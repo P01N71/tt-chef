@@ -1,18 +1,18 @@
-// src/data/courses.js
-
 export const ALL_TAGS = [
   "기초필수", "기초선택", "전공필수", "전공선택",
-  "컴퓨터공학", "수학", "물리학", "화학", "생명과학", "공학선택", "영어",
-  "뇌과학", "기계공학", "전자공학", "재료공학", "화학공학", "읽기,쓰기 중점", "비트랙/융합", "인턴십" 
+  "공학선택", "컴퓨터공학", "수학", "물리학", "화학", "생명과학", "뇌과학", "기계공학", 
+  "전자공학", "재료공학", "화학공학", "영어", "읽기,쓰기 중점", "비트랙/융합", "인턴십", "연구" 
 ];
 
-export const MOCK_COURSES = [
+export const ALL_COURSES = [
   {
     id: "BE101a-01",
     name: "프로그래밍",
     prof: "목지수",
     credit: 3,
-    tags: ["기초필수", "컴퓨터공학"],
+    categories: ["컴퓨터공학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 9, duration: 2 }, { day: 3, start: 9, duration: 2 }]
   },
   {
@@ -20,7 +20,9 @@ export const MOCK_COURSES = [
     name: "데이터사이언스기초",
     prof: "장준기",
     credit: 3,
-    tags: ["기초필수", "컴퓨터공학"],
+    categories: ["컴퓨터공학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 13, duration: 2 }, { day: 3, start: 13, duration: 2 }]
   },
   {
@@ -28,7 +30,9 @@ export const MOCK_COURSES = [
     name: "데이터사이언스기초",
     prof: "길현재",
     credit: 3,
-    tags: ["기초필수", "컴퓨터공학"],
+    categories: ["컴퓨터공학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 15, duration: 2 }, { day: 2, start: 15, duration: 2 }]
   },
   {
@@ -36,7 +40,9 @@ export const MOCK_COURSES = [
     name: "창의기계설계",
     prof: "박준혁",
     credit: 3,
-    tags: ["기초필수", "공학선택"],
+    categories: ["공학선택"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 4, start: 9, duration: 3 }]
   },
   {
@@ -44,7 +50,9 @@ export const MOCK_COURSES = [
     name: "창의기계설계",
     prof: "송석호",
     credit: 3,
-    tags: ["기초필수", "공학선택"],
+    categories: ["공학선택"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 14.5, duration: 3 }]
   },
   {
@@ -52,7 +60,9 @@ export const MOCK_COURSES = [
     name: "회로이론과 계측법(이론)",
     prof: "이정협",
     credit: 2,
-    tags: ["기초필수", "공학선택"],
+    categories: ["공학선택"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 3, start: 17, duration: 2 }]
   },
   {
@@ -60,7 +70,9 @@ export const MOCK_COURSES = [
     name: "회로이론과 계측법(이론)",
     prof: "송민영",
     credit: 2,
-    tags: ["기초필수", "공학선택"],
+    categories: ["공학선택"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 17, duration: 2 }]
   },
   {
@@ -68,7 +80,9 @@ export const MOCK_COURSES = [
     name: "뇌과학실험I(이)",
     prof: "조용철, 김규형, 오용석",
     credit: 3,
-    tags: ["전공선택", "뇌과학"],
+    categories: ["뇌과학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: { "뇌과학": "전공선택" },
     times: [{ day: 4, start: 9, duration: 3 }]
   },
   {
@@ -76,7 +90,9 @@ export const MOCK_COURSES = [
     name: "신경재생 및 퇴행(이)",
     prof: "조용철",
     credit: 3,
-    tags: ["전공선택", "뇌과학"],
+    categories: ["뇌과학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: { "뇌과학": "전공선택" },
     times: [{ day: 1, start: 14.5, duration: 1.5 }, { day: 3, start: 14.5, duration: 1.5 }]
   },
   {
@@ -84,7 +100,9 @@ export const MOCK_COURSES = [
     name: "학습과 기억(이)",
     prof: "박포정",
     credit: 3,
-    tags: ["전공선택", "뇌과학"],
+    categories: ["뇌과학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: { "뇌과학": "전공선택" },
     times: [{ day: 1, start: 16.5, duration: 1.5 }, { day: 3, start: 16.5, duration: 1.5 }]
   },
   {
@@ -92,7 +110,9 @@ export const MOCK_COURSES = [
     name: "공학수학I",
     prof: "안흥주",
     credit: 3,
-    tags: ["기초필수", "수학"],
+    categories: ["수학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 13, duration: 2 }, { day: 3, start: 13, duration: 2 }]
   },
   {
@@ -100,7 +120,9 @@ export const MOCK_COURSES = [
     name: "공학수학I",
     prof: "Hudson Thomas Bryan",
     credit: 3,
-    tags: ["기초필수", "수학"],
+    categories: ["수학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 16.5, duration: 2 }, { day: 3, start: 16.5, duration: 2 }]
   },
   {
@@ -108,7 +130,9 @@ export const MOCK_COURSES = [
     name: "공학수학I",
     prof: "Carlos Scarinci",
     credit: 3,
-    tags: ["기초필수", "수학"],
+    categories: ["수학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 9, duration: 2 }, { day: 2, start: 9, duration: 2 }]
   },
   {
@@ -116,7 +140,9 @@ export const MOCK_COURSES = [
     name: "공학수학I",
     prof: "Carlos Scarinci",
     credit: 3,
-    tags: ["기초필수", "수학"],
+    categories: ["수학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 16, duration: 2 }, { day: 2, start: 16, duration: 2 }]
   },
   {
@@ -124,7 +150,9 @@ export const MOCK_COURSES = [
     name: "공학수학I",
     prof: "미정",
     credit: 3,
-    tags: ["기초필수", "수학"],
+    categories: ["수학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 11, duration: 2 }, { day: 3, start: 11, duration: 2 }]
   },
   {
@@ -132,7 +160,9 @@ export const MOCK_COURSES = [
     name: "일반물리I",
     prof: "DEVECIOGLU DENIZ OLGU",
     credit: 3,
-    tags: ["기초필수", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 15, duration: 1.5 }, { day: 3, start: 15, duration: 1.5 }]
   },
   {
@@ -140,7 +170,9 @@ export const MOCK_COURSES = [
     name: "일반물리I",
     prof: "DEVECIOGLU DENIZ OLGU",
     credit: 3,
-    tags: ["기초필수", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 11, duration: 1.5 }, { day: 3, start: 11, duration: 1.5 }]
   },
   {
@@ -148,7 +180,9 @@ export const MOCK_COURSES = [
     name: "일반물리I",
     prof: "DEVECIOGLU DENIZ OLGU",
     credit: 3,
-    tags: ["기초필수", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 17, duration: 1.5 }, { day: 3, start: 17, duration: 1.5 }]
   },
   {
@@ -156,7 +190,9 @@ export const MOCK_COURSES = [
     name: "일반물리I",
     prof: "미정",
     credit: 3,
-    tags: ["기초필수", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 15, duration: 1.5 }, { day: 4, start: 15, duration: 1.5 }]
   },
   {
@@ -164,7 +200,9 @@ export const MOCK_COURSES = [
     name: "일반물리실험I",
     prof: "김동렬",
     credit: 1,
-    tags: ["기초필수", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 16, duration: 2 }]
   },
   {
@@ -172,7 +210,9 @@ export const MOCK_COURSES = [
     name: "일반물리실험I",
     prof: "김동렬",
     credit: 1,
-    tags: ["기초필수", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 14, duration: 2 }]
   },
   {
@@ -180,7 +220,9 @@ export const MOCK_COURSES = [
     name: "일반물리실험I",
     prof: "김동렬",
     credit: 1,
-    tags: ["기초필수", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 13, duration: 2 }]
   },
   {
@@ -188,7 +230,9 @@ export const MOCK_COURSES = [
     name: "일반물리실험I",
     prof: "김동렬",
     credit: 1,
-    tags: ["기초필수", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 10.5, duration: 2 }]
   },
   {
@@ -196,7 +240,9 @@ export const MOCK_COURSES = [
     name: "일반물리실험I",
     prof: "김동렬",
     credit: 1,
-    tags: ["기초필수", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 11, duration: 2 }]
   },
   {
@@ -204,7 +250,9 @@ export const MOCK_COURSES = [
     name: "일반물리실험I",
     prof: "김동렬",
     credit: 1,
-    tags: ["기초필수", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 16, duration: 2 }]
   },
   {
@@ -212,7 +260,9 @@ export const MOCK_COURSES = [
     name: "일반물리실험I",
     prof: "박기성",
     credit: 1,
-    tags: ["기초필수", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 13, duration: 2 }]
   },
   {
@@ -220,7 +270,9 @@ export const MOCK_COURSES = [
     name: "일반화학실험I",
     prof: "민은선",
     credit: 1,
-    tags: ["기초필수", "화학"],
+    categories: ["화학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 9, duration: 2 }]
   },
   {
@@ -228,7 +280,9 @@ export const MOCK_COURSES = [
     name: "일반화학실험I",
     prof: "민은선",
     credit: 1,
-    tags: ["기초필수", "화학"],
+    categories: ["화학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 9, duration: 2 }]
   },
   {
@@ -236,7 +290,9 @@ export const MOCK_COURSES = [
     name: "일반화학실험I",
     prof: "민은선",
     credit: 1,
-    tags: ["기초필수", "화학"],
+    categories: ["화학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 15, duration: 2 }]
   },
   {
@@ -244,7 +300,9 @@ export const MOCK_COURSES = [
     name: "일반화학실험I",
     prof: "민은선",
     credit: 1,
-    tags: ["기초필수", "화학"],
+    categories: ["화학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 13, duration: 2 }]
   },
   {
@@ -252,7 +310,9 @@ export const MOCK_COURSES = [
     name: "일반화학실험I",
     prof: "민은선",
     credit: 1,
-    tags: ["기초필수", "화학"],
+    categories: ["화학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 14, duration: 2 }]
   },
   {
@@ -260,7 +320,9 @@ export const MOCK_COURSES = [
     name: "일반화학실험I",
     prof: "미정",
     credit: 1,
-    tags: ["기초필수", "화학"],
+    categories: ["화학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 16, duration: 2 }]
   },
   {
@@ -268,7 +330,9 @@ export const MOCK_COURSES = [
     name: "일반화학실험I",
     prof: "미정",
     credit: 1,
-    tags: ["기초필수", "화학"],
+    categories: ["화학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 3, start: 13, duration: 2 }]
   },
   {
@@ -276,7 +340,9 @@ export const MOCK_COURSES = [
     name: "생명과학개론",
     prof: "이석규",
     credit: 3,
-    tags: ["기초필수", "생명과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 11, duration: 1.5 }, { day: 3, start: 11, duration: 1.5 }]
   },
   {
@@ -284,7 +350,9 @@ export const MOCK_COURSES = [
     name: "생명과학개론",
     prof: "이효상",
     credit: 3,
-    tags: ["기초필수", "생명과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 16.5, duration: 1.5 }, { day: 2, start: 16.5, duration: 1.5 }]
   },
   {
@@ -292,7 +360,9 @@ export const MOCK_COURSES = [
     name: "일반생물학 실험",
     prof: "김유리",
     credit: 1,
-    tags: ["기초필수", "생명과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 9, duration: 2 }]
   },
   {
@@ -300,7 +370,9 @@ export const MOCK_COURSES = [
     name: "일반생물학 실험",
     prof: "조정아",
     credit: 1,
-    tags: ["기초필수", "생명과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 11, duration: 2 }]
   },
   {
@@ -308,7 +380,9 @@ export const MOCK_COURSES = [
     name: "일반생물학 실험",
     prof: "조정아",
     credit: 1,
-    tags: ["기초필수", "생명과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 11, duration: 2 }]
   },
   {
@@ -316,7 +390,9 @@ export const MOCK_COURSES = [
     name: "일반생물학 실험",
     prof: "조정아",
     credit: 1,
-    tags: ["기초필수", "생명과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 3, start: 11, duration: 2 }]
   },
   {
@@ -324,7 +400,9 @@ export const MOCK_COURSES = [
     name: "일반생물학 실험",
     prof: "조정아",
     credit: 1,
-    tags: ["기초필수", "생명과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 9, duration: 2 }]
   },
   {
@@ -332,7 +410,9 @@ export const MOCK_COURSES = [
     name: "일반생물학 실험",
     prof: "조정아",
     credit: 1,
-    tags: ["기초필수", "생명과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 14, duration: 2 }]
   },
   {
@@ -340,7 +420,9 @@ export const MOCK_COURSES = [
     name: "일반생물학 실험",
     prof: "조정아",
     credit: 1,
-    tags: ["기초필수", "생명과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 16, duration: 2 }]
   },
   {
@@ -348,7 +430,9 @@ export const MOCK_COURSES = [
     name: "일반생물학I",
     prof: "정찬, 곽준명, 김민식",
     credit: 3,
-    tags: ["기초필수", "생명과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 16.5, duration: 1.5 }, { day: 2, start: 16.5, duration: 1.5 }]
   },
   {
@@ -356,7 +440,9 @@ export const MOCK_COURSES = [
     name: "일반화학I",
     prof: "미정",
     credit: 3,
-    tags: ["기초필수", "화학"],
+    categories: ["화학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 13, duration: 3 }]
   },
   {
@@ -364,7 +450,9 @@ export const MOCK_COURSES = [
     name: "일반화학I",
     prof: "SANGARAJU SHANMUGAM",
     credit: 3,
-    tags: ["기초필수", "화학"],
+    categories: ["화학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 14, duration: 1.5 }, { day: 3, start: 14, duration: 1.5 }]
   },
   {
@@ -372,7 +460,9 @@ export const MOCK_COURSES = [
     name: "일반화학I",
     prof: "남은주",
     credit: 3,
-    tags: ["기초필수", "화학"],
+    categories: ["화학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 9, duration: 1.5 }, { day: 4, start: 9, duration: 1.5 }]
   },
   {
@@ -380,7 +470,9 @@ export const MOCK_COURSES = [
     name: "일반화학I",
     prof: "미정",
     credit: 3,
-    tags: ["기초필수", "화학"],
+    categories: ["화학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 16, duration: 1.5 }, { day: 3, start: 16, duration: 1.5 }]
   },
   {
@@ -388,7 +480,9 @@ export const MOCK_COURSES = [
     name: "일반화학I",
     prof: "미정",
     credit: 3,
-    tags: ["기초필수", "화학"],
+    categories: ["화학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 9, duration: 1.5 }, { day: 3, start: 9, duration: 1.5 }]
   },
   {
@@ -396,7 +490,9 @@ export const MOCK_COURSES = [
     name: "확률과 통계 및 실습",
     prof: "미정",
     credit: 3,
-    tags: ["기초필수", "수학"],
+    categories: ["수학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 16, duration: 2 }, { day: 3, start: 16, duration: 2 }]
   },
   {
@@ -404,7 +500,9 @@ export const MOCK_COURSES = [
     name: "선형대수학",
     prof: "한강진",
     credit: 3,
-    tags: ["기초필수", "수학"],
+    categories: ["수학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 13, duration: 2 }, { day: 2, start: 13, duration: 2 }]
   },
   {
@@ -412,7 +510,9 @@ export const MOCK_COURSES = [
     name: "선형대수학",
     prof: "한강진",
     credit: 3,
-    tags: ["기초필수", "수학"],
+    categories: ["수학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 16, duration: 2 }, { day: 3, start: 16, duration: 2 }]
   },
   {
@@ -420,7 +520,9 @@ export const MOCK_COURSES = [
     name: "선형대수학",
     prof: "이두석",
     credit: 3,
-    tags: ["기초필수", "수학"],
+    categories: ["수학"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 9, duration: 2 }, { day: 2, start: 9, duration: 2 }]
   },
   {
@@ -428,7 +530,9 @@ export const MOCK_COURSES = [
     name: "화학공학열역학(공)",
     prof: "고서진",
     credit: 3,
-    tags: ["전공필수", "화학공학"],
+    categories: ["화학공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: { "화학공학": "전공선택" },
     times: [{ day: 1, start: 10.5, duration: 1.5 }, { day: 3, start: 10.5, duration: 1.5 }]
   },
   {
@@ -436,7 +540,9 @@ export const MOCK_COURSES = [
     name: "고분자개론(이,공)",
     prof: "호동해",
     credit: 3,
-    tags: ["전공선택", "화학공학", "화학"],
+    categories: ["화학공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: { "화학공학": "전공선택", "화학": "전공선택" },
     times: [{ day: 1, start: 9, duration: 1.5 }, { day: 3, start: 9, duration: 1.5 }]
   },
   {
@@ -444,7 +550,9 @@ export const MOCK_COURSES = [
     name: "화학제품 및 공정설계(공)",
     prof: "김찬연",
     credit: 3,
-    tags: ["전공선택", "화학공학"],
+    categories: ["화학공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: { "화학공학": "전공선택" },
     times: [{ day: 0, start: 14.5, duration: 1.5 }, { day: 2, start: 14.5, duration: 1.5 }]
   },
   {
@@ -452,7 +560,10 @@ export const MOCK_COURSES = [
     name: "분석화학(이,공)",
     prof: "이호춘",
     credit: 3,
-    tags: ["전공필수", "화학", "재료공학", "화학공학"],
+    categories: ["화학"],
+    fixedTypes: ["전공필수"],
+    // 🔥 [수정] 재료공학 트랙 포함 완료
+    trackRelations: { "화학": "전공필수", "화학공학": "전공선택", "재료공학": "전공선택" },
     times: [{ day: 0, start: 10.5, duration: 1.5 }, { day: 2, start: 10.5, duration: 1.5 }]
   },
   {
@@ -460,7 +571,9 @@ export const MOCK_COURSES = [
     name: "유기화학I(이,공)",
     prof: "정병혁",
     credit: 3,
-    tags: ["전공필수", "화학", "재료공학", "화학공학"],
+    categories: ["화학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: { "화학": "전공필수", "화학공학": "전공필수", "재료공학": "전공선택" },
     times: [{ day: 1, start: 9, duration: 1.5 }, { day: 3, start: 9, duration: 1.5 }]
   },
   {
@@ -468,7 +581,9 @@ export const MOCK_COURSES = [
     name: "일반화학실험II(이)",
     prof: "미정",
     credit: 1,
-    tags: ["전공선택", "화학"],
+    categories: ["화학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 2, start: 13, duration: 2 }]
   },
   {
@@ -476,7 +591,9 @@ export const MOCK_COURSES = [
     name: "심화화학실험I(이)",
     prof: "홍선기, 인수일",
     credit: 2,
-    tags: ["전공필수", "화학"],
+    categories: ["화학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 12.5, duration: 4 }]
   },
   {
@@ -484,7 +601,9 @@ export const MOCK_COURSES = [
     name: "무기화학II(이,공)",
     prof: "김성균",
     credit: 3,
-    tags: ["전공선택", "화학", "화학공학"],
+    categories: ["화학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: { "화학공학": "전공선택", "화학": "전공선택" },
     times: [{ day: 0, start: 15, duration: 1.5 }, { day: 2, start: 15, duration: 1.5 }]
   },
   {
@@ -492,7 +611,9 @@ export const MOCK_COURSES = [
     name: "물리화학II(이,공)",
     prof: "성주영",
     credit: 3,
-    tags: ["전공선택", "화학", "화학공학"],
+    categories: ["화학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: { "화학공학": "전공선택", "화학": "전공선택" },
     times: [{ day: 0, start: 9, duration: 1.5 }, { day: 2, start: 9, duration: 1.5 }]
   },
   {
@@ -500,7 +621,9 @@ export const MOCK_COURSES = [
     name: "계산화학(이)",
     prof: "장윤희",
     credit: 3,
-    tags: ["전공선택", "화학"],
+    categories: ["화학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 16.5, duration: 1.5 }, { day: 2, start: 16.5, duration: 1.5 }]
   },
   {
@@ -508,7 +631,9 @@ export const MOCK_COURSES = [
     name: "자료구조(이,공)",
     prof: "김선준",
     credit: 3,
-    tags: ["전공필수", "컴퓨터공학", "전자공학"],
+    categories: ["컴퓨터공학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: { "컴퓨터공학": "전공필수", "전자공학": "전공필수" },
     times: [{ day: 0, start: 11, duration: 1.5 }, { day: 2, start: 11, duration: 1.5 }]
   },
   {
@@ -516,7 +641,9 @@ export const MOCK_COURSES = [
     name: "기계학습개론(이,공)",
     prof: "미정",
     credit: 3,
-    tags: ["전공선택", "컴퓨터공학"],
+    categories: ["컴퓨터공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 15, duration: 1.5 }, { day: 2, start: 15, duration: 1.5 }]
   },
   {
@@ -524,7 +651,9 @@ export const MOCK_COURSES = [
     name: "컴퓨터구조(공)",
     prof: "이효근",
     credit: 3,
-    tags: ["전공필수", "컴퓨터공학", "전자공학"],
+    categories: ["컴퓨터공학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: { "컴퓨터공학": "전공필수", "전자공학": "전공필수" },
     times: [{ day: 1, start: 13, duration: 1.5 }, { day: 3, start: 13, duration: 1.5 }]
   },
   {
@@ -532,7 +661,9 @@ export const MOCK_COURSES = [
     name: "시스템 프로그래밍(공)",
     prof: "이용우",
     credit: 3,
-    tags: ["전공필수", "컴퓨터공학"],
+    categories: ["컴퓨터공학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 16.5, duration: 1.5 }, { day: 2, start: 16.5, duration: 1.5 }]
   },
   {
@@ -540,7 +671,9 @@ export const MOCK_COURSES = [
     name: "프로그래밍 언어(이,공)",
     prof: "전민석",
     credit: 3,
-    tags: ["전공선택", "컴퓨터공학"],
+    categories: ["컴퓨터공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 14.5, duration: 1.5 }, { day: 3, start: 14.5, duration: 1.5 }]
   },
   {
@@ -548,7 +681,9 @@ export const MOCK_COURSES = [
     name: "컴퓨터 비전 개론(공)",
     prof: "임성훈",
     credit: 3,
-    tags: ["전공선택", "컴퓨터공학"],
+    categories: ["컴퓨터공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 9, duration: 1.5 }, { day: 3, start: 9, duration: 1.5 }]
   },
   {
@@ -556,7 +691,9 @@ export const MOCK_COURSES = [
     name: "컴퓨터보안개론(공)",
     prof: "최원석",
     credit: 3,
-    tags: ["전공선택", "컴퓨터공학"],
+    categories: ["컴퓨터공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 10.5, duration: 1.5 }, { day: 2, start: 10.5, duration: 1.5 }]
   },
   {
@@ -564,7 +701,9 @@ export const MOCK_COURSES = [
     name: "신호 및 시스템(공)",
     prof: "최재호",
     credit: 3,
-    tags: ["전공필수", "전자공학"],
+    categories: ["전자공학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 9, duration: 1.5 }, { day: 3, start: 9, duration: 1.5 }]
   },
   {
@@ -572,7 +711,9 @@ export const MOCK_COURSES = [
     name: "디지털 신호처리(공)",
     prof: "이민선",
     credit: 3,
-    tags: ["전공선택", "전자공학", "컴퓨터공학"],
+    categories: ["전자공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: { "컴퓨터공학": "전공선택", "전자공학": "전공선택" },
     times: [{ day: 1, start: 9, duration: 1.5 }, { day: 3, start: 9, duration: 1.5 }]
   },
   {
@@ -580,7 +721,9 @@ export const MOCK_COURSES = [
     name: "디지털통신(공)",
     prof: "서대원",
     credit: 3,
-    tags: ["전공선택", "전자공학"],
+    categories: ["전자공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 13, duration: 1.5 }, { day: 2, start: 13, duration: 1.5 }]
   },
   {
@@ -588,7 +731,9 @@ export const MOCK_COURSES = [
     name: "지능형제어시스템(공)",
     prof: "김경대, 이성민",
     credit: 3,
-    tags: ["전공선택", "전자공학"],
+    categories: ["전자공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 13, duration: 1.5 }, { day: 3, start: 13, duration: 1.5 }]
   },
   {
@@ -596,119 +741,149 @@ export const MOCK_COURSES = [
     name: "디지털집적회로설계(공)",
     prof: "김가인",
     credit: 3,
-    tags: ["전공선택", "전자공학"],
+    categories: ["전자공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 9, duration: 1.5 }, { day: 2, start: 9, duration: 1.5 }]
   },
   {
     id: "GC101-01",
-    name: "Academic English: Speaking and Correspondence",
+    name: "Academic English: S&C",
     prof: "Aaron Cumberledge",
     credit: 2,
-    tags: ["기초필수", "영어"],
+    categories: ["영어"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 15.5, duration: 3 }]
   },
   {
     id: "GC101-02",
-    name: "Academic English: Speaking and Correspondence",
+    name: "Academic English: S&C",
     prof: "Aaron Cumberledge",
     credit: 2,
-    tags: ["기초필수", "영어"],
+    categories: ["영어"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 9, duration: 3 }]
   },
   {
     id: "GC101-03",
-    name: "Academic English: Speaking and Correspondence",
+    name: "Academic English: S&C",
     prof: "Aaron Cumberledge",
     credit: 2,
-    tags: ["기초필수", "영어"],
+    categories: ["영어"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 13, duration: 3 }]
   },
   {
     id: "GC101-04",
-    name: "Academic English: Speaking and Correspondence",
+    name: "Academic English: S&C",
     prof: "Aaron Cumberledge",
     credit: 2,
-    tags: ["기초필수", "영어"],
+    categories: ["영어"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 11, duration: 3 }]
   },
   {
     id: "GC101-05",
-    name: "Academic English: Speaking and Correspondence",
+    name: "Academic English: S&C",
     prof: "Benjamin Wilson Riley",
     credit: 2,
-    tags: ["기초필수", "영어"],
+    categories: ["영어"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 9, duration: 3 }]
   },
   {
     id: "GC101-06",
-    name: "Academic English: Speaking and Correspondence",
+    name: "Academic English: S&C",
     prof: "Benjamin Wilson Riley",
     credit: 2,
-    tags: ["기초필수", "영어"],
+    categories: ["영어"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 3, start: 11, duration: 3 }]
   },
   {
     id: "GC101-07",
-    name: "Academic English: Speaking and Correspondence",
+    name: "Academic English: S&C",
     prof: "Benjamin Wilson Riley",
     credit: 2,
-    tags: ["기초필수", "영어"],
+    categories: ["영어"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 3, start: 15.5, duration: 3 }]
   },
   {
     id: "GC101-08",
-    name: "Academic English: Speaking and Correspondence",
+    name: "Academic English: S&C",
     prof: "Benjamin Wilson Riley",
     credit: 2,
-    tags: ["기초필수", "영어"],
+    categories: ["영어"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 14, duration: 3 }]
   },
   {
     id: "GC101-09",
-    name: "Academic English: Speaking and Correspondence",
+    name: "Academic English: S&C",
     prof: "Mark Silverlock",
     credit: 2,
-    tags: ["기초필수", "영어"],
+    categories: ["영어"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 14, duration: 3 }]
   },
   {
     id: "GC101-10",
-    name: "Academic English: Speaking and Correspondence",
+    name: "Academic English: S&C",
     prof: "Mark Silverlock",
     credit: 2,
-    tags: ["기초필수", "영어"],
+    categories: ["영어"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 13, duration: 3 }]
   },
   {
     id: "GC101-11",
-    name: "Academic English: Speaking and Correspondence",
+    name: "Academic English: S&C",
     prof: "Mark Silverlock",
     credit: 2,
-    tags: ["기초필수", "영어"],
+    categories: ["영어"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 9, duration: 3 }]
   },
   {
     id: "GC101-12",
-    name: "Academic English: Speaking and Correspondence",
+    name: "Academic English: S&C",
     prof: "Andrew John Miller",
     credit: 2,
-    tags: ["기초필수", "영어"],
+    categories: ["영어"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 4, start: 14, duration: 3 }]
   },
   {
     id: "GC101-13",
-    name: "Academic English: Speaking and Correspondence",
+    name: "Academic English: S&C",
     prof: "Andrew John Miller",
     credit: 2,
-    tags: ["기초필수", "영어"],
+    categories: ["영어"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 4, start: 9.5, duration: 3 }]
   },
   {
     id: "GC101-14",
-    name: "Academic English: Speaking and Correspondence",
+    name: "Academic English: S&C",
     prof: "이정아",
     credit: 2,
-    tags: ["기초필수", "영어"],
+    categories: ["영어"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 14, duration: 3 }]
   },
   {
@@ -716,7 +891,9 @@ export const MOCK_COURSES = [
     name: "경제학 입문",
     prof: "김선구",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 2, start: 10, duration: 3 }]
   },
   {
@@ -724,7 +901,9 @@ export const MOCK_COURSES = [
     name: "과학기술과 현대사회",
     prof: "장하원",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 10, duration: 3 }]
   },
   {
@@ -732,7 +911,9 @@ export const MOCK_COURSES = [
     name: "법과 사회",
     prof: "김현희",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 4, start: 9, duration: 3 }]
   },
   {
@@ -740,7 +921,9 @@ export const MOCK_COURSES = [
     name: "소설의 이해",
     prof: "배하은",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 10.5, duration: 1.5 }, { day: 2, start: 10.5, duration: 1.5 }]
   },
   {
@@ -748,7 +931,9 @@ export const MOCK_COURSES = [
     name: "비교정치학",
     prof: "윤지성",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 16, duration: 1.5 }, { day: 3, start: 16, duration: 1.5 }]
   },
   {
@@ -756,7 +941,9 @@ export const MOCK_COURSES = [
     name: "언어학 입문",
     prof: "이정아",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 4, start: 9, duration: 3 }]
   },
   {
@@ -764,7 +951,9 @@ export const MOCK_COURSES = [
     name: "비교역사학",
     prof: "문준영",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 10, duration: 3 }]
   },
   {
@@ -772,7 +961,9 @@ export const MOCK_COURSES = [
     name: "학술 글쓰기",
     prof: "배하은",
     credit: 3,
-    tags: ["기초필수", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 9, duration: 1.5 }, { day: 2, start: 9, duration: 1.5 }]
   },
   {
@@ -780,7 +971,9 @@ export const MOCK_COURSES = [
     name: "학술 글쓰기",
     prof: "임희현",
     credit: 3,
-    tags: ["기초필수", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 3, start: 10, duration: 3 }]
   },
   {
@@ -788,7 +981,9 @@ export const MOCK_COURSES = [
     name: "학술 글쓰기",
     prof: "임희현",
     credit: 3,
-    tags: ["기초필수", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 3, start: 14.5, duration: 3 }]
   },
   {
@@ -796,7 +991,9 @@ export const MOCK_COURSES = [
     name: "학술 글쓰기",
     prof: "전계성",
     credit: 3,
-    tags: ["기초필수", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 15, duration: 3 }]
   },
   {
@@ -804,7 +1001,9 @@ export const MOCK_COURSES = [
     name: "학술 글쓰기",
     prof: "전계성",
     credit: 3,
-    tags: ["기초필수", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 4, start: 9, duration: 3 }]
   },
   {
@@ -812,7 +1011,9 @@ export const MOCK_COURSES = [
     name: "사회학의 이해",
     prof: "최태섭",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 3, start: 9, duration: 3 }]
   },
   {
@@ -820,7 +1021,9 @@ export const MOCK_COURSES = [
     name: "지리학 입문",
     prof: "Shen Shawn",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 18, duration: 3 }]
   },
   {
@@ -828,7 +1031,9 @@ export const MOCK_COURSES = [
     name: "심리학으로의 여행",
     prof: "곽금주",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 11, duration: 3 }]
   },
   {
@@ -836,7 +1041,9 @@ export const MOCK_COURSES = [
     name: "인류학의 이해",
     prof: "이정덕",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 15, duration: 3 }]
   },
   {
@@ -844,7 +1051,9 @@ export const MOCK_COURSES = [
     name: "인간과 종교",
     prof: "박범석",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 3, start: 9, duration: 3 }]
   },
   {
@@ -852,7 +1061,9 @@ export const MOCK_COURSES = [
     name: "미래소양강좌",
     prof: "최한경",
     credit: 1,
-    tags: ["기초필수", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 4, start: 13, duration: 1 }]
   },
   {
@@ -860,7 +1071,9 @@ export const MOCK_COURSES = [
     name: "진로탐색 및 전공설계I",
     prof: "최한경",
     credit: 1,
-    tags: ["기초필수", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 13, duration: 1 }]
   },
   {
@@ -868,7 +1081,9 @@ export const MOCK_COURSES = [
     name: "Introduction to Traditional Korean Culture",
     prof: "배하은",
     credit: 2,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 13, duration: 2 }]
   },
   {
@@ -876,7 +1091,9 @@ export const MOCK_COURSES = [
     name: "Introduction to Philosophy",
     prof: "김병재",
     credit: 2,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 10.5, duration: 2 }]
   },
   {
@@ -884,7 +1101,9 @@ export const MOCK_COURSES = [
     name: "과학기술사의 주요 장면",
     prof: "장하원",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 14, duration: 3 }]
   },
   {
@@ -892,7 +1111,9 @@ export const MOCK_COURSES = [
     name: "과학철학의 쟁점",
     prof: "강유진",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 2, start: 13, duration: 3 }]
   },
   {
@@ -900,7 +1121,9 @@ export const MOCK_COURSES = [
     name: "근대 사회와 사상",
     prof: "문준영",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 14, duration: 3 }]
   },
   {
@@ -908,7 +1131,9 @@ export const MOCK_COURSES = [
     name: "글로벌 정치경제",
     prof: "윤지성",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 11, duration: 1.5 }, { day: 3, start: 11, duration: 1.5 }]
   },
   {
@@ -916,7 +1141,9 @@ export const MOCK_COURSES = [
     name: "커뮤니케이션 특강",
     prof: "조성겸",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 3, start: 13, duration: 3 }]
   },
   {
@@ -924,7 +1151,9 @@ export const MOCK_COURSES = [
     name: "철학 고전의 이해",
     prof: "김병재",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 13, duration: 1.5 }, { day: 2, start: 13, duration: 1.5 }]
   },
   {
@@ -932,7 +1161,9 @@ export const MOCK_COURSES = [
     name: "권리변동의 일반",
     prof: "함상범",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 9.5, duration: 3 }]
   },
   {
@@ -940,7 +1171,9 @@ export const MOCK_COURSES = [
     name: "도시지리학",
     prof: "Shen Shawn",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 15, duration: 1.5 }, { day: 2, start: 15, duration: 1.5 }]
   },
   {
@@ -948,7 +1181,9 @@ export const MOCK_COURSES = [
     name: "세계종교입문",
     prof: "박범석",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 3, start: 13, duration: 3 }]
   },
   {
@@ -956,7 +1191,9 @@ export const MOCK_COURSES = [
     name: "사회과학 특강I",
     prof: "곽금주",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 14, duration: 3 }]
   },
   {
@@ -964,7 +1201,9 @@ export const MOCK_COURSES = [
     name: "사회과학 특강II",
     prof: "이정덕",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 2, start: 15, duration: 3 }]
   },
   {
@@ -972,7 +1211,9 @@ export const MOCK_COURSES = [
     name: "사회과학 특강II",
     prof: "최태섭",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 3, start: 13, duration: 3 }]
   },
   {
@@ -980,7 +1221,9 @@ export const MOCK_COURSES = [
     name: "심리철학",
     prof: "김병재",
     credit: 3,
-    tags: ["기초선택", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 14.5, duration: 1.5 }, { day: 2, start: 14.5, duration: 1.5 }]
   },
   {
@@ -988,7 +1231,9 @@ export const MOCK_COURSES = [
     name: "Scientific Writing",
     prof: "이정아",
     credit: 3,
-    tags: ["기초필수", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 1, start: 9, duration: 1.5 }, { day: 3, start: 9, duration: 1.5 }]
   },
   {
@@ -996,7 +1241,9 @@ export const MOCK_COURSES = [
     name: "Scientific Writing",
     prof: "Mark Silverlock",
     credit: 3,
-    tags: ["기초필수", "읽기,쓰기 중점"],
+    categories: ["읽기,쓰기 중점"],
+    fixedTypes: ["기초필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 18, duration: 1.5 }, { day: 2, start: 18, duration: 1.5 }]
   },
   {
@@ -1004,7 +1251,9 @@ export const MOCK_COURSES = [
     name: "인턴십I",
     prof: "김소희",
     credit: 1,
-    tags: ["전공필수", "인턴십"],
+    categories: ["인턴십"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 5, start: 17, duration: 1 }]
   },
   {
@@ -1012,7 +1261,9 @@ export const MOCK_COURSES = [
     name: "인턴십II",
     prof: "김소희",
     credit: 1,
-    tags: ["전공필수", "인턴십"],
+    categories: ["인턴십"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 5, start: 17, duration: 1 }]
   },
   {
@@ -1020,7 +1271,9 @@ export const MOCK_COURSES = [
     name: "인턴십III",
     prof: "김소희",
     credit: 2,
-    tags: ["전공필수", "인턴십"],
+    categories: ["인턴십"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 5, start: 17, duration: 2 }]
   },
   {
@@ -1028,7 +1281,9 @@ export const MOCK_COURSES = [
     name: "인턴십IV",
     prof: "김소희",
     credit: 2,
-    tags: ["전공필수", "인턴십"],
+    categories: ["인턴십"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 5, start: 17, duration: 2 }]
   },
   {
@@ -1036,7 +1291,9 @@ export const MOCK_COURSES = [
     name: "글로벌 인턴십V",
     prof: "김회준",
     credit: 2,
-    tags: ["전공필수", "인턴십"],
+    categories: ["인턴십"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 5, start: 13.5, duration: 10 }]
   },
   {
@@ -1044,7 +1301,9 @@ export const MOCK_COURSES = [
     name: "글로벌 인턴십VI",
     prof: "김회준",
     credit: 2,
-    tags: ["전공필수", "인턴십"],
+    categories: ["인턴십"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 5, start: 13.5, duration: 10 }]
   },
   {
@@ -1052,7 +1311,9 @@ export const MOCK_COURSES = [
     name: "글로벌 인턴십VII",
     prof: "김회준",
     credit: 2,
-    tags: ["전공필수", "인턴십"],
+    categories: ["인턴십"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 5, start: 13.5, duration: 10 }]
   },
   {
@@ -1060,7 +1321,9 @@ export const MOCK_COURSES = [
     name: "글로벌 인턴십VIII",
     prof: "김회준",
     credit: 2,
-    tags: ["전공필수", "인턴십"],
+    categories: ["인턴십"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 5, start: 13.5, duration: 10 }]
   },
   {
@@ -1068,7 +1331,9 @@ export const MOCK_COURSES = [
     name: "인턴십V",
     prof: "김소희",
     credit: 2,
-    tags: ["전공필수", "인턴십"],
+    categories: ["인턴십"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 5, start: 13.5, duration: 10 }]
   },
   {
@@ -1076,7 +1341,9 @@ export const MOCK_COURSES = [
     name: "인턴십VI",
     prof: "김소희",
     credit: 2,
-    tags: ["전공필수", "인턴십"],
+    categories: ["인턴십"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 5, start: 13.5, duration: 10 }]
   },
   {
@@ -1084,7 +1351,9 @@ export const MOCK_COURSES = [
     name: "세포생물학 실험(이)",
     prof: "이창훈, 정찬, 조정아",
     credit: 3,
-    tags: ["전공선택", "생명과학", "뇌과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: { "생명과학": "전공선택", "뇌과학": "전공선택" },
     times: [{ day: 0, start: 16.5, duration: 3 }, { day: 2, start: 16.5, duration: 3 }]
   },
   {
@@ -1092,7 +1361,9 @@ export const MOCK_COURSES = [
     name: "세포생물학 실험(이)",
     prof: "정찬, 이창훈, 조정아",
     credit: 3,
-    tags: ["전공선택", "생명과학", "뇌과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: { "생명과학": "전공선택", "뇌과학": "전공선택" },
     times: [{ day: 1, start: 15.5, duration: 3 }, { day: 3, start: 15.5, duration: 3 }]
   },
   {
@@ -1100,7 +1371,9 @@ export const MOCK_COURSES = [
     name: "세포생물학 실험(이)",
     prof: "조정아, 정찬, 이창훈",
     credit: 3,
-    tags: ["전공선택", "생명과학", "뇌과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: { "생명과학": "전공선택", "뇌과학": "전공선택" },
     times: [{ day: 1, start: 15, duration: 3 }, { day: 3, start: 15, duration: 3 }]
   },
   {
@@ -1108,7 +1381,9 @@ export const MOCK_COURSES = [
     name: "세포생물학(이)",
     prof: "백명인, 정영태",
     credit: 3,
-    tags: ["전공필수", "생명과학", "뇌과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: { "생명과학": "전공필수", "뇌과학": "전공선택" },
     times: [{ day: 1, start: 15, duration: 1.5 }, { day: 3, start: 15, duration: 1.5 }]
   },
   {
@@ -1116,7 +1391,9 @@ export const MOCK_COURSES = [
     name: "세포생물학(이)",
     prof: "백명인, 정영태",
     credit: 3,
-    tags: ["전공필수", "생명과학", "뇌과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: { "생명과학": "전공필수", "뇌과학": "전공선택" },
     times: [{ day: 0, start: 13, duration: 1.5 }, { day: 2, start: 13, duration: 1.5 }]
   },
   {
@@ -1124,7 +1401,9 @@ export const MOCK_COURSES = [
     name: "생명체의 다양성과 유기적 관계 (이)",
     prof: "이상임",
     credit: 3,
-    tags: ["전공선택", "생명과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 9, duration: 1.5 }, { day: 3, start: 9, duration: 1.5 }]
   },
   {
@@ -1132,7 +1411,9 @@ export const MOCK_COURSES = [
     name: "신경과학I(이)",
     prof: "서병창, 엄지원",
     credit: 3,
-    tags: ["전공선택", "생명과학", "뇌과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: { "생명과학": "전공선택", "뇌과학": "전공필수" },
     times: [{ day: 1, start: 13, duration: 1.5 }, { day: 3, start: 13, duration: 1.5 }]
   },
   {
@@ -1140,7 +1421,9 @@ export const MOCK_COURSES = [
     name: "신경과학II(이)",
     prof: "현정호, 이효상, 최한경",
     credit: 3,
-    tags: ["전공선택", "생명과학", "뇌과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: { "생명과학": "전공선택", "뇌과학": "전공필수" },
     times: [{ day: 0, start: 14.5, duration: 1.5 }, { day: 2, start: 14.5, duration: 1.5 }]
   },
   {
@@ -1148,7 +1431,9 @@ export const MOCK_COURSES = [
     name: "생화학I(이)",
     prof: "김진해, 김유리, 이종찬, 이재민",
     credit: 3,
-    tags: ["전공필수", "생명과학", "뇌과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: { "생명과학": "전공필수", "뇌과학": "전공필수" },
     times: [{ day: 0, start: 16.5, duration: 1.5 }, { day: 2, start: 16.5, duration: 1.5 }]
   },
   {
@@ -1156,7 +1441,9 @@ export const MOCK_COURSES = [
     name: "의약품공학(이)",
     prof: "예경무, 이병훈",
     credit: 3,
-    tags: ["전공선택", "생명과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 9, duration: 3 }]
   },
   {
@@ -1164,7 +1451,9 @@ export const MOCK_COURSES = [
     name: "생명과학 노벨상 수상의 위대한 발견(이)",
     prof: "이병훈, 이송이",
     credit: 3,
-    tags: ["전공선택", "생명과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 9, duration: 1.5 }, { day: 2, start: 9, duration: 1.5 }]
   },
   {
@@ -1172,7 +1461,9 @@ export const MOCK_COURSES = [
     name: "발생 및 발달생물학(이)",
     prof: "백명인, 유성운, 곽준명",
     credit: 3,
-    tags: ["전공선택", "생명과학", "뇌과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: { "생명과학": "전공선택", "뇌과학": "전공선택" },
     times: [{ day: 1, start: 10.5, duration: 1.5 }, { day: 3, start: 10.5, duration: 1.5 }]
   },
   {
@@ -1180,7 +1471,9 @@ export const MOCK_COURSES = [
     name: "의생명공학(이,공)",
     prof: "이광",
     credit: 3,
-    tags: ["전공선택", "생명과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 4, start: 9, duration: 3 }]
   },
   {
@@ -1188,7 +1481,9 @@ export const MOCK_COURSES = [
     name: "인체생리학(이)",
     prof: "이재민, 김은경",
     credit: 3,
-    tags: ["전공선택", "생명과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 9, duration: 1.5 }, { day: 2, start: 9, duration: 1.5 }]
   },
   {
@@ -1196,7 +1491,9 @@ export const MOCK_COURSES = [
     name: "현대 미생물학(이)",
     prof: "김유리, 정찬",
     credit: 3,
-    tags: ["전공선택", "생명과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 14.5, duration: 1.5 }, { day: 2, start: 14.5, duration: 1.5 }]
   },
   {
@@ -1204,7 +1501,9 @@ export const MOCK_COURSES = [
     name: "계산뇌과학입문(이)",
     prof: "유우경, 김민환",
     credit: 3,
-    tags: ["전공선택", "생명과학", "뇌과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: { "생명과학": "전공선택", "뇌과학": "전공선택" },
     times: [{ day: 0, start: 10.5, duration: 1.5 }, { day: 2, start: 10.5, duration: 1.5 }]
   },
   {
@@ -1212,7 +1511,9 @@ export const MOCK_COURSES = [
     name: "뇌질환(이)",
     prof: "이성배",
     credit: 3,
-    tags: ["전공선택", "생명과학", "뇌과학"],
+    categories: ["생명과학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: { "생명과학": "전공선택", "뇌과학": "전공선택" },
     times: [{ day: 1, start: 9, duration: 1.5 }, { day: 3, start: 9, duration: 1.5 }]
   },
   {
@@ -1220,7 +1521,9 @@ export const MOCK_COURSES = [
     name: "고체역학(공)",
     prof: "장경인",
     credit: 3,
-    tags: ["전공필수", "기계공학"],
+    categories: ["기계공학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 13, duration: 1.5 }, { day: 2, start: 13, duration: 1.5 }]
   },
   {
@@ -1228,7 +1531,9 @@ export const MOCK_COURSES = [
     name: "인간과 공학(공)",
     prof: "김회준, 이성민, 박준혁, 남강현, 정소현, 김기섭",
     credit: 3,
-    tags: ["전공선택", "기계공학"],
+    categories: ["기계공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 4, start: 13, duration: 3 }]
   },
   {
@@ -1236,7 +1541,9 @@ export const MOCK_COURSES = [
     name: "진동공학(공)",
     prof: "임용섭",
     credit: 3,
-    tags: ["전공선택", "기계공학"],
+    categories: ["기계공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 10.5, duration: 1.5 }, { day: 2, start: 10.5, duration: 1.5 }]
   },
   {
@@ -1244,7 +1551,9 @@ export const MOCK_COURSES = [
     name: "자동제어시스템(공)",
     prof: "박석호",
     credit: 3,
-    tags: ["전공필수", "기계공학", "전자공학"],
+    categories: ["기계공학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: { "기계공학": "전공필수", "전자공학": "전공선택" },
     times: [{ day: 1, start: 10.5, duration: 1.5 }, { day: 3, start: 10.5, duration: 1.5 }]
   },
   {
@@ -1252,7 +1561,9 @@ export const MOCK_COURSES = [
     name: "유체역학(공)",
     prof: "정소현",
     credit: 3,
-    tags: ["전공필수", "기계공학", "화학공학"],
+    categories: ["기계공학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: { "기계공학": "전공필수", "화학공학": "전공선택" },
     times: [{ day: 2, start: 17.5, duration: 3 }]
   },
   {
@@ -1260,7 +1571,9 @@ export const MOCK_COURSES = [
     name: "로봇전자공학(공)",
     prof: "박경서",
     credit: 3,
-    tags: ["전공선택", "기계공학"],
+    categories: ["기계공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 16, duration: 1.5 }, { day: 2, start: 16, duration: 1.5 }]
   },
   {
@@ -1268,7 +1581,9 @@ export const MOCK_COURSES = [
     name: "로봇동역학 및 제어(공)",
     prof: "황민호",
     credit: 3,
-    tags: ["전공선택", "기계공학"],
+    categories: ["기계공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 10.5, duration: 1.5 }, { day: 3, start: 10.5, duration: 1.5 }]
   },
   {
@@ -1276,7 +1591,9 @@ export const MOCK_COURSES = [
     name: "마이크로/나노공학(공)",
     prof: "이재홍",
     credit: 3,
-    tags: ["전공선택", "기계공학"],
+    categories: ["기계공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 13, duration: 1.5 }, { day: 3, start: 13, duration: 1.5 }]
   },
   {
@@ -1284,7 +1601,9 @@ export const MOCK_COURSES = [
     name: "열전달(공)",
     prof: "최경호",
     credit: 3,
-    tags: ["전공선택", "기계공학"],
+    categories: ["기계공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 9, duration: 1.5 }, { day: 3, start: 9, duration: 1.5 }]
   },
   {
@@ -1292,7 +1611,9 @@ export const MOCK_COURSES = [
     name: "모빌리티공학개론(공)",
     prof: "이성민",
     credit: 3,
-    tags: ["전공선택", "기계공학"],
+    categories: ["기계공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 16.5, duration: 1.5 }, { day: 3, start: 16.5, duration: 1.5 }]
   },
   {
@@ -1300,7 +1621,9 @@ export const MOCK_COURSES = [
     name: "재료공학개론I(이,공)",
     prof: "이주혁",
     credit: 3,
-    tags: ["전공필수", "재료공학"],
+    categories: ["재료공학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 9, duration: 1.5 }, { day: 2, start: 9, duration: 1.5 }]
   },
   {
@@ -1308,7 +1631,9 @@ export const MOCK_COURSES = [
     name: "재료공학실험(공)",
     prof: "김진수, 이성원, 이주혁, 이종수, 이신범",
     credit: 3,
-    tags: ["전공필수", "재료공학"],
+    categories: ["재료공학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 2, start: 16.5, duration: 3 }, { day: 4, start: 13, duration: 3 }]
   },
   {
@@ -1316,7 +1641,9 @@ export const MOCK_COURSES = [
     name: "재료상변태(공)",
     prof: "김진수",
     credit: 3,
-    tags: ["전공필수", "재료공학", "물리학"],
+    categories: ["재료공학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: { "재료공학": "전공필수", "물리학": "전공선택" },
     times: [{ day: 2, start: 10.5, duration: 1.5 }, { day: 4, start: 10.5, duration: 1.5 }]
   },
   {
@@ -1324,7 +1651,9 @@ export const MOCK_COURSES = [
     name: "재료의 기계적 거동(공)",
     prof: "김영규",
     credit: 3,
-    tags: ["전공선택", "재료공학"],
+    categories: ["재료공학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 13.5, duration: 1.5 }, { day: 2, start: 13.5, duration: 1.5 }]
   },
   {
@@ -1332,7 +1661,9 @@ export const MOCK_COURSES = [
     name: "해석역학I(이,공)",
     prof: "이재동",
     credit: 3,
-    tags: ["전공필수", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 16, duration: 1.5 }, { day: 2, start: 16, duration: 1.5 }]
   },
   {
@@ -1340,7 +1671,9 @@ export const MOCK_COURSES = [
     name: "현대물리(이)",
     prof: "김소연",
     credit: 3,
-    tags: ["전공선택", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 11, duration: 1.5 }, { day: 2, start: 11, duration: 1.5 }]
   },
   {
@@ -1348,7 +1681,9 @@ export const MOCK_COURSES = [
     name: "고급물리 실험(이)",
     prof: "박기성, 김소연, 서정필",
     credit: 2,
-    tags: ["전공필수", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 13, duration: 2 }, { day: 2, start: 13, duration: 2 }]
   },
   {
@@ -1356,7 +1691,9 @@ export const MOCK_COURSES = [
     name: "양자역학I(이,공)",
     prof: "박기성",
     credit: 3,
-    tags: ["전공필수", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["전공필수"],
+    trackRelations: {},
     times: [{ day: 0, start: 9, duration: 1.5 }, { day: 2, start: 9, duration: 1.5 }]
   },
   {
@@ -1364,7 +1701,9 @@ export const MOCK_COURSES = [
     name: "수리물리(이)",
     prof: "최승호",
     credit: 3,
-    tags: ["전공선택", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 9, duration: 1.5 }, { day: 3, start: 9, duration: 1.5 }]
   },
   {
@@ -1372,7 +1711,9 @@ export const MOCK_COURSES = [
     name: "전기역학II(이)",
     prof: "조창희",
     credit: 3,
-    tags: ["전공선택", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 10.5, duration: 1.5 }, { day: 3, start: 10.5, duration: 1.5 }]
   },
   {
@@ -1380,7 +1721,9 @@ export const MOCK_COURSES = [
     name: "현대광학(이,공)",
     prof: "이기준",
     credit: 3,
-    tags: ["전공선택", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 10.5, duration: 1.5 }, { day: 3, start: 10.5, duration: 1.5 }]
   },
   {
@@ -1388,7 +1731,9 @@ export const MOCK_COURSES = [
     name: "고체물리II(이,공)",
     prof: "홍정일",
     credit: 3,
-    tags: ["전공선택", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 10.5, duration: 1.5 }, { day: 2, start: 10.5, duration: 1.5 }]
   },
   {
@@ -1396,7 +1741,9 @@ export const MOCK_COURSES = [
     name: "생물물리학(이,공)",
     prof: "이종찬",
     credit: 3,
-    tags: ["전공선택", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 4, start: 13, duration: 3 }]
   },
   {
@@ -1404,7 +1751,9 @@ export const MOCK_COURSES = [
     name: "전산물리(이)",
     prof: "강준구",
     credit: 3,
-    tags: ["전공선택", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 14.5, duration: 1.5 }, { day: 3, start: 14.5, duration: 1.5 }]
   },
   {
@@ -1412,7 +1761,9 @@ export const MOCK_COURSES = [
     name: "원자분자물리학(이,공)",
     prof: "허승정",
     credit: 3,
-    tags: ["전공선택", "물리학"],
+    categories: ["물리학"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 13, duration: 1.5 }, { day: 3, start: 13, duration: 1.5 }]
   },
   {
@@ -1420,7 +1771,9 @@ export const MOCK_COURSES = [
     name: "디자인사고",
     prof: "박종래",
     credit: 3,
-    tags: ["전공선택", "비트랙/융합"],
+    categories: ["비트랙/융합"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 9, duration: 3 }]
   },
   {
@@ -1428,7 +1781,9 @@ export const MOCK_COURSES = [
     name: "도심항공교통개론(이,공)",
     prof: "인수일",
     credit: 3,
-    tags: ["전공선택", "비트랙/융합"],
+    categories: ["비트랙/융합"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 0, start: 16, duration: 3 }]
   },
   {
@@ -1436,7 +1791,9 @@ export const MOCK_COURSES = [
     name: "커뮤니케이션과 현대사회",
     prof: "조성겸",
     credit: 3,
-    tags: ["전공선택", "비트랙/융합"],
+    categories: ["비트랙/융합"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 4, start: 9, duration: 3 }]
   },
   {
@@ -1444,7 +1801,9 @@ export const MOCK_COURSES = [
     name: "게임이론",
     prof: "김선구",
     credit: 3,
-    tags: ["전공선택", "비트랙/융합"],
+    categories: ["비트랙/융합"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 2, start: 14.5, duration: 3 }]
   },
   {
@@ -1452,7 +1811,9 @@ export const MOCK_COURSES = [
     name: "UX디자인",
     prof: "박종래",
     credit: 3,
-    tags: ["전공선택", "비트랙/융합"],
+    categories: ["비트랙/융합"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 2, start: 10.5, duration: 3 }]
   },
   {
@@ -1460,7 +1821,9 @@ export const MOCK_COURSES = [
     name: "생명에 대한 융합적 이해",
     prof: "남창훈",
     credit: 3,
-    tags: ["전공선택", "비트랙/융합"],
+    categories: ["비트랙/융합"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 9, duration: 3 }]
   },
   {
@@ -1468,7 +1831,9 @@ export const MOCK_COURSES = [
     name: "학부생을 위한 해석학 개론",
     prof: "안흥주",
     credit: 3,
-    tags: ["전공선택", "비트랙/융합"],
+    categories: ["비트랙/융합"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 9, duration: 1.5 }, { day: 3, start: 9, duration: 1.5 }]
   },
   {
@@ -1476,7 +1841,9 @@ export const MOCK_COURSES = [
     name: "현대대수학 개론",
     prof: "Hudson Thomas Bryan",
     credit: 3,
-    tags: ["전공선택", "비트랙/융합"],
+    categories: ["비트랙/융합"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 9, duration: 1.5 }, { day: 3, start: 9, duration: 1.5 }]
   },
   {
@@ -1484,7 +1851,351 @@ export const MOCK_COURSES = [
     name: "텐서들의 기하학과 그 응용(이,공)",
     prof: "한강진",
     credit: 3,
-    tags: ["전공선택", "비트랙/융합"],
+    categories: ["비트랙/융합"],
+    fixedTypes: ["전공선택"],
+    trackRelations: {},
     times: [{ day: 1, start: 13, duration: 1.5 }, { day: 3, start: 13, duration: 1.5 }]
-  }
+  },
+  {
+    id: "CSE402",
+    name: "강화학습(이,공)",
+    prof: "이두석",
+    credit: 3,
+    times: [
+      { day: 0, start: 16.5, duration: 1.5 }, // 월 16:30
+      { day: 2, start: 16.5, duration: 1.5 }  // 수 16:30
+    ],
+    categories: ["컴퓨터공학", "전자공학"],
+    type: "전공선택", // 🔥 type 추가
+    trackRelations: { "컴퓨터공학": "전공선택", "전자공학": "전공선택" }
+  },
+  {
+    id: "EE303",
+    name: "전자회로 이론(공)",
+    prof: "윤종혁",
+    credit: 3,
+    times: [
+      { day: 1, start: 14.5, duration: 1.5 }, // 화 14:30
+      { day: 3, start: 14.5, duration: 1.5 }  // 목 14:30
+    ],
+    categories: ["전자공학"],
+    type: "전공필수", // 🔥 type 추가
+    trackRelations: { "전자공학": "전공필수" }
+  },
+  {
+    id: "EE304",
+    name: "반도체물성 개론(공)",
+    prof: "이상훈",
+    credit: 3,
+    times: [
+      { day: 1, start: 16, duration: 1.5 },   // 화 16:00
+      { day: 3, start: 16, duration: 1.5 }    // 목 16:00
+    ],
+    categories: ["전자공학", "물리학", "화학공학"],
+    type: "전공선택", // 🔥 type 추가
+    trackRelations: { "전자공학": "전공선택", "물리학": "전공선택", "화학공학": "전공선택" }
+  },
+  {
+    id: "ENT301",
+    name: "기업가 정신과 사회적 책임",
+    prof: "길영준",
+    credit: 3,
+    times: [
+      { day: 0, start: 9, duration: 1.5 },
+      { day: 2, start: 9, duration: 1.5 }
+    ],
+    categories: ["창업"],
+    type: "전공선택", // 🔥 type 추가
+    trackRelations: { "창업": "전공선택" }
+  },
+  {
+    id: "ENT306",
+    name: "회계학원론",
+    prof: "조성표",
+    credit: 3,
+    times: [
+      { day: 1, start: 14.5, duration: 3 } // 화 14:30-17:30
+    ],
+    categories: ["창업"],
+    type: "전공선택", // 🔥 type 추가
+    trackRelations: { "창업": "전공선택" }
+  },
+
+  // --- 2. Thesis (RP401~RP406) - type 필드 포함 ---
+  { id: 'RP401_1', name: 'Thesis', prof: '문제일', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_2', name: 'Thesis', prof: '유성운', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_3', name: 'Thesis', prof: '김은경', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_4', name: 'Thesis', prof: '서병창', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_5', name: 'Thesis', prof: '김규형', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_6', name: 'Thesis', prof: '이석규', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_7', name: 'Thesis', prof: '이성배', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_8', name: 'Thesis', prof: '오용석', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_9', name: 'Thesis', prof: '이효상', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_10', name: 'Thesis', prof: '최한경', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_11', name: 'Thesis', prof: '유우경', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_12', name: 'Thesis', prof: '고재원', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_13', name: 'Thesis', prof: '엄지원', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_14', name: 'Thesis', prof: '백명인', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_15', name: 'Thesis', prof: '이광', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_16', name: 'Thesis', prof: '현정호', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_17', name: 'Thesis', prof: '조용철', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_18', name: 'Thesis', prof: '김민환', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP401_19', name: 'Thesis', prof: '박포정', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_1', name: 'Thesis', prof: '구재형', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_2', name: 'Thesis', prof: '이창훈', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_3', name: 'Thesis', prof: '남창훈', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_4', name: 'Thesis', prof: '우혜련', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_5', name: 'Thesis', prof: '곽준명', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_6', name: 'Thesis', prof: '이영삼', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_7', name: 'Thesis', prof: '이상임', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_8', name: 'Thesis', prof: '이병훈', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_9', name: 'Thesis', prof: '김민석', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_10', name: 'Thesis', prof: '이재민', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_11', name: 'Thesis', prof: '예경무', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_12', name: 'Thesis', prof: '김진해', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_13', name: 'Thesis', prof: '이종찬', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_14', name: 'Thesis', prof: '전영태', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_15', name: 'Thesis', prof: '김민식', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_16', name: 'Thesis', prof: '기영훈', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_17', name: 'Thesis', prof: '김유리', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_18', name: 'Thesis', prof: '정찬', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_19', name: 'Thesis', prof: '최일규', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_20', name: 'Thesis', prof: '김태완', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_21', name: 'Thesis', prof: '이송이', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP402_22', name: 'Thesis', prof: 'Felix Jonas', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_1', name: 'Thesis', prof: '오세훈', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_2', name: 'Thesis', prof: '김기섭', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_3', name: 'Thesis', prof: '김동욱', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_4', name: 'Thesis', prof: '김봉훈', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_5', name: 'Thesis', prof: '김소희', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_6', name: 'Thesis', prof: '김회준', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_7', name: 'Thesis', prof: '남강현', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_8', name: 'Thesis', prof: '문인규', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_9', name: 'Thesis', prof: '박경서', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_10', name: 'Thesis', prof: '박상현', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_11', name: 'Thesis', prof: '박석호', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_12', name: 'Thesis', prof: '박준혁', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_13', name: 'Thesis', prof: '송석호', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_14', name: 'Thesis', prof: '송철', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_15', name: 'Thesis', prof: '유재석', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_16', name: 'Thesis', prof: '윤동원', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_17', name: 'Thesis', prof: '이상훈', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_18', name: 'Thesis', prof: '이성민', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_19', name: 'Thesis', prof: '이아형', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_20', name: 'Thesis', prof: '이옥균', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_21', name: 'Thesis', prof: '이재홍', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_22', name: 'Thesis', prof: '임영섭', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_23', name: 'Thesis', prof: '장경인', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_24', name: 'Thesis', prof: '정소현', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_25', name: 'Thesis', prof: '한상윤', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP403_26', name: 'Thesis', prof: '황민호', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_1', name: 'Thesis', prof: '홍정일', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_2', name: 'Thesis', prof: '박기성', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_3', name: 'Thesis', prof: '김성균', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_4', name: 'Thesis', prof: '장낙천', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_5', name: 'Thesis', prof: '조창희', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_6', name: 'Thesis', prof: '서정필', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_7', name: 'Thesis', prof: '김철기', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_8', name: 'Thesis', prof: '정병혁', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_9', name: 'Thesis', prof: '강준구', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_10', name: 'Thesis', prof: '박진희', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_11', name: 'Thesis', prof: '이성원', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_12', name: 'Thesis', prof: '이신범', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_13', name: 'Thesis', prof: '홍선기', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_14', name: 'Thesis', prof: '이성기', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_15', name: 'Thesis', prof: '성주영', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_16', name: 'Thesis', prof: '김아람', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_17', name: 'Thesis', prof: '서상원', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_18', name: 'Thesis', prof: '김종구', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_19', name: 'Thesis', prof: '김소연', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP404_20', name: 'Thesis', prof: '문혜원', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP405_1', name: 'Thesis', prof: '이호천', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP405_2', name: 'Thesis', prof: '이윤구', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP405_3', name: 'Thesis', prof: 'SANGARAJU SHANMUGAM', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP405_4', name: 'Thesis', prof: '이종수', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP405_5', name: 'Thesis', prof: '인수일', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP405_6', name: 'Thesis', prof: '최성호', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP405_7', name: 'Thesis', prof: '장연희', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP405_8', name: 'Thesis', prof: '이주혁', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP405_9', name: 'Thesis', prof: '양지웅', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP405_10', name: 'Thesis', prof: '김찬연', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP405_11', name: 'Thesis', prof: '호동해', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP405_12', name: 'Thesis', prof: '김운혁', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP405_13', name: 'Thesis', prof: '김진수', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP405_14', name: 'Thesis', prof: '이종민', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP405_15', name: 'Thesis', prof: '고서진', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP405_16', name: 'Thesis', prof: '김승현', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_1', name: 'Thesis', prof: '장재은', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_2', name: 'Thesis', prof: '박경준', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_3', name: 'Thesis', prof: '은용순', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_4', name: 'Thesis', prof: '이기준', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_5', name: 'Thesis', prof: '황재윤', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_6', name: 'Thesis', prof: '이정협', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_7', name: 'Thesis', prof: '권혁준', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_8', name: 'Thesis', prof: '김경대', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_9', name: 'Thesis', prof: '신동훈', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_10', name: 'Thesis', prof: '임성훈', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_11', name: 'Thesis', prof: '김선준', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_12', name: 'Thesis', prof: '창진호', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_13', name: 'Thesis', prof: '김예성', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_14', name: 'Thesis', prof: '윤종혁', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_15', name: 'Thesis', prof: '김백규', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_16', name: 'Thesis', prof: '서대원', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_17', name: 'Thesis', prof: '김가인', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_18', name: 'Thesis', prof: '송민영', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_19', name: 'Thesis', prof: '김영식', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_20', name: 'Thesis', prof: '이경태', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_21', name: 'Thesis', prof: '소진현', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_22', name: 'Thesis', prof: '이병권', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_23', name: 'Thesis', prof: '이병문', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_24', name: 'Thesis', prof: '최재호', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_25', name: 'Thesis', prof: '박대희', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_26', name: 'Thesis', prof: '최원석', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_27', name: 'Thesis', prof: '이용우', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_28', name: 'Thesis', prof: '김기섭', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_29', name: 'Thesis', prof: '최상현', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_30', name: 'Thesis', prof: '전민석', credit: 1.0, times: [{ day: 5, start: 15, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_31', name: 'Thesis', prof: '길현재', credit: 1.0, times: [{ day: 5, start: 9, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_32', name: 'Thesis', prof: '장준기', credit: 1.0, times: [{ day: 5, start: 9, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_33', name: 'Thesis', prof: '목지수', credit: 1.0, times: [{ day: 5, start: 9, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP406_34', name: 'Thesis', prof: '이민선', credit: 1.0, times: [{ day: 5, start: 9, duration: 5 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+
+  // --- 3. URP (RP408) - type 필드 포함 ---
+  { id: 'RP408_1', name: 'URP', prof: '문제일', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_2', name: 'URP', prof: '유성운', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_3', name: 'URP', prof: '김은경', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_4', name: 'URP', prof: '서병창', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_5', name: 'URP', prof: '김규형', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_6', name: 'URP', prof: '이석규', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_7', name: 'URP', prof: '이성배', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_8', name: 'URP', prof: '오용석', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_9', name: 'URP', prof: '이효상', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_10', name: 'URP', prof: '최한경', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_11', name: 'URP', prof: '유우경', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_12', name: 'URP', prof: '고재원', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_13', name: 'URP', prof: '엄지원', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_14', name: 'URP', prof: '백명인', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_15', name: 'URP', prof: '이광', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_16', name: 'URP', prof: '현정호', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_17', name: 'URP', prof: '최영철', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_18', name: 'URP', prof: '김민환', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_19', name: 'URP', prof: '박포정', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_20', name: 'URP', prof: '구재형', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_21', name: 'URP', prof: '이창훈', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_22', name: 'URP', prof: '남창훈', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_23', name: 'URP', prof: '우혜련', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_24', name: 'URP', prof: '곽준명', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_25', name: 'URP', prof: '이영삼', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_26', name: 'URP', prof: '이상임', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_27', name: 'URP', prof: '이병훈', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_28', name: 'URP', prof: '김민석', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_29', name: 'URP', prof: '이재민', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_30', name: 'URP', prof: '예경무', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_31', name: 'URP', prof: '김진해', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_32', name: 'URP', prof: '이종찬', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_33', name: 'URP', prof: '전영태', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_34', name: 'URP', prof: '김민식', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_35', name: 'URP', prof: '기영훈', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_36', name: 'URP', prof: '김유리', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_37', name: 'URP', prof: '정찬', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_38', name: 'URP', prof: '최일규', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_39', name: 'URP', prof: '김태완', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_40', name: 'URP', prof: '이송이', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_41', name: 'URP', prof: 'Felix Jonas', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_42', name: 'URP', prof: '오세훈', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_43', name: 'URP', prof: '김기섭', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_44', name: 'URP', prof: '김동욱', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_45', name: 'URP', prof: '김봉훈', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_46', name: 'URP', prof: '김소희', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_47', name: 'URP', prof: '김회준', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_48', name: 'URP', prof: '남강현', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_49', name: 'URP', prof: '문인규', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_50', name: 'URP', prof: '박경서', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_51', name: 'URP', prof: '박상현', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_52', name: 'URP', prof: '박석호', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_53', name: 'URP', prof: '박준혁', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_54', name: 'URP', prof: '송석호', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_55', name: 'URP', prof: '송철', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_56', name: 'URP', prof: '유재석', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_57', name: 'URP', prof: '윤동원', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_58', name: 'URP', prof: '이상훈', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_59', name: 'URP', prof: '이성민', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_60', name: 'URP', prof: '이아형', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_61', name: 'URP', prof: '이옥균', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_62', name: 'URP', prof: '이재홍', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_63', name: 'URP', prof: '임영섭', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_64', name: 'URP', prof: '장경인', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_65', name: 'URP', prof: '정소현', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_66', name: 'URP', prof: '한상윤', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_67', name: 'URP', prof: '황민호', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_69', name: 'URP', prof: '홍정일', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_70', name: 'URP', prof: '박기성', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_71', name: 'URP', prof: '김성균', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_72', name: 'URP', prof: '조낙천', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_73', name: 'URP', prof: '조창희', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_74', name: 'URP', prof: '서정필', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_75', name: 'URP', prof: '김철기', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_76', name: 'URP', prof: '정병혁', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_77', name: 'URP', prof: '강준구', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_78', name: 'URP', prof: '박진희', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_79', name: 'URP', prof: '이성원', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_80', name: 'URP', prof: '이신범', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_81', name: 'URP', prof: '홍선기', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_82', name: 'URP', prof: '이성기', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_83', name: 'URP', prof: '성주영', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_84', name: 'URP', prof: '김아람', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_85', name: 'URP', prof: '서상원', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_86', name: 'URP', prof: '김종구', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_87', name: 'URP', prof: '김소연', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_88', name: 'URP', prof: '문혜원', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_89', name: 'URP', prof: '이호천', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_90', name: 'URP', prof: '이용구', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_91', name: 'URP', prof: 'SANGARAJU SHANMUGAM', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_92', name: 'URP', prof: '이종수', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_93', name: 'URP', prof: '인수일', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_94', name: 'URP', prof: '최성호', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_95', name: 'URP', prof: '장윤희', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_96', name: 'URP', prof: '이주혁', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_97', name: 'URP', prof: '양지웅', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_98', name: 'URP', prof: '김찬연', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_99', name: 'URP', prof: '호동해', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_100', name: 'URP', prof: '김운혁', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_101', name: 'URP', prof: '김진수', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_102', name: 'URP', prof: '이종민', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_103', name: 'URP', prof: '고서진', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_104', name: 'URP', prof: '김승현', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_105', name: 'URP', prof: '장재은', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_106', name: 'URP', prof: '박경준', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_107', name: 'URP', prof: '은용순', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_108', name: 'URP', prof: '이기준', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_109', name: 'URP', prof: '황재윤', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_110', name: 'URP', prof: '이정협', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_111', name: 'URP', prof: '권혁준', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_112', name: 'URP', prof: '김경대', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_113', name: 'URP', prof: '신동훈', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_114', name: 'URP', prof: '임성훈', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_115', name: 'URP', prof: '김선준', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_116', name: 'URP', prof: '장진호', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_117', name: 'URP', prof: '김예성', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_118', name: 'URP', prof: '윤종혁', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_119', name: 'URP', prof: '김백규', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_120', name: 'URP', prof: '서대원', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_121', name: 'URP', prof: '김가인', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_122', name: 'URP', prof: '송민영', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_123', name: 'URP', prof: '김영식', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_124', name: 'URP', prof: '이경태', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_125', name: 'URP', prof: '소진현', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_126', name: 'URP', prof: '이병권', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_127', name: 'URP', prof: '이병문', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_128', name: 'URP', prof: '최재호', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_129', name: 'URP', prof: '박대희', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_130', name: 'URP', prof: '최원석', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_131', name: 'URP', prof: '이용우', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_132', name: 'URP', prof: '김기섭', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_133', name: 'URP', prof: '최상현', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_134', name: 'URP', prof: '전민석', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_135', name: 'URP', prof: '길현재', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_136', name: 'URP', prof: '장준기', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_137', name: 'URP', prof: '목지수', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
+  { id: 'RP408_138', name: 'URP', prof: '이민선', credit: 2.0, times: [{ day: 5, start: 9, duration: 2 }], categories: ['연구'], type: '전공선택', trackRelations: {} },
 ];

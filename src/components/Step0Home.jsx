@@ -1,4 +1,3 @@
-// src/components/Step0Home.jsx
 import React from 'react';
 import useStore from '../store/useStore';
 import { ChefHat, ArrowRight, MousePointerClick } from 'lucide-react';
@@ -23,8 +22,11 @@ const Step0Home = () => {
       </h1>
       
       <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-xl mx-auto leading-relaxed mb-12">
-        2026 Spring ver. <br className="hidden md:block" />
-        <span className="font-bold text-slate-700 dark:text-slate-200">시간표 요리사</span>와 함께 당신만의 맛있는 시간표를 계획하세요.
+        2026 Spring ver. (fix.0126)
+        {/* 🔥 수정됨: span에 block을 줘서 무조건 다음 줄로 내림 + 여백 추가 */}
+        <span className="block mt-2">
+          <span className="font-bold text-slate-700 dark:text-slate-200">시간표 요리사</span>와 함께 당신만의 맛있는 시간표를 계획하세요.
+        </span>
       </p>
 
       {/* 시작 버튼 */}
@@ -42,7 +44,7 @@ const Step0Home = () => {
       {/* 하단 뱃지 */}
       <div className="mt-16 flex items-center gap-2 text-sm text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-4 py-2 rounded-full">
         <MousePointerClick size={16} />
-        <span>Drag & Drop Supported</span>
+        <span>Easy Click & Touch</span>
       </div>
     </div>
   );

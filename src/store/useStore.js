@@ -1,67 +1,97 @@
 import { create } from 'zustand';
-import { MOCK_COURSES } from '../data/courses';
+import { ALL_COURSES } from '../data/courses';
 
 const useStore = create((set, get) => ({
   step: 0,
-  
-  // 전체 과목 데이터
-  allCourses: MOCK_COURSES,
-  
-  // 장바구니 & 시간표 데이터
+  setStep: (step) => set({ step }),
+
+  allCourses: ALL_COURSES,
   basket: [],
   schedule: [],
   isOverCredit: false,
 
-  setStep: (newStep) => set({ step: newStep }),
-  setAllCourses: (courses) => set({ allCourses: courses }),
+  toggleOverCredit: () => set((state) => ({ isOverCredit: !state.isOverCredit })),
+
+  // 1. 현재 과목의 인정구분(Type) 계산
+  getCourseType: (course) => {
+    // 트랙이 선택되어 있다면 그 트랙의 인정구분 반환
+    if (course.selectedTrack && course.trackRelations?.[course.selectedTrack]) {
+      return course.trackRelations[course.selectedTrack];
+    }
+    // 없으면 고정 타입 반환
+    return (course.fixedTypes && course.fixedTypes[0]) || course.type || course.defaultType || "일반선택";
+  },
+
+  // 🔥 [핵심 수정] 검색용 태그 생성기
+  // categories뿐만 아니라 trackRelations에 있는 '모든 트랙명'과 '인정구분'을 다 가져옵니다.
+  getCourseTags: (course) => {
+    // 1. 기본 카테고리 (예: ["생명과학"])
+    const cats = course.categories || (course.category ? [course.category] : []);
+    
+    // 2. 고정 타입 (예: ["전공선택"])
+    const fTypes = course.fixedTypes || (course.type ? [course.type] : []);
+
+    // 3. 🔥 트랙 관계도에서 '학과명'과 '이수구분' 모두 추출
+    // 예: trackRelations: { "뇌과학": "전공필수" } -> ["뇌과학", "전공필수"] 추가
+    const relationKeys = course.trackRelations ? Object.keys(course.trackRelations) : [];
+    const relationValues = course.trackRelations ? Object.values(course.trackRelations) : [];
+
+    // 4. 모든 태그 합치기 (중복 제거)
+    const allTags = new Set([
+      ...cats,
+      ...fTypes,
+      ...relationKeys,   // "뇌과학" 같은 트랙명도 태그로 인정!
+      ...relationValues  // "전공필수" 같은 트랙별 인정구분도 태그로 인정!
+    ]);
+    
+    return Array.from(allTags);
+  },
 
   toggleBasket: (course) => set((state) => {
-    const isExist = state.basket.find((item) => item.id === course.id);
-    if (isExist) {
-      return { basket: state.basket.filter((item) => item.id !== course.id) };
-    } else {
-      return { basket: [...state.basket, course] };
+    const exists = state.basket.find((c) => c.id === course.id);
+    if (exists) {
+      return {
+        basket: state.basket.filter((c) => c.id !== course.id),
+        schedule: state.schedule.filter((c) => c.id !== course.id),
+      };
     }
+    return { basket: [...state.basket, course] };
   }),
 
-  // 🔥 [핵심 수정] 충돌 과목명 찾기 기능 추가 🔥
-  addToSchedule: (course) => set((state) => {
-    // 1. 이미 시간표에 있는 과목이면 무시
-    if (state.schedule.find(c => c.id === course.id)) return state;
+  addToSchedule: (newCourse) => set((state) => {
+    if (state.schedule.find((c) => c.id === newCourse.id)) return state;
 
-    // 2. 시간 충돌 검사 (Collision Detection)
-    // some() 대신 find()를 써서 충돌한 범인을 잡아냅니다.
-    const conflictingCourse = state.schedule.find(existingCourse => {
-      // 기존 과목의 시간들(eTime)과 새 과목의 시간들(nTime)을 비교
-      return existingCourse.times.some(eTime => 
-        course.times.some(nTime => {
-          // 요일이 다르면 충돌 아님
-          if (eTime.day !== nTime.day) return false;
+    const availableTracks = newCourse.trackRelations ? Object.keys(newCourse.trackRelations) : [];
+    const defaultTrack = availableTracks.length > 0 ? availableTracks[0] : null;
 
-          // 요일이 같으면 시간 겹침 확인
-          const eEnd = eTime.start + eTime.duration;
-          const nEnd = nTime.start + nTime.duration;
-          
-          return (eTime.start < nEnd && eEnd > nTime.start);
-        })
+    const courseWithTrack = { ...newCourse, selectedTrack: defaultTrack };
+
+    const conflictingCourses = state.schedule.filter((existingCourse) => {
+      if (existingCourse.name === newCourse.name) return true;
+      return existingCourse.times.some((existingTime) =>
+        newCourse.times.some((newTime) =>
+          existingTime.day === newTime.day &&
+          Math.max(existingTime.start, newTime.start) < Math.min(existingTime.start + existingTime.duration, newTime.start + newTime.duration)
+        )
       );
     });
 
-    // 3. 충돌 발생 시 알림창에 범인 공개
-    if (conflictingCourse) {
-      alert(`⚠️ 시간표 충돌!\n\n새로 넣으려는 [${course.name}] 수업이\n기존의 [${conflictingCourse.name}] 수업과 시간이 겹칩니다.\n\n기존 수업을 빼고 다시 시도해주세요.`);
-      return state; // 상태 변경 없이 리턴 (추가 안 됨)
-    }
+    const filteredSchedule = state.schedule.filter(
+      (c) => !conflictingCourses.find((conflict) => conflict.id === c.id)
+    );
 
-    // 4. 문제 없으면 추가
-    return { schedule: [...state.schedule, course] };
+    return { schedule: [...filteredSchedule, courseWithTrack] };
   }),
 
-  removeFromSchedule: (courseId) => set((state) => ({
-    schedule: state.schedule.filter((c) => c.id !== courseId)
+  setCourseTrack: (courseId, trackName) => set((state) => ({
+    schedule: state.schedule.map((c) => 
+      c.id === courseId ? { ...c, selectedTrack: trackName } : c
+    )
   })),
 
-  toggleOverCredit: () => set((state) => ({ isOverCredit: !state.isOverCredit })),
+  removeFromSchedule: (courseId) => set((state) => ({
+    schedule: state.schedule.filter((c) => c.id !== courseId),
+  })),
 }));
 
 export default useStore;
