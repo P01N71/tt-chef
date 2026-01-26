@@ -1,6 +1,6 @@
 import React, { useRef, useMemo, useCallback, useState } from 'react';
 import useStore from '../store/useStore';
-import { Image as ImageIcon, ArrowLeft, CheckCircle, GraduationCap, BookOpen, Clock } from 'lucide-react';
+import { Image as ImageIcon, ArrowLeft, CheckCircle, GraduationCap, BookOpen, Clock, Save, X, Tag } from 'lucide-react';
 import { toPng } from 'html-to-image';
 
 const START_HOUR = 9;
@@ -15,19 +15,25 @@ const getBlockColor = (type) => {
 };
 
 const Step3Save = () => {
-  const { schedule, setStep, getCourseType } = useStore();
+  const { schedule, setStep, getCourseType, saveScheduleToShelf } = useStore();
   
   const exportRef = useRef(null); 
   const [isSaving, setIsSaving] = useState(false);
 
+  // --- 진열대 저장용 모달 상태 ---
+  const [showShelfModal, setShowShelfModal] = useState(false);
+  const [shelfTitle, setShelfTitle] = useState('');
+  const [shelfTag, setShelfTag] = useState('26봄');
+
   const safeSchedule = Array.isArray(schedule) ? schedule : [];
 
-  // 🔥 [수정 1] 토요일 수업 여부에 따라 요일 배열을 동적으로 생성합니다.
+  // [기존] 동적 요일 계산
   const currentDays = useMemo(() => {
     const hasSaturday = safeSchedule.some(c => c.times?.some(t => t.day === 5));
     return hasSaturday ? ['월', '화', '수', '목', '금', '토'] : ['월', '화', '수', '목', '금'];
   }, [safeSchedule]);
 
+  // [기존] 통계 계산
   const totalCredits = useMemo(() => safeSchedule.reduce((sum, c) => sum + (c.credit || 0), 0), [safeSchedule]);
   
   const majorCredits = useMemo(() => safeSchedule.reduce((sum, course) => {
@@ -58,6 +64,7 @@ const Step3Save = () => {
 
   const timeLabels = Array.from({ length: dynamicEndHour - START_HOUR + 1 }, (_, i) => START_HOUR + i);
 
+  // [기존] 시간표 렌더링 함수
   const renderTimetableOnly = () => (
     <div className="w-full bg-white p-8 rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
       <div className="text-center mb-8 border-b pb-6 border-slate-100">
@@ -76,7 +83,6 @@ const Step3Save = () => {
       <div className="relative border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
         <div className="flex border-b border-slate-200 bg-slate-50 h-10">
           <div className="w-12 border-r border-slate-200 bg-slate-100/50"></div>
-          {/* 🔥 [수정 2] 고정된 DAYS 대신 동적 currentDays 사용 */}
           {currentDays.map(day => (
             <div key={day} className="flex-1 flex items-center justify-center font-bold text-slate-600 text-sm border-r border-slate-200 last:border-0">{day}</div>
           ))}
@@ -91,7 +97,6 @@ const Step3Save = () => {
             ))}
           </div>
 
-          {/* 🔥 [수정 3] 고정된 DAYS 대신 동적 currentDays 사용 */}
           {currentDays.map((day, dayIdx) => (
             <div key={day} className="flex-1 relative border-r border-slate-100 border-dashed last:border-r-0">
               {timeLabels.map(t => (
@@ -100,7 +105,6 @@ const Step3Save = () => {
               {safeSchedule.map(course => {
                 const timeInfo = course.times?.find(t => t.day === dayIdx);
                 if (!timeInfo) return null;
-
                 const currentType = getCourseType(course);
                 const colorClass = getBlockColor(currentType);
                 
@@ -131,19 +135,13 @@ const Step3Save = () => {
     </div>
   );
 
+  // [기존] 이미지 저장 핸들러
   const exportToImage = useCallback(async () => {
     if (exportRef.current === null) return;
     setIsSaving(true);
-
     try {
       await new Promise(resolve => setTimeout(resolve, 500));
-
-      const dataUrl = await toPng(exportRef.current, { 
-        cacheBust: true,
-        backgroundColor: '#f8fafc', 
-        pixelRatio: 2,
-      });
-
+      const dataUrl = await toPng(exportRef.current, { cacheBust: true, backgroundColor: '#f8fafc', pixelRatio: 2 });
       const link = document.createElement('a');
       link.download = `2026_봄학기_시간표.png`;
       link.href = dataUrl;
@@ -155,6 +153,15 @@ const Step3Save = () => {
       setIsSaving(false);
     }
   }, [exportRef]);
+
+  // [NEW] 진열대 저장 핸들러
+  const handleShelfSave = () => {
+    if (!shelfTitle.trim()) {
+      alert("시간표 이름을 입력해주세요!");
+      return;
+    }
+    saveScheduleToShelf(shelfTitle, shelfTag);
+  };
 
   return (
     <div className="h-full w-full bg-slate-50 flex flex-col p-4 md:p-8 overflow-y-auto custom-scrollbar relative">
@@ -169,30 +176,37 @@ const Step3Save = () => {
             <CheckCircle className="text-emerald-500" /> 요리 완성!
           </h2>
         </div>
-        <button 
-          onClick={exportToImage} 
-          disabled={isSaving}
-          className={`px-8 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg transition-all ${isSaving ? 'bg-slate-300 text-slate-500' : 'bg-blue-600 hover:bg-blue-500 text-white shadow-blue-500/30 hover:-translate-y-1'}`}
-        >
-          {isSaving ? '저장 중...' : <><ImageIcon size={20} /> 이미지로 저장하기</>}
-        </button>
+        
+        <div className="flex gap-3">
+          {/* 1. 이미지 저장 버튼 (기존) */}
+          <button 
+            onClick={exportToImage} 
+            disabled={isSaving}
+            className={`px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-sm transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900`}
+          >
+            {isSaving ? '저장 중...' : <><ImageIcon size={20} /> 이미지 저장</>}
+          </button>
+
+          {/* 2. [NEW] 진열대 저장 버튼 */}
+          <button 
+            onClick={() => setShowShelfModal(true)}
+            className="px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg transition-all bg-blue-600 hover:bg-blue-500 text-white shadow-blue-500/30 hover:-translate-y-1"
+          >
+            <Save size={20} /> 진열대에 저장 및 이동
+          </button>
+        </div>
       </div>
 
       {/* 화면에 보이는 영역 (시간표 + 리포트 둘 다 보임) */}
       <div className="flex-1 w-full max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 items-start pb-20">
-        
-        {/* 왼쪽: 시간표 */}
         <div className="flex-1 w-full">
            {renderTimetableOnly()}
         </div>
-
-        {/* 오른쪽: 리포트 패널 (저장할 때는 빠짐) */}
         <div className="w-full lg:w-80 space-y-6">
           <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6">
             <h4 className="font-bold text-lg mb-4 text-slate-800 flex items-center gap-2">
               <BookOpen size={20} className="text-blue-600"/> 수강 과목 리포트
             </h4>
-            
             <div className="space-y-3 max-h-[400px] overflow-y-auto custom-scrollbar pr-1">
               {safeSchedule.map((course, idx) => {
                 const currentType = getCourseType(course);
@@ -215,7 +229,7 @@ const Step3Save = () => {
                 );
               })}
             </div>
-
+            {/* ... (리포트 하단 합계 부분 - 기존 동일) ... */}
             <div className="mt-6 pt-6 border-t border-slate-100">
               <div className="flex justify-between items-center mb-2 text-slate-500 text-sm">
                 <span>총 신청 학점</span>
@@ -225,38 +239,69 @@ const Step3Save = () => {
                 <span className="flex items-center gap-1"><GraduationCap size={16}/> 전공 인정 학점</span>
                 <span className="text-xl">{majorCredits}학점</span>
               </div>
-              
-              <div className="mt-3 flex flex-col items-end gap-1">
-                {Object.entries(trackBreakdown).map(([track, credit]) => (
-                  credit > 0 && (
-                    <div key={track} className="text-[11px] font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">
-                      <span className="font-bold text-slate-700">{track}</span> {credit}학점
-                    </div>
-                  )
-                ))}
-              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div 
-        style={{ 
-           position: 'fixed', 
-           top: 0, 
-           left: '100vw', 
-           width: '1280px', 
-           height: 'auto',
-           zIndex: -50,
-           pointerEvents: 'none',
-           backgroundColor: '#f8fafc',
-           padding: '40px' 
-        }}
-      >
+      {/* 이미지 캡처용 (화면 밖) */}
+      <div style={{ position: 'fixed', top: 0, left: '100vw', width: '1280px', height: 'auto', zIndex: -50, pointerEvents: 'none', backgroundColor: '#f8fafc', padding: '40px' }}>
         <div ref={exportRef}>
            {renderTimetableOnly()}
         </div>
       </div>
+
+      {/* [NEW] 진열대 저장 모달 (Popup) */}
+      {showShelfModal && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in zoom-in duration-200">
+          <div className="bg-white w-full max-w-sm rounded-2xl shadow-2xl p-6 relative">
+            <button 
+              onClick={() => setShowShelfModal(false)}
+              className="absolute top-4 right-4 text-slate-400 hover:text-slate-600"
+            >
+              <X size={20}/>
+            </button>
+            
+            <h3 className="text-xl font-bold text-slate-800 mb-2">진열대에 보관하기</h3>
+            <p className="text-sm text-slate-500 mb-6">나중에 다시 꺼내볼 수 있도록 이름을 지어주세요.</p>
+            
+            <div className="space-y-4 mb-6">
+              <div>
+                <label className="block text-xs font-bold text-slate-500 mb-1 ml-1">이름</label>
+                <input 
+                  type="text" 
+                  placeholder="예: 1학년 1학기 (망함)" 
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 font-bold text-slate-800 outline-none focus:border-blue-500"
+                  value={shelfTitle}
+                  onChange={(e) => setShelfTitle(e.target.value)}
+                  autoFocus
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-slate-500 mb-1 ml-1 flex items-center gap-1"><Tag size={12}/> 태그</label>
+                <div className="flex gap-2 flex-wrap">
+                  {['26년도 봄학기', '26년도 여름학기', '26년도 가을학기', '26년도 겨울학기', '임시'].map(t => (
+                    <button 
+                      key={t}
+                      onClick={() => setShelfTag(t)}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-bold border transition-all ${shelfTag === t ? 'bg-blue-600 border-blue-600 text-white' : 'bg-white border-slate-200 text-slate-400 hover:bg-slate-50'}`}
+                    >
+                      {t}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <button 
+              onClick={handleShelfSave}
+              className="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg hover:shadow-blue-500/30 transition-all"
+            >
+              <Save size={18}/> 저장하고 이동하기
+            </button>
+          </div>
+        </div>
+      )}
 
     </div>
   );

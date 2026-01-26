@@ -139,7 +139,7 @@ const ScheduledBlock = ({ course, dayIndex, removeFromSchedule }) => {
   );
 };
 
-const DroppableTimetable = ({ schedule, removeFromSchedule, timeLabels }) => {
+export const DroppableTimetable = ({ schedule, removeFromSchedule, timeLabels }) => {
   const hasSaturday = useMemo(() => {
     return schedule.some(c => c.times.some(t => t.day === 5));
   }, [schedule]);
