@@ -2,28 +2,86 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { ALL_COURSES as initialCoursesData } from '../data/courses';
 
+// Firebase 설정
+import { db } from '../firebaseConfig';
+// 🔥 [수정] writeBatch 추가 (일괄 업데이트용)
+import { collection, addDoc, getDocs, updateDoc, deleteDoc, getDoc, doc, increment, query, orderBy, where, writeBatch } from 'firebase/firestore';
+
+// 닉네임 생성기
+const getRandomName = () => {
+  const number = Math.floor(1000 + Math.random() * 9000);
+  return `달구 #${number}`;
+};
+
 const useStore = create(
   persist(
     (set, get) => ({
-      // [1] 시스템 상태
+      // --- [기본 상태] ---
       currentStep: 0,
       mode: null,
+      userNickname: null,
+      
+      userProfile: {
+        status: '학사',
+        semester: '1',
+        major: '미정',
+        doubleMajor: '미정',
+        minor: '미정',
+        lastUpdatedAt: null
+      },
+
       setStep: (step) => set({ currentStep: step }),
       setMode: (mode) => set({ mode: mode }),
+      
+      // 🔥 [핵심 수정] 프로필 업데이트 시 -> 내 과거 게시글들도 싹 다 업데이트
+      updateUserProfile: async (newProfile) => {
+        // 1. 로컬 상태 업데이트
+        const updatedProfile = { 
+            ...get().userProfile, 
+            ...newProfile,
+            lastUpdatedAt: new Date().toISOString() 
+        };
+        set({ userProfile: updatedProfile });
 
-      // [2] 시간표 데이터
+        // 2. Firebase 동기화 (닉네임이 있을 경우에만)
+        const { userNickname } = get();
+        if (userNickname) {
+            try {
+                // 내 닉네임으로 작성된 모든 글 찾기
+                const q = query(collection(db, "timetables"), where("author", "==", userNickname));
+                const querySnapshot = await getDocs(q);
+
+                if (!querySnapshot.empty) {
+                    const batch = writeBatch(db); // 일괄 처리 시작
+                    querySnapshot.forEach((doc) => {
+                        // 각 문서의 userProfile 필드를 최신으로 교체
+                        batch.update(doc.ref, { userProfile: updatedProfile });
+                    });
+                    await batch.commit(); // 커밋 (저장)
+                    
+                    // 공유마당 데이터 새로고침 (변경사항 즉시 반영)
+                    get().fetchCommunityPosts();
+                }
+            } catch (e) {
+                console.error("프로필 동기화 실패:", e);
+            }
+        }
+      },
+
+      // --- [시간표 데이터] ---
       allCourses: initialCoursesData || [],
       basket: [],
       schedule: [],
       isOverCredit: false,
 
+      // --- [액션] ---
       toggleBasket: (course) => set((state) => {
         const exists = state.basket.find((c) => c.id === course.id);
         if (exists) {
           return { 
             basket: state.basket.filter((c) => c.id !== course.id),
             schedule: state.schedule.filter((c) => c.id !== course.id),
-            grades: { ...state.grades, [course.id]: undefined } 
+            grades: { ...state.grades, [course.id]: undefined }
           };
         } else {
           return { basket: [...state.basket, course] };
@@ -31,107 +89,96 @@ const useStore = create(
       }),
 
       addToSchedule: (newCourse) => set((state) => {
-        const newCourseCode = newCourse.id.split('-')[0];
-        const newSchedule = state.schedule.filter(existingCourse => {
-          const existingCode = existingCourse.id.split('-')[0];
-          if (existingCode === newCourseCode) return false; 
-          
-          const hasOverlap = existingCourse.times.some(existTime => 
-            newCourse.times.some(newTime => {
-              if (existTime.day !== newTime.day) return false;
-              const existEnd = existTime.start + existTime.duration;
-              const newEnd = newTime.start + newTime.duration;
-              return (newTime.start < existEnd) && (existTime.start < newEnd);
-            })
-          );
-          if (hasOverlap) return false;
-          return true;
-        });
+        if (state.schedule.some(c => c.id === newCourse.id)) return state;
+
+        let conflictingIds = [];
+        const sameNameCourse = state.schedule.find(c => c.name === newCourse.name);
+        if (sameNameCourse) conflictingIds.push(sameNameCourse.id);
+
+        if (newCourse.times && newCourse.times.length > 0) {
+            state.schedule.forEach(existing => {
+                if (conflictingIds.includes(existing.id)) return;
+                if (!existing.times) return;
+
+                const hasOverlap = existing.times.some(eTime => 
+                    newCourse.times.some(nTime => 
+                        eTime.day === nTime.day &&
+                        eTime.start < (nTime.start + nTime.duration) &&
+                        (eTime.start + eTime.duration) > nTime.start
+                    )
+                );
+                if (hasOverlap) conflictingIds.push(existing.id);
+            });
+        }
+        const newSchedule = state.schedule.filter(c => !conflictingIds.includes(c.id));
         return { schedule: [...newSchedule, newCourse] };
       }),
 
       removeFromSchedule: (courseId) => set((state) => ({
         schedule: state.schedule.filter((c) => c.id !== courseId)
       })),
-
       setCourseTrack: (courseId, trackName) => set((state) => ({
-        schedule: state.schedule.map(c => 
-          c.id === courseId ? { ...c, selectedTrack: trackName } : c
-        )
+        schedule: state.schedule.map(c => c.id === courseId ? { ...c, selectedTrack: trackName } : c)
       })),
-
       toggleOverCredit: () => set((state) => ({ isOverCredit: !state.isOverCredit })),
 
-      // [3] 졸업 시뮬레이터
-      transcript: [], gradType: 'general', semestersCompleted: 0, hasThesis: false, warningCount: 0, grades: {}, 
-
+      // --- [졸업/성적] ---
+      transcript: [],
+      gradType: 'general',
+      semestersCompleted: 0,
+      hasThesis: false,
+      warningCount: 0,
+      grades: {},
       setGradType: (type) => set({ gradType: type }),
       setSemestersCompleted: (num) => set({ semestersCompleted: num }),
       toggleThesis: () => set((state) => ({ hasThesis: !state.hasThesis })),
       setWarningCount: (count) => set({ warningCount: count }),
       setGrade: (courseId, score) => set((state) => ({ grades: { ...state.grades, [courseId]: score } })),
-
+      
       importScheduleToTranscript: () => set((state) => {
-        const newCourses = state.schedule.map(course => ({ ...course, grade: undefined }));
-        const existingIds = new Set(state.transcript.map(c => c.id));
-        const filteredNewCourses = newCourses.filter(c => !existingIds.has(c.id));
-        return { transcript: [...state.transcript, ...filteredNewCourses] };
+        const newTranscript = [...state.transcript];
+        state.schedule.forEach(course => {
+          if (!newTranscript.find(c => c.id === course.id)) newTranscript.push({ ...course, grade: 4.5 });
+        });
+        return { transcript: newTranscript, mode: 'graduation' };
       }),
+      updateTranscriptGrade: (courseId, score) => set((state) => ({ transcript: state.transcript.map(c => c.id === courseId ? { ...c, grade: score } : c) })),
+      removeFromTranscript: (courseId) => set((state) => ({ transcript: state.transcript.filter(c => c.id !== courseId) })),
 
-      updateTranscriptGrade: (courseId, score) => set((state) => ({
-        transcript: state.transcript.map(c => c.id === courseId ? { ...c, grade: score } : c)
-      })),
-
-      removeFromTranscript: (courseId) => set((state) => ({
-        transcript: state.transcript.filter(c => c.id !== courseId)
-      })),
-
-      // [4] 진열대 (Shelf)
+      // --- [진열대] ---
       savedTimetables: [],
-
       saveScheduleToShelf: (title, tag) => set((state) => {
-        const newEntry = {
+        const newTimetable = {
           id: Date.now(),
-          title: title || '제목 없음',
-          tag: tag || '26봄',
+          title,
+          tag,
           courses: [...state.schedule],
           createdAt: new Date().toISOString(),
+          firebaseId: null,
+          userProfile: { ...state.userProfile } 
         };
-
-        return {
-          savedTimetables: [newEntry, ...state.savedTimetables],
-          schedule: [],
+        return { 
+          savedTimetables: [...state.savedTimetables, newTimetable],
+          schedule: [], 
           basket: [],
-          // 🔥 [수정됨] 0 -> 1 (그래야 Step0Home이 아닌 TimeTableShelf가 보임)
-          currentStep: 1, 
-          mode: 'shelf' 
+          currentStep: 1,
+          mode: 'shelf'
         };
       }),
+      deleteFromShelf: (id) => set((state) => ({ savedTimetables: state.savedTimetables.filter(t => t.id !== id) })),
+      updateShelfItem: (id, newTitle, newTag) => set((state) => ({ savedTimetables: state.savedTimetables.map(t => t.id === id ? { ...t, title: newTitle, tag: newTag } : t) })),
 
-      deleteFromShelf: (id) => set((state) => ({
-        savedTimetables: state.savedTimetables.filter(t => t.id !== id)
-      })),
-
-      // 🔥 [NEW] 3. 진열대 아이템 수정 (제목/태그)
-      updateShelfItem: (id, newTitle, newTag) => set((state) => ({
-        savedTimetables: state.savedTimetables.map(t => 
-          t.id === id ? { ...t, title: newTitle, tag: newTag } : t
-        )
-      })),
-
-      // [5] Helpers & Reset
+      // --- [헬퍼 함수] ---
       getCourseTags: (course) => {
         if (!course) return [];
-        const tags = [];
-        if (course.fixedTypes?.length > 0) tags.push(...course.fixedTypes);
-        else if (course.type) tags.push(course.type);
-        if (course.trackRelations && course.selectedTrack) {
-           const trackType = course.trackRelations[course.selectedTrack];
-           if (trackType && !tags.includes(trackType)) tags.push(trackType);
-        }
-        return tags;
+        const tags = new Set(); 
+        if (course.type) tags.add(course.type);
+        if (course.fixedTypes && course.fixedTypes.length > 0) course.fixedTypes.forEach(t => tags.add(t));
+        if (course.trackRelations) Object.keys(course.trackRelations).forEach(t => tags.add(t));
+        if (course.categories && Array.isArray(course.categories)) course.categories.forEach(c => tags.add(c));
+        return Array.from(tags);
       },
-      
+
       getCourseType: (course) => {
         if (!course) return '일반';
         if (course.selectedTrack && course.trackRelations) {
@@ -141,18 +188,132 @@ const useStore = create(
         return course.type || '일반';
       },
 
-      resetAll: () => set({ 
-        currentStep: 0, mode: null, basket: [], schedule: [], isOverCredit: false, uploadedTranscript: null,
-        transcript: [], gradType: 'general', semestersCompleted: 0, hasThesis: false, warningCount: 0, grades: {},
-      }),
+      resetAll: () => set({ currentStep: 0, basket: [], schedule: [], transcript: [], grades: {} }),
+
+      // --- [Firebase 커뮤니티] ---
+      communityPosts: [],
+      isLoadingPosts: false,
+      likedPostIds: [],
+
+      fetchCommunityPosts: async () => {
+        set({ isLoadingPosts: true });
+        try {
+          const q = query(collection(db, "timetables"), orderBy("createdAt", "desc"));
+          const querySnapshot = await getDocs(q);
+          const posts = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+          set({ communityPosts: posts, isLoadingPosts: false });
+        } catch (e) {
+          console.error("Error fetching posts: ", e);
+          set({ isLoadingPosts: false });
+        }
+      },
+
+      // 🔥 [수정됨] 비밀번호 제거
+      uploadPost: async (title, tag, customCourses = null, localTimetableId = null) => {
+        const { schedule, userNickname, userProfile } = get();
+        const coursesToUse = customCourses || schedule;
+        if (!coursesToUse || coursesToUse.length === 0) {
+          alert("공유할 시간표 내용이 비어있습니다!");
+          return false;
+        }
+
+        let finalAuthor = userNickname;
+        if (!finalAuthor) {
+            let isUnique = false;
+            let attempts = 0;
+            while (!isUnique && attempts < 5) {
+                finalAuthor = getRandomName();
+                const q = query(collection(db, "timetables"), where("author", "==", finalAuthor));
+                const querySnapshot = await getDocs(q);
+                if (querySnapshot.empty) isUnique = true;
+                attempts++;
+            }
+            if (!isUnique) finalAuthor += `-${Date.now().toString().slice(-3)}`;
+            set({ userNickname: finalAuthor });
+        }
+
+        try {
+          const minimalCourses = coursesToUse.map(c => ({
+            id: c.id,
+            name: c.name,
+            prof: c.prof || '',
+            credit: c.credit,
+            type: c.type || null, 
+            fixedTypes: c.fixedTypes || [], 
+            trackRelations: c.trackRelations || {}, 
+            categories: c.categories || [],
+            times: c.times || [],
+            selectedTrack: c.selectedTrack || null
+          }));
+
+          const docRef = await addDoc(collection(db, "timetables"), {
+            title,
+            author: finalAuthor, 
+            tag,
+            courses: minimalCourses,
+            likes: 0,
+            createdAt: new Date().toISOString(),
+            userProfile: { ...userProfile } 
+            // password 필드 제거됨
+          });
+          
+          if (localTimetableId) {
+             set(state => ({
+                savedTimetables: state.savedTimetables.map(t => 
+                    t.id === localTimetableId ? { ...t, firebaseId: docRef.id } : t
+                )
+             }));
+          }
+
+          await get().fetchCommunityPosts();
+          return true;
+        } catch (e) {
+          console.error("Error adding document: ", e);
+          alert("업로드 실패: " + e.message);
+          return false;
+        }
+      },
+
+      // 🔥 [수정됨] 비밀번호 확인 로직 제거 (로컬 권한으로 대체)
+      deletePost: async (firebaseId, localTimetableId = null) => {
+        try {
+            const docRef = doc(db, "timetables", firebaseId);
+            await deleteDoc(docRef);
+
+            if (localTimetableId) {
+                set(state => ({ savedTimetables: state.savedTimetables.map(t => t.id === localTimetableId ? { ...t, firebaseId: null } : t) }));
+            }
+            await get().fetchCommunityPosts();
+            return true;
+        } catch (e) {
+            console.error("Delete failed", e);
+            alert("삭제 중 오류가 발생했습니다.");
+            return false;
+        }
+      },
+
+      toggleLike: async (postId) => {
+        const { likedPostIds } = get();
+        const isLiked = likedPostIds.includes(postId);
+        set(state => ({
+            likedPostIds: isLiked ? state.likedPostIds.filter(id => id !== postId) : [...state.likedPostIds, postId],
+            communityPosts: state.communityPosts.map(p => p.id === postId ? { ...p, likes: p.likes + (isLiked ? -1 : 1) } : p)
+        }));
+        try {
+            const postRef = doc(db, "timetables", postId);
+            await updateDoc(postRef, { likes: increment(isLiked ? -1 : 1) });
+        } catch (e) { console.error("Like failed", e); }
+      }
     }),
     {
       name: 'dgist-chef-storage',
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
         currentStep: state.currentStep, mode: state.mode, basket: state.basket, schedule: state.schedule, isOverCredit: state.isOverCredit,
-        transcript: state.transcript, gradType: state.gradType, semestersCompleted: state.semestersCompleted, hasThesis: state.hasThesis, warningCount: state.warningCount, grades: state.grades,
-        savedTimetables: state.savedTimetables 
+        savedTimetables: state.savedTimetables, transcript: state.transcript, gradType: state.gradType, semestersCompleted: state.semestersCompleted,
+        hasThesis: state.hasThesis, warningCount: state.warningCount, grades: state.grades,
+        likedPostIds: state.likedPostIds, userNickname: state.userNickname, 
+        userProfile: state.userProfile
       }),
     }
   )

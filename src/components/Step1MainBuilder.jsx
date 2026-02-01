@@ -55,37 +55,34 @@ const getBadgeStyle = (tagName) => {
   return 'bg-white text-slate-500 border-slate-200'; 
 };
 
-// 🔥 [수정] CommonCard: 태그를 제목 아래로 이동 (flex-col 구조 내에서 순서 변경)
+// 🔥 [수정] 태그 전체 표시 (트랙 포함)
 const CommonCard = ({ course, rightAction }) => {
   const { getCourseTags } = useStore();
-  const tags = getCourseTags(course);
+  const tags = getCourseTags(course); // 트랙 포함된 태그들
 
   return (
     <div className="bg-white py-2 px-2.5 lg:py-3 lg:px-3 rounded-lg border border-slate-200 shadow-sm flex-shrink-0 w-[260px] lg:w-full hover:border-blue-300 transition-colors animate-slide-in relative flex items-center justify-between gap-2 lg:gap-3 h-auto">
         <div className="flex-1 min-w-0 mr-1 flex flex-col justify-center">
-          {/* 1. 제목 (단독 줄) */}
           <div className="font-bold text-xs lg:text-sm text-slate-800 leading-tight truncate mb-0.5">
             {course.name}
           </div>
           
-          {/* 2. 태그 (제목 아래, 줄바꿈) */}
+          {/* 태그 표시 영역 */}
           <div className="flex gap-0.5 flex-wrap mb-0.5">
-            {tags.map(tag => (
-               <span key={tag} className={`text-[8px] lg:text-[9px] px-1 py-[1px] rounded border whitespace-nowrap leading-none ${getBadgeStyle(tag)}`}>{tag}</span>
-            ))}
+             {tags.map(tag => (
+                <span key={tag} className={`text-[8px] lg:text-[9px] px-1 py-[1px] rounded border whitespace-nowrap leading-none ${getBadgeStyle(tag)}`}>
+                    {tag}
+                </span>
+             ))}
           </div>
 
-          {/* 3. 교수 | 학점 */}
           <div className="flex items-center gap-1.5 text-[10px] lg:text-xs text-slate-500 leading-none mt-0.5">
             <span className="font-medium truncate max-w-[80px] lg:max-w-[100px]">{course.prof}</span> 
             <span className="text-slate-300">|</span> 
             <span>{course.credit}학점</span>
           </div>
-
-          {/* 4. 시간 */}
           <div className="text-[9px] lg:text-[10px] text-blue-600 font-bold leading-none mt-0.5 truncate">{formatTimeStr(course.times)}</div>
         </div>
-        
         <div className="flex flex-col gap-1 flex-shrink-0">
           {rightAction}
         </div>
@@ -172,6 +169,7 @@ const Step1MainBuilder = () => {
   const [search, setSearch] = useState('');
   const [selectedTags, setSelectedTags] = useState([]);
 
+  // 검색 로직 (태그/트랙 검색 포함)
   const filteredCourses = allCourses
     .filter(course => course.name.toLowerCase().includes(search.toLowerCase()) || course.prof.includes(search) || course.id.toLowerCase().includes(search.toLowerCase()))
     .filter(course => selectedTags.length === 0 || selectedTags.every(tag => getCourseTags(course).includes(tag)));
@@ -205,8 +203,8 @@ const Step1MainBuilder = () => {
           <div className="flex items-center gap-3 lg:gap-4">
             <button onClick={() => setStep(0)} className="text-slate-400 hover:text-white transition"><ArrowLeft size={18} className="lg:w-5 lg:h-5" /></button>
             <h1 className="text-lg lg:text-xl font-bold flex items-center gap-2">
-               <ChefHat size={20} className="lg:w-6 lg:h-6 text-blue-500" />
-               <span className="hidden md:inline">시간표 <span className="text-blue-400">요리사</span></span>
+                <ChefHat size={20} className="lg:w-6 lg:h-6 text-blue-500" />
+                <span className="hidden md:inline">시간표 <span className="text-blue-400">요리사</span></span>
             </h1>
           </div>
           <div className="flex items-center gap-3 lg:gap-4">
@@ -226,27 +224,27 @@ const Step1MainBuilder = () => {
 
         <div className="flex-1 flex flex-col lg:flex-row overflow-hidden">
           <div className="flex-1 overflow-y-auto relative custom-scrollbar bg-white p-2 lg:p-4">
-             <DroppableTimetable schedule={schedule} removeFromSchedule={removeFromSchedule} timeLabels={timeLabels} />
+              <DroppableTimetable schedule={schedule} removeFromSchedule={removeFromSchedule} timeLabels={timeLabels} />
           </div>
 
           <div className="w-full lg:w-96 h-[55%] lg:h-auto flex-shrink-0 flex flex-col bg-slate-50 border-t lg:border-t-0 lg:border-l border-slate-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] lg:shadow-xl z-20">
-             
-             {/* 검색 영역 */}
-             <div className="flex flex-col min-h-0 border-b border-slate-200 h-[55%] lg:h-auto lg:flex-1">
-               <div className="p-3 bg-white border-b border-slate-100 flex-shrink-0">
-                 <div className="relative mb-2">
-                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={14} />
-                   <input type="text" placeholder="과목명, 교수명, 과목코드로 검색..." className="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs lg:text-sm focus:ring-1 focus:ring-blue-500 outline-none" value={search} onChange={(e) => setSearch(e.target.value)} />
-                 </div>
-                 <div className="flex gap-1.5 overflow-x-auto hide-scrollbar pb-1">
-                   {ALL_TAGS.map(tag => (
-                     <button key={tag} onClick={() => handleTagClick(tag)} className={`px-2 py-1 text-[10px] lg:text-xs rounded-md border transition-colors whitespace-nowrap flex-shrink-0 ${selectedTags.includes(tag) ? 'bg-blue-600 border-blue-600 text-white shadow-sm' : 'bg-white border-slate-200 text-slate-500 hover:bg-slate-50'}`}>{tag}</button>
-                   ))}
-                 </div>
-               </div>
-               
-               <div className="flex-1 p-2 custom-scrollbar overflow-x-auto lg:overflow-x-hidden lg:overflow-y-auto flex flex-row lg:flex-col gap-2">
-                 {filteredCourses.map(course => {
+              
+              {/* 검색 영역 */}
+              <div className="flex flex-col min-h-0 border-b border-slate-200 h-[55%] lg:h-auto lg:flex-1">
+                <div className="p-3 bg-white border-b border-slate-100 flex-shrink-0">
+                  <div className="relative mb-2">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={14} />
+                    <input type="text" placeholder="과목명, 교수명, 과목코드로 검색..." className="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs lg:text-sm focus:ring-1 focus:ring-blue-500 outline-none" value={search} onChange={(e) => setSearch(e.target.value)} />
+                  </div>
+                  <div className="flex gap-1.5 overflow-x-auto hide-scrollbar pb-1">
+                    {ALL_TAGS.map(tag => (
+                      <button key={tag} onClick={() => handleTagClick(tag)} className={`px-2 py-1 text-[10px] lg:text-xs rounded-md border transition-colors whitespace-nowrap flex-shrink-0 ${selectedTags.includes(tag) ? 'bg-blue-600 border-blue-600 text-white shadow-sm' : 'bg-white border-slate-200 text-slate-500 hover:bg-slate-50'}`}>{tag}</button>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="flex-1 p-2 custom-scrollbar overflow-x-auto lg:overflow-x-hidden lg:overflow-y-auto flex flex-row lg:flex-col gap-2">
+                  {filteredCourses.map(course => {
                     const isAdded = basket.some(b => b.id === course.id);
                     return (
                       <CommonCard 
@@ -257,35 +255,35 @@ const Step1MainBuilder = () => {
                         } 
                       />
                     );
-                 })}
-               </div>
-             </div>
+                  })}
+                </div>
+              </div>
 
-             {/* 배치 대기 영역 */}
-             <div className="flex flex-col min-h-0 bg-slate-100/50 h-[45%] lg:h-auto lg:flex-1">
-                <div className="p-2 px-3 bg-white border-b border-slate-200 flex justify-between items-center shadow-sm flex-shrink-0">
-                  <span className="font-bold text-slate-700 text-xs lg:text-sm flex items-center gap-2"><ShoppingBasket size={14} className="text-blue-600"/> 배치 대기중</span>
-                  <span className="bg-blue-100 text-blue-700 text-[10px] lg:text-xs px-2 py-0.5 rounded-full font-bold">{remainingIngredients.length}</span>
-                </div>
-                <div className="flex-1 p-2 custom-scrollbar overflow-x-auto lg:overflow-x-hidden lg:overflow-y-auto flex flex-row lg:flex-col gap-2">
-                  {remainingIngredients.length === 0 ? (
-                    <div className="w-full h-full flex flex-col items-center justify-center text-slate-400 gap-2"><LayoutGrid size={24} className="opacity-20"/><p className="text-xs">비어있음</p></div>
-                  ) : (
-                    remainingIngredients.map(course => (
-                      <CommonCard 
-                        key={course.id} 
-                        course={course} 
-                        rightAction={
-                          <>
-                            <button onClick={() => toggleBasket(course)} className="w-6 h-6 lg:w-7 lg:h-7 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 hover:bg-red-100 hover:text-red-500 transition-all"><XCircle size={14} className="lg:w-4 lg:h-4"/></button>
-                            <button onClick={() => addToSchedule(course)} className="w-6 h-6 lg:w-7 lg:h-7 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 hover:bg-blue-100 hover:text-blue-500 transition-all"><ArrowRightCircle size={14} className="lg:w-4 lg:h-4"/></button>
-                          </>
-                        }
-                      />
-                    ))
-                  )}
-                </div>
-             </div>
+              {/* 배치 대기 영역 */}
+              <div className="flex flex-col min-h-0 bg-slate-100/50 h-[45%] lg:h-auto lg:flex-1">
+                 <div className="p-2 px-3 bg-white border-b border-slate-200 flex justify-between items-center shadow-sm flex-shrink-0">
+                   <span className="font-bold text-slate-700 text-xs lg:text-sm flex items-center gap-2"><ShoppingBasket size={14} className="text-blue-600"/> 배치 대기중</span>
+                   <span className="bg-blue-100 text-blue-700 text-[10px] lg:text-xs px-2 py-0.5 rounded-full font-bold">{remainingIngredients.length}</span>
+                 </div>
+                 <div className="flex-1 p-2 custom-scrollbar overflow-x-auto lg:overflow-x-hidden lg:overflow-y-auto flex flex-row lg:flex-col gap-2">
+                   {remainingIngredients.length === 0 ? (
+                     <div className="w-full h-full flex flex-col items-center justify-center text-slate-400 gap-2"><LayoutGrid size={24} className="opacity-20"/><p className="text-xs">비어있음</p></div>
+                   ) : (
+                     remainingIngredients.map(course => (
+                       <CommonCard 
+                         key={course.id} 
+                         course={course} 
+                         rightAction={
+                           <>
+                             <button onClick={() => toggleBasket(course)} className="w-6 h-6 lg:w-7 lg:h-7 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 hover:bg-red-100 hover:text-red-500 transition-all"><XCircle size={14} className="lg:w-4 lg:h-4"/></button>
+                             <button onClick={() => addToSchedule(course)} className="w-6 h-6 lg:w-7 lg:h-7 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 hover:bg-blue-100 hover:text-blue-500 transition-all"><ArrowRightCircle size={14} className="lg:w-4 lg:h-4"/></button>
+                           </>
+                         }
+                       />
+                     ))
+                   )}
+                 </div>
+              </div>
           </div>
         </div>
       </div>

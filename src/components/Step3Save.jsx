@@ -23,7 +23,7 @@ const Step3Save = () => {
   // --- 진열대 저장용 모달 상태 ---
   const [showShelfModal, setShowShelfModal] = useState(false);
   const [shelfTitle, setShelfTitle] = useState('');
-  const [shelfTag, setShelfTag] = useState('26봄');
+  const [shelfTag, setShelfTag] = useState('26년도 봄학기');
 
   const safeSchedule = Array.isArray(schedule) ? schedule : [];
 
@@ -270,7 +270,7 @@ const Step3Save = () => {
                 <label className="block text-xs font-bold text-slate-500 mb-1 ml-1">이름</label>
                 <input 
                   type="text" 
-                  placeholder="예: 1학년 1학기 (망함)" 
+                  placeholder="예: 시간표1" 
                   className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 font-bold text-slate-800 outline-none focus:border-blue-500"
                   value={shelfTitle}
                   onChange={(e) => setShelfTitle(e.target.value)}
