@@ -67,14 +67,24 @@ const TimeTableShelf = () => {
     return groups;
   }, [savedTimetables]);
 
+  // 🔥 [수정] 검색 필터링 로직 강화 (전공/복수/부전공 포함)
   const filteredPosts = useMemo(() => {
     if (!searchTerm.trim()) return communityPosts;
     const lowerTerm = searchTerm.toLowerCase();
-    return communityPosts.filter(post => 
-        post.title?.toLowerCase().includes(lowerTerm) || 
-        post.author?.toLowerCase().includes(lowerTerm) ||
-        post.tag?.toLowerCase().includes(lowerTerm)
-    );
+    
+    return communityPosts.filter(post => {
+        const userProfile = post.userProfile || {};
+        
+        // 검색 대상: 제목, 작성자, 태그, 주전공, 복수전공, 부전공
+        return (
+            post.title?.toLowerCase().includes(lowerTerm) || 
+            post.author?.toLowerCase().includes(lowerTerm) ||
+            post.tag?.toLowerCase().includes(lowerTerm) ||
+            userProfile.major?.toLowerCase().includes(lowerTerm) ||
+            userProfile.doubleMajor?.toLowerCase().includes(lowerTerm) ||
+            userProfile.minor?.toLowerCase().includes(lowerTerm)
+        );
+    });
   }, [communityPosts, searchTerm]);
 
   useEffect(() => {
@@ -150,7 +160,7 @@ const TimeTableShelf = () => {
     if (timetable.firebaseId) {
         setIsDeleteModalOpen(true);
     } else {
-        const initialTags = timetable.tag ? [timetable.tag] : [];
+        const initialTags = timetable.tag ? timetable.tag.split(', ') : [];
         setForm({ title: timetable.title, tags: initialTags });
         setUploadModalOpen(true);
     }
@@ -298,7 +308,6 @@ const TimeTableShelf = () => {
                                     <div className="flex justify-between items-start">
                                         <FolderOpen className="text-slate-300 group-hover:text-blue-400" size={24}/>
                                         
-                                        {/* 🔥 [신규] 카드 위에 바로 공유 버튼 표시 */}
                                         <div className="flex items-center gap-1">
                                             {item.firebaseId && <span className="text-[10px] bg-pink-100 text-pink-600 px-1.5 py-0.5 rounded font-bold">공유됨</span>}
                                             <button 
@@ -341,7 +350,7 @@ const TimeTableShelf = () => {
                         type="text" 
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        placeholder="제목, 작성자, 태그로 검색..." 
+                        placeholder="제목, 작성자, 태그, 전공으로 검색..." 
                         className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-200 text-sm"
                       />
                     </div>
@@ -442,7 +451,7 @@ const TimeTableShelf = () => {
 
       </div>
 
-      {/* --- Modals --- */}
+      {/* --- Modals (생략: 기존과 동일) --- */}
       {viewingTimetable && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
           <div className="bg-white w-full max-w-4xl max-h-[90vh] rounded-3xl shadow-2xl overflow-hidden flex flex-col">
@@ -514,7 +523,6 @@ const TimeTableShelf = () => {
                     <div><label className="text-xs font-bold text-slate-500 ml-1">제목</label><input value={form.title} onChange={e => setForm({...form, title: e.target.value})} className="w-full mt-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-blue-500 font-bold" placeholder="예: 26학번 생존 시간표"/></div>
                     <div>
                         <label className="text-xs font-bold text-slate-500 ml-1">태그</label>
-                        {/* 가로 스크롤 & 1줄 표시 */}
                         <div className="flex gap-2 mt-1 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                             <style>{` .hide-scroll::-webkit-scrollbar { display: none; } `}</style>
                             <div className="flex gap-2 hide-scroll">

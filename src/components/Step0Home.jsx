@@ -12,31 +12,22 @@ const STANDARD_MAJORS = [
   "기계공학", "화학공학", "전자공학", "컴퓨터공학", "재료공학"
 ];
 
-// =========================================================================
-// 🔥 [핵심 수정] MajorSelector를 컴포넌트 밖으로 분리했습니다.
-// 이렇게 해야 입력할 때마다 컴포넌트가 재생성되지 않아 한글이 깨지지 않습니다.
-// =========================================================================
+// MajorSelector 컴포넌트
 const MajorSelector = ({ label, value, onChange, allowCustom = false, disabled = false }) => {
-    // 내부적으로 "자율트랙(직접입력) 모드"인지 판단하는 상태
     const [isCustomMode, setIsCustomMode] = useState(false);
 
-    // value(부모의 값)가 바뀔 때마다 모드 동기화
     useEffect(() => {
-        // 값이 있고, 표준 목록에 없으면 -> 자율트랙(직접입력) 모드로 인식
         if (value && value !== "미정" && !STANDARD_MAJORS.includes(value)) {
             setIsCustomMode(true);
         } else if (STANDARD_MAJORS.includes(value)) {
-            // 표준 목록에 있는 값이면 입력창 닫기
             setIsCustomMode(false);
         }
     }, [value]);
 
-    // 드롭다운에 표시할 값 계산
     let dropdownValue = value;
     if (isCustomMode) {
         dropdownValue = "자율트랙";
     } else if (!STANDARD_MAJORS.includes(value)) {
-        // 초기값이거나 미정일 때 안전장치
         dropdownValue = "미정";
     }
 
@@ -50,7 +41,7 @@ const MajorSelector = ({ label, value, onChange, allowCustom = false, disabled =
                 const val = e.target.value;
                 if (val === "자율트랙") {
                     setIsCustomMode(true);
-                    onChange(""); // 입력창 비우고 시작
+                    onChange(""); 
                 } else {
                     setIsCustomMode(false);
                     onChange(val);
@@ -64,7 +55,6 @@ const MajorSelector = ({ label, value, onChange, allowCustom = false, disabled =
             {allowCustom && <option value="자율트랙">자율트랙 (직접 입력)</option>}
         </select>
         
-        {/* 자율트랙 입력창 */}
         {allowCustom && isCustomMode && (
             <div className="relative animate-in fade-in slide-in-from-top-1 duration-200">
                 <PenTool size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-500"/>
@@ -82,9 +72,7 @@ const MajorSelector = ({ label, value, onChange, allowCustom = false, disabled =
     );
 };
 
-// =========================================================================
 // 메인 컴포넌트
-// =========================================================================
 const Step0Home = () => {
   const { setStep, setMode, userProfile, updateUserProfile } = useStore();
   
@@ -138,7 +126,6 @@ const Step0Home = () => {
     }));
   };
 
-  // 교착 상태 방지 로직
   const isDoubleSelected = localProfile.doubleMajor && localProfile.doubleMajor !== '미정';
   const isMinorSelected = localProfile.minor && localProfile.minor !== '미정';
 
@@ -170,7 +157,7 @@ const Step0Home = () => {
           DGIST <span className="text-blue-600 dark:text-blue-400">TT Chef</span>
         </h1>
         <p className="text-slate-500 dark:text-slate-400 mb-8 md:mb-12 font-medium text-sm md:text-base">
-          2026 Spring ver. (fix.0131)
+          2026 Spring ver. (fix.0201)
         </p>
 
         {/* 선택 영역 */}
@@ -205,10 +192,15 @@ const Step0Home = () => {
             <p className="text-slate-500 dark:text-slate-400 text-sm mb-6 flex-1 flex items-center justify-center break-keep">
               졸업까지 남은 재료들을<br className="hidden md:block"/> 꼼꼼하게 점검하세요.
             </p>
-            <div className="mt-auto flex flex-col items-center gap-1 w-full">
+            {/* 🔥 [수정] 높이 맞추기 (gap-2 통일 및 투명 더미 요소 추가) */}
+            <div className="mt-auto flex flex-col items-center gap-2 w-full">
               <div className="flex items-center gap-2 text-purple-600 dark:text-purple-400 font-bold group-hover:gap-3 transition-all text-base md:text-lg py-2">
                 <span>요리 시작하기</span>
                 <ArrowRight size={18} />
+              </div>
+              {/* 높이 맞춤용 투명 버튼 (왼쪽 카드와 균형 맞추기) */}
+              <div className="text-xs font-bold text-transparent py-1.5 px-3 select-none pointer-events-none flex items-center gap-1">
+                ( <LayoutGrid size={12}/> 보관함 & 공유 )
               </div>
             </div>
           </button>
