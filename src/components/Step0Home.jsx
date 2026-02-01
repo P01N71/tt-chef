@@ -280,7 +280,7 @@ const Step0Home = () => {
                 <div className="bg-blue-50 text-blue-600 text-xs p-3 rounded-xl mt-6 font-medium leading-relaxed">
                     💡 <b>오타 수정 유예 기간: 1시간</b><br/>
                     한 번 저장하면 1시간 동안은 수정 가능하지만, <br/>
-                    그 이후에는 학기(3개월) 단위로만 변경할 수 있습니다.
+                    그 이후에는 3개월 단위로만 변경할 수 있습니다.
                 </div>
 
                 <button onClick={saveProfile} className="w-full mt-4 py-3 bg-slate-900 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-slate-800 transition-all">
