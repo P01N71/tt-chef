@@ -633,7 +633,7 @@ export const ALL_COURSES = [
     credit: 3,
     categories: ["컴퓨터공학"],
     fixedTypes: ["전공필수"],
-    trackRelations: { "컴퓨터공학": "전공필수", "전자공학": "전공필수" },
+    trackRelations: { "컴퓨터공학": "전공필수", "전자공학": "전공선택" },
     times: [{ day: 0, start: 11, duration: 1.5 }, { day: 2, start: 11, duration: 1.5 }]
   },
   {
@@ -653,7 +653,7 @@ export const ALL_COURSES = [
     credit: 3,
     categories: ["컴퓨터공학"],
     fixedTypes: ["전공필수"],
-    trackRelations: { "컴퓨터공학": "전공필수", "전자공학": "전공필수" },
+    trackRelations: { "컴퓨터공학": "전공필수", "전자공학": "전공선택" },
     times: [{ day: 1, start: 13, duration: 1.5 }, { day: 3, start: 13, duration: 1.5 }]
   },
   {

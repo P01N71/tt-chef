@@ -4,7 +4,6 @@ import { ALL_COURSES as initialCoursesData } from '../data/courses';
 
 // Firebase 설정
 import { db } from '../firebaseConfig';
-// 🔥 [수정] writeBatch 추가 (일괄 업데이트용)
 import { collection, addDoc, getDocs, updateDoc, deleteDoc, getDoc, doc, increment, query, orderBy, where, writeBatch } from 'firebase/firestore';
 
 // 닉네임 생성기
@@ -21,6 +20,8 @@ const useStore = create(
       mode: null,
       userNickname: null,
       
+      editingId: null,
+
       userProfile: {
         status: '학사',
         semester: '1',
@@ -33,9 +34,7 @@ const useStore = create(
       setStep: (step) => set({ currentStep: step }),
       setMode: (mode) => set({ mode: mode }),
       
-      // 🔥 [핵심 수정] 프로필 업데이트 시 -> 내 과거 게시글들도 싹 다 업데이트
       updateUserProfile: async (newProfile) => {
-        // 1. 로컬 상태 업데이트
         const updatedProfile = { 
             ...get().userProfile, 
             ...newProfile,
@@ -43,23 +42,18 @@ const useStore = create(
         };
         set({ userProfile: updatedProfile });
 
-        // 2. Firebase 동기화 (닉네임이 있을 경우에만)
         const { userNickname } = get();
         if (userNickname) {
             try {
-                // 내 닉네임으로 작성된 모든 글 찾기
                 const q = query(collection(db, "timetables"), where("author", "==", userNickname));
                 const querySnapshot = await getDocs(q);
 
                 if (!querySnapshot.empty) {
-                    const batch = writeBatch(db); // 일괄 처리 시작
+                    const batch = writeBatch(db); 
                     querySnapshot.forEach((doc) => {
-                        // 각 문서의 userProfile 필드를 최신으로 교체
                         batch.update(doc.ref, { userProfile: updatedProfile });
                     });
-                    await batch.commit(); // 커밋 (저장)
-                    
-                    // 공유마당 데이터 새로고침 (변경사항 즉시 반영)
+                    await batch.commit(); 
                     get().fetchCommunityPosts();
                 }
             } catch (e) {
@@ -147,7 +141,29 @@ const useStore = create(
 
       // --- [진열대] ---
       savedTimetables: [],
+      
       saveScheduleToShelf: (title, tag) => set((state) => {
+        if (state.editingId) {
+            const updatedList = state.savedTimetables.map(t => 
+                t.id === state.editingId ? { 
+                    ...t, 
+                    title, 
+                    tag, 
+                    courses: [...state.schedule],
+                    userProfile: { ...state.userProfile },
+                    updatedAt: new Date().toISOString()
+                } : t
+            );
+            return {
+                savedTimetables: updatedList,
+                editingId: null,
+                schedule: [], 
+                basket: [],
+                currentStep: 1,
+                mode: 'shelf'
+            };
+        }
+
         const newTimetable = {
           id: Date.now(),
           title,
@@ -165,8 +181,33 @@ const useStore = create(
           mode: 'shelf'
         };
       }),
+
       deleteFromShelf: (id) => set((state) => ({ savedTimetables: state.savedTimetables.filter(t => t.id !== id) })),
       updateShelfItem: (id, newTitle, newTag) => set((state) => ({ savedTimetables: state.savedTimetables.map(t => t.id === id ? { ...t, title: newTitle, tag: newTag } : t) })),
+
+      loadScheduleFromShelf: (timetable) => set((state) => ({
+        schedule: [...timetable.courses],
+        editingId: timetable.id, 
+        basket: [], 
+        currentStep: 1, 
+        mode: 'timetable' 
+      })),
+
+      // 🔥 [신규] 공유마당 시간표 -> 내 진열대로 복사
+      importFromCommunity: (post) => set((state) => {
+        const newTimetable = {
+            id: Date.now(), // 새로운 로컬 ID 생성
+            title: post.title, // 원본 제목 유지
+            tag: post.tag || '기타',
+            courses: [...post.courses], // 강의 복사
+            createdAt: new Date().toISOString(),
+            firebaseId: null, // 🔥 공유 연결 끊기 (내 로컬 파일이 됨)
+            userProfile: { ...state.userProfile } // 🔥 소유자를 '나'로 변경
+        };
+        return {
+            savedTimetables: [...state.savedTimetables, newTimetable]
+        };
+      }),
 
       // --- [헬퍼 함수] ---
       getCourseTags: (course) => {
@@ -188,7 +229,7 @@ const useStore = create(
         return course.type || '일반';
       },
 
-      resetAll: () => set({ currentStep: 0, basket: [], schedule: [], transcript: [], grades: {} }),
+      resetAll: () => set({ currentStep: 0, basket: [], schedule: [], transcript: [], grades: {}, editingId: null }),
 
       // --- [Firebase 커뮤니티] ---
       communityPosts: [],
@@ -208,7 +249,6 @@ const useStore = create(
         }
       },
 
-      // 🔥 [수정됨] 비밀번호 제거
       uploadPost: async (title, tag, customCourses = null, localTimetableId = null) => {
         const { schedule, userNickname, userProfile } = get();
         const coursesToUse = customCourses || schedule;
@@ -254,7 +294,6 @@ const useStore = create(
             likes: 0,
             createdAt: new Date().toISOString(),
             userProfile: { ...userProfile } 
-            // password 필드 제거됨
           });
           
           if (localTimetableId) {
@@ -274,7 +313,6 @@ const useStore = create(
         }
       },
 
-      // 🔥 [수정됨] 비밀번호 확인 로직 제거 (로컬 권한으로 대체)
       deletePost: async (firebaseId, localTimetableId = null) => {
         try {
             const docRef = doc(db, "timetables", firebaseId);
@@ -313,7 +351,8 @@ const useStore = create(
         savedTimetables: state.savedTimetables, transcript: state.transcript, gradType: state.gradType, semestersCompleted: state.semestersCompleted,
         hasThesis: state.hasThesis, warningCount: state.warningCount, grades: state.grades,
         likedPostIds: state.likedPostIds, userNickname: state.userNickname, 
-        userProfile: state.userProfile
+        userProfile: state.userProfile,
+        editingId: state.editingId 
       }),
     }
   )

@@ -9,7 +9,7 @@ try { dalguLogo = new URL('../assets/dalgu.jpg', import.meta.url).href; } catch 
 const STANDARD_MAJORS = [
   "미정", 
   "물리학", "화학", "생명과학", "뇌과학", 
-  "기계공학", "화학공학", "전자공학", "컴퓨터공학", "재료공학"
+  "기계공학", "화학공학", "전자공학", "컴퓨터공학", "재료공학", "반도체공학과"
 ];
 
 // MajorSelector 컴포넌트
@@ -157,7 +157,7 @@ const Step0Home = () => {
           DGIST <span className="text-blue-600 dark:text-blue-400">TT Chef</span>
         </h1>
         <p className="text-slate-500 dark:text-slate-400 mb-8 md:mb-12 font-medium text-sm md:text-base">
-          2026 Spring ver. (fix.0201)
+          2026 Spring ver. (fix.0206)
         </p>
 
         {/* 선택 영역 */}

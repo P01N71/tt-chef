@@ -2,7 +2,8 @@ import React, { useState, useRef, useMemo, useEffect } from 'react';
 import useStore from '../store/useStore';
 import { 
     ArrowLeft, Trash2, Download, X, LayoutGrid, Clock, GraduationCap, 
-    FolderOpen, Pencil, Check, RotateCcw, Share2, Heart, Search, UploadCloud, Loader2, Globe, Lock
+    FolderOpen, Pencil, Check, RotateCcw, Share2, Heart, Search, UploadCloud, Loader2, Globe, Lock,
+    LogOut, FolderPlus // 🔥 FolderPlus 아이콘 추가
 } from 'lucide-react';
 import { toPng } from 'html-to-image';
 
@@ -31,13 +32,15 @@ const getBlockColor = (rawType) => {
 
 const isMajorCredit = (c) => {
     const type = getSmartType(c);
-    return type.includes('전공');
+    if (!type.includes('전공')) return false;
+    if (c.id && (c.id.startsWith('TP') || c.id.startsWith('ENT'))) return false;
+    return true;
 };
 
 const TimeTableShelf = () => {
   const { 
     setStep, setMode, 
-    savedTimetables = [], deleteFromShelf, updateShelfItem, 
+    savedTimetables = [], deleteFromShelf, updateShelfItem, loadScheduleFromShelf, importFromCommunity,
     communityPosts, fetchCommunityPosts, uploadPost, deletePost, toggleLike, isLoadingPosts, likedPostIds 
   } = useStore();
 
@@ -67,15 +70,12 @@ const TimeTableShelf = () => {
     return groups;
   }, [savedTimetables]);
 
-  // 🔥 [수정] 검색 필터링 로직 강화 (전공/복수/부전공 포함)
   const filteredPosts = useMemo(() => {
     if (!searchTerm.trim()) return communityPosts;
     const lowerTerm = searchTerm.toLowerCase();
     
     return communityPosts.filter(post => {
         const userProfile = post.userProfile || {};
-        
-        // 검색 대상: 제목, 작성자, 태그, 주전공, 복수전공, 부전공
         return (
             post.title?.toLowerCase().includes(lowerTerm) || 
             post.author?.toLowerCase().includes(lowerTerm) ||
@@ -174,6 +174,22 @@ const TimeTableShelf = () => {
             : [...prev.tags, tag];
         return { ...prev, tags: newTags };
     });
+  };
+
+  const handleLoadAndEdit = () => {
+    if(window.confirm('현재 작성 중이던 시간표는 덮어씌워집니다.\n이 시간표를 불러와서 수정하시겠습니까?')) {
+        loadScheduleFromShelf(viewingTimetable);
+    }
+  };
+
+  // 🔥 [신규] 내 진열대로 가져오기 핸들러
+  const handleImportToShelf = () => {
+    if(window.confirm(`'${viewingTimetable.title}' 시간표를 내 진열대에 저장하시겠습니까?`)) {
+        importFromCommunity(viewingTimetable);
+        alert('저장되었습니다! [내 진열대] 탭에서 확인해보세요.');
+        setViewingTimetable(null);
+        setActiveTab('my');
+    }
   };
 
   // --- [뷰어 컴포넌트] ---
@@ -451,7 +467,7 @@ const TimeTableShelf = () => {
 
       </div>
 
-      {/* --- Modals (생략: 기존과 동일) --- */}
+      {/* --- Modals --- */}
       {viewingTimetable && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
           <div className="bg-white w-full max-w-4xl max-h-[90vh] rounded-3xl shadow-2xl overflow-hidden flex flex-col">
@@ -461,10 +477,19 @@ const TimeTableShelf = () => {
                 <div className="flex items-center gap-2 flex-1 mr-4">
                   <div className="flex flex-col gap-2 w-full max-w-sm">
                     <input type="text" value={editTitle} onChange={(e) => setEditTitle(e.target.value)} className="border border-blue-300 rounded-lg px-3 py-1.5 text-lg font-bold outline-none focus:ring-2 focus:ring-blue-200" placeholder="제목 입력"/>
-                    <div className="flex gap-2">
-                      {['26봄', '26가을', '계절', '기타'].map(tag => (
-                        <button key={tag} onClick={() => setEditTag(tag)} className={`px-2 py-1 text-xs rounded-md border ${editTag === tag ? 'bg-blue-600 text-white border-blue-600' : 'bg-white text-slate-500 border-slate-200'}`}>{tag}</button>
-                      ))}
+                    <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                        <style>{` .hide-scroll::-webkit-scrollbar { display: none; } `}</style>
+                        <div className="flex gap-2 hide-scroll flex-nowrap">
+                            {['26년도 봄학기', '26년도 여름학기', '26년도 가을학기', '26년도 겨울학기', '임시'].map(tag => (
+                                <button 
+                                    key={tag} 
+                                    onClick={() => setEditTag(tag)} 
+                                    className={`px-3 py-1.5 text-xs rounded-lg border font-bold whitespace-nowrap flex-shrink-0 transition-all ${editTag === tag ? 'bg-blue-600 text-white border-blue-600' : 'bg-white text-slate-500 border-slate-200'}`}
+                                >
+                                    {tag}
+                                </button>
+                            ))}
+                        </div>
                     </div>
                   </div>
                   <button onClick={handleUpdate} className="p-2 bg-blue-100 text-blue-600 rounded-full hover:bg-blue-200"><Check size={20}/></button>
@@ -491,6 +516,14 @@ const TimeTableShelf = () => {
                 {activeTab === 'my' && (
                     <>
                         <button 
+                            onClick={handleLoadAndEdit}
+                            className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 transition font-bold text-sm"
+                            title="이 시간표 불러오기"
+                        >
+                            <LogOut className="rotate-180" size={16}/> <span>수정하기</span>
+                        </button>
+                        <div className="w-px h-6 bg-slate-200 mx-1"></div>
+                        <button 
                             onClick={() => handleShareClick(viewingTimetable)}
                             className={`flex items-center gap-1.5 px-3 py-2 rounded-full transition font-bold text-sm ${viewingTimetable.firebaseId ? 'bg-slate-100 text-slate-500 hover:bg-red-50 hover:text-red-500' : 'bg-blue-100 text-blue-600 hover:bg-blue-200'}`}
                         >
@@ -504,6 +537,18 @@ const TimeTableShelf = () => {
                         <button onClick={() => { if(window.confirm('삭제하시겠습니까?')) { deleteFromShelf(viewingTimetable.id); setViewingTimetable(null); } }} className="p-2 text-red-400 hover:bg-red-50 rounded-full transition"><Trash2 size={20}/></button>
                     </>
                 )}
+                {/* 🔥 [신규] 커뮤니티 탭일 때 저장 버튼 표시 */}
+                {activeTab === 'community' && (
+                    <>
+                        <button 
+                            onClick={handleImportToShelf}
+                            className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition font-bold text-sm shadow-sm"
+                        >
+                            <FolderPlus size={16}/> <span>내 진열대에 저장</span>
+                        </button>
+                        <div className="w-px h-6 bg-slate-200 mx-1"></div>
+                    </>
+                )}
                 <button onClick={() => setViewingTimetable(null)} className="p-2 text-slate-400 hover:bg-slate-100 rounded-full transition"><X size={24}/></button>
               </div>
             </div>
@@ -513,6 +558,7 @@ const TimeTableShelf = () => {
         </div>
       )}
 
+      {/* ... (나머지 Modal 등은 기존 유지) ... */}
       {/* 2. Upload Modal */}
       {isUploadModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">

@@ -4,7 +4,8 @@ import { ALL_TAGS } from '../data/courses';
 import { 
   ArrowLeft, ArrowRight, Trash2, LayoutGrid, Clock, 
   Search, Plus, Check, ShoppingBasket, ChefHat, 
-  ChevronDown, Settings2, ArrowRightCircle, XCircle 
+  ChevronDown, Settings2, ArrowRightCircle, XCircle,
+  FileText, PieChart, BookOpen, Calendar, X, User, MapPin, Phone, Mail, Info, Users
 } from 'lucide-react';
 
 const START_HOUR = 9;
@@ -24,6 +25,204 @@ const animationStyles = `
   .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
   .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 `;
+
+// 🔥 [업그레이드] 실라버스 모달 (상세 정보 포함)
+const SyllabusModal = ({ course, onClose }) => {
+    if (!course) return null;
+
+    // 더미 데이터 (실제 데이터가 없을 경우 보여줌)
+    const syllabus = course.syllabus || {
+        // 1. 기본 정보
+        section: "01",
+        capacity: "30 / 40",
+        classroom: "E7-233 (PBL실)",
+        
+        // 2. 교수님 연락처
+        contact: {
+            email: "prof@dgist.ac.kr",
+            phone: "053-785-0000",
+            office: "E7-501",
+            office_hours: "화/목 15:00 ~ 17:00 (예약 필수)"
+        },
+
+        // 3. 수업 내용
+        summary: "본 교과목은 해당 분야의 기초 이론을 학습하고, 이를 바탕으로 실제 문제를 해결하는 프로젝트를 수행합니다. 최신 연구 동향을 살피고 논문을 리뷰하는 과정이 포함됩니다.",
+        
+        // 4. 교수 방법 & 준비물
+        methods: ["강의 (Lecture)", "팀 프로젝트 (Team Project)", "토론 (Discussion)"],
+        materials: "개인 노트북 (Python 설치 필수), 필기도구",
+        
+        // 5. 교수 정책
+        policies: "지각 3회는 결석 1회로 간주합니다. 과제 제출 기한을 엄수해야 하며, 하루 지연 시 10% 감점됩니다. 표절 적발 시 F학점 처리됩니다.",
+
+        // 6. 평가 방법
+        grading: [
+            { name: "중간고사", percent: 30 },
+            { name: "기말고사", percent: 30 },
+            { name: "과제 및 프로젝트", percent: 30 },
+            { name: "출석 및 태도", percent: 10 }
+        ],
+
+        // 7. 주별 계획
+        schedule: [
+            "1주차: 강의 소개 및 오리엔테이션",
+            "2주차: 기초 이론 학습 (1)",
+            "3주차: 기초 이론 학습 (2)",
+            "4주차: 심화 주제 탐구",
+            "5주차: 개인 과제 발표",
+            "6주차: 팀 구성 및 주제 선정",
+            "7주차: 중간 점검",
+            "8주차: 중간고사 (Midterm Exam)",
+            "9주차: 프로젝트 진행 (1)",
+            "10주차: 프로젝트 진행 (2)",
+            "11주차: 프로젝트 진행 (3)",
+            "12주차: 관련 논문 리뷰",
+            "13주차: 최종 발표 준비",
+            "14주차: 최종 프로젝트 발표",
+            "15주차: 기말고사 (Final Exam)",
+            "16주차: 총평 및 피드백"
+        ],
+
+        // 8. 교재
+        textbook: "Introduction to Subject, 3rd Edition (John Doe, 2024)"
+    };
+
+    return (
+        <div className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
+            <div className="bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+                
+                {/* 헤더 */}
+                <div className="bg-slate-900 p-6 flex justify-between items-start text-white shrink-0">
+                    <div>
+                        <div className="flex items-center gap-2 mb-2">
+                            <span className="text-xs font-bold bg-blue-600 text-white px-2 py-0.5 rounded border border-blue-500">{course.id || 'CODE'}</span>
+                            <span className="text-xs font-bold text-slate-300 border border-slate-600 px-2 py-0.5 rounded">{syllabus.section}분반</span>
+                        </div>
+                        <h2 className="text-2xl font-black leading-tight mb-1">{course.name}</h2>
+                        <div className="text-slate-400 text-sm font-medium flex items-center gap-3 mt-2">
+                            <span className="flex items-center gap-1"><User size={14}/> {course.prof || '교수 미정'}</span>
+                            <span className="w-px h-3 bg-slate-700"></span>
+                            <span className="flex items-center gap-1"><Clock size={14}/> {course.credit}학점</span>
+                        </div>
+                    </div>
+                    <button onClick={onClose} className="p-2 bg-slate-800 rounded-full hover:bg-slate-700 text-slate-300 hover:text-white transition">
+                        <X size={20}/>
+                    </button>
+                </div>
+
+                {/* 내용 스크롤 영역 */}
+                <div className="flex-1 overflow-y-auto p-6 space-y-8 custom-scrollbar text-left bg-slate-50">
+                    
+                    {/* 1. 교수님 & 강의실 정보 (카드 형태) */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 className="text-xs font-bold text-slate-400 mb-3 flex items-center gap-1"><User size={12}/> 교수님 정보</h4>
+                            <div className="space-y-2 text-sm text-slate-700">
+                                <div className="flex items-center gap-2"><Mail size={14} className="text-blue-500"/> {syllabus.contact.email}</div>
+                                <div className="flex items-center gap-2"><Phone size={14} className="text-green-500"/> {syllabus.contact.phone}</div>
+                                <div className="flex items-center gap-2"><MapPin size={14} className="text-red-500"/> {syllabus.contact.office}</div>
+                                <div className="flex items-start gap-2"><Clock size={14} className="text-purple-500 mt-0.5"/> <span className="flex-1">{syllabus.contact.office_hours}</span></div>
+                            </div>
+                        </div>
+                        <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 className="text-xs font-bold text-slate-400 mb-3 flex items-center gap-1"><Info size={12}/> 강의 정보</h4>
+                            <div className="space-y-2 text-sm text-slate-700">
+                                <div className="flex justify-between border-b border-slate-100 pb-1">
+                                    <span className="text-slate-500">수강 정원</span>
+                                    <span className="font-bold flex items-center gap-1"><Users size={14}/> {syllabus.capacity}</span>
+                                </div>
+                                <div className="flex justify-between border-b border-slate-100 pb-1">
+                                    <span className="text-slate-500">강의실</span>
+                                    <span className="font-bold">{syllabus.classroom}</span>
+                                </div>
+                                <div className="flex flex-col gap-1 pt-1">
+                                    <span className="text-slate-500 text-xs">교수 방법</span>
+                                    <div className="flex flex-wrap gap-1">
+                                        {syllabus.methods.map((m, i) => <span key={i} className="text-[10px] bg-slate-100 px-1.5 py-0.5 rounded text-slate-600">{m}</span>)}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 2. 과목 설명 */}
+                    <section className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                        <h3 className="text-sm font-black text-slate-800 mb-3 flex items-center gap-2">
+                            <FileText size={18} className="text-blue-500"/> 과목 설명
+                        </h3>
+                        <div className="text-slate-600 text-sm leading-7 text-justify break-keep">{syllabus.summary}</div>
+                    </section>
+
+                    {/* 3. 평가 방법 (Grading) */}
+                    <section className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                        <h3 className="text-sm font-black text-slate-800 mb-3 flex items-center gap-2">
+                            <PieChart size={18} className="text-pink-500"/> 평가 방법 및 비율
+                        </h3>
+                        <div className="flex gap-2 mb-4 overflow-hidden rounded-full h-4 bg-slate-100">
+                            {syllabus.grading.map((item, idx) => (
+                                <div key={idx} className={`h-full ${['bg-pink-400', 'bg-blue-400', 'bg-purple-400', 'bg-emerald-400'][idx % 4]}`} style={{ width: `${item.percent}%` }} title={`${item.name} (${item.percent}%)`}></div>
+                            ))}
+                        </div>
+                        <div className="grid grid-cols-2 gap-2">
+                            {syllabus.grading?.map((item, idx) => (
+                                <div key={idx} className="flex justify-between items-center bg-slate-50 px-3 py-2 rounded-lg">
+                                    <div className="flex items-center gap-2">
+                                        <div className={`w-2 h-2 rounded-full ${['bg-pink-400', 'bg-blue-400', 'bg-purple-400', 'bg-emerald-400'][idx % 4]}`}></div>
+                                        <span className="text-xs font-bold text-slate-600">{item.name}</span>
+                                    </div>
+                                    <span className="text-sm font-black text-slate-800">{item.percent}%</span>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* 4. 교수 정책 & 준비물 */}
+                    <section className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                        <h3 className="text-sm font-black text-slate-800 mb-3 flex items-center gap-2">
+                            <Check size={18} className="text-orange-500"/> 교수 정책 및 준비물
+                        </h3>
+                        <div className="space-y-3">
+                            <div>
+                                <span className="text-xs font-bold text-slate-400 block mb-1">수업 정책</span>
+                                <div className="text-sm text-slate-600 bg-orange-50 p-3 rounded-xl border border-orange-100">{syllabus.policies}</div>
+                            </div>
+                            <div>
+                                <span className="text-xs font-bold text-slate-400 block mb-1">준비물</span>
+                                <div className="text-sm text-slate-600">{syllabus.materials}</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* 5. 주별 강의 계획 */}
+                    <section className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                        <h3 className="text-sm font-black text-slate-800 mb-3 flex items-center gap-2">
+                            <Calendar size={18} className="text-purple-500"/> 주별 강의 계획
+                        </h3>
+                        <div className="space-y-0 text-sm">
+                            {syllabus.schedule?.map((week, idx) => (
+                                <div key={idx} className="flex gap-3 py-2 border-b border-slate-50 last:border-0">
+                                    <span className="font-bold text-slate-400 w-10 shrink-0">{idx + 1}주</span>
+                                    <span className="font-medium text-slate-700">{week.replace(/^\d+주차:\s*/, '')}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* 6. 교재 */}
+                    <section className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                        <h3 className="text-sm font-black text-slate-800 mb-3 flex items-center gap-2">
+                            <BookOpen size={18} className="text-emerald-500"/> 교재 및 참고문헌
+                        </h3>
+                        <div className="bg-emerald-50/50 p-4 rounded-xl border border-emerald-100 text-emerald-800 text-sm font-medium leading-relaxed">
+                            {syllabus.textbook}
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    );
+};
 
 const formatTimeStr = (times) => {
   if (!Array.isArray(times) || times.length === 0) return '시간 미정';
@@ -55,19 +254,18 @@ const getBadgeStyle = (tagName) => {
   return 'bg-white text-slate-500 border-slate-200'; 
 };
 
-// 🔥 [수정] 태그 전체 표시 (트랙 포함)
+// 태그 전체 표시 (트랙 포함)
 const CommonCard = ({ course, rightAction }) => {
   const { getCourseTags } = useStore();
   const tags = getCourseTags(course); // 트랙 포함된 태그들
 
   return (
     <div className="bg-white py-2 px-2.5 lg:py-3 lg:px-3 rounded-lg border border-slate-200 shadow-sm flex-shrink-0 w-[260px] lg:w-full hover:border-blue-300 transition-colors animate-slide-in relative flex items-center justify-between gap-2 lg:gap-3 h-auto">
-        <div className="flex-1 min-w-0 mr-1 flex flex-col justify-center">
+        <div className="flex-1 min-w-0 mr-1 flex flex-col justify-center text-left">
           <div className="font-bold text-xs lg:text-sm text-slate-800 leading-tight truncate mb-0.5">
             {course.name}
           </div>
           
-          {/* 태그 표시 영역 */}
           <div className="flex gap-0.5 flex-wrap mb-0.5">
              {tags.map(tag => (
                 <span key={tag} className={`text-[8px] lg:text-[9px] px-1 py-[1px] rounded border whitespace-nowrap leading-none ${getBadgeStyle(tag)}`}>
@@ -168,6 +366,9 @@ const Step1MainBuilder = () => {
   const { setStep, allCourses, basket, schedule, toggleBasket, addToSchedule, removeFromSchedule, isOverCredit, toggleOverCredit, getCourseTags } = useStore();
   const [search, setSearch] = useState('');
   const [selectedTags, setSelectedTags] = useState([]);
+  
+  // 🔥 [신규] 실라버스 모달용 상태
+  const [selectedSyllabusCourse, setSelectedSyllabusCourse] = useState(null);
 
   // 검색 로직 (태그/트랙 검색 포함)
   const filteredCourses = allCourses
@@ -275,6 +476,14 @@ const Step1MainBuilder = () => {
                          course={course} 
                          rightAction={
                            <>
+                             {/* 🔥 [신규] 강의계획서 버튼 (위쪽 배치) */}
+                             <button 
+                                onClick={() => setSelectedSyllabusCourse(course)}
+                                className="w-6 h-6 lg:w-7 lg:h-7 rounded-full flex items-center justify-center bg-white border border-slate-200 text-slate-400 hover:bg-slate-50 hover:text-blue-500 transition-all"
+                                title="강의계획서 보기"
+                             >
+                                <FileText size={12} className="lg:w-3.5 lg:h-3.5"/>
+                             </button>
                              <button onClick={() => toggleBasket(course)} className="w-6 h-6 lg:w-7 lg:h-7 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 hover:bg-red-100 hover:text-red-500 transition-all"><XCircle size={14} className="lg:w-4 lg:h-4"/></button>
                              <button onClick={() => addToSchedule(course)} className="w-6 h-6 lg:w-7 lg:h-7 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 hover:bg-blue-100 hover:text-blue-500 transition-all"><ArrowRightCircle size={14} className="lg:w-4 lg:h-4"/></button>
                            </>
@@ -287,6 +496,12 @@ const Step1MainBuilder = () => {
           </div>
         </div>
       </div>
+
+      {/* 🔥 모달 렌더링 */}
+      <SyllabusModal 
+        course={selectedSyllabusCourse} 
+        onClose={() => setSelectedSyllabusCourse(null)} 
+      />
     </>
   );
 };
