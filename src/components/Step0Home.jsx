@@ -157,7 +157,8 @@ const Step0Home = () => {
           DGIST <span className="text-blue-600 dark:text-blue-400">TT Chef</span>
         </h1>
         <p className="text-slate-500 dark:text-slate-400 mb-8 md:mb-12 font-medium text-sm md:text-base">
-          2026 Spring ver. (fix.0206)
+          2026 Spring ver. (fix.0209)<br className="hidden md:block"/>
+          Made by P01N71 (w/ D1C3, pharmaxxan)
         </p>
 
         {/* 선택 영역 */}
@@ -184,21 +185,22 @@ const Step0Home = () => {
           </div>
 
           {/* 2. 졸업 요리사 */}
-          <button onClick={() => handleModeSelect('graduation')} className="group relative flex flex-col items-center p-6 md:p-10 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700 rounded-3xl hover:border-purple-500 dark:hover:border-purple-500 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 overflow-hidden h-full w-full">
-            <div className="mb-4 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-2xl group-hover:bg-purple-100 dark:group-hover:bg-purple-900/30 transition-colors">
+          <button onClick={() => handleModeSelect('graduation')} className="group relative flex flex-col items-center p-6 md:p-10 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700 rounded-3xl hover:border-blue-200 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 overflow-hidden h-full w-full">
+            <div className="mb-4 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-2xl group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
               <GraduationCap size={32} className="text-purple-600 dark:text-purple-400 md:w-10 md:h-10" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold text-slate-800 dark:text-white mb-2">졸업 요리사</h3>
             <p className="text-slate-500 dark:text-slate-400 text-sm mb-6 flex-1 flex items-center justify-center break-keep">
               졸업까지 남은 재료들을<br className="hidden md:block"/> 꼼꼼하게 점검하세요.
             </p>
-            {/* 🔥 [수정] 높이 맞추기 (gap-2 통일 및 투명 더미 요소 추가) */}
+            
             <div className="mt-auto flex flex-col items-center gap-2 w-full">
-              <div className="flex items-center gap-2 text-purple-600 dark:text-purple-400 font-bold group-hover:gap-3 transition-all text-base md:text-lg py-2">
+              {/* 🔥 [수정] group-hover 제거, hover 추가 (화살표 움직임 일관성 맞춤) */}
+              <div className="flex items-center gap-2 text-purple-600 dark:text-purple-400 font-bold hover:gap-3 transition-all text-base md:text-lg py-2">
                 <span>요리 시작하기</span>
                 <ArrowRight size={18} />
               </div>
-              {/* 높이 맞춤용 투명 버튼 (왼쪽 카드와 균형 맞추기) */}
+              
               <div className="text-xs font-bold text-transparent py-1.5 px-3 select-none pointer-events-none flex items-center gap-1">
                 ( <LayoutGrid size={12}/> 보관함 & 공유 )
               </div>
@@ -212,7 +214,7 @@ const Step0Home = () => {
         </div>
       </div>
 
-      {/* 모달 */}
+      {/* 모달 (기존 동일) */}
       {isProfileOpen && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
             <div className="bg-white dark:bg-slate-800 w-full max-w-md rounded-3xl shadow-2xl p-6 relative">
@@ -250,7 +252,6 @@ const Step0Home = () => {
                         </div>
                     </div>
 
-                    {/* 주전공 (자율트랙 가능) */}
                     <MajorSelector 
                         label="주전공 (Major)" 
                         value={localProfile.major} 
@@ -258,7 +259,6 @@ const Step0Home = () => {
                         allowCustom={true}
                     />
                     
-                    {/* 복수/부전공 (자율트랙 불가, 교차 선택 불가) */}
                     <div className="grid grid-cols-2 gap-4">
                         <MajorSelector 
                             label="복수전공 (선택)" 
@@ -280,7 +280,7 @@ const Step0Home = () => {
                 <div className="bg-blue-50 text-blue-600 text-xs p-3 rounded-xl mt-6 font-medium leading-relaxed">
                     💡 <b>오타 수정 유예 기간: 1시간</b><br/>
                     한 번 저장하면 1시간 동안은 수정 가능하지만, <br/>
-                    그 이후에는 3개월 단위로만 변경할 수 있습니다.
+                    그 이후에는 학기(3개월) 단위로만 변경할 수 있습니다.
                 </div>
 
                 <button onClick={saveProfile} className="w-full mt-4 py-3 bg-slate-900 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-slate-800 transition-all">
