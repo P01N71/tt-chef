@@ -2059,7 +2059,7 @@ export const ALL_COURSES = [
         materials: "None",
         policies: "절대 평가로서 A+ 94.0% 이상, A0 90.0~93.9%, A- 88.0~89.9%, B+ 85.0~87.9%, B0 80.0~84.9%, B- 78.0~79.9%, C+ 74.0~77.9%, C0 67.0~73.9%, C- 65.0~66.9%, F 64.9% 이하",
         grading: [
-            { name: "Etc.", percent: 100 }
+            { name: "Etc.", percent: 100 },
         ],
         schedule: [ 
    	     "1주차:생명과학의 주제 / 원자와 분자",
@@ -7995,7 +7995,7 @@ export const ALL_COURSES = [
         materials: "None",
         policies: "YOUR MOBILE PHONE SHOULD BE TURNED OFF DUR ING THE CLASS TIME. Please read the syllabus for grading system.",
         grading: [
-            { name: "Etc", percent: 100 }
+            { name: "Etc.", percent: 100 }
         ],
         schedule: [
             "TBA"
