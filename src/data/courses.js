@@ -2061,7 +2061,7 @@ export const ALL_COURSES = [
         grading: [
             { name: "Etc.", percent: 100 }
         ],
-        schedule: [  
+        schedule: [ 
    	     "1주차:생명과학의 주제 / 원자와 분자",
   	     "2주차:물의 화학 / 탄소: 분자 다양성",
   	     "3주차:생체 거대 분자와 지질 / 에너지와 생명체",
