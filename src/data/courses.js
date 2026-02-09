@@ -2058,7 +2058,7 @@ export const ALL_COURSES = [
         methods: ["Lecture", "Flipped-learning", "Project", "Presentation", "Peer teaching"],
         materials: "None",
         policies: "절대 평가로서 A+ 94.0% 이상, A0 90.0~93.9%, A- 88.0~89.9%, B+ 85.0~87.9%, B0 80.0~84.9%, B- 78.0~79.9%, C+ 74.0~77.9%, C0 67.0~73.9%, C- 65.0~66.9%, F 64.9% 이하",
-        grading: "None",
+        grading: { name: "Etc.", percent: 20 },
         schedule: [  
    	     "1주차:생명과학의 주제 / 원자와 분자",
   	     "2주차:물의 화학 / 탄소: 분자 다양성",
