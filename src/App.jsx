@@ -6,6 +6,7 @@ import Step3Save from './components/Step3Save';
 import TimeTableShelf from './components/TimeTableShelf';
 import GraduationChef from './components/GraduationChef';
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
   const { currentStep: step, mode } = useStore();

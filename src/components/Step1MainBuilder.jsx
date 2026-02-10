@@ -5,7 +5,7 @@ import {
   ArrowLeft, ArrowRight, Trash2, LayoutGrid, Clock, 
   Search, Plus, Check, ShoppingBasket, ChefHat, 
   ChevronDown, Settings2, ArrowRightCircle, XCircle,
-  FileText, PieChart, BookOpen, Calendar, X, User, MapPin, Phone, Mail, Info, Users
+  FileText, PieChart, BookOpen, Calendar, X, User, MapPin, Phone, Mail, Info, Users, RotateCcw
 } from 'lucide-react';
 
 const START_HOUR = 9;
@@ -373,6 +373,34 @@ const Step1MainBuilder = () => {
                 <span className="hidden md:inline">시간표 <span className="text-blue-400">요리사</span></span>
             </h1>
           </div>
+          <div className="flex items-center gap-1 lg:gap-2 mr-2">
+                {/* 1. 전체 초기화 (휴지통) */}
+                <button
+                    onClick={() => {
+                        if (window.confirm('모든 강의를 삭제하고 초기화하시겠습니까? (배치 대기 및 시간표 모두 삭제)')) {
+                            // resetAll 대신 setState 사용
+                            useStore.setState({ basket: [], schedule: [], editingId: null });
+                        }
+                    }}
+                    className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-full transition"
+                    title="전체 초기화 (배치 대기 포함)"
+                >
+                    <Trash2 size={18} />
+                </button>
+
+                {/* 2. 시간표만 비우기 (되돌리기) */}
+                <button
+                    onClick={() => {
+                        if (window.confirm('시간표에 배치된 강의를 모두 대기열로 되돌리시겠습니까?')) {
+                            useStore.setState({ schedule: [] });
+                        }
+                    }}
+                    className="p-2 text-slate-400 hover:text-blue-500 hover:bg-blue-50 rounded-full transition"
+                    title="시간표 비우기 (대기열로 이동)"
+                >
+                    <RotateCcw size={18} />
+                </button>
+            </div>
           <div className="flex items-center gap-3 lg:gap-4">
             <div className={`flex items-center gap-1.5 lg:gap-2 px-2.5 lg:px-3 py-1 rounded-full text-xs lg:text-sm font-bold bg-slate-800 border ${totalCredits > MAX_CREDIT ? 'border-red-500 text-red-400' : totalCredits < MIN_CREDIT ? 'border-yellow-500 text-yellow-400' : 'border-slate-700'}`}>
               <Clock size={14} className="text-blue-400"/>
