@@ -3,7 +3,7 @@ import useStore from '../store/useStore';
 import { 
     ArrowLeft, Trash2, Download, X, LayoutGrid, Clock, GraduationCap, 
     FolderOpen, Pencil, Check, RotateCcw, Share2, Heart, Search, UploadCloud, Loader2, Globe, Lock,
-    LogOut, FolderPlus // 🔥 FolderPlus 아이콘 추가
+    LogOut, FolderPlus, FileText, PieChart, BookOpen, Calendar, ChevronDown, ChevronUp, ExternalLink
 } from 'lucide-react';
 import { toPng } from 'html-to-image';
 
@@ -37,6 +37,108 @@ const isMajorCredit = (c) => {
     return true;
 };
 
+// 실라버스 모달
+const SyllabusModal = ({ course, onClose }) => {
+    if (!course) return null;
+
+    const syllabus = course.syllabus || {
+        summary: "본 교과목은 데이터사이언스 입문 과목으로, 데이터 기반 문제 해결의 전체 프로세스를 이해하고 실습 중심으로 경험하도록 구성된다. 파이썬 환경에서 데이터셋을 활용하여 분석 과제를 수행하며...",
+        objectives: "데이터 획득부터 정제, 탐색/분석, 시각화에 이르는 전 과정을 수행할 수 있는 도구 활용 역량을 기르고...",
+        grading: [
+            { name: "Term Project", percent: 30 },
+            { name: "Quiz", percent: 10 },
+            { name: "Attendance", percent: 10 },
+            { name: "Homework", percent: 20 },
+            { name: "Final Exam", percent: 30 }
+        ],
+        schedule: [
+            "1주차: Introduction to Data Science & Environment Setup",
+            "2주차: Python/NumPy 핵심 기초",
+            "3주차: Data Wrangling I",
+            "4주차: Data Wrangling II",
+            "5주차: Exploratory Data Analysis (EDA) & Visualization I",
+            "6주차: Exploratory Data Analysis (EDA) & Visualization II",
+            "7주차: Statistical Thinking",
+            "8주차: Midterm Exam"
+        ],
+        textbook: "Python for Data Analysis: Data Wes McKinney (O'Reilly Media, 2022)"
+    };
+
+    return (
+        <div className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
+            <div className="bg-white w-full max-w-xl rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[85vh]">
+                <div className="bg-slate-900 p-6 flex justify-between items-start text-white shrink-0">
+                    <div>
+                        <div className="flex items-center gap-2 mb-1">
+                            <span className="text-xs font-bold bg-blue-600 text-white px-2 py-0.5 rounded">{course.id || 'CODE'}</span>
+                            <span className="text-xs font-bold text-slate-400">{getSmartType(course)}</span>
+                        </div>
+                        <h2 className="text-2xl font-black leading-tight mb-1">{course.name}</h2>
+                        <div className="text-slate-400 text-sm font-medium flex items-center gap-2">
+                            <span>{course.prof || '교수 미정'} 교수님</span>
+                            <div className="w-1 h-1 bg-slate-600 rounded-full"></div>
+                            <span>{course.credit}학점</span>
+                        </div>
+                    </div>
+                    <button onClick={onClose} className="p-2 bg-slate-800 rounded-full hover:bg-slate-700 text-slate-300 hover:text-white transition">
+                        <X size={20}/>
+                    </button>
+                </div>
+                <div className="flex-1 overflow-y-auto p-6 space-y-8 custom-scrollbar">
+                    <section>
+                        <h3 className="text-sm font-black text-slate-800 mb-3 flex items-center gap-2 border-b border-slate-100 pb-2">
+                            <FileText size={18} className="text-blue-500"/> 강의 개요
+                        </h3>
+                        <div className="text-slate-600 text-sm leading-7 text-justify break-keep">{syllabus.summary}</div>
+                    </section>
+                    <section>
+                        <h3 className="text-sm font-black text-slate-800 mb-3 flex items-center gap-2 border-b border-slate-100 pb-2">
+                            <PieChart size={18} className="text-pink-500"/> 평가 방법
+                        </h3>
+                        <div className="grid grid-cols-2 gap-2">
+                            {Array.isArray(syllabus.grading) ? syllabus.grading.map((item, idx) => (
+                                <div key={idx} className="flex justify-between items-center bg-slate-50 border border-slate-100 px-4 py-2.5 rounded-xl">
+                                    <span className="text-xs font-bold text-slate-500">{item.name}</span>
+                                    <span className="text-sm font-black text-slate-700">{item.percent}%</span>
+                                </div>
+                            )) : <div className="text-sm text-slate-600">{syllabus.grading || "정보 없음"}</div>}
+                        </div>
+                    </section>
+                    <section>
+                        <h3 className="text-sm font-black text-slate-800 mb-3 flex items-center gap-2 border-b border-slate-100 pb-2">
+                            <Calendar size={18} className="text-purple-500"/> 주별 강의 계획
+                        </h3>
+                        <div className="bg-slate-50 rounded-xl border border-slate-100 overflow-hidden">
+                            {Array.isArray(syllabus.schedule) ? syllabus.schedule.map((week, idx) => (
+                                <div key={idx} className="px-4 py-3 border-b border-slate-100 last:border-0 text-sm text-slate-600 flex gap-3">
+                                    <span className="font-bold text-slate-400 w-8 shrink-0">{idx + 1}주</span>
+                                    <span className="font-medium">{week.replace(/^\d+주차:\s*/, '')}</span>
+                                </div>
+                            )) : <div className="p-4 text-sm text-slate-600">{syllabus.schedule || "정보 없음"}</div>}
+                        </div>
+                    </section>
+                    <section>
+                        <h3 className="text-sm font-black text-slate-800 mb-3 flex items-center gap-2 border-b border-slate-100 pb-2">
+                            <BookOpen size={18} className="text-emerald-500"/> 교재 및 참고문헌
+                        </h3>
+                        <div className="bg-emerald-50/50 p-4 rounded-xl border border-emerald-100 text-emerald-800 text-sm font-medium leading-relaxed">
+                            {Array.isArray(syllabus.textbook) ? (
+                                <ul className="list-disc list-inside space-y-1">
+                                    {syllabus.textbook.map((book, idx) => (
+                                        <li key={idx} className="break-keep pl-4 -indent-4">{book}</li>
+                                    ))}
+                                </ul>
+                            ) : (
+                                syllabus.textbook
+                            )}
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    );
+};
+
 const TimeTableShelf = () => {
   const { 
     setStep, setMode, 
@@ -59,6 +161,8 @@ const TimeTableShelf = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [targetLocalTimetable, setTargetLocalTimetable] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+
+  const [selectedCourseForSyllabus, setSelectedCourseForSyllabus] = useState(null);
 
   const shelvedTimetables = useMemo(() => {
     const groups = {};
@@ -101,10 +205,20 @@ const TimeTableShelf = () => {
     }
   }, [activeTab]);
 
+  // 🔥 [수정] Chrome/Firefox 모두 호환되는 이미지 저장 방식
   const handleDownloadImage = async () => {
     if (!hiddenCaptureRef.current) return;
     try {
-      const dataUrl = await toPng(hiddenCaptureRef.current, { cacheBust: true, backgroundColor: '#ffffff', pixelRatio: 2 });
+      const dataUrl = await toPng(hiddenCaptureRef.current, { 
+          cacheBust: true, 
+          backgroundColor: '#ffffff', 
+          pixelRatio: 2,
+          // 🔥 핵심: 캡처하는 순간에만 opacity 1로 강제 설정
+          style: {
+            opacity: '1', 
+            visibility: 'visible',
+          }
+      });
       const link = document.createElement('a');
       link.download = `${viewingTimetable.title}.png`;
       link.href = dataUrl;
@@ -182,7 +296,6 @@ const TimeTableShelf = () => {
     }
   };
 
-  // 🔥 [신규] 내 진열대로 가져오기 핸들러
   const handleImportToShelf = () => {
     if(window.confirm(`'${viewingTimetable.title}' 시간표를 내 진열대에 저장하시겠습니까?`)) {
         importFromCommunity(viewingTimetable);
@@ -190,6 +303,10 @@ const TimeTableShelf = () => {
         setViewingTimetable(null);
         setActiveTab('my');
     }
+  };
+
+  const handleCourseClick = (course) => {
+    setSelectedCourseForSyllabus(course);
   };
 
   // --- [뷰어 컴포넌트] ---
@@ -246,8 +363,17 @@ const TimeTableShelf = () => {
                                 const currentType = getSmartType(course);
                                 const colorClass = getBlockColor(currentType);
                                 return (
-                                    <div key={`${course.id}-${dayIdx}`} className={`absolute inset-x-1 border-l-4 p-1.5 overflow-hidden rounded-r shadow-sm ${colorClass}`} style={{ top: `${(timeInfo.start - START_HOUR) * SLOT_HEIGHT}px`, height: `${timeInfo.duration * SLOT_HEIGHT - 2}px` }}>
-                                        <div className="font-bold text-[11px] leading-tight mb-0.5">{course.name}</div>
+                                    <div 
+                                        key={`${course.id}-${dayIdx}`} 
+                                        onClick={() => handleCourseClick(course)}
+                                        className={`absolute inset-x-1 border-l-4 p-1.5 overflow-hidden rounded-r shadow-sm ${colorClass} cursor-pointer hover:brightness-95 transition-all group`} 
+                                        style={{ top: `${(timeInfo.start - START_HOUR) * SLOT_HEIGHT}px`, height: `${timeInfo.duration * SLOT_HEIGHT - 2}px` }}
+                                        title={`${course.name} 강의 정보 보기`}
+                                    >
+                                        <div className="flex justify-between items-start">
+                                            <div className="font-bold text-[11px] leading-tight mb-0.5">{course.name}</div>
+                                            <FileText size={10} className="opacity-0 group-hover:opacity-50 text-current flex-shrink-0"/>
+                                        </div>
                                         <div className="text-[9px] opacity-90">{course.prof}</div>
                                         <div className="text-[8px] mt-0.5 font-bold opacity-70">{course.selectedTrack ? `[${course.selectedTrack}]` : currentType}</div>
                                     </div>
@@ -281,25 +407,17 @@ const TimeTableShelf = () => {
         </div>
         
         <div className="flex px-4 pt-2 gap-1">
-            <button 
-                onClick={() => setActiveTab('my')}
-                className={`flex-1 py-3 text-sm font-bold rounded-t-xl transition-all flex items-center justify-center gap-2 ${activeTab === 'my' ? 'bg-slate-50 text-slate-800' : 'bg-transparent text-slate-400 hover:text-white hover:bg-slate-800'}`}
-            >
+            <button onClick={() => setActiveTab('my')} className={`flex-1 py-3 text-sm font-bold rounded-t-xl transition-all flex items-center justify-center gap-2 ${activeTab === 'my' ? 'bg-slate-50 text-slate-800' : 'bg-transparent text-slate-400 hover:text-white hover:bg-slate-800'}`}>
                 <FolderOpen size={16}/> 내 진열대
             </button>
-            <button 
-                onClick={() => setActiveTab('community')}
-                className={`flex-1 py-3 text-sm font-bold rounded-t-xl transition-all flex items-center justify-center gap-2 ${activeTab === 'community' ? 'bg-slate-50 text-slate-800' : 'bg-transparent text-slate-400 hover:text-white hover:bg-slate-800'}`}
-            >
+            <button onClick={() => setActiveTab('community')} className={`flex-1 py-3 text-sm font-bold rounded-t-xl transition-all flex items-center justify-center gap-2 ${activeTab === 'community' ? 'bg-slate-50 text-slate-800' : 'bg-transparent text-slate-400 hover:text-white hover:bg-slate-800'}`}>
                 <Globe size={16}/> 공유마당
             </button>
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="flex-1 overflow-y-auto p-6 md:p-10 bg-slate-50 custom-scrollbar">
-        
-        {/* [VIEW 1] 내 진열대 */}
+        {/* ... (이하 뷰 렌더링 로직은 기존과 동일) ... */}
         {activeTab === 'my' && (
             <>
                 {(!savedTimetables || savedTimetables.length === 0) ? (
@@ -323,16 +441,9 @@ const TimeTableShelf = () => {
                                 <div className="h-24 bg-slate-100 p-4 flex flex-col justify-between group-hover:bg-blue-50 transition-colors">
                                     <div className="flex justify-between items-start">
                                         <FolderOpen className="text-slate-300 group-hover:text-blue-400" size={24}/>
-                                        
                                         <div className="flex items-center gap-1">
                                             {item.firebaseId && <span className="text-[10px] bg-pink-100 text-pink-600 px-1.5 py-0.5 rounded font-bold">공유됨</span>}
-                                            <button 
-                                                onClick={(e) => { e.stopPropagation(); handleShareClick(item); }}
-                                                className="w-7 h-7 flex items-center justify-center rounded-full bg-white text-blue-500 shadow-sm border border-slate-200 hover:bg-blue-50 transition-colors"
-                                                title="공유하기"
-                                            >
-                                                <Share2 size={14}/>
-                                            </button>
+                                            <button onClick={(e) => { e.stopPropagation(); handleShareClick(item); }} className="w-7 h-7 flex items-center justify-center rounded-full bg-white text-blue-500 shadow-sm border border-slate-200 hover:bg-blue-50 transition-colors" title="공유하기"><Share2 size={14}/></button>
                                         </div>
                                     </div>
                                     <span className="text-[10px] text-slate-400 font-mono text-right">{new Date(item.createdAt).toLocaleDateString()}</span>
@@ -356,105 +467,50 @@ const TimeTableShelf = () => {
             </>
         )}
 
-        {/* [VIEW 2] 공유마당 */}
         {activeTab === 'community' && (
             <div className="max-w-4xl mx-auto">
                 <div className="flex flex-col md:flex-row gap-4 mb-8">
                     <div className="flex-1 relative">
                       <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18}/>
-                      <input 
-                        type="text" 
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        placeholder="제목, 작성자, 태그, 전공으로 검색..." 
-                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-200 text-sm"
-                      />
+                      <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="제목, 작성자, 태그, 전공으로 검색..." className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-200 text-sm"/>
                     </div>
                 </div>
-
-                {isLoadingPosts ? (
-                     <div className="flex justify-center items-center py-20 text-slate-400 gap-2"><Loader2 className="animate-spin" size={24}/> 불러오는 중...</div>
-                ) : filteredPosts.length === 0 ? (
-                     <div className="text-center py-20 text-slate-400">
-                        {searchTerm ? <p>검색 결과가 없습니다.</p> : <p>아직 공유된 시간표가 없습니다.<br/>첫 번째 주인공이 되어보세요!</p>}
-                     </div>
-                ) : (
+                {isLoadingPosts ? (<div className="flex justify-center items-center py-20 text-slate-400 gap-2"><Loader2 className="animate-spin" size={24}/> 불러오는 중...</div>) : filteredPosts.length === 0 ? (<div className="text-center py-20 text-slate-400">{searchTerm ? <p>검색 결과가 없습니다.</p> : <p>아직 공유된 시간표가 없습니다.<br/>첫 번째 주인공이 되어보세요!</p>}</div>) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {filteredPosts.map(post => {
                             const isLiked = likedPostIds.includes(post.id);
                             const userProfile = post.userProfile || {}; 
                             const majorCredits = post.courses?.reduce((sum, c) => isMajorCredit(c) ? sum + (c.credit || 0) : sum, 0);
-
                             return (
                                 <div key={post.id} onClick={() => setViewingTimetable(post)} className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:shadow-lg hover:border-blue-100 transition-all cursor-pointer group">
                                     <div className="flex items-center justify-between mb-4">
                                         <div className="flex items-center gap-2">
                                             <div className="flex flex-col">
-                                                <div className="flex items-center gap-2">
-                                                    <span className="text-sm font-bold text-slate-800">{post.author}</span>
-                                                </div>
+                                                <div className="flex items-center gap-2"><span className="text-sm font-bold text-slate-800">{post.author}</span></div>
                                                 <span className="text-[10px] text-slate-400">{new Date(post.createdAt).toLocaleDateString()}</span>
                                             </div>
                                         </div>
                                         <span className="px-2 py-1 bg-slate-50 text-slate-500 text-xs font-bold rounded-lg border border-slate-100">#{post.tag}</span>
                                     </div>
                                     <h3 className="text-lg font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors line-clamp-1">{post.title}</h3>
-                                    
                                     <div className="w-full bg-slate-50 rounded-xl mb-4 border border-slate-100 p-4 flex justify-evenly items-center">
-                                        <div className="text-center min-w-[50px]">
-                                            <div className="text-xs text-slate-400 mb-0.5">총 학점</div>
-                                            <div className="text-lg font-black text-slate-700">{post.courses?.reduce((acc, c) => acc + (c.credit || 0), 0)}</div>
-                                        </div>
-                                        
+                                        <div className="text-center min-w-[50px]"><div className="text-xs text-slate-400 mb-0.5">총 학점</div><div className="text-lg font-black text-slate-700">{post.courses?.reduce((acc, c) => acc + (c.credit || 0), 0)}</div></div>
                                         <div className="w-px h-8 bg-slate-200"></div>
-                                        
-                                        <div className="text-center min-w-[50px]">
-                                            <div className="text-xs text-blue-400 mb-0.5 font-bold">전공</div>
-                                            <div className="text-lg font-black text-blue-600">{majorCredits}</div>
-                                        </div>
-
+                                        <div className="text-center min-w-[50px]"><div className="text-xs text-blue-400 mb-0.5 font-bold">전공</div><div className="text-lg font-black text-blue-600">{majorCredits}</div></div>
                                         <div className="w-px h-8 bg-slate-200"></div>
-                                        
                                         <div className="text-center flex flex-col items-center justify-center min-w-[100px]">
-                                            {userProfile.semester ? (
-                                                <span className="text-[10px] bg-white border border-blue-100 text-blue-600 px-2 py-0.5 rounded-full font-bold mb-1 shadow-sm">
-                                                    {userProfile.semester}학기차
-                                                </span>
-                                            ) : (
-                                                <span className="text-xs text-slate-400 mb-1">전공/트랙</span>
-                                            )}
-
+                                            {userProfile.semester ? (<span className="text-[10px] bg-white border border-blue-100 text-blue-600 px-2 py-0.5 rounded-full font-bold mb-1 shadow-sm">{userProfile.semester}학기차</span>) : (<span className="text-xs text-slate-400 mb-1">전공/트랙</span>)}
                                             {userProfile.major ? (
                                                 <div className="flex flex-col items-center gap-1">
                                                     <span className="text-sm font-black text-slate-700 leading-tight break-keep">{userProfile.major}</span>
-                                                    
-                                                    {userProfile.doubleMajor && userProfile.doubleMajor !== '미정' && (
-                                                        <div className="text-[9px] text-slate-500 flex items-center gap-1 whitespace-nowrap">
-                                                            <span className="font-bold">복수:</span>
-                                                            <span>{userProfile.doubleMajor}</span>
-                                                        </div>
-                                                    )}
-                                                    
-                                                    {userProfile.minor && userProfile.minor !== '미정' && (
-                                                        <div className="text-[9px] text-slate-500 flex items-center gap-1 whitespace-nowrap">
-                                                            <span className="font-bold">부:</span>
-                                                            <span>{userProfile.minor}</span>
-                                                        </div>
-                                                    )}
+                                                    {userProfile.doubleMajor && userProfile.doubleMajor !== '미정' && (<div className="text-[9px] text-slate-500 flex items-center gap-1 whitespace-nowrap"><span className="font-bold">복수:</span><span>{userProfile.doubleMajor}</span></div>)}
+                                                    {userProfile.minor && userProfile.minor !== '미정' && (<div className="text-[9px] text-slate-500 flex items-center gap-1 whitespace-nowrap"><span className="font-bold">부:</span><span>{userProfile.minor}</span></div>)}
                                                 </div>
-                                            ) : (
-                                                <div className="text-xs font-bold text-slate-400">정보 없음</div>
-                                            )}
+                                            ) : (<div className="text-xs font-bold text-slate-400">정보 없음</div>)}
                                         </div>
                                     </div>
-
                                     <div className="flex items-center justify-between border-t border-slate-50 pt-3">
-                                        <button 
-                                            onClick={(e) => { e.stopPropagation(); toggleLike(post.id); }} 
-                                            className={`flex items-center gap-1.5 transition-colors px-3 py-1.5 rounded-full ${isLiked ? 'bg-pink-500 text-white' : 'bg-pink-50 text-pink-500 hover:bg-pink-100'}`}
-                                        >
-                                            <Heart size={16} fill={isLiked ? "currentColor" : "none"}/><span className="text-xs font-bold">{post.likes}</span>
-                                        </button>
+                                        <button onClick={(e) => { e.stopPropagation(); toggleLike(post.id); }} className={`flex items-center gap-1.5 transition-colors px-3 py-1.5 rounded-full ${isLiked ? 'bg-pink-500 text-white' : 'bg-pink-50 text-pink-500 hover:bg-pink-100'}`}><Heart size={16} fill={isLiked ? "currentColor" : "none"}/><span className="text-xs font-bold">{post.likes}</span></button>
                                         <span className="text-xs text-slate-300">클릭해서 상세 보기</span>
                                     </div>
                                 </div>
@@ -464,7 +520,6 @@ const TimeTableShelf = () => {
                 )}
             </div>
         )}
-
       </div>
 
       {/* --- Modals --- */}
@@ -472,7 +527,6 @@ const TimeTableShelf = () => {
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
           <div className="bg-white w-full max-w-4xl max-h-[90vh] rounded-3xl shadow-2xl overflow-hidden flex flex-col">
             <div className="p-4 px-6 border-b border-slate-100 flex justify-between items-center bg-white flex-shrink-0">
-              
               {activeTab === 'my' && isEditing ? (
                 <div className="flex items-center gap-2 flex-1 mr-4">
                   <div className="flex flex-col gap-2 w-full max-w-sm">
@@ -481,13 +535,7 @@ const TimeTableShelf = () => {
                         <style>{` .hide-scroll::-webkit-scrollbar { display: none; } `}</style>
                         <div className="flex gap-2 hide-scroll flex-nowrap">
                             {['26년도 봄학기', '26년도 여름학기', '26년도 가을학기', '26년도 겨울학기', '임시'].map(tag => (
-                                <button 
-                                    key={tag} 
-                                    onClick={() => setEditTag(tag)} 
-                                    className={`px-3 py-1.5 text-xs rounded-lg border font-bold whitespace-nowrap flex-shrink-0 transition-all ${editTag === tag ? 'bg-blue-600 text-white border-blue-600' : 'bg-white text-slate-500 border-slate-200'}`}
-                                >
-                                    {tag}
-                                </button>
+                                <button key={tag} onClick={() => setEditTag(tag)} className={`px-3 py-1.5 text-xs rounded-lg border font-bold whitespace-nowrap flex-shrink-0 transition-all ${editTag === tag ? 'bg-blue-600 text-white border-blue-600' : 'bg-white text-slate-500 border-slate-200'}`}>{tag}</button>
                             ))}
                         </div>
                     </div>
@@ -515,35 +563,20 @@ const TimeTableShelf = () => {
               <div className="flex items-center gap-2">
                 {activeTab === 'my' && (
                     <>
-                        <button 
-                            onClick={handleLoadAndEdit}
-                            className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 transition font-bold text-sm"
-                            title="이 시간표 불러오기"
-                        >
+                        <button onClick={handleLoadAndEdit} className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 transition font-bold text-sm" title="이 시간표 불러오기">
                             <LogOut className="rotate-180" size={16}/> <span>수정하기</span>
                         </button>
                         <div className="w-px h-6 bg-slate-200 mx-1"></div>
-                        <button 
-                            onClick={() => handleShareClick(viewingTimetable)}
-                            className={`flex items-center gap-1.5 px-3 py-2 rounded-full transition font-bold text-sm ${viewingTimetable.firebaseId ? 'bg-slate-100 text-slate-500 hover:bg-red-50 hover:text-red-500' : 'bg-blue-100 text-blue-600 hover:bg-blue-200'}`}
-                        >
-                            {viewingTimetable.firebaseId ? (
-                                <><span>공유됨 (취소)</span></>
-                            ) : (
-                                <><Share2 size={16}/> <span>공유</span></>
-                            )}
+                        <button onClick={() => handleShareClick(viewingTimetable)} className={`flex items-center gap-1.5 px-3 py-2 rounded-full transition font-bold text-sm ${viewingTimetable.firebaseId ? 'bg-slate-100 text-slate-500 hover:bg-red-50 hover:text-red-500' : 'bg-blue-100 text-blue-600 hover:bg-blue-200'}`}>
+                            {viewingTimetable.firebaseId ? (<><span>공유됨 (취소)</span></>) : (<><Share2 size={16}/> <span>공유</span></>)}
                         </button>
                         <div className="w-px h-6 bg-slate-200 mx-1"></div>
                         <button onClick={() => { if(window.confirm('삭제하시겠습니까?')) { deleteFromShelf(viewingTimetable.id); setViewingTimetable(null); } }} className="p-2 text-red-400 hover:bg-red-50 rounded-full transition"><Trash2 size={20}/></button>
                     </>
                 )}
-                {/* 🔥 [신규] 커뮤니티 탭일 때 저장 버튼 표시 */}
                 {activeTab === 'community' && (
                     <>
-                        <button 
-                            onClick={handleImportToShelf}
-                            className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition font-bold text-sm shadow-sm"
-                        >
+                        <button onClick={handleImportToShelf} className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition font-bold text-sm shadow-sm">
                             <FolderPlus size={16}/> <span>내 진열대에 저장</span>
                         </button>
                         <div className="w-px h-6 bg-slate-200 mx-1"></div>
@@ -558,7 +591,7 @@ const TimeTableShelf = () => {
         </div>
       )}
 
-      {/* ... (나머지 Modal 등은 기존 유지) ... */}
+      {/* Upload/Delete Modal... (생략) */}
       {/* 2. Upload Modal */}
       {isUploadModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
@@ -573,13 +606,7 @@ const TimeTableShelf = () => {
                             <style>{` .hide-scroll::-webkit-scrollbar { display: none; } `}</style>
                             <div className="flex gap-2 hide-scroll">
                                 {['공강', '우주공강', '아침형 인간', '저녁형 인간', '디지스트 헤르미온느'].map(tag => (
-                                    <button 
-                                        key={tag} 
-                                        onClick={() => toggleTag(tag)} 
-                                        className={`px-3 py-1.5 rounded-lg text-xs font-bold border transition-all whitespace-nowrap flex-shrink-0 ${form.tags.includes(tag) ? 'bg-blue-500 border-blue-500 text-white' : 'bg-white border-slate-200 text-slate-400'}`}
-                                    >
-                                        {tag}
-                                    </button>
+                                    <button key={tag} onClick={() => toggleTag(tag)} className={`px-3 py-1.5 rounded-lg text-xs font-bold border transition-all whitespace-nowrap flex-shrink-0 ${form.tags.includes(tag) ? 'bg-blue-500 border-blue-500 text-white' : 'bg-white border-slate-200 text-slate-400'}`}>{tag}</button>
                                 ))}
                             </div>
                         </div>
@@ -597,18 +624,31 @@ const TimeTableShelf = () => {
             <div className="bg-white w-full max-w-sm rounded-3xl shadow-2xl p-6 relative">
                 <button onClick={() => setIsDeleteModalOpen(false)} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600"><X size={24}/></button>
                 <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 text-red-500"><Lock size={20}/> 공유 취소</h2>
-                <p className="text-sm text-slate-600 mb-6 text-center">
-                    공유된 시간표를 삭제하시겠습니까?<br/>
-                    <span className="text-xs text-slate-400">(내 진열대의 시간표는 유지됩니다)</span>
-                </p>
+                <p className="text-sm text-slate-600 mb-6 text-center">공유된 시간표를 삭제하시겠습니까?<br/><span className="text-xs text-slate-400">(내 진열대의 시간표는 유지됩니다)</span></p>
                 <button onClick={handleDeleteShare} disabled={isProcessing} className="w-full mt-2 py-3.5 bg-red-500 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-red-600 transition-all">{isProcessing ? <Loader2 className="animate-spin"/> : <Trash2 size={20}/>} {isProcessing ? '삭제 중...' : '공유 중단하기'}</button>
             </div>
         </div>
       )}
 
-      {/* Hidden Capture View */}
+      {/* 🔥 모달 렌더링 */}
+      <SyllabusModal 
+        course={selectedCourseForSyllabus} 
+        onClose={() => setSelectedCourseForSyllabus(null)} 
+      />
+
+      {/* Hidden Capture View (Updated for Firefox) */}
       {viewingTimetable && (
-        <div style={{ position: 'fixed', top: 0, left: '-9999px', width: '1280px', zIndex: -100, padding: '60px', backgroundColor: '#f8fafc' }}>
+        <div style={{ 
+            position: 'fixed', 
+            top: 0, 
+            left: 0, 
+            width: '1280px', 
+            zIndex: -9999, // 맨 뒤로 보내기
+            opacity: 0, // 사용자 눈에만 안 보이게 (렌더링은 됨)
+            pointerEvents: 'none', // 클릭 방지
+            padding: '60px', 
+            backgroundColor: '#f8fafc' 
+        }}>
             <div ref={hiddenCaptureRef}><ShelfTimetableViewer timetableData={viewingTimetable} /></div>
         </div>
       )}

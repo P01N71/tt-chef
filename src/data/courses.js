@@ -259,8 +259,8 @@ export const ALL_COURSES = [
     trackRelations: {},
     times: [{ day: 3, start: 17, duration: 2 }],
     syllabus: {
-        capacity: "80",
-        classroom: "E7-236",
+        capacity: "90",
+        classroom: "E7-233",
         contact: {
             email: "jhlee1@dgist.ac.kr",
             phone: "053-785-6319",
@@ -308,8 +308,8 @@ export const ALL_COURSES = [
     trackRelations: {},
     times: [{ day: 1, start: 17, duration: 2 }],
     syllabus: {
-        capacity: "80",
-        classroom: "E7-236",
+        capacity: "90",
+        classroom: "E7-233",
         contact: {
             email: "msong@dgist.ac.kr",
             phone: "053-785-6333",
@@ -2386,7 +2386,7 @@ export const ALL_COURSES = [
     trackRelations: {},
     times: [{ day: 0, start: 13, duration: 2 }, { day: 2, start: 13, duration: 2 }],
     syllabus: {
-        capacity: "60",
+        capacity: "65",
         classroom: "E7-224",
         contact: {
             email: "kjhan@dgist.ac.kr",
@@ -2653,7 +2653,7 @@ export const ALL_COURSES = [
     trackRelations: { "화학": "전공필수", "화학공학": "전공선택", "재료공학": "전공선택" },
     times: [{ day: 0, start: 10.5, duration: 1.5 }, { day: 2, start: 10.5, duration: 1.5 }],
     syllabus: {
-        capacity: "70",
+        capacity: "80",
         classroom: "E7-233",
         contact: {
             email: "dukelee@dgist.ac.kr",
@@ -3192,7 +3192,7 @@ export const ALL_COURSES = [
     trackRelations: {},
     times: [{ day: 1, start: 9, duration: 1.5 }, { day: 3, start: 9, duration: 1.5 }],
     syllabus: {
-        capacity: "80",
+        capacity: "100",
         classroom: "E7-241",
         contact: {
             email: "jhochoi@dgist.ac.kr",
@@ -7979,7 +7979,7 @@ export const ALL_COURSES = [
     trackRelations: {},
     times: [{ day: 2, start: 14.5, duration: 3 }],
     syllabus: {
-        capacity: "40",
+        capacity: "0",
         classroom: "E7-L31",
         contact: {
             email: "sonkukim@snu.ac.kr",
@@ -8352,8 +8352,8 @@ export const ALL_COURSES = [
     type: "전공선택", // 🔥 type 추가
     trackRelations: { "전자공학": "전공선택", "물리학": "전공선택", "화학공학": "전공선택" },
     syllabus: {
-        capacity: "60",
-        classroom: "E7-235",
+        capacity: "80",
+        classroom: "E7-236",
         contact: {
             email: "hoonw@dgist.ac.kr",
             phone: "053-785-6224",
