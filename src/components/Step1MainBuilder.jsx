@@ -1,6 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import useStore from '../store/useStore';
-import { ALL_TAGS } from '../data/courses'; 
 import { 
   ArrowLeft, ArrowRight, Trash2, LayoutGrid, Clock, 
   Search, Plus, Check, ShoppingBasket, ChefHat, 
@@ -12,6 +11,12 @@ const START_HOUR = 9;
 const SLOT_HEIGHT = 60; 
 const MAX_CREDIT = 21;
 const MIN_CREDIT = 10;
+
+const ALL_TAGS = [
+  "기초필수", "기초선택", "전공필수", "전공선택",
+  "공학선택", "수학", "물리학", "화학", "생명과학", "뇌과학", "기계공학", "컴퓨터공학",
+  "전자공학", "재료공학", "화학공학", "영어", "읽기,쓰기 중점", "비트랙/융합", "인턴십", "연구" 
+];
 
 const animationStyles = `
   @keyframes popIn { 0% { transform: scale(0.8); opacity: 0; } 60% { transform: scale(1.05); opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
@@ -328,10 +333,16 @@ export const DroppableTimetable = ({ schedule, removeFromSchedule, timeLabels })
 };
 
 const Step1MainBuilder = () => {
-  const { setStep, allCourses, basket, schedule, toggleBasket, addToSchedule, removeFromSchedule, isOverCredit, toggleOverCredit, getCourseTags } = useStore();
+  const { setStep, allCourses, basket, schedule, toggleBasket, addToSchedule, removeFromSchedule, isOverCredit, toggleOverCredit, getCourseTags, fetchCourses } = useStore();
   const [search, setSearch] = useState('');
   const [selectedTags, setSelectedTags] = useState([]);
-  
+
+  console.log("현재 로드된 강의 데이터 개수:", allCourses.length);
+
+  useEffect(() => {
+    fetchCourses();
+  }, []);
+
   // 🔥 [신규] 실라버스 모달용 상태
   const [selectedSyllabusCourse, setSelectedSyllabusCourse] = useState(null);
 

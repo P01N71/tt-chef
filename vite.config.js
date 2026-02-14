@@ -1,11 +1,34 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite' // 이 줄이 있어야 함
+import tailwindcss from '@tailwindcss/vite'
+import obfuscator from 'rollup-plugin-obfuscator';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcss(), // 여기도 있어야 함
+    tailwindcss(),
+    process.env.NODE_ENV === 'production' && obfuscator({
+      global: true,
+      options: {
+        compact: true,
+        debugProtection: true, 
+        stringArray: true, 
+        rotateStringArray: true,
+      }
+    })
   ],
+  build: {
+    minify: 'esbuild',
+    rollupOptions: {
+        output: {
+            manualChunks: {
+                vendor: ['react', 'react-dom', 'zustand', 'firebase/app', 'firebase/firestore'],
+                icons: ['lucide-react'] 
+            }
+        }
+    }
+  },
+  esbuild: {
+    drop: ['console', 'debugger'],
+  },
 })

@@ -1,12 +1,9 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import { ALL_COURSES as initialCoursesData } from '../data/courses';
 
-// Firebase 설정
 import { db } from '../firebaseConfig';
 import { collection, addDoc, getDocs, updateDoc, deleteDoc, getDoc, doc, increment, query, orderBy, where, writeBatch } from 'firebase/firestore';
 
-// 닉네임 생성기
 const getRandomName = () => {
   const number = Math.floor(1000 + Math.random() * 9000);
   return `달구 #${number}`;
@@ -15,7 +12,6 @@ const getRandomName = () => {
 const useStore = create(
   persist(
     (set, get) => ({
-      // --- [기본 상태] ---
       currentStep: 0,
       mode: null,
       userNickname: null,
@@ -62,13 +58,25 @@ const useStore = create(
         }
       },
 
-      // --- [시간표 데이터] ---
-      allCourses: initialCoursesData || [],
+      allCourses: [], 
       basket: [],
       schedule: [],
       isOverCredit: false,
 
-      // --- [액션] ---
+      fetchCourses: async () => {
+        if (get().allCourses.length > 0) return;
+
+        try {
+          const response = await fetch('/t2.json');
+          if (!response.ok) throw new Error('데이터 로딩 실패');
+          
+          const data = await response.json();
+          set({ allCourses: data }); 
+        } catch (error) {
+          console.error("강의 데이터 로딩 실패:", error);
+        }
+      },
+
       toggleBasket: (course) => set((state) => {
         const exists = state.basket.find((c) => c.id === course.id);
         if (exists) {
@@ -116,7 +124,6 @@ const useStore = create(
       })),
       toggleOverCredit: () => set((state) => ({ isOverCredit: !state.isOverCredit })),
 
-      // --- [졸업/성적] ---
       transcript: [],
       gradType: 'general',
       semestersCompleted: 0,
@@ -139,7 +146,6 @@ const useStore = create(
       updateTranscriptGrade: (courseId, score) => set((state) => ({ transcript: state.transcript.map(c => c.id === courseId ? { ...c, grade: score } : c) })),
       removeFromTranscript: (courseId) => set((state) => ({ transcript: state.transcript.filter(c => c.id !== courseId) })),
 
-      // --- [진열대] ---
       savedTimetables: [],
       
       saveScheduleToShelf: (title, tag) => set((state) => {
@@ -193,23 +199,21 @@ const useStore = create(
         mode: 'timetable' 
       })),
 
-      // 🔥 [신규] 공유마당 시간표 -> 내 진열대로 복사
       importFromCommunity: (post) => set((state) => {
         const newTimetable = {
-            id: Date.now(), // 새로운 로컬 ID 생성
-            title: post.title, // 원본 제목 유지
+            id: Date.now(), 
+            title: post.title, 
             tag: post.tag || '기타',
-            courses: [...post.courses], // 강의 복사
+            courses: [...post.courses], 
             createdAt: new Date().toISOString(),
-            firebaseId: null, // 🔥 공유 연결 끊기 (내 로컬 파일이 됨)
-            userProfile: { ...state.userProfile } // 🔥 소유자를 '나'로 변경
+            firebaseId: null, 
+            userProfile: { ...state.userProfile } 
         };
         return {
             savedTimetables: [...state.savedTimetables, newTimetable]
         };
       }),
 
-      // --- [헬퍼 함수] ---
       getCourseTags: (course) => {
         if (!course) return [];
         const tags = new Set(); 
@@ -231,7 +235,6 @@ const useStore = create(
 
       resetAll: () => set({ currentStep: 0, basket: [], schedule: [], transcript: [], grades: {}, editingId: null }),
 
-      // --- [Firebase 커뮤니티] ---
       communityPosts: [],
       isLoadingPosts: false,
       likedPostIds: [],
@@ -283,7 +286,7 @@ const useStore = create(
             trackRelations: c.trackRelations || {}, 
             categories: c.categories || [],
             times: c.times || [],
-            selectedTrack: c.selectedTrack || null
+            selectedTrack: c.selectedTrack || null,
           }));
 
           const docRef = await addDoc(collection(db, "timetables"), {
