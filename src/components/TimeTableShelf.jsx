@@ -3,14 +3,14 @@ import useStore from '../store/useStore';
 import { 
     ArrowLeft, Trash2, Download, X, LayoutGrid, Clock, GraduationCap, 
     FolderOpen, Pencil, Check, RotateCcw, Share2, Heart, Search, UploadCloud, Loader2, Globe, Lock,
-    LogOut, FolderPlus, FileText, PieChart, BookOpen, Calendar, ChevronDown, ChevronUp, ExternalLink
+    LogOut, FolderPlus, FileText, PieChart, BookOpen, Calendar, ChevronDown, ChevronUp, Scroll, UserCircle2
 } from 'lucide-react';
 import { toPng } from 'html-to-image';
 
 const START_HOUR = 9;
 const SLOT_HEIGHT = 60;
 
-// 색상/타입 계산 로직
+// --- Helper Functions ---
 const getSmartType = (course) => {
     if (course.type) return course.type;
     if (course.fixedTypes && course.fixedTypes.length > 0) return course.fixedTypes[0];
@@ -37,31 +37,15 @@ const isMajorCredit = (c) => {
     return true;
 };
 
-// 실라버스 모달
+// --- Modals & Viewers ---
+
 const SyllabusModal = ({ course, onClose }) => {
     if (!course) return null;
-
     const syllabus = course.syllabus || {
-        summary: "본 교과목은 데이터사이언스 입문 과목으로, 데이터 기반 문제 해결의 전체 프로세스를 이해하고 실습 중심으로 경험하도록 구성된다. 파이썬 환경에서 데이터셋을 활용하여 분석 과제를 수행하며...",
-        objectives: "데이터 획득부터 정제, 탐색/분석, 시각화에 이르는 전 과정을 수행할 수 있는 도구 활용 역량을 기르고...",
-        grading: [
-            { name: "Term Project", percent: 30 },
-            { name: "Quiz", percent: 10 },
-            { name: "Attendance", percent: 10 },
-            { name: "Homework", percent: 20 },
-            { name: "Final Exam", percent: 30 }
-        ],
-        schedule: [
-            "1주차: Introduction to Data Science & Environment Setup",
-            "2주차: Python/NumPy 핵심 기초",
-            "3주차: Data Wrangling I",
-            "4주차: Data Wrangling II",
-            "5주차: Exploratory Data Analysis (EDA) & Visualization I",
-            "6주차: Exploratory Data Analysis (EDA) & Visualization II",
-            "7주차: Statistical Thinking",
-            "8주차: Midterm Exam"
-        ],
-        textbook: "Python for Data Analysis: Data Wes McKinney (O'Reilly Media, 2022)"
+        summary: "본 교과목은 데이터사이언스 입문 과목으로...",
+        grading: [{ name: "Exam", percent: 100 }],
+        schedule: ["1주차: OT"],
+        textbook: "None"
     };
 
     return (
@@ -69,85 +53,197 @@ const SyllabusModal = ({ course, onClose }) => {
             <div className="bg-white w-full max-w-xl rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[85vh]">
                 <div className="bg-slate-900 p-6 flex justify-between items-start text-white shrink-0">
                     <div>
-                        <div className="flex items-center gap-2 mb-1">
-                            <span className="text-xs font-bold bg-blue-600 text-white px-2 py-0.5 rounded">{course.id || 'CODE'}</span>
-                            <span className="text-xs font-bold text-slate-400">{getSmartType(course)}</span>
-                        </div>
                         <h2 className="text-2xl font-black leading-tight mb-1">{course.name}</h2>
-                        <div className="text-slate-400 text-sm font-medium flex items-center gap-2">
-                            <span>{course.prof || '교수 미정'} 교수님</span>
-                            <div className="w-1 h-1 bg-slate-600 rounded-full"></div>
-                            <span>{course.credit}학점</span>
-                        </div>
+                        <div className="text-slate-400 text-sm font-medium">{course.prof} | {course.credit}학점</div>
                     </div>
-                    <button onClick={onClose} className="p-2 bg-slate-800 rounded-full hover:bg-slate-700 text-slate-300 hover:text-white transition">
-                        <X size={20}/>
-                    </button>
+                    <button onClick={onClose} className="p-2 bg-slate-800 rounded-full hover:bg-slate-700 text-slate-300 hover:text-white transition"><X size={20}/></button>
                 </div>
-                <div className="flex-1 overflow-y-auto p-6 space-y-8 custom-scrollbar">
-                    <section>
-                        <h3 className="text-sm font-black text-slate-800 mb-3 flex items-center gap-2 border-b border-slate-100 pb-2">
-                            <FileText size={18} className="text-blue-500"/> 강의 개요
-                        </h3>
-                        <div className="text-slate-600 text-sm leading-7 text-justify break-keep">{syllabus.summary}</div>
-                    </section>
-                    <section>
-                        <h3 className="text-sm font-black text-slate-800 mb-3 flex items-center gap-2 border-b border-slate-100 pb-2">
-                            <PieChart size={18} className="text-pink-500"/> 평가 방법
-                        </h3>
-                        <div className="grid grid-cols-2 gap-2">
-                            {Array.isArray(syllabus.grading) ? syllabus.grading.map((item, idx) => (
-                                <div key={idx} className="flex justify-between items-center bg-slate-50 border border-slate-100 px-4 py-2.5 rounded-xl">
-                                    <span className="text-xs font-bold text-slate-500">{item.name}</span>
-                                    <span className="text-sm font-black text-slate-700">{item.percent}%</span>
-                                </div>
-                            )) : <div className="text-sm text-slate-600">{syllabus.grading || "정보 없음"}</div>}
-                        </div>
-                    </section>
-                    <section>
-                        <h3 className="text-sm font-black text-slate-800 mb-3 flex items-center gap-2 border-b border-slate-100 pb-2">
-                            <Calendar size={18} className="text-purple-500"/> 주별 강의 계획
-                        </h3>
-                        <div className="bg-slate-50 rounded-xl border border-slate-100 overflow-hidden">
-                            {Array.isArray(syllabus.schedule) ? syllabus.schedule.map((week, idx) => (
-                                <div key={idx} className="px-4 py-3 border-b border-slate-100 last:border-0 text-sm text-slate-600 flex gap-3">
-                                    <span className="font-bold text-slate-400 w-8 shrink-0">{idx + 1}주</span>
-                                    <span className="font-medium">{week.replace(/^\d+주차:\s*/, '')}</span>
-                                </div>
-                            )) : <div className="p-4 text-sm text-slate-600">{syllabus.schedule || "정보 없음"}</div>}
-                        </div>
-                    </section>
-                    <section>
-                        <h3 className="text-sm font-black text-slate-800 mb-3 flex items-center gap-2 border-b border-slate-100 pb-2">
-                            <BookOpen size={18} className="text-emerald-500"/> 교재 및 참고문헌
-                        </h3>
-                        <div className="bg-emerald-50/50 p-4 rounded-xl border border-emerald-100 text-emerald-800 text-sm font-medium leading-relaxed">
-                            {Array.isArray(syllabus.textbook) ? (
-                                <ul className="list-disc list-inside space-y-1">
-                                    {syllabus.textbook.map((book, idx) => (
-                                        <li key={idx} className="break-keep pl-4 -indent-4">{book}</li>
-                                    ))}
-                                </ul>
-                            ) : (
-                                syllabus.textbook
-                            )}
-                        </div>
-                    </section>
+                <div className="flex-1 overflow-y-auto p-6 space-y-4 custom-scrollbar">
+                    <p className="text-slate-500 text-sm">강의 계획서 상세 내용은 실제 데이터 연동 시 표시됩니다.</p>
                 </div>
             </div>
         </div>
     );
 };
 
+// [TimeTable Viewer]
+const ShelfTimetableViewer = ({ timetableData, onCourseClick }) => {
+    const courses = timetableData.courses || [];
+    const totalCredits = courses.reduce((sum, c) => sum + (c.credit || 0), 0);
+    const majorCredits = courses.reduce((sum, c) => isMajorCredit(c) ? sum + (c.credit || 0) : sum, 0);
+
+    const currentDays = useMemo(() => {
+        const hasSaturday = courses.some(c => c.times?.some(t => t.day === 5));
+        return hasSaturday ? ['월', '화', '수', '목', '금', '토'] : ['월', '화', '수', '목', '금'];
+    }, [courses]);
+
+    const dynamicEndHour = useMemo(() => {
+        const maxScheduleTime = courses.reduce((max, course) => {
+          if (!course.times) return max;
+          const courseEnd = Math.max(...course.times.map(t => t.start + t.duration));
+          return Math.max(max, courseEnd);
+        }, 18); 
+        return Math.min(Math.ceil(maxScheduleTime), 22);
+    }, [courses]);
+
+    const timeLabels = Array.from({ length: dynamicEndHour - START_HOUR + 1 }, (_, i) => START_HOUR + i);
+
+    return (
+        <div className="w-full bg-white p-8 rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+            <div className="text-center mb-8 border-b pb-6 border-slate-100">
+                <h3 className="text-3xl font-black text-slate-900 mb-2 tracking-tight">{timetableData.title}</h3>
+                <div className="flex justify-center items-center gap-4 text-slate-500 text-sm md:text-base">
+                    <span className="px-2 py-0.5 bg-slate-100 text-slate-600 text-xs font-bold rounded border border-slate-200 whitespace-nowrap">{timetableData.tag}</span>
+                    <div className="w-px h-3 bg-slate-300"></div>
+                    <div className="flex items-center gap-2 whitespace-nowrap"><Clock size={18} /> <span>총 {totalCredits} 학점</span></div>
+                    <div className="w-1 h-1 bg-slate-300 rounded-full"></div>
+                    <div className="flex items-center gap-2 text-blue-600 font-bold whitespace-nowrap"><GraduationCap size={20} /> <span>전공 {majorCredits} 학점</span></div>
+                </div>
+            </div>
+            <div className="relative border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm select-none">
+                <div className="flex border-b border-slate-200 bg-slate-50 h-10">
+                    <div className="w-12 border-r border-slate-200 bg-slate-100/50"></div>
+                    {currentDays.map(day => (<div key={day} className="flex-1 flex items-center justify-center font-bold text-slate-600 text-sm border-r border-slate-200 last:border-0">{day}</div>))}
+                </div>
+                <div className="flex relative" style={{ height: `${(dynamicEndHour - START_HOUR + 1) * SLOT_HEIGHT}px` }}>
+                    <div className="w-12 flex-shrink-0 border-r border-slate-200 bg-slate-50 text-xs text-slate-400 font-medium text-right pr-2">
+                        {timeLabels.map(t => (<div key={t} className="border-b border-slate-100 relative" style={{ height: `${SLOT_HEIGHT}px` }}><span className="absolute top-2 right-3">{t}</span></div>))}
+                    </div>
+                    {currentDays.map((day, dayIdx) => (
+                        <div key={day} className="flex-1 relative border-r border-slate-100 border-dashed last:border-r-0">
+                            {timeLabels.map(t => (<div key={t} className="border-b border-slate-50" style={{ height: `${SLOT_HEIGHT}px` }}></div>))}
+                            {courses.map(course => {
+                                const timeInfo = course.times?.find(t => t.day === dayIdx);
+                                if (!timeInfo) return null;
+                                const currentType = getSmartType(course);
+                                const colorClass = getBlockColor(currentType);
+                                return (
+                                    <div 
+                                        key={`${course.id}-${dayIdx}`} 
+                                        onClick={() => onCourseClick && onCourseClick(course)}
+                                        className={`absolute inset-x-1 border-l-4 p-1.5 overflow-hidden rounded-r shadow-sm ${colorClass} cursor-pointer hover:brightness-95 transition-all group`} 
+                                        style={{ top: `${(timeInfo.start - START_HOUR) * SLOT_HEIGHT}px`, height: `${timeInfo.duration * SLOT_HEIGHT - 2}px` }}
+                                        title={`${course.name} 강의 정보 보기`}
+                                    >
+                                        <div className="flex justify-between items-start">
+                                            <div className="font-bold text-[11px] leading-tight mb-0.5">{course.name}</div>
+                                        </div>
+                                        <div className="text-[9px] opacity-90">{course.prof}</div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <p className="mt-6 text-center text-[10px] text-slate-300 font-bold tracking-widest uppercase">Generated by 시간표 요리사</p>
+        </div>
+    );
+};
+
+// [Modified] Recipe Viewer (기초/심화 학점 추가)
+const ShelfRecipeViewer = ({ recipeData }) => {
+    const { userProfile, transcript } = recipeData.data || {};
+    const courses = transcript || [];
+    
+    // 학점 계산
+    const basicCredits = courses.filter(c => c.category_main === '기초').reduce((sum, c) => sum + (c.credit || 0), 0);
+    const advancedCredits = courses.filter(c => c.category_main === '심화').reduce((sum, c) => sum + (c.credit || 0), 0);
+
+    const semesterGroups = useMemo(() => {
+        const groups = {};
+        courses.forEach(c => {
+            if (c.year === '계획' || c.semester === '미정') return;
+            const key = `${c.year}-${c.semester}`;
+            if (!groups[key]) groups[key] = [];
+            groups[key].push(c);
+        });
+        return groups;
+    }, [courses]);
+
+    const sortedSemesters = Object.keys(semesterGroups).sort();
+
+    return (
+        <div className="w-full bg-white p-8 rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+             <div className="text-center mb-8 border-b pb-6 border-slate-100">
+                <div className="inline-flex items-center gap-2 bg-purple-50 text-purple-600 px-3 py-1 rounded-full text-xs font-bold mb-3">
+                    <Scroll size={14} /> 졸업 시나리오
+                </div>
+                <h3 className="text-3xl font-black text-slate-900 mb-2 tracking-tight">{recipeData.title}</h3>
+                
+                {/* [수정] 통계 정보에 기초/심화 학점 추가 */}
+                <div className="flex justify-center items-center gap-6 text-slate-500 text-sm mt-4">
+                    <div className="text-center">
+                        <div className="text-[10px] text-slate-400 font-bold">예상 학위</div>
+                        <div className="text-slate-800 font-bold">{recipeData.degreeName}</div>
+                    </div>
+                    <div className="w-px h-8 bg-slate-200"></div>
+                    <div className="text-center">
+                        <div className="text-[10px] text-slate-400 font-bold">총 학점</div>
+                        <div className="text-blue-600 font-bold text-base">{recipeData.totalCredits}</div>
+                    </div>
+                    <div className="w-px h-8 bg-slate-200"></div>
+                    <div className="text-center">
+                        <div className="text-[10px] text-slate-400 font-bold">기초</div>
+                        <div className="text-slate-700 font-bold">{basicCredits}</div>
+                    </div>
+                    <div className="w-px h-8 bg-slate-200"></div>
+                    <div className="text-center">
+                        <div className="text-[10px] text-slate-400 font-bold">심화</div>
+                        <div className="text-slate-700 font-bold">{advancedCredits}</div>
+                    </div>
+                    <div className="w-px h-8 bg-slate-200"></div>
+                    <div className="text-center">
+                        <div className="text-[10px] text-slate-400 font-bold">평점</div>
+                        <div className="text-purple-600 font-bold text-base">{recipeData.gpa}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+                <div className="col-span-2 mb-2">
+                    <h4 className="text-sm font-bold text-slate-600 mb-2 flex items-center gap-2"><UserCircle2 size={16}/> 트랙 설정 정보</h4>
+                    <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 text-sm flex gap-4">
+                         <div><span className="text-slate-400 text-xs">주전공</span> <span className="font-bold">{userProfile?.major}</span></div>
+                         <div><span className="text-slate-400 text-xs">복수전공</span> <span className="font-bold">{userProfile?.doubleMajor}</span></div>
+                         <div><span className="text-slate-400 text-xs">부전공</span> <span className="font-bold">{userProfile?.minor}</span></div>
+                    </div>
+                </div>
+
+                {sortedSemesters.map(key => (
+                    <div key={key} className="bg-white border border-slate-100 rounded-xl p-3 shadow-sm">
+                        <div className="text-xs font-bold text-slate-500 mb-2 border-b border-slate-50 pb-1">{key}</div>
+                        <div className="space-y-1">
+                            {semesterGroups[key].map(c => (
+                                <div key={c.id} className="flex justify-between items-center text-xs">
+                                    <span className="text-slate-700 truncate">{c.name}</span>
+                                    <span className="text-slate-400 text-[10px] shrink-0">{c.credit}학점</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+
+// --- Main Component ---
 const TimeTableShelf = () => {
   const { 
     setStep, setMode, 
-    savedTimetables = [], deleteFromShelf, updateShelfItem, loadScheduleFromShelf, importFromCommunity,
+    savedTimetables = [], savedRecipes = [], 
+    deleteFromShelf, updateShelfItem, loadScheduleFromShelf, importFromCommunity,
+    deleteRecipe, loadRecipe, 
     communityPosts, fetchCommunityPosts, uploadPost, deletePost, toggleLike, isLoadingPosts, likedPostIds 
   } = useStore();
 
   const [activeTab, setActiveTab] = useState('my');
-  const [viewingTimetable, setViewingTimetable] = useState(null);
+  const [shelfCategory, setShelfCategory] = useState('timetable'); 
+
+  const [viewingItem, setViewingItem] = useState(null);
+  
   const [isEditing, setIsEditing] = useState(false);
   const [editTitle, setEditTitle] = useState('');
   const [editTag, setEditTag] = useState('');
@@ -177,27 +273,24 @@ const TimeTableShelf = () => {
   const filteredPosts = useMemo(() => {
     if (!searchTerm.trim()) return communityPosts;
     const lowerTerm = searchTerm.toLowerCase();
-    
     return communityPosts.filter(post => {
         const userProfile = post.userProfile || {};
         return (
             post.title?.toLowerCase().includes(lowerTerm) || 
             post.author?.toLowerCase().includes(lowerTerm) ||
             post.tag?.toLowerCase().includes(lowerTerm) ||
-            userProfile.major?.toLowerCase().includes(lowerTerm) ||
-            userProfile.doubleMajor?.toLowerCase().includes(lowerTerm) ||
-            userProfile.minor?.toLowerCase().includes(lowerTerm)
+            userProfile.major?.toLowerCase().includes(lowerTerm)
         );
     });
   }, [communityPosts, searchTerm]);
 
   useEffect(() => {
-    if (viewingTimetable && activeTab === 'my') {
-      setEditTitle(viewingTimetable.title);
-      setEditTag(viewingTimetable.tag);
+    if (viewingItem && activeTab === 'my' && viewingItem.type !== 'recipe') {
+      setEditTitle(viewingItem.title);
+      setEditTag(viewingItem.tag);
       setIsEditing(false);
     }
-  }, [viewingTimetable, activeTab]);
+  }, [viewingItem, activeTab]);
 
   useEffect(() => {
     if (activeTab === 'community') {
@@ -205,22 +298,15 @@ const TimeTableShelf = () => {
     }
   }, [activeTab]);
 
-  // 🔥 [수정] Chrome/Firefox 모두 호환되는 이미지 저장 방식
   const handleDownloadImage = async () => {
-    if (!hiddenCaptureRef.current) return;
+    if (!hiddenCaptureRef.current || !viewingItem) return;
     try {
       const dataUrl = await toPng(hiddenCaptureRef.current, { 
-          cacheBust: true, 
-          backgroundColor: '#ffffff', 
-          pixelRatio: 2,
-          // 🔥 핵심: 캡처하는 순간에만 opacity 1로 강제 설정
-          style: {
-            opacity: '1', 
-            visibility: 'visible',
-          }
+          cacheBust: true, backgroundColor: '#ffffff', pixelRatio: 2,
+          style: { opacity: '1', visibility: 'visible' }
       });
       const link = document.createElement('a');
-      link.download = `${viewingTimetable.title}.png`;
+      link.download = `${viewingItem.title}.png`;
       link.href = dataUrl;
       link.click();
     } catch (err) {
@@ -231,8 +317,8 @@ const TimeTableShelf = () => {
 
   const handleUpdate = () => {
     if (!editTitle.trim()) { alert("제목을 입력해주세요!"); return; }
-    updateShelfItem(viewingTimetable.id, editTitle, editTag);
-    setViewingTimetable(prev => ({ ...prev, title: editTitle, tag: editTag }));
+    updateShelfItem(viewingItem.id, editTitle, editTag);
+    setViewingItem(prev => ({ ...prev, title: editTitle, tag: editTag }));
     setIsEditing(false);
   };
 
@@ -241,11 +327,8 @@ const TimeTableShelf = () => {
     setIsProcessing(true);
     const courses = targetLocalTimetable ? targetLocalTimetable.courses : null;
     const localId = targetLocalTimetable ? targetLocalTimetable.id : null;
-    
     const tagString = form.tags.length > 0 ? form.tags.join(', ') : '';
-
     const success = await uploadPost(form.title, tagString, courses, localId);
-    
     setIsProcessing(false);
     if(success) {
         setUploadModalOpen(false);
@@ -264,7 +347,7 @@ const TimeTableShelf = () => {
     if(success) {
         setIsDeleteModalOpen(false);
         setTargetLocalTimetable(null);
-        setViewingTimetable(prev => ({ ...prev, firebaseId: null }));
+        setViewingItem(prev => ({ ...prev, firebaseId: null }));
         alert("공유가 취소되었습니다.");
     }
   };
@@ -283,115 +366,40 @@ const TimeTableShelf = () => {
   const toggleTag = (tag) => {
     setForm(prev => {
         const isSelected = prev.tags.includes(tag);
-        const newTags = isSelected 
-            ? prev.tags.filter(t => t !== tag) 
-            : [...prev.tags, tag];
+        const newTags = isSelected ? prev.tags.filter(t => t !== tag) : [...prev.tags, tag];
         return { ...prev, tags: newTags };
     });
   };
 
   const handleLoadAndEdit = () => {
     if(window.confirm('현재 작성 중이던 시간표는 덮어씌워집니다.\n이 시간표를 불러와서 수정하시겠습니까?')) {
-        loadScheduleFromShelf(viewingTimetable);
+        loadScheduleFromShelf(viewingItem);
+        setMode('timetable'); 
+        setStep(1);
     }
+  };
+
+  const handleLoadRecipe = () => {
+      if(window.confirm('현재 작성 중인 졸업 요건 데이터가 덮어씌워집니다.\n이 레시피를 불러와서 요리하시겠습니까?')) {
+          if(loadRecipe) loadRecipe(viewingItem.data);
+          else console.warn("loadRecipe function missing in store");
+          setMode('graduation');
+          setStep(1);
+      }
   };
 
   const handleImportToShelf = () => {
-    if(window.confirm(`'${viewingTimetable.title}' 시간표를 내 진열대에 저장하시겠습니까?`)) {
-        importFromCommunity(viewingTimetable);
+    if(window.confirm(`'${viewingItem.title}' 시간표를 내 진열대에 저장하시겠습니까?`)) {
+        importFromCommunity(viewingItem);
         alert('저장되었습니다! [내 진열대] 탭에서 확인해보세요.');
-        setViewingTimetable(null);
+        setViewingItem(null);
         setActiveTab('my');
     }
-  };
-
-  const handleCourseClick = (course) => {
-    setSelectedCourseForSyllabus(course);
-  };
-
-  // --- [뷰어 컴포넌트] ---
-  const ShelfTimetableViewer = ({ timetableData }) => {
-    const courses = timetableData.courses || [];
-    const safeCourses = Array.isArray(courses) ? courses : [];
-    
-    const totalCredits = safeCourses.reduce((sum, c) => sum + (c.credit || 0), 0);
-    const majorCredits = safeCourses.reduce((sum, c) => isMajorCredit(c) ? sum + (c.credit || 0) : sum, 0);
-
-    const currentDays = useMemo(() => {
-        const hasSaturday = safeCourses.some(c => c.times?.some(t => t.day === 5));
-        return hasSaturday ? ['월', '화', '수', '목', '금', '토'] : ['월', '화', '수', '목', '금'];
-    }, [safeCourses]);
-
-    const dynamicEndHour = useMemo(() => {
-        const maxScheduleTime = safeCourses.reduce((max, course) => {
-          if (!course.times) return max;
-          const courseEnd = Math.max(...course.times.map(t => t.start + t.duration));
-          return Math.max(max, courseEnd);
-        }, 18); 
-        return Math.min(Math.ceil(maxScheduleTime), 22);
-    }, [safeCourses]);
-
-    const timeLabels = Array.from({ length: dynamicEndHour - START_HOUR + 1 }, (_, i) => START_HOUR + i);
-
-    return (
-        <div className="w-full bg-white p-8 rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
-            <div className="text-center mb-8 border-b pb-6 border-slate-100">
-                <h3 className="text-3xl font-black text-slate-900 mb-2 tracking-tight">{timetableData.title}</h3>
-                <div className="flex justify-center items-center gap-4 text-slate-500 text-sm md:text-base">
-                    <span className="px-2 py-0.5 bg-slate-100 text-slate-600 text-xs font-bold rounded border border-slate-200 whitespace-nowrap">{timetableData.tag}</span>
-                    <div className="w-px h-3 bg-slate-300"></div>
-                    <div className="flex items-center gap-2 whitespace-nowrap"><Clock size={18} /> <span>총 {totalCredits} 학점</span></div>
-                    <div className="w-1 h-1 bg-slate-300 rounded-full"></div>
-                    <div className="flex items-center gap-2 text-blue-600 font-bold whitespace-nowrap"><GraduationCap size={20} /> <span>전공 {majorCredits} 학점</span></div>
-                </div>
-            </div>
-            <div className="relative border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm select-none">
-                <div className="flex border-b border-slate-200 bg-slate-50 h-10">
-                    <div className="w-12 border-r border-slate-200 bg-slate-100/50"></div>
-                    {currentDays.map(day => (<div key={day} className="flex-1 flex items-center justify-center font-bold text-slate-600 text-sm border-r border-slate-200 last:border-0">{day}</div>))}
-                </div>
-                <div className="flex relative" style={{ height: `${(dynamicEndHour - START_HOUR + 1) * SLOT_HEIGHT}px` }}>
-                    <div className="w-12 flex-shrink-0 border-r border-slate-200 bg-slate-50 text-xs text-slate-400 font-medium text-right pr-2">
-                        {timeLabels.map(t => (<div key={t} className="border-b border-slate-100 relative" style={{ height: `${SLOT_HEIGHT}px` }}><span className="absolute top-2 right-3">{t}</span></div>))}
-                    </div>
-                    {currentDays.map((day, dayIdx) => (
-                        <div key={day} className="flex-1 relative border-r border-slate-100 border-dashed last:border-r-0">
-                            {timeLabels.map(t => (<div key={t} className="border-b border-slate-50" style={{ height: `${SLOT_HEIGHT}px` }}></div>))}
-                            {safeCourses.map(course => {
-                                const timeInfo = course.times?.find(t => t.day === dayIdx);
-                                if (!timeInfo) return null;
-                                const currentType = getSmartType(course);
-                                const colorClass = getBlockColor(currentType);
-                                return (
-                                    <div 
-                                        key={`${course.id}-${dayIdx}`} 
-                                        onClick={() => handleCourseClick(course)}
-                                        className={`absolute inset-x-1 border-l-4 p-1.5 overflow-hidden rounded-r shadow-sm ${colorClass} cursor-pointer hover:brightness-95 transition-all group`} 
-                                        style={{ top: `${(timeInfo.start - START_HOUR) * SLOT_HEIGHT}px`, height: `${timeInfo.duration * SLOT_HEIGHT - 2}px` }}
-                                        title={`${course.name} 강의 정보 보기`}
-                                    >
-                                        <div className="flex justify-between items-start">
-                                            <div className="font-bold text-[11px] leading-tight mb-0.5">{course.name}</div>
-                                            <FileText size={10} className="opacity-0 group-hover:opacity-50 text-current flex-shrink-0"/>
-                                        </div>
-                                        <div className="text-[9px] opacity-90">{course.prof}</div>
-                                        <div className="text-[8px] mt-0.5 font-bold opacity-70">{course.selectedTrack ? `[${course.selectedTrack}]` : currentType}</div>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    ))}
-                </div>
-            </div>
-            <p className="mt-6 text-center text-[10px] text-slate-300 font-bold tracking-widest uppercase">Generated by 시간표 요리사</p>
-        </div>
-    );
   };
 
   return (
     <div className="h-screen flex flex-col bg-slate-50">
       
-      {/* Header & Tabs */}
       <div className="bg-slate-900 flex flex-col flex-shrink-0 z-10">
         <div className="h-14 border-b border-slate-800 flex items-center justify-between px-4 lg:px-6 text-white">
           <div className="flex items-center gap-4">
@@ -417,56 +425,132 @@ const TimeTableShelf = () => {
       </div>
 
       <div className="flex-1 overflow-y-auto p-6 md:p-10 bg-slate-50 custom-scrollbar">
-        {/* ... (이하 뷰 렌더링 로직은 기존과 동일) ... */}
+        {activeTab === 'my' && (
+            <div className="max-w-5xl mx-auto mb-8 flex justify-center">
+                <div className="bg-slate-200 p-1 rounded-full flex gap-1">
+                    <button 
+                        onClick={() => setShelfCategory('timetable')}
+                        className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all flex items-center gap-2 ${shelfCategory === 'timetable' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                    >
+                        <Clock size={14}/> 시간표
+                    </button>
+                    <button 
+                        onClick={() => setShelfCategory('recipe')}
+                        className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all flex items-center gap-2 ${shelfCategory === 'recipe' ? 'bg-white text-purple-700 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                    >
+                        <Scroll size={14}/> 졸업 레시피
+                    </button>
+                </div>
+            </div>
+        )}
+
         {activeTab === 'my' && (
             <>
-                {(!savedTimetables || savedTimetables.length === 0) ? (
-                  <div className="h-full flex flex-col items-center justify-center text-slate-400 gap-4">
-                    <LayoutGrid size={64} className="opacity-20"/>
-                    <p className="text-lg font-medium">아직 진열된 시간표가 없습니다.</p>
-                    <button onClick={() => { setMode('timetable'); setStep(1); }} className="px-6 py-2 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-500 transition shadow-lg hover:shadow-blue-500/30">새 시간표 요리하러 가기</button>
-                  </div>
-                ) : (
-                  <div className="max-w-5xl mx-auto space-y-12">
-                    {Object.entries(shelvedTimetables).map(([tag, items]) => (
-                      <div key={tag} className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                        <h3 className="text-xl font-black text-slate-700 mb-4 flex items-center gap-2">
-                          <span className="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-lg text-sm shadow-sm">{tag}</span>
-                          <span className="text-slate-400 text-sm font-medium">({items.length})</span>
-                        </h3>
-                        <div className="relative">
-                          <div className="flex flex-wrap gap-6 px-4 relative z-10">
-                            {items.map(item => (
-                              <div key={item.id} onClick={() => setViewingTimetable(item)} className="w-56 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-slate-200 group flex flex-col overflow-hidden">
-                                <div className="h-24 bg-slate-100 p-4 flex flex-col justify-between group-hover:bg-blue-50 transition-colors">
-                                    <div className="flex justify-between items-start">
-                                        <FolderOpen className="text-slate-300 group-hover:text-blue-400" size={24}/>
-                                        <div className="flex items-center gap-1">
-                                            {item.firebaseId && <span className="text-[10px] bg-pink-100 text-pink-600 px-1.5 py-0.5 rounded font-bold">공유됨</span>}
-                                            <button onClick={(e) => { e.stopPropagation(); handleShareClick(item); }} className="w-7 h-7 flex items-center justify-center rounded-full bg-white text-blue-500 shadow-sm border border-slate-200 hover:bg-blue-50 transition-colors" title="공유하기"><Share2 size={14}/></button>
+                {/* 1. Timetables */}
+                {shelfCategory === 'timetable' && (
+                    (!savedTimetables || savedTimetables.length === 0) ? (
+                        <div className="h-full flex flex-col items-center justify-center text-slate-400 gap-4 mt-20">
+                            <LayoutGrid size={64} className="opacity-20"/>
+                            <p className="text-lg font-medium">아직 진열된 시간표가 없습니다.</p>
+                            <button onClick={() => { setMode('timetable'); setStep(1); }} className="px-6 py-2 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-500 transition shadow-lg hover:shadow-blue-500/30">새 시간표 요리하러 가기</button>
+                        </div>
+                    ) : (
+                        <div className="max-w-5xl mx-auto space-y-12">
+                            {Object.entries(shelvedTimetables).map(([tag, items]) => (
+                            <div key={tag} className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+                                <h3 className="text-xl font-black text-slate-700 mb-4 flex items-center gap-2">
+                                <span className="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-lg text-sm shadow-sm">{tag}</span>
+                                <span className="text-slate-400 text-sm font-medium">({items.length})</span>
+                                </h3>
+                                <div className="relative">
+                                <div className="flex flex-wrap gap-6 px-4 relative z-10">
+                                    {items.map(item => (
+                                    <div key={item.id} onClick={() => setViewingItem(item)} className="w-56 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-slate-200 group flex flex-col overflow-hidden">
+                                        <div className="h-24 bg-slate-100 p-4 flex flex-col justify-between group-hover:bg-blue-50 transition-colors">
+                                            <div className="flex justify-between items-start">
+                                                <FolderOpen className="text-slate-300 group-hover:text-blue-400" size={24}/>
+                                                <div className="flex items-center gap-1">
+                                                    {item.firebaseId && <span className="text-[10px] bg-pink-100 text-pink-600 px-1.5 py-0.5 rounded font-bold">공유됨</span>}
+                                                    <button onClick={(e) => { e.stopPropagation(); handleShareClick(item); }} className="w-7 h-7 flex items-center justify-center rounded-full bg-white text-blue-500 shadow-sm border border-slate-200 hover:bg-blue-50 transition-colors" title="공유하기"><Share2 size={14}/></button>
+                                                </div>
+                                            </div>
+                                            <span className="text-[10px] text-slate-400 font-mono text-right">{new Date(item.createdAt).toLocaleDateString()}</span>
+                                        </div>
+                                        <div className="p-4 bg-white flex-1 flex flex-col">
+                                            <h4 className="font-bold text-slate-800 text-lg leading-tight line-clamp-2 mb-2 group-hover:text-blue-600">{item.title}</h4>
+                                            <div className="mt-auto pt-3 border-t border-slate-100 flex flex-col gap-1 text-xs">
+                                                <div className="flex justify-between items-center text-slate-500"><span className="flex items-center gap-1"><Clock size={12}/> 총 학점</span><span className="font-bold">{item.courses?.reduce((sum, c) => sum + (c.credit || 0), 0)}학점</span></div>
+                                                <div className="flex justify-between items-center text-blue-600"><span className="flex items-center gap-1"><GraduationCap size={12}/> 전공</span><span className="font-bold">{item.courses?.reduce((sum, c) => isMajorCredit(c) ? sum + (c.credit || 0) : sum, 0)}학점</span></div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <span className="text-[10px] text-slate-400 font-mono text-right">{new Date(item.createdAt).toLocaleDateString()}</span>
+                                    ))}
                                 </div>
-                                <div className="p-4 bg-white flex-1 flex flex-col">
-                                    <h4 className="font-bold text-slate-800 text-lg leading-tight line-clamp-2 mb-2 group-hover:text-blue-600">{item.title}</h4>
-                                    <div className="mt-auto pt-3 border-t border-slate-100 flex flex-col gap-1 text-xs">
-                                        <div className="flex justify-between items-center text-slate-500"><span className="flex items-center gap-1"><Clock size={12}/> 총 학점</span><span className="font-bold">{item.courses?.reduce((sum, c) => sum + (c.credit || 0), 0)}학점</span></div>
-                                        <div className="flex justify-between items-center text-blue-600"><span className="flex items-center gap-1"><GraduationCap size={12}/> 전공</span><span className="font-bold">{item.courses?.reduce((sum, c) => isMajorCredit(c) ? sum + (c.credit || 0) : sum, 0)}학점</span></div>
-                                    </div>
+                                <div className="absolute bottom-0 w-full h-4 bg-slate-300 rounded-full shadow-inner transform translate-y-2 z-0"></div>
                                 </div>
-                              </div>
+                            </div>
                             ))}
-                          </div>
-                          <div className="absolute bottom-0 w-full h-4 bg-slate-300 rounded-full shadow-inner transform translate-y-2 z-0"></div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
+                    )
+                )}
+
+                {/* 2. Recipes (Modified Card) */}
+                {shelfCategory === 'recipe' && (
+                    (!savedRecipes || savedRecipes.length === 0) ? (
+                        <div className="h-full flex flex-col items-center justify-center text-slate-400 gap-4 mt-20">
+                            <Scroll size={64} className="opacity-20"/>
+                            <p className="text-lg font-medium">저장된 졸업 레시피가 없습니다.</p>
+                            <button onClick={() => { setMode('graduation'); setStep(1); }} className="px-6 py-2 bg-purple-600 text-white rounded-full font-bold hover:bg-purple-500 transition shadow-lg hover:shadow-purple-500/30">졸업 요리하러 가기</button>
+                        </div>
+                    ) : (
+                        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {savedRecipes.map(recipe => {
+                                const transcript = recipe.data?.transcript || [];
+                                const basicCredits = transcript.filter(c => c.category_main === '기초').reduce((sum, c) => sum + (c.credit || 0), 0);
+                                const advancedCredits = transcript.filter(c => c.category_main === '심화').reduce((sum, c) => sum + (c.credit || 0), 0);
+
+                                return (
+                                    <div key={recipe.id} onClick={() => setViewingItem(recipe)} className="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer border border-slate-200 overflow-hidden group">
+                                        <div className="p-5 border-b border-slate-50 bg-slate-50/50 group-hover:bg-purple-50/30 transition-colors">
+                                            <div className="flex justify-between items-start mb-2">
+                                                <div className="bg-purple-100 text-purple-600 p-2 rounded-lg">
+                                                    <Scroll size={20}/>
+                                                </div>
+                                                <span className="text-[10px] text-slate-400 font-mono">{new Date(recipe.createdAt).toLocaleDateString()}</span>
+                                            </div>
+                                            <h4 className="font-bold text-slate-800 text-lg leading-snug group-hover:text-purple-600 transition-colors">{recipe.title}</h4>
+                                        </div>
+                                        <div className="p-5 pt-3">
+                                            <div className="text-xs text-slate-500 mb-4 bg-slate-50 px-2 py-1 rounded border border-slate-100 inline-block font-medium">
+                                                {recipe.degreeName}
+                                            </div>
+                                            <div className="flex justify-between items-center text-sm border-t border-slate-100 pt-3">
+                                                <div className="flex flex-col text-center">
+                                                    <span className="text-[10px] text-slate-400 font-bold">기초</span>
+                                                    <span className="font-bold text-slate-600">{basicCredits}</span>
+                                                </div>
+                                                <div className="w-px h-8 bg-slate-100"></div>
+                                                <div className="flex flex-col text-center">
+                                                    <span className="text-[10px] text-slate-400 font-bold">심화</span>
+                                                    <span className="font-bold text-slate-600">{advancedCredits}</span>
+                                                </div>
+                                                <div className="w-px h-8 bg-slate-100"></div>
+                                                <div className="flex flex-col text-right">
+                                                    <span className="text-[10px] text-slate-400 font-bold">평점</span>
+                                                    <span className="font-black text-purple-600">{recipe.gpa}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    )
                 )}
             </>
         )}
 
+        {/* [Community Tab] */}
         {activeTab === 'community' && (
             <div className="max-w-4xl mx-auto">
                 <div className="flex flex-col md:flex-row gap-4 mb-8">
@@ -482,7 +566,7 @@ const TimeTableShelf = () => {
                             const userProfile = post.userProfile || {}; 
                             const majorCredits = post.courses?.reduce((sum, c) => isMajorCredit(c) ? sum + (c.credit || 0) : sum, 0);
                             return (
-                                <div key={post.id} onClick={() => setViewingTimetable(post)} className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:shadow-lg hover:border-blue-100 transition-all cursor-pointer group">
+                                <div key={post.id} onClick={() => setViewingItem(post)} className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:shadow-lg hover:border-blue-100 transition-all cursor-pointer group">
                                     <div className="flex items-center justify-between mb-4">
                                         <div className="flex items-center gap-2">
                                             <div className="flex flex-col">
@@ -494,24 +578,24 @@ const TimeTableShelf = () => {
                                     </div>
                                     <h3 className="text-lg font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors line-clamp-1">{post.title}</h3>
                                     <div className="w-full bg-slate-50 rounded-xl mb-4 border border-slate-100 p-4 flex justify-evenly items-center">
-                                        <div className="text-center min-w-[50px]"><div className="text-xs text-slate-400 mb-0.5">총 학점</div><div className="text-lg font-black text-slate-700">{post.courses?.reduce((acc, c) => acc + (c.credit || 0), 0)}</div></div>
-                                        <div className="w-px h-8 bg-slate-200"></div>
-                                        <div className="text-center min-w-[50px]"><div className="text-xs text-blue-400 mb-0.5 font-bold">전공</div><div className="text-lg font-black text-blue-600">{majorCredits}</div></div>
-                                        <div className="w-px h-8 bg-slate-200"></div>
-                                        <div className="text-center flex flex-col items-center justify-center min-w-[100px]">
-                                            {userProfile.semester ? (<span className="text-[10px] bg-white border border-blue-100 text-blue-600 px-2 py-0.5 rounded-full font-bold mb-1 shadow-sm">{userProfile.semester}학기차</span>) : (<span className="text-xs text-slate-400 mb-1">전공/트랙</span>)}
-                                            {userProfile.major ? (
-                                                <div className="flex flex-col items-center gap-1">
-                                                    <span className="text-sm font-black text-slate-700 leading-tight break-keep">{userProfile.major}</span>
-                                                    {userProfile.doubleMajor && userProfile.doubleMajor !== '미정' && (<div className="text-[9px] text-slate-500 flex items-center gap-1 whitespace-nowrap"><span className="font-bold">복수:</span><span>{userProfile.doubleMajor}</span></div>)}
-                                                    {userProfile.minor && userProfile.minor !== '미정' && (<div className="text-[9px] text-slate-500 flex items-center gap-1 whitespace-nowrap"><span className="font-bold">부:</span><span>{userProfile.minor}</span></div>)}
-                                                </div>
-                                            ) : (<div className="text-xs font-bold text-slate-400">정보 없음</div>)}
-                                        </div>
+                                            <div className="text-center min-w-[50px]"><div className="text-xs text-slate-400 mb-0.5">총 학점</div><div className="text-lg font-black text-slate-700">{post.courses?.reduce((acc, c) => acc + (c.credit || 0), 0)}</div></div>
+                                            <div className="w-px h-8 bg-slate-200"></div>
+                                            <div className="text-center min-w-[50px]"><div className="text-xs text-blue-400 mb-0.5 font-bold">전공</div><div className="text-lg font-black text-blue-600">{majorCredits}</div></div>
+                                            <div className="w-px h-8 bg-slate-200"></div>
+                                            <div className="text-center flex flex-col items-center justify-center min-w-[100px]">
+                                                {userProfile.semester ? (<span className="text-[10px] bg-white border border-blue-100 text-blue-600 px-2 py-0.5 rounded-full font-bold mb-1 shadow-sm">{userProfile.semester}학기차</span>) : (<span className="text-xs text-slate-400 mb-1">전공/트랙</span>)}
+                                                {userProfile.major ? (
+                                                    <div className="flex flex-col items-center gap-1">
+                                                        <span className="text-sm font-black text-slate-700 leading-tight break-keep">{userProfile.major}</span>
+                                                        {userProfile.doubleMajor && userProfile.doubleMajor !== '미정' && (<div className="text-[9px] text-slate-500 flex items-center gap-1 whitespace-nowrap"><span className="font-bold">복수:</span><span>{userProfile.doubleMajor}</span></div>)}
+                                                        {userProfile.minor && userProfile.minor !== '미정' && (<div className="text-[9px] text-slate-500 flex items-center gap-1 whitespace-nowrap"><span className="font-bold">부:</span><span>{userProfile.minor}</span></div>)}
+                                                    </div>
+                                                ) : (<div className="text-xs font-bold text-slate-400">정보 없음</div>)}
+                                            </div>
                                     </div>
                                     <div className="flex items-center justify-between border-t border-slate-50 pt-3">
-                                        <button onClick={(e) => { e.stopPropagation(); toggleLike(post.id); }} className={`flex items-center gap-1.5 transition-colors px-3 py-1.5 rounded-full ${isLiked ? 'bg-pink-500 text-white' : 'bg-pink-50 text-pink-500 hover:bg-pink-100'}`}><Heart size={16} fill={isLiked ? "currentColor" : "none"}/><span className="text-xs font-bold">{post.likes}</span></button>
-                                        <span className="text-xs text-slate-300">클릭해서 상세 보기</span>
+                                            <button onClick={(e) => { e.stopPropagation(); toggleLike(post.id); }} className={`flex items-center gap-1.5 transition-colors px-3 py-1.5 rounded-full ${isLiked ? 'bg-pink-500 text-white' : 'bg-pink-50 text-pink-500 hover:bg-pink-100'}`}><Heart size={16} fill={isLiked ? "currentColor" : "none"}/><span className="text-xs font-bold">{post.likes}</span></button>
+                                            <span className="text-xs text-slate-300">클릭해서 상세 보기</span>
                                     </div>
                                 </div>
                             );
@@ -522,77 +606,121 @@ const TimeTableShelf = () => {
         )}
       </div>
 
-      {/* --- Modals --- */}
-      {viewingTimetable && (
+      {/* --- Detail Modal --- */}
+      {viewingItem && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
           <div className="bg-white w-full max-w-4xl max-h-[90vh] rounded-3xl shadow-2xl overflow-hidden flex flex-col">
             <div className="p-4 px-6 border-b border-slate-100 flex justify-between items-center bg-white flex-shrink-0">
-              {activeTab === 'my' && isEditing ? (
-                <div className="flex items-center gap-2 flex-1 mr-4">
-                  <div className="flex flex-col gap-2 w-full max-w-sm">
-                    <input type="text" value={editTitle} onChange={(e) => setEditTitle(e.target.value)} className="border border-blue-300 rounded-lg px-3 py-1.5 text-lg font-bold outline-none focus:ring-2 focus:ring-blue-200" placeholder="제목 입력"/>
-                    <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                        <style>{` .hide-scroll::-webkit-scrollbar { display: none; } `}</style>
-                        <div className="flex gap-2 hide-scroll flex-nowrap">
-                            {['26년도 봄학기', '26년도 여름학기', '26년도 가을학기', '26년도 겨울학기', '임시'].map(tag => (
-                                <button key={tag} onClick={() => setEditTag(tag)} className={`px-3 py-1.5 text-xs rounded-lg border font-bold whitespace-nowrap flex-shrink-0 transition-all ${editTag === tag ? 'bg-blue-600 text-white border-blue-600' : 'bg-white text-slate-500 border-slate-200'}`}>{tag}</button>
-                            ))}
+                {/* [Timetable Editing Header] */}
+                {viewingItem.type !== 'recipe' && activeTab === 'my' && isEditing ? (
+                     <div className="flex items-center gap-2 flex-1 mr-4">
+                        <div className="flex flex-col gap-2 w-full max-w-sm">
+                            <input type="text" value={editTitle} onChange={(e) => setEditTitle(e.target.value)} className="border border-blue-300 rounded-lg px-3 py-1.5 text-lg font-bold outline-none focus:ring-2 focus:ring-blue-200" placeholder="제목 입력"/>
+                            <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                                <style>{` .hide-scroll::-webkit-scrollbar { display: none; } `}</style>
+                                <div className="flex gap-2 hide-scroll flex-nowrap">
+                                    {['26년도 봄학기', '26년도 여름학기', '26년도 가을학기', '26년도 겨울학기', '임시'].map(tag => (
+                                        <button key={tag} onClick={() => setEditTag(tag)} className={`px-3 py-1.5 text-xs rounded-lg border font-bold whitespace-nowrap flex-shrink-0 transition-all ${editTag === tag ? 'bg-blue-600 text-white border-blue-600' : 'bg-white text-slate-500 border-slate-200'}`}>{tag}</button>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                        <button onClick={handleUpdate} className="p-2 bg-blue-100 text-blue-600 rounded-full hover:bg-blue-200"><Check size={20}/></button>
+                        <button onClick={() => setIsEditing(false)} className="p-2 bg-slate-100 text-slate-500 rounded-full hover:bg-slate-200"><RotateCcw size={20}/></button>
+                    </div>
+                ) : (
+                    // [General Header]
+                    <div className="flex items-center gap-3">
+                         <div className="flex flex-col">
+                            <span className="text-xs text-slate-500 font-bold mb-0.5 flex items-center gap-2">
+                                {viewingItem.type === 'recipe' ? (
+                                    <span className="bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded text-[10px]">레시피</span>
+                                ) : (
+                                    <span className="bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded text-[10px]">시간표</span>
+                                )}
+                                {viewingItem.author ? `작성자: ${viewingItem.author}` : `진열대 No. ${viewingItem.id?.toString().slice(-4)}`}
+                                {viewingItem.type !== 'recipe' && <span className="ml-2 inline-block px-1.5 py-0.5 bg-slate-100 rounded text-slate-500 font-normal border border-slate-200">{viewingItem.tag}</span>}
+                            </span>
+                            <div className="flex items-center gap-2 group">
+                                <h2 className="text-xl font-bold text-slate-800">{viewingItem.title}</h2>
+                                {activeTab === 'my' && viewingItem.type !== 'recipe' && (
+                                    <button onClick={() => setIsEditing(true)} className="opacity-0 group-hover:opacity-100 transition-opacity p-1 text-slate-400 hover:text-blue-500"><Pencil size={16}/></button>
+                                )}
+                            </div>
                         </div>
                     </div>
-                  </div>
-                  <button onClick={handleUpdate} className="p-2 bg-blue-100 text-blue-600 rounded-full hover:bg-blue-200"><Check size={20}/></button>
-                  <button onClick={() => setIsEditing(false)} className="p-2 bg-slate-100 text-slate-500 rounded-full hover:bg-slate-200"><RotateCcw size={20}/></button>
-                </div>
-              ) : (
-                <div className="flex items-center gap-3">
-                    <div className="flex flex-col">
-                        <span className="text-xs text-slate-500 font-bold mb-0.5">
-                            {viewingTimetable.author ? `작성자: ${viewingTimetable.author}` : `진열대 No. ${viewingTimetable.id?.toString().slice(-4)}`}
-                            <span className="ml-2 inline-block px-1.5 py-0.5 bg-slate-100 rounded text-slate-500 font-normal border border-slate-200">{viewingTimetable.tag}</span>
-                        </span>
-                        <div className="flex items-center gap-2 group">
-                            <h2 className="text-xl font-bold text-slate-800">{viewingTimetable.title}</h2>
-                            {activeTab === 'my' && (
-                                <button onClick={() => setIsEditing(true)} className="opacity-0 group-hover:opacity-100 transition-opacity p-1 text-slate-400 hover:text-blue-500"><Pencil size={16}/></button>
-                            )}
-                        </div>
-                    </div>
-                </div>
-              )}
+                )}
               
-              <div className="flex items-center gap-2">
-                {activeTab === 'my' && (
-                    <>
-                        <button onClick={handleLoadAndEdit} className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 transition font-bold text-sm" title="이 시간표 불러오기">
-                            <LogOut className="rotate-180" size={16}/> <span>수정하기</span>
-                        </button>
-                        <div className="w-px h-6 bg-slate-200 mx-1"></div>
-                        <button onClick={() => handleShareClick(viewingTimetable)} className={`flex items-center gap-1.5 px-3 py-2 rounded-full transition font-bold text-sm ${viewingTimetable.firebaseId ? 'bg-slate-100 text-slate-500 hover:bg-red-50 hover:text-red-500' : 'bg-blue-100 text-blue-600 hover:bg-blue-200'}`}>
-                            {viewingTimetable.firebaseId ? (<><span>공유됨 (취소)</span></>) : (<><Share2 size={16}/> <span>공유</span></>)}
-                        </button>
-                        <div className="w-px h-6 bg-slate-200 mx-1"></div>
-                        <button onClick={() => { if(window.confirm('삭제하시겠습니까?')) { deleteFromShelf(viewingTimetable.id); setViewingTimetable(null); } }} className="p-2 text-red-400 hover:bg-red-50 rounded-full transition"><Trash2 size={20}/></button>
-                    </>
-                )}
-                {activeTab === 'community' && (
-                    <>
-                        <button onClick={handleImportToShelf} className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition font-bold text-sm shadow-sm">
-                            <FolderPlus size={16}/> <span>내 진열대에 저장</span>
-                        </button>
-                        <div className="w-px h-6 bg-slate-200 mx-1"></div>
-                    </>
-                )}
-                <button onClick={() => setViewingTimetable(null)} className="p-2 text-slate-400 hover:bg-slate-100 rounded-full transition"><X size={24}/></button>
-              </div>
+                <div className="flex items-center gap-2">
+                    {/* [My Tab Actions] */}
+                    {activeTab === 'my' && (
+                        <>
+                            {viewingItem.type === 'recipe' ? (
+                                // 레시피 전용 액션
+                                <button onClick={handleLoadRecipe} className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-purple-600 text-white hover:bg-purple-500 transition font-bold text-sm shadow-md shadow-purple-200">
+                                    <LogOut className="rotate-180" size={16}/> <span>이 레시피로 요리하기</span>
+                                </button>
+                            ) : (
+                                // 시간표 전용 액션
+                                <button onClick={handleLoadAndEdit} className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 transition font-bold text-sm" title="이 시간표 불러오기">
+                                    <LogOut className="rotate-180" size={16}/> <span>수정하기</span>
+                                </button>
+                            )}
+
+                            <div className="w-px h-6 bg-slate-200 mx-1"></div>
+                            
+                            {viewingItem.type !== 'recipe' && (
+                                <button onClick={() => handleShareClick(viewingItem)} className={`flex items-center gap-1.5 px-3 py-2 rounded-full transition font-bold text-sm ${viewingItem.firebaseId ? 'bg-slate-100 text-slate-500 hover:bg-red-50 hover:text-red-500' : 'bg-blue-100 text-blue-600 hover:bg-blue-200'}`}>
+                                    {viewingItem.firebaseId ? (<><span>공유됨 (취소)</span></>) : (<><Share2 size={16}/> <span>공유</span></>)}
+                                </button>
+                            )}
+                            
+                            <button onClick={() => { 
+                                if(window.confirm('삭제하시겠습니까?')) { 
+                                    if(viewingItem.type === 'recipe') deleteRecipe(viewingItem.id);
+                                    else deleteFromShelf(viewingItem.id);
+                                    setViewingItem(null); 
+                                } 
+                            }} className="p-2 text-red-400 hover:bg-red-50 rounded-full transition"><Trash2 size={20}/></button>
+                        </>
+                    )}
+                    {/* [Community Tab Actions] */}
+                    {activeTab === 'community' && (
+                        <>
+                            <button onClick={handleImportToShelf} className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition font-bold text-sm shadow-sm">
+                                <FolderPlus size={16}/> <span>내 진열대에 저장</span>
+                            </button>
+                            <div className="w-px h-6 bg-slate-200 mx-1"></div>
+                        </>
+                    )}
+                    <button onClick={() => setViewingItem(null)} className="p-2 text-slate-400 hover:bg-slate-100 rounded-full transition"><X size={24}/></button>
+                </div>
             </div>
-            <div className="flex-1 overflow-y-auto bg-slate-50 p-6 custom-scrollbar"><div className="max-w-3xl mx-auto"><ShelfTimetableViewer timetableData={isEditing ? { ...viewingTimetable, title: editTitle, tag: editTag } : viewingTimetable} /></div></div>
-            <div className="p-4 border-t border-slate-100 bg-white flex justify-center flex-shrink-0"><button onClick={handleDownloadImage} className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-500 shadow-lg hover:shadow-blue-500/30 transition-all"><Download size={20}/> 이미지로 저장하기</button></div>
+            
+            <div className="flex-1 overflow-y-auto bg-slate-50 p-6 custom-scrollbar">
+                <div className="max-w-3xl mx-auto">
+                    {/* 내용 렌더링 분기 */}
+                    {viewingItem.type === 'recipe' ? (
+                        <ShelfRecipeViewer recipeData={viewingItem} />
+                    ) : (
+                        <ShelfTimetableViewer timetableData={isEditing ? { ...viewingItem, title: editTitle, tag: editTag } : viewingItem} onCourseClick={handleCourseClick}/>
+                    )}
+                </div>
+            </div>
+            
+            {/* 시간표일 때만 이미지 저장 버튼 표시 */}
+            {viewingItem.type !== 'recipe' && (
+                <div className="p-4 border-t border-slate-100 bg-white flex justify-center flex-shrink-0">
+                    <button onClick={handleDownloadImage} className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-500 shadow-lg hover:shadow-blue-500/30 transition-all">
+                        <Download size={20}/> 이미지로 저장하기
+                    </button>
+                </div>
+            )}
           </div>
         </div>
       )}
 
-      {/* Upload/Delete Modal... (생략) */}
-      {/* 2. Upload Modal */}
+      {/* Upload/Delete Modal... (생략 - 기존과 동일) */}
       {isUploadModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
             <div className="bg-white w-full max-w-md rounded-3xl shadow-2xl p-6 relative">
@@ -618,7 +746,6 @@ const TimeTableShelf = () => {
         </div>
       )}
 
-      {/* 3. Delete Modal */}
       {isDeleteModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
             <div className="bg-white w-full max-w-sm rounded-3xl shadow-2xl p-6 relative">
@@ -630,26 +757,15 @@ const TimeTableShelf = () => {
         </div>
       )}
 
-      {/* 🔥 모달 렌더링 */}
       <SyllabusModal 
         course={selectedCourseForSyllabus} 
         onClose={() => setSelectedCourseForSyllabus(null)} 
       />
 
-      {/* Hidden Capture View (Updated for Firefox) */}
-      {viewingTimetable && (
-        <div style={{ 
-            position: 'fixed', 
-            top: 0, 
-            left: 0, 
-            width: '1280px', 
-            zIndex: -9999, // 맨 뒤로 보내기
-            opacity: 0, // 사용자 눈에만 안 보이게 (렌더링은 됨)
-            pointerEvents: 'none', // 클릭 방지
-            padding: '60px', 
-            backgroundColor: '#f8fafc' 
-        }}>
-            <div ref={hiddenCaptureRef}><ShelfTimetableViewer timetableData={viewingTimetable} /></div>
+      {/* Hidden Capture View */}
+      {viewingItem && viewingItem.type !== 'recipe' && (
+        <div style={{ position: 'fixed', top: 0, left: 0, width: '1280px', zIndex: -9999, opacity: 0, pointerEvents: 'none', padding: '60px', backgroundColor: '#f8fafc' }}>
+            <div ref={hiddenCaptureRef}><ShelfTimetableViewer timetableData={viewingItem} /></div>
         </div>
       )}
     </div>

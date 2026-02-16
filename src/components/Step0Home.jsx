@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import useStore from '../store/useStore';
-import { ChefHat, ArrowRight, MousePointerClick, GraduationCap, LayoutGrid, UserCircle2, X, Save, PenTool } from 'lucide-react';
+import { ChefHat, ArrowRight, GraduationCap, LayoutGrid, UserCircle2, X, PenTool, Archive } from 'lucide-react';
 
+// 로고 이미지 로드 (없으면 아이콘 대체)
 let dalguLogo = null;
 try { dalguLogo = new URL('../assets/dalgu.jpg', import.meta.url).href; } catch (e) {}
 
@@ -12,7 +13,7 @@ const STANDARD_MAJORS = [
   "기계공학", "화학공학", "전자공학", "컴퓨터공학", "재료공학", "반도체공학과"
 ];
 
-// MajorSelector 컴포넌트
+// --- [Component] 전공 선택 드롭다운 (프로필 설정용) ---
 const MajorSelector = ({ label, value, onChange, allowCustom = false, disabled = false }) => {
     const [isCustomMode, setIsCustomMode] = useState(false);
 
@@ -72,20 +73,24 @@ const MajorSelector = ({ label, value, onChange, allowCustom = false, disabled =
     );
 };
 
-// 메인 컴포넌트
+// --- [Main Component] Step0Home ---
 const Step0Home = () => {
   const { setStep, setMode, userProfile, updateUserProfile } = useStore();
   
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  
+  // 로컬 프로필 상태 (모달에서 수정 중인 데이터)
   const [localProfile, setLocalProfile] = useState(userProfile || {
     status: '학사', semester: '1', major: '미정', doubleMajor: '미정', minor: '미정'
   });
 
+  // 모드 선택 핸들러
   const handleModeSelect = (mode) => {
     setMode(mode);
     setStep(1);
   };
 
+  // 프로필 저장 핸들러
   const saveProfile = () => {
     if (userProfile.lastUpdatedAt) {
         const lastUpdate = new Date(userProfile.lastUpdatedAt);
@@ -110,6 +115,7 @@ const Step0Home = () => {
     alert("프로필이 저장되었습니다.");
   };
 
+  // 복수전공/부전공 상호 배타적 선택 로직
   const handleDoubleMajorChange = (val) => {
     setLocalProfile(prev => ({
         ...prev,
@@ -130,12 +136,14 @@ const Step0Home = () => {
   const isMinorSelected = localProfile.minor && localProfile.minor !== '미정';
 
   return (
-    <div className="h-full w-full bg-slate-50 dark:bg-slate-900 overflow-y-auto custom-scrollbar relative">
+    <div className="h-full w-full bg-blue-50/30 dark:bg-slate-900 overflow-y-auto custom-scrollbar relative">
+      
+      {/* 우측 상단 프로필 설정 버튼 */}
       <button 
         onClick={() => { setLocalProfile(userProfile); setIsProfileOpen(true); }}
-        className="absolute top-6 right-6 flex items-center gap-2 bg-white dark:bg-slate-800 px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all text-slate-600 dark:text-slate-300 font-bold text-sm border border-slate-200 dark:border-slate-700 z-10"
+        className="absolute top-6 right-6 flex items-center gap-2 bg-white/80 backdrop-blur-sm dark:bg-slate-800 px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all text-slate-600 dark:text-slate-300 font-bold text-sm border border-slate-200 dark:border-slate-700 z-10"
       >
-        <UserCircle2 size={20} className="text-blue-500"/>
+        <UserCircle2 size={20} className="text-slate-500"/>
         <span>내 프로필 설정</span>
       </button>
 
@@ -144,7 +152,7 @@ const Step0Home = () => {
         {/* 로고 영역 */}
         <div className="relative mb-6 md:mb-10 group cursor-default">
           <div className="absolute -inset-4 bg-blue-500/20 rounded-full blur-2xl group-hover:bg-blue-500/30 transition-colors duration-500"></div>
-          <div className="relative bg-white dark:bg-slate-800 p-6 rounded-[2rem] shadow-2xl border-4 border-slate-100 dark:border-slate-700 transform group-hover:scale-105 transition-transform duration-300 w-40 h-40 md:w-56 md:h-56 flex items-center justify-center overflow-hidden">
+          <div className="relative bg-white dark:bg-slate-800 p-6 rounded-[2rem] shadow-2xl border-4 border-white dark:border-slate-700 transform group-hover:scale-105 transition-transform duration-300 w-40 h-40 md:w-56 md:h-56 flex items-center justify-center overflow-hidden ring-1 ring-blue-50">
             {dalguLogo ? (
               <img src={dalguLogo} alt="DGIST Dalgu Chef" className="w-full h-full object-contain drop-shadow-md" onError={(e) => { e.target.style.display='none'; }} />
             ) : (
@@ -153,73 +161,71 @@ const Step0Home = () => {
           </div>
         </div>
 
-        <h1 className="text-3xl md:text-6xl font-black tracking-tight text-slate-800 dark:text-white mb-2">
+        <h1 className="text-3xl md:text-6xl font-black tracking-tight text-slate-900 dark:text-white mb-2">
           DGIST <span className="text-blue-600 dark:text-blue-400">TT Chef</span>
         </h1>
         <p className="text-slate-500 dark:text-slate-400 mb-8 md:mb-12 font-medium text-sm md:text-base">
-          2026 Spring ver. (fix.0214)<br className="hidden md:block"/>
+          2026 Spring ver. (fix.0216)<br className="hidden md:block"/>
           Made by P01N71 (w/ D1C3, pharmaxxan)
         </p>
 
-        {/* 선택 영역 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full max-w-4xl px-2 md:px-4 items-stretch">
+        {/* 3단 선택 영역 */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-6xl px-4 md:px-8 items-stretch">
           
-          {/* 1. 시간표 요리사 */}
-          <div className="relative flex flex-col items-center p-6 md:p-10 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700 rounded-3xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:border-blue-200 group h-full">
-            <div className="mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-2xl transition-colors group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30">
-              <ChefHat size={32} className="text-blue-600 dark:text-blue-400 md:w-10 md:h-10" />
+          {/* 1. 시간표 요리사 (Blue Theme) */}
+          <button onClick={() => handleModeSelect('timetable')} className="group relative flex flex-col items-center p-8 bg-white dark:bg-slate-800 border-2 border-white dark:border-slate-700 rounded-3xl hover:border-blue-200 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-200/20 hover:-translate-y-1 h-full w-full ring-1 ring-slate-100">
+            <div className="mb-6 p-5 bg-blue-50 dark:bg-blue-900/20 rounded-2xl group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
+              <ChefHat size={36} className="text-blue-600 dark:text-blue-400" />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-slate-800 dark:text-white mb-2">시간표 요리사</h3>
-            <p className="text-slate-500 dark:text-slate-400 text-sm mb-6 flex-1 flex items-center justify-center break-keep">
-              이번 학기 맛있는 시간표를<br className="hidden md:block"/> 직접 요리해 보세요.
+            <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-3">시간표 요리사</h3>
+            <p className="text-slate-500 dark:text-slate-400 text-sm mb-8 break-keep leading-relaxed">
+              이번 학기 맛있는 시간표를<br/>직접 요리해 보세요.
             </p>
-            <div className="mt-auto flex flex-col items-center gap-2 w-full">
-              <button onClick={() => handleModeSelect('timetable')} className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-bold hover:gap-3 transition-all text-base md:text-lg py-2">
-                <span>요리 시작하기</span>
-                <ArrowRight size={18} />
-              </button>
-              <button onClick={() => handleModeSelect('shelf')} className="text-xs font-bold text-slate-400 hover:text-blue-600 transition-colors flex items-center gap-1 py-1.5 px-3 rounded-full hover:bg-slate-50">
-                ( <LayoutGrid size={12}/> 보관함 & 공유 )
-              </button>
-            </div>
-          </div>
-
-          {/* 2. 졸업 요리사 */}
-          <button onClick={() => handleModeSelect('graduation')} className="group relative flex flex-col items-center p-6 md:p-10 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700 rounded-3xl hover:border-blue-200 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 overflow-hidden h-full w-full">
-            <div className="mb-4 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-2xl group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
-              <GraduationCap size={32} className="text-purple-600 dark:text-purple-400 md:w-10 md:h-10" />
-            </div>
-            <h3 className="text-xl md:text-2xl font-bold text-slate-800 dark:text-white mb-2">졸업 요리사</h3>
-            <p className="text-slate-500 dark:text-slate-400 text-sm mb-6 flex-1 flex items-center justify-center break-keep">
-              졸업까지 남은 재료들을<br className="hidden md:block"/> 꼼꼼하게 점검하세요.
-            </p>
-            
-            <div className="mt-auto flex flex-col items-center gap-2 w-full">
-              {/* 🔥 [수정] group-hover 제거, hover 추가 (화살표 움직임 일관성 맞춤) */}
-              <div className="flex items-center gap-2 text-purple-600 dark:text-purple-400 font-bold hover:gap-3 transition-all text-base md:text-lg py-2">
-                <span>요리 시작하기</span>
-                <ArrowRight size={18} />
-              </div>
-              
-              <div className="text-xs font-bold text-transparent py-1.5 px-3 select-none pointer-events-none flex items-center gap-1">
-                ( <LayoutGrid size={12}/> 보관함 & 공유 )
-              </div>
+            <div className="mt-auto flex items-center gap-2 text-blue-600 dark:text-blue-400 font-bold group-hover:gap-3 transition-all text-base">
+              <span>요리 시작하기</span>
+              <ArrowRight size={18} />
             </div>
           </button>
-        </div>
 
-        <div className="flex items-center gap-2 text-sm text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-4 py-2 rounded-full mt-8">
-          <MousePointerClick size={16} />
-          <span>Easy Clicker</span>
+          {/* 2. 졸업 요리사 (Purple Theme) */}
+          <button onClick={() => handleModeSelect('graduation')} className="group relative flex flex-col items-center p-8 bg-white dark:bg-slate-800 border-2 border-white dark:border-slate-700 rounded-3xl hover:border-purple-200 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-purple-200/20 hover:-translate-y-1 h-full w-full ring-1 ring-slate-100">
+            <div className="mb-6 p-5 bg-purple-50 dark:bg-purple-900/20 rounded-2xl group-hover:bg-purple-100 dark:group-hover:bg-purple-900/30 transition-colors">
+              <GraduationCap size={36} className="text-purple-600 dark:text-purple-400" />
+            </div>
+            <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-3">졸업 요리사</h3>
+            <p className="text-slate-500 dark:text-slate-400 text-sm mb-8 break-keep leading-relaxed">
+              졸업까지 남은 재료들을<br/>꼼꼼하게 점검하세요.
+            </p>
+            <div className="mt-auto flex items-center gap-2 text-purple-600 dark:text-purple-400 font-bold group-hover:gap-3 transition-all text-base">
+              <span>요리 시작하기</span>
+              <ArrowRight size={18} />
+            </div>
+          </button>
+
+          {/* 3. 진열대 & 공유 (Slate/Grey Theme) - [수정됨] */}
+          <button onClick={() => handleModeSelect('shelf')} className="group relative flex flex-col items-center p-8 bg-white dark:bg-slate-800 border-2 border-white dark:border-slate-700 rounded-3xl hover:border-slate-300 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-slate-200/40 hover:-translate-y-1 h-full w-full ring-1 ring-slate-100">
+            <div className="mb-6 p-5 bg-slate-100 dark:bg-slate-700 rounded-2xl group-hover:bg-slate-200 dark:group-hover:bg-slate-600 transition-colors">
+              <Archive size={36} className="text-slate-600 dark:text-slate-300" />
+            </div>
+            <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-3">진열대 & 공유</h3>
+            <p className="text-slate-500 dark:text-slate-400 text-sm mb-8 break-keep leading-relaxed">
+              완성된 요리를 진열하고<br/>친구들과 공유하세요.
+            </p>
+            <div className="mt-auto flex items-center gap-2 text-slate-600 dark:text-slate-400 font-bold group-hover:gap-3 transition-all text-base">
+              <span>구경하러 가기</span>
+              <ArrowRight size={18} />
+            </div>
+          </button>
+
         </div>
       </div>
 
-      {/* 모달 (기존 동일) */}
+      {/* 프로필 설정 모달 */}
       {isProfileOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
-            <div className="bg-white dark:bg-slate-800 w-full max-w-md rounded-3xl shadow-2xl p-6 relative">
+        <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
+            <div className="bg-white dark:bg-slate-800 w-full max-w-md rounded-3xl shadow-2xl p-6 relative ring-1 ring-slate-200/50">
                 <button onClick={() => setIsProfileOpen(false)} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600"><X size={24}/></button>
-                <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-6 flex items-center gap-2"><UserCircle2 className="text-blue-500"/> 내 프로필 설정</h2>
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2"><UserCircle2 className="text-slate-600"/> 내 프로필 설정</h2>
                 
                 <div className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
@@ -228,7 +234,7 @@ const Step0Home = () => {
                             <select 
                                 value={localProfile.status} 
                                 onChange={e => setLocalProfile({...localProfile, status: e.target.value})}
-                                className="w-full mt-1 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 outline-none focus:border-blue-500 text-sm font-bold"
+                                className="w-full mt-1 bg-white border border-slate-200 rounded-xl px-3 py-2.5 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 text-sm font-bold text-slate-700 shadow-sm transition-all"
                             >
                                 <option>학사</option>
                                 <option>석사</option>
@@ -245,7 +251,7 @@ const Step0Home = () => {
                                     min="1" max="20"
                                     value={localProfile.semester} 
                                     onChange={e => setLocalProfile({...localProfile, semester: e.target.value})}
-                                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 outline-none focus:border-blue-500 text-sm font-bold text-center"
+                                    className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 text-sm font-bold text-center text-slate-700 shadow-sm transition-all"
                                 />
                                 <span className="text-sm text-slate-500 font-bold whitespace-nowrap">학기차</span>
                             </div>
@@ -277,14 +283,14 @@ const Step0Home = () => {
                     </div>
                 </div>
 
-                <div className="bg-blue-50 text-blue-600 text-xs p-3 rounded-xl mt-6 font-medium leading-relaxed">
+                <div className="bg-slate-50 text-slate-600 text-xs p-3 rounded-xl mt-6 font-medium leading-relaxed border border-slate-100">
                     💡 <b>오타 수정 유예 기간: 1시간</b><br/>
                     한 번 저장하면 1시간 동안은 수정 가능하지만, <br/>
                     그 이후에는 학기(3개월) 단위로만 변경할 수 있습니다.
                 </div>
 
-                <button onClick={saveProfile} className="w-full mt-4 py-3 bg-slate-900 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-slate-800 transition-all">
-                    <Save size={18}/> 저장하기
+                <button onClick={saveProfile} className="w-full mt-4 py-3 bg-slate-900 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-slate-800 active:scale-[0.98] transition-all shadow-lg shadow-slate-200/50">
+                    <PenTool size={18}/> 저장하기
                 </button>
             </div>
         </div>

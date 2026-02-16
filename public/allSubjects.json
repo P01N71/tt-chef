@@ -1,0 +1,1325 @@
+[
+  {
+    "name": "공학수학I",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "수학",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "공학수학II",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "수학",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "다변수 미적분학",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "수학",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "일변수 미적분학",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "수학",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "선형대수학",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "수학",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "확률과 통계 및 실습",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "수학",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "일반물리I",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1"],       
+    "category_main": "기초",
+    "category_sub": "물리",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "일반물리실험I",
+    "credit": 1,
+    "grade_level": 1,      
+    "semester": ["1"],       
+    "category_main": "기초",
+    "category_sub": "물리",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "일반물리II",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["2"],       
+    "category_main": "기초",
+    "category_sub": "물리",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "일반물리실험II",
+    "credit": 1,
+    "grade_level": 1,      
+    "semester": ["2"],       
+    "category_main": "기초",
+    "category_sub": "물리",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "일반화학I",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1"],       
+    "category_main": "기초",
+    "category_sub": "화학",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "일반화학실험I",
+    "credit": 1,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "화학",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "일반화학II",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "화학",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "일반생물학I",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "생명과학",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "생명과학개론",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "생명과학",
+    "available_tracks": ["기초학부"],
+    "restriction_note": "일반생물학I 이수 후 수강 불가"
+  },
+  {
+    "name": "일반생물학II",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["2"],       
+    "category_main": "기초",
+    "category_sub": "생명과학",
+    "available_tracks": ["기초학부"],
+    "prerequisites": [["일반생물학I","생명과학개론"]]
+  },
+  {
+    "name": "일반생물학 실험",
+    "credit": 1,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "생명과학",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "프로그래밍",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "컴퓨터공학",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "데이터사이언스기초",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1"],       
+    "category_main": "기초",
+    "category_sub": "컴퓨터공학",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "인공지능기초",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["2"],       
+    "category_main": "기초",
+    "category_sub": "컴퓨터공학",
+    "max_year": 2024,
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "회로이론과 계측법(이론)",
+    "credit": 2,
+    "grade_level": 2,      
+    "semester": ["1"],       
+    "category_main": "기초",
+    "category_sub": "공학선택",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "회로이론과 계측법(실습)",
+    "credit": 1,
+    "grade_level": 2,      
+    "semester": ["2"],       
+    "category_main": "기초",
+    "category_sub": "공학선택",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "창의기계설계",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1"],       
+    "category_main": "기초",
+    "category_sub": "공학선택",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "화학공학개론",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["2"],       
+    "category_main": "기초",
+    "category_sub": "공학선택",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "비교역사학",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "법과 사회",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "소설의 이해",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "경제학 입문",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "글로벌 문화와 의사소통",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "언어학 입문",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "현대 사회와 윤리",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "과학기술과 현대사회",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "비교정치학",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "한국정치의 이해",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "한국사회의 이해",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "사회학의 이해",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "지리학 입문",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "심리학으로의 여행",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "인류학의 이해",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "인간과 종교",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "Introduction to Philosophy",
+    "credit": 2,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "Introduction to Traditional Korean Culture",
+    "credit": 2,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "미래소양강좌",
+    "credit": 1,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "진로탐색 및 전공설계I",
+    "credit": 1,
+    "grade_level": 1,      
+    "semester": ["1"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "진로탐색 및 전공설계II",
+    "credit": 1,
+    "grade_level": 1,      
+    "semester": ["2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "학술 글쓰기",
+    "credit": 3,
+    "grade_level": 1,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "철학 고전의 이해",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "근대 사회와 사상",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "과학기술사의 주요 장면",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "커뮤니케이션 특강",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "동서양문학의 이해",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "글로벌 정치경제",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "과학철학의 쟁점",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "영어 문학 텍스트 : 주제적 접근 읽기",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "젠더와 사회",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "고전의 산책",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "권리변동의 일반",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "문학과 영화",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "도시지리학",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "조직 심리학의 이해와 적용",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "문화와 경제",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "세계종교입문",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "인문학 특강I",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "인문학 특강II",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "사회과학 특강I",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "사회과학 특강II",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "심리철학",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "시 읽기의 즐거움",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "Scientific Writing",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["1","2"],       
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "Academic English: S&C",
+    "credit": 2,
+    "grade_level": 1,      
+    "semester": ["1"],       
+    "category_main": "기초",
+    "category_sub": "영어",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "Academic English: R&W",
+    "credit": 2,
+    "grade_level": 1,      
+    "semester": ["2"],       
+    "category_main": "기초",
+    "category_sub": "영어",
+    "available_tracks": ["기초학부"]
+  },
+  {
+    "name": "해석역학I(이,공)",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"]
+  },
+  {
+    "name": "현대물리(이)",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"]
+  },
+  {
+    "name": "전기역학I(이)",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"]
+  },
+  {
+    "name": "해석역학II(이,공)",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"]
+  },
+  {
+    "name": "고급물리 실험(이)",
+    "credit": 2,
+    "grade_level": 3,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"]
+  },
+  {
+    "name": "양자역학I(이,공)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"],
+    "prerequisites": [["해석역학I(이,공)", "전기역학I(이)"]]
+  },
+  {
+    "name": "수리물리(이)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"]
+  },
+  {
+    "name": "전기역학II(이)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"]
+  },
+  {
+    "name": "반도체물성 개론(공)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학","전자공학","화학공학"],
+    "prerequisites": [["일반물리II"]]
+  },
+  {
+    "name": "고체물리I(이,공)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"]
+  },
+  {
+    "name": "양자역학II(이,공)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"],
+    "prerequisites": [["양자역학I(이,공)"]]
+  },
+  {
+    "name": "응용물리 실험(이,공)",
+    "credit": 2,
+    "grade_level": 3,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"]
+  },
+  {
+    "name": "열 및 통계 물리(이,공)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"],
+    "prerequisites": [["해석역학I(이,공)"]]
+  },
+  {
+    "name": "재료열역학 개론(이,공)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학","재료공학"]
+  },
+  {
+    "name": "응욤물리특론(이,공)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"]
+  },
+  {
+    "name": "미분기하학과 일반상대론(이)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"]
+  },
+  {
+    "name": "고체물리II(이,공)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"],
+    "prerequisites": [["양자역학I(이,공)"]]
+  },
+  {
+    "name": "현대광학(이,공)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"],
+    "prerequisites": [["전기역학I(이)"]]
+  },
+  {
+    "name": "재료상변태(공)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학","재료공학"]
+  },
+  {
+    "name": "생물물리학(이,공)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"]
+  },
+  {
+    "name": "전산물리(이)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"]
+  },
+  {
+    "name": "원자분자물리학(이,공)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"]
+  },
+  {
+    "name": "결정학 및 회절(이,공)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학","화학","재료공학"]
+  },
+  {
+    "name": "양자 컴퓨팅 개론(이,공)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["물리학"]
+  },
+  {
+    "name": "일반화학실험II(이)",
+    "credit": 1,
+    "grade_level": 2,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학"]
+  },
+  {
+    "name": "유기화학I(이,공)",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학","재료공학","화학공학"]
+  },
+  {
+    "name": "분석화학(이,공)",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학","재료공학","화학공학"]
+  },
+  {
+    "name": "무기화학I(이,공)",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학","재료공학","화학공학"]
+  },
+  {
+    "name": "물리화학I(이,공)",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학","재료공학","화학공학"]
+  },
+  {
+    "name": "유기화학II(이,공)",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학","화학공학"],
+    "prerequisites": [["유기화학I(이,공)"]]
+  },
+  {
+    "name": "물리화학II(이,공)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학","화학공학"]
+  },
+  {
+    "name": "무기화학II(이,공)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학","화학공학"],
+    "prerequisites": [["무기화학I(이,공)"]]
+  },
+  {
+    "name": "심화화학실험I(이)",
+    "credit": 2,
+    "grade_level": 3,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학"]
+  },
+  {
+    "name": "재료공학개론I(이,공)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학","재료공학"]
+  },
+  {
+    "name": "심화화학실험II(이)",
+    "credit": 2,
+    "grade_level": 3,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학"]
+  },
+  {
+    "name": "유기화학III(이,공)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학","화학공학"],
+    "prerequisites": [["유기화학II(이,공)"]]
+  },
+  {
+    "name": "물리화학III(이,공)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학","화학공학"],
+    "prerequisites": [["물리화학I(이,공)"]]
+  },
+  {
+    "name": "고분자개론(이,공)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학","화학공학"]
+  },
+  {
+    "name": "계산화학(이)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학"]
+  },
+  {
+    "name": "고체화학I(이)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학"],
+    "prerequisites": [["무기화학I(이,공)"]]
+  },
+  {
+    "name": "전기화학(이,공)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학","화학공학"],
+    "prerequisites": [["물리화학II(이,공)"]]
+  },
+  {
+    "name": "광물리화학 개론(이)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학"]
+  },
+  {
+    "name": "유기금속화학(이)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학"],
+    "prerequisites": [["무기화학I(이,공)"],["무기화학II(이,공)"]]
+  },
+  {
+    "name": "세포생물학(이)",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학","뇌과학"],
+    "prerequisites": [["생명과학개론","일반생물학I"]]
+  },
+  {
+    "name": "세포생물학 실험(이)",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학","뇌과학"],
+    "prerequisites": [["일반생물학 실험"],["생명과학개론","일반생물학I"]]
+  },
+  {
+    "name": "생물학 야외실습(이)",
+    "credit": 1,
+    "grade_level": 2,      
+    "semester": ["여름"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "유전학(이)",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학","뇌과학"],
+    "prerequisites": [["생명과학개론","일반생물학I"]]
+  },
+  {
+    "name": "유전학 실험(이)",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학","뇌과학"],
+    "prerequisites": [["일반생물학 실험"]]
+  },
+  {
+    "name": "생명분석화학(이,공)",
+    "credit": 3,
+    "grade_level": 2,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "생화학I(이,공)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학","뇌과학"],
+    "prerequisites": [["생명과학개론","일반생물학I"]]
+  },
+  {
+    "name": "생명체의 다양성과 유기적 관계(이)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "의약품공학(이)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "생명과학 노벨상 수상의 위대한 발견(이)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "뉴바이올로지 특강(이)",
+    "credit": 3,
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"],
+    "semester": ["1", "2"],
+    "year_constraint": {
+      "odd": ["2"],  
+      "even": ["1"] 
+    }
+  },
+  {
+    "name": "분자생물학(이)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학","뇌과학"],
+    "prerequisites": [["생명과학개론","일반생물학I"]]
+  },
+  {
+    "name": "생화학II(이)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학","뇌과학"],
+    "prerequisites": [["생화학I(이)"]]
+  },
+  {
+    "name": "정량 생명과학(이)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학","뇌과학"]
+  },
+  {
+    "name": "해부생리학(이)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "생명과학과 사회(이)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "분자생물학 실험(이)",
+    "credit": 3,
+    "grade_level": 3,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"],
+    "prerequisites": [["일반생물학 실험"]]
+  },
+  {
+    "name": "발생 및 발달생물학(이)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학","뇌과학"]
+  },
+  {
+    "name": "융합생명과학(이)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "의생명공학(이,공)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "생물정보학(이,공)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "현대미생물학(이)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "인체생리학(이)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "생명과학특강III(이)",
+    "credit": 2,
+    "grade_level": 4,      
+    "semester": ["여름","겨울"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "광학현미경(이,공)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["1"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "면역학(이)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "일주기 생체리듬(이)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "식물 생명과학(이)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "암생물학(이)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  },
+  {
+    "name": "줄기세포생물학(이)",
+    "credit": 3,
+    "grade_level": 4,      
+    "semester": ["2"],       
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["생명과학"]
+  }
+]
