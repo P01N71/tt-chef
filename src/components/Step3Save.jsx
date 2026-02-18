@@ -15,7 +15,7 @@ const getBlockColor = (type) => {
 };
 
 const Step3Save = () => {
-  const { schedule, setStep, getCourseType, saveScheduleToShelf } = useStore();
+  const { schedule, setStep, setMode, getCourseType, saveScheduleToShelf } = useStore();
   
   const exportRef = useRef(null); 
   const [isSaving, setIsSaving] = useState(false);
@@ -160,7 +160,18 @@ const Step3Save = () => {
       alert("시간표 이름을 입력해주세요!");
       return;
     }
+    
+    // 1. 데이터 저장
     saveScheduleToShelf(shelfTitle, shelfTag);
+    
+    // 2. [추가] 모달 닫기
+    setShowShelfModal(false);
+    
+    alert("시간표가 성공적으로 저장되었습니다!");
+    
+    // 3. [추가] 보관소(TimeTableShelf) 화면으로 전환!
+    setMode('shelf');
+    setStep(1); 
   };
 
   return (

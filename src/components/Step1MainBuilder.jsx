@@ -333,10 +333,11 @@ export const DroppableTimetable = ({ schedule, removeFromSchedule, timeLabels })
 };
 
 const Step1MainBuilder = () => {
-  const { setStep, allCourses, basket, schedule, toggleBasket, addToSchedule, removeFromSchedule, isOverCredit, toggleOverCredit, getCourseTags, fetchCourses } = useStore();
+  const { setStep, setMode, saveScheduleToShelf, editingId, savedTimetables, allCourses, basket, schedule, toggleBasket, addToSchedule, removeFromSchedule, isOverCredit, toggleOverCredit, getCourseTags, fetchCourses } = useStore();
   const [search, setSearch] = useState('');
   const [selectedTags, setSelectedTags] = useState([]);
-
+  const [isSaveModalOpen, setIsSaveModalOpen] = useState(false);
+  const [saveForm, setSaveForm] = useState({ title: '', tag: '임시' });
   console.log("현재 로드된 강의 데이터 개수:", allCourses.length);
 
   useEffect(() => {
@@ -358,6 +359,8 @@ const Step1MainBuilder = () => {
   const handleComplete = () => {
     if (totalCredits < MIN_CREDIT) { alert(`🚫 학점이 부족합니다! (최소 ${MIN_CREDIT}학점)`); return; }
     if (!isOverCredit && totalCredits > MAX_CREDIT) { alert(`🚫 학점이 초과되었습니다! (최대 ${MAX_CREDIT}학점)`); return; }
+    
+    // 다음 단계(Step 2 또는 3)로 넘어갑니다!
     setStep(2); 
   };
 
@@ -502,10 +505,53 @@ const Step1MainBuilder = () => {
       </div>
 
       {/* 🔥 모달 렌더링 */}
+      {/* (기존) 실라버스 모달 */}
       <SyllabusModal 
         course={selectedSyllabusCourse} 
         onClose={() => setSelectedSyllabusCourse(null)} 
       />
+
+      {/* ▼ [추가된 부분] 예쁜 디자인의 저장 모달 창 복구 */}
+      {isSaveModalOpen && (
+        <div className="fixed inset-0 z-[70] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
+          <div className="bg-white w-full max-w-md rounded-3xl shadow-2xl p-6 relative">
+            <button onClick={() => setIsSaveModalOpen(false)} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600"><X size={24}/></button>
+            <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+              <ChefHat className="text-blue-500" /> 시간표 저장하기
+            </h2>
+            <div className="space-y-5">
+              <div>
+                <label className="text-xs font-bold text-slate-500 ml-1">제목</label>
+                <input 
+                  type="text" 
+                  value={saveForm.title} 
+                  onChange={e => setSaveForm({...saveForm, title: e.target.value})} 
+                  className="w-full mt-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 font-bold" 
+                  placeholder="예: 26년도 봄학기 최종"
+                  autoFocus
+                />
+              </div>
+              <div>
+                <label className="text-xs font-bold text-slate-500 ml-1">학기 태그</label>
+                <div className="flex gap-2 mt-1 overflow-x-auto pb-2 hide-scrollbar">
+                  {['26년도 봄학기', '26년도 여름학기', '26년도 가을학기', '26년도 겨울학기', '임시'].map(tag => (
+                    <button 
+                      key={tag} 
+                      onClick={() => setSaveForm({...saveForm, tag})} 
+                      className={`px-3 py-1.5 rounded-lg text-xs font-bold border transition-all whitespace-nowrap flex-shrink-0 ${saveForm.tag === tag ? 'bg-blue-500 border-blue-500 text-white shadow-md shadow-blue-500/20' : 'bg-white border-slate-200 text-slate-500 hover:bg-slate-50'}`}
+                    >
+                      {tag}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <button onClick={handleFinalSave} className="w-full mt-8 py-3.5 bg-blue-600 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-blue-500 transition-all shadow-lg shadow-blue-500/30">
+              <Check size={20}/> 저장하고 보관소로 이동
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };

@@ -1,41 +1,42 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import useStore from './store/useStore';
-
 import Step0Home from './components/Step0Home';
+import Step1MainBuilder from './components/Step1MainBuilder';
+import Step3Save from './components/Step3Save';
+import TimeTableShelf from './components/TimeTableShelf';
+import GraduationChef from './components/GraduationChef';
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
-const Step1MainBuilder = lazy(() => import('./components/Step1MainBuilder'));
-const TimeTableShelf = lazy(() => import('./components/TimeTableShelf'));
-const GraduationChef = lazy(() => import('./components/GraduationChef'));
-
-const App = () => {
-  const { currentStep, mode } = useStore();
+function App() {
+  const { currentStep: step, mode } = useStore();
 
   return (
-    <div className="h-screen w-full bg-slate-50 text-slate-800 font-sans overflow-hidden">
-      <Suspense fallback={
-        <div className="flex h-screen w-full items-center justify-center bg-slate-50">
-          <div className="flex flex-col items-center gap-4">
-            <div className="w-10 h-10 border-4 border-blue-100 border-t-blue-600 rounded-full animate-spin"></div>
-            <p className="text-slate-400 font-bold text-sm animate-pulse">
-              재료 준비 중...
-            </p>
-          </div>
-        </div>
-      }>
-        {currentStep === 0 && <Step0Home />}
+    <div className="w-full h-screen flex flex-col overflow-hidden bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white font-sans transition-colors duration-300">
+      <main className="w-full h-full relative">
+        
+        {step === 0 && <Step0Home />}
 
-        {currentStep === 1 && (
+        {step > 0 && (
           <>
-            {mode === 'timetable' && <Step1MainBuilder />}
-            
-            {mode === 'graduation' && <GraduationChef />}
+            {mode === 'timetable' && (
+              <>
+                {step === 1 && <Step1MainBuilder />}
+                {step === 2 && <Step3Save />}
+              </>
+            )}
 
+            {mode === 'graduation' && <GraduationChef />}
+            
+            {/* 🔥 shelf 모드 하나에서 진열대와 커뮤니티를 모두 보여줍니다 */}
             {mode === 'shelf' && <TimeTableShelf />}
           </>
         )}
-      </Suspense>
+
+      </main>
+      <Analytics />
     </div>
   );
-};
+}
 
 export default App;
