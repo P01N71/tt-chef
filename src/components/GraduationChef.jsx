@@ -88,7 +88,7 @@ const isCourseActive = (course, targetYear, targetSemester) => {
 };
 
 const CATEGORY_MAP = {
-  '기초': ['수학', '물리학', '화학', '생명과학', '컴퓨터공학', '공학선택', '인문사회', '영어', '쓰기,읽기중점'],
+  '기초': ['수학', '물리학', '화학', '생명과학', '컴퓨터공학', '공학선택', '영어', '쓰기,읽기중점'],
   '심화': ['트랙', '비트랙/융합', '연구', '창업', '인턴십']
 };
 
@@ -124,6 +124,8 @@ const GraduationChef = () => {
   });
 
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedTags, setSelectedTags] = useState([]); // 태그 필터 상태
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCustomOpen, setIsCustomOpen] = useState(false);
   const [isSaveModalOpen, setIsSaveModalOpen] = useState(false);
@@ -135,8 +137,9 @@ const GraduationChef = () => {
   const [newSemYear, setNewSemYear] = useState(new Date().getFullYear());
   const [newSemTerm, setNewSemTerm] = useState('1');
   
+  // ★ [수정] 초기 category_sub 값을 CATEGORY_MAP 기반으로 매칭 ('수학')
   const [customForm, setCustomForm] = useState({ 
-    name: '', credit: 3, category_main: '기초', category_sub: '선택안함', 
+    name: '', credit: 3, category_main: '기초', category_sub: '수학', 
     specific_track: '컴퓨터공학', isOnline: false 
   });
 
@@ -180,20 +183,49 @@ const GraduationChef = () => {
     }
   }, [transcript]);
 
+  // ★ availableTags 추출 시 트랙을 세분화 (ex. 트랙(물리학))
+  const availableTags = useMemo(() => {
+    if (!gradCourses) return [];
+    const tags = new Set();
+    gradCourses.forEach(c => {
+      if (c.category_sub === '트랙' && Array.isArray(c.available_tracks)) {
+        c.available_tracks.forEach(t => {
+          if (t !== '기초학부') tags.add(`트랙(${t})`);
+        });
+      } else if (c.category_sub) {
+        if (c.category_sub !== '트랙') tags.add(c.category_sub);
+      }
+    });
+    return Array.from(tags).sort(); // 가나다순 정렬
+  }, [gradCourses]);
+
   const filteredGradCourses = useMemo(() => {
     if (!gradCourses) return [];
     const currentTranscript = transcript || [];
     const takenCourseNames = new Set(currentTranscript.map(t => t.name.replace(/\s/g, '')));
+    
     return gradCourses.filter(c => {
       if (takenCourseNames.has(c.name.replace(/\s/g, ''))) return false;
+      
       const nameMatch = c.name.includes(searchTerm);
       if (c.classification && c.classification.includes('사용자지정')) return nameMatch;
+      
       const minYear = c.min_year || 0;
       const maxYear = c.max_year || 9999;
       const yearMatch = entryYear >= minYear && entryYear <= maxYear;
-      return nameMatch && yearMatch;
+      
+      // ★ 트랙 태그와 일반 태그를 분리해서 다중 필터링 지원
+      const tagMatch = selectedTags.length === 0 || selectedTags.some(tag => {
+        if (tag.startsWith('트랙(') && tag.endsWith(')')) {
+          const trackName = tag.slice(3, -1); // "트랙(물리학)" -> "물리학"
+          return c.category_sub === '트랙' && Array.isArray(c.available_tracks) && c.available_tracks.includes(trackName);
+        }
+        return c.category_sub === tag;
+      });
+      
+      return nameMatch && yearMatch && tagMatch;
     });
-  }, [gradCourses, searchTerm, entryYear, transcript]);
+  }, [gradCourses, searchTerm, entryYear, transcript, selectedTags]);
 
   const semesterData = useMemo(() => {
     const groups = {};
@@ -564,13 +596,19 @@ const GraduationChef = () => {
         moveTranscriptCourse(draggableId, targetYear, targetSemester);
     }
   };
+  
+  // ★ 커스텀 과목 생성 로직
   const handleAddCustom = () => {
     if (!customForm.name) return;
     const isDuplicate = transcript.some(t => t.name === customForm.name);
     if (isDuplicate) { alert(`'${customForm.name}'은(는) 이미 존재하는 과목입니다.`); return; }
     const randomId = Math.floor(Math.random() * 9000) + 1000;
     const creatorTag = `사용자지정 (달구 #${randomId})`;
-    const tracks = (customForm.category_main === '심화' && customForm.category_sub === '트랙') ? [customForm.specific_track] : [];
+    
+    // ★ 심화-트랙인 경우 해당 트랙을 available_tracks로 지정!
+    const isTrack = customForm.category_main === '심화' && customForm.category_sub === '트랙';
+    const tracks = isTrack ? [customForm.specific_track] : [];
+    
     const newCourse = {
       id: `custom-${Date.now()}`,
       name: customForm.name,
@@ -581,12 +619,12 @@ const GraduationChef = () => {
       semester: ['1', '2', '여름', '겨울'],
       grade_level: '전',
       available_tracks: tracks,
-      selected_track: tracks.length > 0 ? tracks[0] : '', 
+      selected_track: tracks.length > 0 ? tracks[0] : '', // ★ 자동으로 해당 트랙으로 카운트됨
       is_online: customForm.isOnline 
     };
     if (addNewCourseToWarehouse) addNewCourseToWarehouse(newCourse);
     setIsCustomOpen(false);
-    setCustomForm({ name: '', credit: 3, category_main: '기초', category_sub: '선택안함', specific_track: '컴퓨터공학', isOnline: false });
+    setCustomForm({ name: '', credit: 3, category_main: '기초', category_sub: '수학', specific_track: '컴퓨터공학', isOnline: false });
   };
   
   const planningYears = Array.from({length: 10}, (_, i) => 2021 + i);
@@ -635,10 +673,31 @@ const GraduationChef = () => {
                   </button>
                 </div>
               </div>
-              <div className="relative">
+              <div className="relative mb-2">
                 <Search className="absolute left-3 top-2.5 w-4 h-4 text-slate-400" />
                 <input type="text" placeholder="과목명 검색..." className="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500" onChange={(e) => setSearchTerm(e.target.value)} />
               </div>
+              {/* 태그 필터 버튼 영역 */}
+              {availableTags.length > 0 && (
+                <div className="flex gap-1.5 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                  <style>{` .hide-scrollbar::-webkit-scrollbar { display: none; } `}</style>
+                  <div className="flex gap-1.5 hide-scrollbar flex-nowrap">
+                    {availableTags.map(tag => (
+                      <button
+                        key={tag}
+                        onClick={() => setSelectedTags(prev => prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag])}
+                        className={`px-3 py-1.5 text-[11px] rounded-lg border font-bold whitespace-nowrap flex-shrink-0 transition-all ${
+                          selectedTags.includes(tag) 
+                            ? 'bg-blue-600 text-white border-blue-600 shadow-sm' 
+                            : 'bg-white text-slate-500 border-slate-200 hover:bg-slate-50'
+                        }`}
+                      >
+                        {tag}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
             <Droppable droppableId="warehouse" isDropDisabled={true} renderClone={(provided, snapshot, rubric) => {
                 const course = filteredGradCourses[rubric.source.index];
@@ -782,7 +841,6 @@ const GraduationChef = () => {
               <h3 className="text-xs font-bold text-slate-400 mb-2 flex items-center gap-1">
                 <GraduationCap className="w-3.5 h-3.5" /> 예상 학위
               </h3>
-              {/* ★ [수정됨] 학위명에 쉼표가 있을 경우 렌더링 시 자동 줄바꿈 적용 */}
               <div className="font-bold text-lg leading-snug text-blue-100">
                 {degreeName.split(', ').map((text, index) => (
                     <div key={index}>{text}</div>
@@ -890,15 +948,25 @@ const GraduationChef = () => {
                     <input type="number" className="w-full border border-slate-200 p-2.5 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all" value={customForm.credit} onChange={e=>setCustomForm({...customForm, credit: e.target.value})} />
                   </div>
                   <div className="grid grid-cols-2 gap-3">
+                    {/* ★ 대분류 변경 시 소분류의 첫 번째 항목으로 자동 업데이트되도록 수정 */}
                     <div>
                         <label className="block text-xs font-bold text-slate-500 mb-1.5 ml-1">이수구분 (대분류)</label>
-                        <select className="w-full border border-slate-200 p-2.5 rounded-lg text-sm bg-white focus:outline-none focus:border-blue-500" value={customForm.category_main} onChange={e=>setCustomForm({...customForm, category_main: e.target.value})}>
+                        <select className="w-full border border-slate-200 p-2.5 rounded-lg text-sm bg-white focus:outline-none focus:border-blue-500" 
+                          value={customForm.category_main} 
+                          onChange={e => {
+                            const newMain = e.target.value;
+                            setCustomForm({...customForm, category_main: newMain, category_sub: CATEGORY_MAP[newMain][0]});
+                          }}
+                        >
                             {Object.keys(CATEGORY_MAP).map(key => <option key={key} value={key}>{key}</option>)}
                         </select>
                     </div>
                     <div>
                         <label className="block text-xs font-bold text-slate-500 mb-1.5 ml-1">영역 (소분류)</label>
-                        <select className="w-full border border-slate-200 p-2.5 rounded-lg text-sm bg-white focus:outline-none focus:border-blue-500" value={customForm.category_sub} onChange={e=>setCustomForm({...customForm, category_sub: e.target.value})}>
+                        <select className="w-full border border-slate-200 p-2.5 rounded-lg text-sm bg-white focus:outline-none focus:border-blue-500" 
+                          value={customForm.category_sub} 
+                          onChange={e=>setCustomForm({...customForm, category_sub: e.target.value})}
+                        >
                             {CATEGORY_MAP[customForm.category_main].map(sub => <option key={sub} value={sub}>{sub}</option>)}
                         </select>
                     </div>
@@ -906,7 +974,10 @@ const GraduationChef = () => {
                   {customForm.category_main === '심화' && customForm.category_sub === '트랙' && (
                       <div className="mt-3">
                           <label className="block text-xs font-bold text-slate-500 mb-1.5 ml-1">세부 전공 (트랙)</label>
-                          <select className="w-full border border-slate-200 p-2.5 rounded-lg text-sm bg-white focus:outline-none focus:border-blue-500" value={customForm.specific_track} onChange={e=>setCustomForm({...customForm, specific_track: e.target.value})}>
+                          <select className="w-full border border-slate-200 p-2.5 rounded-lg text-sm bg-white focus:outline-none focus:border-blue-500" 
+                            value={customForm.specific_track} 
+                            onChange={e=>setCustomForm({...customForm, specific_track: e.target.value})}
+                          >
                               {TRACK_LIST.map(track => <option key={track} value={track}>{track}</option>)}
                           </select>
                       </div>
