@@ -2,25 +2,21 @@ import React, { useState, useEffect } from 'react';
 import useStore from '../store/useStore';
 import { ChefHat, ArrowRight, GraduationCap, LayoutGrid, UserCircle2, X, PenTool, Archive } from 'lucide-react';
 
-// 로고 이미지 로드 (없으면 아이콘 대체)
 let dalguLogo = null;
 try { dalguLogo = new URL('../assets/dalgu.jpg', import.meta.url).href; } catch (e) {}
 
-// 🔥 전공 목록 (표준)
 const STANDARD_MAJORS = [
-  "미정", 
   "물리학", "화학", "생명과학", "뇌과학", 
   "기계공학", "화학공학", "전자공학", "컴퓨터공학", "재료공학", "반도체공학과"
 ];
 
-// --- [Component] 전공 선택 드롭다운 (프로필 설정용) ---
-const MajorSelector = ({ label, value, onChange, allowCustom = false, disabled = false }) => {
+const MajorSelector = ({ label, value, onChange, allowCustom = false }) => {
     const [isCustomMode, setIsCustomMode] = useState(false);
 
     useEffect(() => {
-        if (value && value !== "미정" && !STANDARD_MAJORS.includes(value)) {
+        if (value && value !== "미정" && value !== "없음" && !STANDARD_MAJORS.includes(value)) {
             setIsCustomMode(true);
-        } else if (STANDARD_MAJORS.includes(value)) {
+        } else {
             setIsCustomMode(false);
         }
     }, [value]);
@@ -28,16 +24,15 @@ const MajorSelector = ({ label, value, onChange, allowCustom = false, disabled =
     let dropdownValue = value;
     if (isCustomMode) {
         dropdownValue = "자율트랙";
-    } else if (!STANDARD_MAJORS.includes(value)) {
+    } else if (!value || value === "미정" || value === "없음") {
         dropdownValue = "미정";
     }
 
     return (
-      <div className={`flex flex-col gap-2 transition-opacity duration-200 ${disabled ? 'opacity-40 pointer-events-none grayscale' : ''}`}>
+      <div className="flex flex-col gap-2 transition-opacity duration-200">
         <label className="text-xs font-bold text-slate-500 ml-1">{label}</label>
         <select 
             value={dropdownValue} 
-            disabled={disabled}
             onChange={(e) => {
                 const val = e.target.value;
                 if (val === "자율트랙") {
@@ -50,8 +45,9 @@ const MajorSelector = ({ label, value, onChange, allowCustom = false, disabled =
             }}
             className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 outline-none focus:border-blue-500 text-sm font-bold"
         >
+            <option value="미정">없음 (미정)</option>
             {STANDARD_MAJORS.map(m => (
-                <option key={m} value={m}>{m === '미정' && label !== '주전공 (Major)' ? '없음 (미정)' : m}</option>
+                <option key={m} value={m}>{m}</option>
             ))}
             {allowCustom && <option value="자율트랙">자율트랙 (직접 입력)</option>}
         </select>
@@ -61,7 +57,7 @@ const MajorSelector = ({ label, value, onChange, allowCustom = false, disabled =
                 <PenTool size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-500"/>
                 <input 
                     type="text"
-                    value={value} 
+                    value={value === "미정" ? "" : value} 
                     onChange={(e) => onChange(e.target.value)}
                     placeholder="트랙명 직접 입력"
                     className="w-full bg-blue-50 border border-blue-200 rounded-xl pl-9 pr-3 py-2.5 outline-none focus:border-blue-500 text-sm font-bold text-blue-700 placeholder:text-blue-300"
@@ -73,39 +69,24 @@ const MajorSelector = ({ label, value, onChange, allowCustom = false, disabled =
     );
 };
 
-// --- [Main Component] Step0Home ---
 const Step0Home = () => {
   const { setStep, setMode, userProfile, updateUserProfile } = useStore();
   
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   
-  // 로컬 프로필 상태 (모달에서 수정 중인 데이터)
   const [localProfile, setLocalProfile] = useState(userProfile || {
     status: '학사', semester: '1', major: '미정', doubleMajor: '미정', minor: '미정'
   });
 
-  // 모드 선택 핸들러
   const handleModeSelect = (mode) => {
     setMode(mode);
     setStep(1);
   };
 
-  // 프로필 저장 핸들러
   const saveProfile = () => {
-    if (userProfile.lastUpdatedAt) {
-        const lastUpdate = new Date(userProfile.lastUpdatedAt);
-        const now = new Date();
-        const diffHours = (now - lastUpdate) / (1000 * 60 * 60);
-        const diffDays = diffHours / 24;
-
-        if (diffHours >= 1 && diffDays < 90) {
-            alert(`프로필은 학기 단위(3개월)로만 변경할 수 있습니다.\n\n남은 기간: 약 ${Math.ceil(90 - diffDays)}일`);
-            return;
-        }
-    }
-
     const finalProfile = {
         ...localProfile,
+        major: localProfile.major || '미정',
         doubleMajor: localProfile.doubleMajor || '미정',
         minor: localProfile.minor || '미정'
     };
@@ -115,7 +96,7 @@ const Step0Home = () => {
     alert("프로필이 저장되었습니다.");
   };
 
-  // 복수전공/부전공 상호 배타적 선택 로직
+  // [수정됨] disabled 락을 걸지 않고 값만 상호 배타적으로 지워줌
   const handleDoubleMajorChange = (val) => {
     setLocalProfile(prev => ({
         ...prev,
@@ -132,13 +113,9 @@ const Step0Home = () => {
     }));
   };
 
-  const isDoubleSelected = localProfile.doubleMajor && localProfile.doubleMajor !== '미정';
-  const isMinorSelected = localProfile.minor && localProfile.minor !== '미정';
-
   return (
     <div className="h-full w-full bg-blue-50/30 dark:bg-slate-900 overflow-y-auto custom-scrollbar relative">
       
-      {/* 우측 상단 프로필 설정 버튼 */}
       <button 
         onClick={() => { setLocalProfile(userProfile); setIsProfileOpen(true); }}
         className="absolute top-6 right-6 flex items-center gap-2 bg-white/80 backdrop-blur-sm dark:bg-slate-800 px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all text-slate-600 dark:text-slate-300 font-bold text-sm border border-slate-200 dark:border-slate-700 z-10"
@@ -149,7 +126,6 @@ const Step0Home = () => {
 
       <div className="min-h-full flex flex-col items-center justify-center text-center p-4 py-12 pb-32 animate-in fade-in duration-700">
         
-        {/* 로고 영역 */}
         <div className="relative mb-6 md:mb-10 group cursor-default">
           <div className="absolute -inset-4 bg-blue-500/20 rounded-full blur-2xl group-hover:bg-blue-500/30 transition-colors duration-500"></div>
           <div className="relative bg-white dark:bg-slate-800 p-6 rounded-[2rem] shadow-2xl border-4 border-white dark:border-slate-700 transform group-hover:scale-105 transition-transform duration-300 w-40 h-40 md:w-56 md:h-56 flex items-center justify-center overflow-hidden ring-1 ring-blue-50">
@@ -165,14 +141,11 @@ const Step0Home = () => {
           DGIST <span className="text-blue-600 dark:text-blue-400">TT Chef</span>
         </h1>
         <p className="text-slate-500 dark:text-slate-400 mb-8 md:mb-12 font-medium text-sm md:text-base">
-          2026 Spring ver. (fix.0216)<br className="hidden md:block"/>
+          2026 Spring ver. (fix.0218)<br className="hidden md:block"/>
           Made by P01N71 (w/ D1C3, pharmaxxan)
         </p>
 
-        {/* 3단 선택 영역 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-6xl px-4 md:px-8 items-stretch">
-          
-          {/* 1. 시간표 요리사 (Blue Theme) */}
           <button onClick={() => handleModeSelect('timetable')} className="group relative flex flex-col items-center p-8 bg-white dark:bg-slate-800 border-2 border-white dark:border-slate-700 rounded-3xl hover:border-blue-200 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-200/20 hover:-translate-y-1 h-full w-full ring-1 ring-slate-100">
             <div className="mb-6 p-5 bg-blue-50 dark:bg-blue-900/20 rounded-2xl group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
               <ChefHat size={36} className="text-blue-600 dark:text-blue-400" />
@@ -187,7 +160,6 @@ const Step0Home = () => {
             </div>
           </button>
 
-          {/* 2. 졸업 요리사 (Purple Theme) */}
           <button onClick={() => handleModeSelect('graduation')} className="group relative flex flex-col items-center p-8 bg-white dark:bg-slate-800 border-2 border-white dark:border-slate-700 rounded-3xl hover:border-purple-200 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-purple-200/20 hover:-translate-y-1 h-full w-full ring-1 ring-slate-100">
             <div className="mb-6 p-5 bg-purple-50 dark:bg-purple-900/20 rounded-2xl group-hover:bg-purple-100 dark:group-hover:bg-purple-900/30 transition-colors">
               <GraduationCap size={36} className="text-purple-600 dark:text-purple-400" />
@@ -202,7 +174,6 @@ const Step0Home = () => {
             </div>
           </button>
 
-          {/* 3. 진열대 & 공유 (Slate/Grey Theme) - [수정됨] */}
           <button onClick={() => handleModeSelect('shelf')} className="group relative flex flex-col items-center p-8 bg-white dark:bg-slate-800 border-2 border-white dark:border-slate-700 rounded-3xl hover:border-slate-300 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-slate-200/40 hover:-translate-y-1 h-full w-full ring-1 ring-slate-100">
             <div className="mb-6 p-5 bg-slate-100 dark:bg-slate-700 rounded-2xl group-hover:bg-slate-200 dark:group-hover:bg-slate-600 transition-colors">
               <Archive size={36} className="text-slate-600 dark:text-slate-300" />
@@ -220,7 +191,6 @@ const Step0Home = () => {
         </div>
       </div>
 
-      {/* 프로필 설정 모달 */}
       {isProfileOpen && (
         <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
             <div className="bg-white dark:bg-slate-800 w-full max-w-md rounded-3xl shadow-2xl p-6 relative ring-1 ring-slate-200/50">
@@ -266,19 +236,18 @@ const Step0Home = () => {
                     />
                     
                     <div className="grid grid-cols-2 gap-4">
+                        {/* disabled 제거하여 자유롭게 클릭 후 상호 초기화 되도록 수정 */}
                         <MajorSelector 
                             label="복수전공 (선택)" 
                             value={localProfile.doubleMajor} 
                             onChange={handleDoubleMajorChange}
                             allowCustom={false}
-                            disabled={isMinorSelected} 
                         />
                         <MajorSelector 
                             label="부전공 (선택)" 
                             value={localProfile.minor} 
                             onChange={handleMinorChange}
                             allowCustom={false}
-                            disabled={isDoubleSelected} 
                         />
                     </div>
                 </div>

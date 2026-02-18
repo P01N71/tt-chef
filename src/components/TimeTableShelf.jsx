@@ -10,7 +10,6 @@ import { toPng } from 'html-to-image';
 const START_HOUR = 9;
 const SLOT_HEIGHT = 60;
 
-// --- Helper Functions ---
 const getSmartType = (course) => {
     if (course.type) return course.type;
     if (course.fixedTypes && course.fixedTypes.length > 0) return course.fixedTypes[0];
@@ -37,17 +36,8 @@ const isMajorCredit = (c) => {
     return true;
 };
 
-// --- Modals & Viewers ---
-
 const SyllabusModal = ({ course, onClose }) => {
     if (!course) return null;
-    const syllabus = course.syllabus || {
-        summary: "본 교과목은 데이터사이언스 입문 과목으로...",
-        grading: [{ name: "Exam", percent: 100 }],
-        schedule: ["1주차: OT"],
-        textbook: "None"
-    };
-
     return (
         <div className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
             <div className="bg-white w-full max-w-xl rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[85vh]">
@@ -59,14 +49,13 @@ const SyllabusModal = ({ course, onClose }) => {
                     <button onClick={onClose} className="p-2 bg-slate-800 rounded-full hover:bg-slate-700 text-slate-300 hover:text-white transition"><X size={20}/></button>
                 </div>
                 <div className="flex-1 overflow-y-auto p-6 space-y-4 custom-scrollbar">
-                    <p className="text-slate-500 text-sm">강의 계획서 상세 내용은 실제 데이터 연동 시 표시됩니다.</p>
+                    <p className="text-slate-500 text-sm">강의 상세 정보는 준비 중입니다.</p>
                 </div>
             </div>
         </div>
     );
 };
 
-// [TimeTable Viewer]
 const ShelfTimetableViewer = ({ timetableData, onCourseClick }) => {
     const courses = timetableData.courses || [];
     const totalCredits = courses.reduce((sum, c) => sum + (c.credit || 0), 0);
@@ -141,14 +130,25 @@ const ShelfTimetableViewer = ({ timetableData, onCourseClick }) => {
     );
 };
 
-// [Modified] Recipe Viewer (기초/심화 학점 추가)
 const ShelfRecipeViewer = ({ recipeData }) => {
-    const { userProfile, transcript } = recipeData.data || {};
-    const courses = transcript || [];
+    const userProfile = recipeData.userProfile || {};
+    const courses = recipeData.courses || [];
+    const degreeName = recipeData.degreeName || "수료 (요건 미달)";
     
-    // 학점 계산
+    const totalCredits = courses.reduce((sum, c) => sum + (c.credit || 0), 0);
     const basicCredits = courses.filter(c => c.category_main === '기초').reduce((sum, c) => sum + (c.credit || 0), 0);
     const advancedCredits = courses.filter(c => c.category_main === '심화').reduce((sum, c) => sum + (c.credit || 0), 0);
+
+    let totalScore = 0;
+    let totalCount = 0;
+    const scoreMap = { 'A+': 4.3, 'A0': 4.0, 'A-': 3.7, 'B+': 3.3, 'B0': 3.0, 'B-': 2.7, 'C+': 2.3, 'C0': 2.0, 'C-': 1.7, 'D+': 1.3, 'D0': 1.0, 'D-': 0.7 };
+    courses.forEach(c => {
+        if(c.grade && scoreMap[c.grade]) {
+            totalScore += scoreMap[c.grade] * c.credit;
+            totalCount += c.credit;
+        }
+    });
+    const gpa = totalCount > 0 ? (totalScore / totalCount).toFixed(2) : "0.00";
 
     const semesterGroups = useMemo(() => {
         const groups = {};
@@ -165,59 +165,64 @@ const ShelfRecipeViewer = ({ recipeData }) => {
 
     return (
         <div className="w-full bg-white p-8 rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
-             <div className="text-center mb-8 border-b pb-6 border-slate-100">
+              <div className="text-center mb-8 border-b pb-6 border-slate-100">
                 <div className="inline-flex items-center gap-2 bg-purple-50 text-purple-600 px-3 py-1 rounded-full text-xs font-bold mb-3">
-                    <Scroll size={14} /> 졸업 시나리오
+                    <Scroll size={14} /> 졸업 레시피
                 </div>
-                <h3 className="text-3xl font-black text-slate-900 mb-2 tracking-tight">{recipeData.title}</h3>
+                <h3 className="text-3xl font-black text-slate-900 mb-6 tracking-tight">{recipeData.title}</h3>
                 
-                {/* [수정] 통계 정보에 기초/심화 학점 추가 */}
-                <div className="flex justify-center items-center gap-6 text-slate-500 text-sm mt-4">
-                    <div className="text-center">
-                        <div className="text-[10px] text-slate-400 font-bold">예상 학위</div>
-                        <div className="text-slate-800 font-bold">{recipeData.degreeName}</div>
+                <div className="grid grid-cols-12 divide-x divide-slate-200 text-sm">
+                    {/* ★ [수정됨] 모달 뷰: 쉼표를 기준으로 줄바꿈 렌더링 */}
+                    <div className="col-span-4 flex flex-col items-center justify-center gap-1 px-2">
+                        <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wide">예상 학위</div>
+                        <div className="text-slate-800 font-bold w-full break-words text-center leading-snug">
+                            {degreeName.split(', ').map((text, index) => (
+                                <div key={index}>{text}</div>
+                            ))}
+                        </div>
                     </div>
-                    <div className="w-px h-8 bg-slate-200"></div>
-                    <div className="text-center">
-                        <div className="text-[10px] text-slate-400 font-bold">총 학점</div>
-                        <div className="text-blue-600 font-bold text-base">{recipeData.totalCredits}</div>
+                    <div className="col-span-2 flex flex-col items-center justify-center gap-1">
+                        <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wide">총 학점</div>
+                        <div className="text-blue-600 font-bold text-base">{totalCredits}</div>
                     </div>
-                    <div className="w-px h-8 bg-slate-200"></div>
-                    <div className="text-center">
-                        <div className="text-[10px] text-slate-400 font-bold">기초</div>
+                    <div className="col-span-2 flex flex-col items-center justify-center gap-1">
+                        <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wide">기초</div>
                         <div className="text-slate-700 font-bold">{basicCredits}</div>
                     </div>
-                    <div className="w-px h-8 bg-slate-200"></div>
-                    <div className="text-center">
-                        <div className="text-[10px] text-slate-400 font-bold">심화</div>
+                    <div className="col-span-2 flex flex-col items-center justify-center gap-1">
+                        <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wide">심화</div>
                         <div className="text-slate-700 font-bold">{advancedCredits}</div>
                     </div>
-                    <div className="w-px h-8 bg-slate-200"></div>
-                    <div className="text-center">
-                        <div className="text-[10px] text-slate-400 font-bold">평점</div>
-                        <div className="text-purple-600 font-bold text-base">{recipeData.gpa}</div>
+                    <div className="col-span-2 flex flex-col items-center justify-center gap-1">
+                        <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wide">평점</div>
+                        <div className="text-purple-600 font-bold text-base">{gpa}</div>
                     </div>
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-                <div className="col-span-2 mb-2">
-                    <h4 className="text-sm font-bold text-slate-600 mb-2 flex items-center gap-2"><UserCircle2 size={16}/> 트랙 설정 정보</h4>
-                    <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 text-sm flex gap-4">
-                         <div><span className="text-slate-400 text-xs">주전공</span> <span className="font-bold">{userProfile?.major}</span></div>
-                         <div><span className="text-slate-400 text-xs">복수전공</span> <span className="font-bold">{userProfile?.doubleMajor}</span></div>
-                         <div><span className="text-slate-400 text-xs">부전공</span> <span className="font-bold">{userProfile?.minor}</span></div>
-                    </div>
+            <div className="mb-6">
+                <h4 className="text-sm font-bold text-slate-600 mb-2 flex items-center gap-2"><UserCircle2 size={16}/> 트랙 설정 정보</h4>
+                <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 text-sm grid grid-cols-3 gap-4">
+                      <div className="flex flex-col"><span className="text-slate-400 text-xs mb-1">주전공</span> <span className="font-bold text-slate-800">{userProfile.major || '미정'}</span></div>
+                      <div className="flex flex-col"><span className="text-slate-400 text-xs mb-1">복수전공</span> <span className="font-bold text-slate-800">{userProfile.doubleMajor || '없음'}</span></div>
+                      <div className="flex flex-col"><span className="text-slate-400 text-xs mb-1">부전공</span> <span className="font-bold text-slate-800">{userProfile.minor || '없음'}</span></div>
                 </div>
+            </div>
 
+            <div className="grid grid-cols-3 gap-4">
                 {sortedSemesters.map(key => (
-                    <div key={key} className="bg-white border border-slate-100 rounded-xl p-3 shadow-sm">
-                        <div className="text-xs font-bold text-slate-500 mb-2 border-b border-slate-50 pb-1">{key}</div>
+                    <div key={key} className="bg-white border border-slate-100 rounded-xl p-3 shadow-sm h-fit">
+                        <div className="text-xs font-bold text-slate-500 mb-2 border-b border-slate-50 pb-1 flex justify-between">
+                            <span>{key}</span>
+                            <span className="text-[10px] bg-slate-100 px-1.5 rounded text-slate-400">
+                                {semesterGroups[key].reduce((a,c)=>a+c.credit,0)}학점
+                            </span>
+                        </div>
                         <div className="space-y-1">
                             {semesterGroups[key].map(c => (
-                                <div key={c.id} className="flex justify-between items-center text-xs">
-                                    <span className="text-slate-700 truncate">{c.name}</span>
-                                    <span className="text-slate-400 text-[10px] shrink-0">{c.credit}학점</span>
+                                <div key={c.id} className="flex justify-between items-center text-xs group">
+                                    <span className="text-slate-700 truncate group-hover:text-blue-600 transition-colors">{c.name}</span>
+                                    <span className="text-slate-400 text-[10px] shrink-0">{c.credit}</span>
                                 </div>
                             ))}
                         </div>
@@ -228,8 +233,6 @@ const ShelfRecipeViewer = ({ recipeData }) => {
     );
 };
 
-
-// --- Main Component ---
 const TimeTableShelf = () => {
   const { 
     setStep, setMode, 
@@ -260,6 +263,10 @@ const TimeTableShelf = () => {
 
   const [selectedCourseForSyllabus, setSelectedCourseForSyllabus] = useState(null);
 
+  const handleCourseClick = (course) => {
+    setSelectedCourseForSyllabus(course);
+  };
+
   const shelvedTimetables = useMemo(() => {
     const groups = {};
     savedTimetables.forEach(item => {
@@ -285,7 +292,7 @@ const TimeTableShelf = () => {
   }, [communityPosts, searchTerm]);
 
   useEffect(() => {
-    if (viewingItem && activeTab === 'my' && viewingItem.type !== 'recipe') {
+    if (viewingItem && activeTab === 'my' && !viewingItem.isGraduation) {
       setEditTitle(viewingItem.title);
       setEditTag(viewingItem.tag);
       setIsEditing(false);
@@ -381,8 +388,18 @@ const TimeTableShelf = () => {
 
   const handleLoadRecipe = () => {
       if(window.confirm('현재 작성 중인 졸업 요건 데이터가 덮어씌워집니다.\n이 레시피를 불러와서 요리하시겠습니까?')) {
-          if(loadRecipe) loadRecipe(viewingItem.data);
-          else console.warn("loadRecipe function missing in store");
+          const recipeToLoad = {
+              ...viewingItem,
+              transcript: viewingItem.courses 
+          };
+          
+          if(loadRecipe) loadRecipe(recipeToLoad); 
+          else {
+             useStore.setState({ 
+                 transcript: viewingItem.courses || [], 
+                 userProfile: viewingItem.userProfile || {} 
+             });
+          }
           setMode('graduation');
           setStep(1);
       }
@@ -452,7 +469,7 @@ const TimeTableShelf = () => {
                         <div className="h-full flex flex-col items-center justify-center text-slate-400 gap-4 mt-20">
                             <LayoutGrid size={64} className="opacity-20"/>
                             <p className="text-lg font-medium">아직 진열된 시간표가 없습니다.</p>
-                            <button onClick={() => { setMode('timetable'); setStep(1); }} className="px-6 py-2 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-500 transition shadow-lg hover:shadow-blue-500/30">새 시간표 요리하러 가기</button>
+                            <button onClick={() => { setMode('timetable'); setStep(1); }} className="px-6 py-2 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-50 transition shadow-lg hover:shadow-blue-500/30">새 시간표 요리하러 가기</button>
                         </div>
                     ) : (
                         <div className="max-w-5xl mx-auto space-y-12">
@@ -466,23 +483,23 @@ const TimeTableShelf = () => {
                                 <div className="flex flex-wrap gap-6 px-4 relative z-10">
                                     {items.map(item => (
                                     <div key={item.id} onClick={() => setViewingItem(item)} className="w-56 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-slate-200 group flex flex-col overflow-hidden">
-                                        <div className="h-24 bg-slate-100 p-4 flex flex-col justify-between group-hover:bg-blue-50 transition-colors">
-                                            <div className="flex justify-between items-start">
-                                                <FolderOpen className="text-slate-300 group-hover:text-blue-400" size={24}/>
-                                                <div className="flex items-center gap-1">
-                                                    {item.firebaseId && <span className="text-[10px] bg-pink-100 text-pink-600 px-1.5 py-0.5 rounded font-bold">공유됨</span>}
-                                                    <button onClick={(e) => { e.stopPropagation(); handleShareClick(item); }} className="w-7 h-7 flex items-center justify-center rounded-full bg-white text-blue-500 shadow-sm border border-slate-200 hover:bg-blue-50 transition-colors" title="공유하기"><Share2 size={14}/></button>
+                                            <div className="h-24 bg-slate-100 p-4 flex flex-col justify-between group-hover:bg-blue-50 transition-colors">
+                                                <div className="flex justify-between items-start">
+                                                    <FolderOpen className="text-slate-300 group-hover:text-blue-400" size={24}/>
+                                                    <div className="flex items-center gap-1">
+                                                        {item.firebaseId && <span className="text-[10px] bg-pink-100 text-pink-600 px-1.5 py-0.5 rounded font-bold">공유됨</span>}
+                                                        <button onClick={(e) => { e.stopPropagation(); handleShareClick(item); }} className="w-7 h-7 flex items-center justify-center rounded-full bg-white text-blue-500 shadow-sm border border-slate-200 hover:bg-blue-50 transition-colors" title="공유하기"><Share2 size={14}/></button>
+                                                    </div>
+                                                </div>
+                                                <span className="text-[10px] text-slate-400 font-mono text-right">{new Date(item.createdAt).toLocaleDateString()}</span>
+                                            </div>
+                                            <div className="p-4 bg-white flex-1 flex flex-col">
+                                                <h4 className="font-bold text-slate-800 text-lg leading-tight line-clamp-2 mb-2 group-hover:text-blue-600">{item.title}</h4>
+                                                <div className="mt-auto pt-3 border-t border-slate-100 flex flex-col gap-1 text-xs">
+                                                    <div className="flex justify-between items-center text-slate-500"><span className="flex items-center gap-1"><Clock size={12}/> 총 학점</span><span className="font-bold">{item.courses?.reduce((sum, c) => sum + (c.credit || 0), 0)}학점</span></div>
+                                                    <div className="flex justify-between items-center text-blue-600"><span className="flex items-center gap-1"><GraduationCap size={12}/> 전공</span><span className="font-bold">{item.courses?.reduce((sum, c) => isMajorCredit(c) ? sum + (c.credit || 0) : sum, 0)}학점</span></div>
                                                 </div>
                                             </div>
-                                            <span className="text-[10px] text-slate-400 font-mono text-right">{new Date(item.createdAt).toLocaleDateString()}</span>
-                                        </div>
-                                        <div className="p-4 bg-white flex-1 flex flex-col">
-                                            <h4 className="font-bold text-slate-800 text-lg leading-tight line-clamp-2 mb-2 group-hover:text-blue-600">{item.title}</h4>
-                                            <div className="mt-auto pt-3 border-t border-slate-100 flex flex-col gap-1 text-xs">
-                                                <div className="flex justify-between items-center text-slate-500"><span className="flex items-center gap-1"><Clock size={12}/> 총 학점</span><span className="font-bold">{item.courses?.reduce((sum, c) => sum + (c.credit || 0), 0)}학점</span></div>
-                                                <div className="flex justify-between items-center text-blue-600"><span className="flex items-center gap-1"><GraduationCap size={12}/> 전공</span><span className="font-bold">{item.courses?.reduce((sum, c) => isMajorCredit(c) ? sum + (c.credit || 0) : sum, 0)}학점</span></div>
-                                            </div>
-                                        </div>
                                     </div>
                                     ))}
                                 </div>
@@ -494,53 +511,57 @@ const TimeTableShelf = () => {
                     )
                 )}
 
-                {/* 2. Recipes (Modified Card) */}
+                {/* 2. Recipes */}
                 {shelfCategory === 'recipe' && (
                     (!savedRecipes || savedRecipes.length === 0) ? (
                         <div className="h-full flex flex-col items-center justify-center text-slate-400 gap-4 mt-20">
                             <Scroll size={64} className="opacity-20"/>
                             <p className="text-lg font-medium">저장된 졸업 레시피가 없습니다.</p>
-                            <button onClick={() => { setMode('graduation'); setStep(1); }} className="px-6 py-2 bg-purple-600 text-white rounded-full font-bold hover:bg-purple-500 transition shadow-lg hover:shadow-purple-500/30">졸업 요리하러 가기</button>
+                            <button onClick={() => { setMode('graduation'); setStep(1); }} className="px-6 py-2 bg-purple-600 text-white rounded-full font-bold hover:bg-purple-50 transition shadow-lg hover:shadow-purple-500/30">졸업 요리하러 가기</button>
                         </div>
                     ) : (
                         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {savedRecipes.map(recipe => {
-                                const transcript = recipe.data?.transcript || [];
-                                const basicCredits = transcript.filter(c => c.category_main === '기초').reduce((sum, c) => sum + (c.credit || 0), 0);
-                                const advancedCredits = transcript.filter(c => c.category_main === '심화').reduce((sum, c) => sum + (c.credit || 0), 0);
+                                const transcript = recipe.courses || [];
+                                const degreeName = recipe.degreeName || "수료 (요건 미달)";
 
                                 return (
-                                    <div key={recipe.id} onClick={() => setViewingItem(recipe)} className="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer border border-slate-200 overflow-hidden group">
-                                        <div className="p-5 border-b border-slate-50 bg-slate-50/50 group-hover:bg-purple-50/30 transition-colors">
-                                            <div className="flex justify-between items-start mb-2">
-                                                <div className="bg-purple-100 text-purple-600 p-2 rounded-lg">
-                                                    <Scroll size={20}/>
+                                    <div key={recipe.id} onClick={() => setViewingItem(recipe)} className="bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer border border-slate-200 overflow-hidden group flex flex-col h-full">
+                                            <div className="p-5 border-b border-slate-50 bg-slate-50/50 group-hover:bg-purple-50/30 transition-colors">
+                                                <div className="flex justify-between items-start mb-2">
+                                                    <div className="bg-purple-100 text-purple-600 p-2 rounded-lg">
+                                                        <Scroll size={20}/>
+                                                    </div>
+                                                    <span className="text-[10px] text-slate-400 font-mono">{new Date(recipe.createdAt).toLocaleDateString()}</span>
                                                 </div>
-                                                <span className="text-[10px] text-slate-400 font-mono">{new Date(recipe.createdAt).toLocaleDateString()}</span>
+                                                <h4 className="font-bold text-slate-800 text-lg leading-snug group-hover:text-purple-600 transition-colors">{recipe.title}</h4>
                                             </div>
-                                            <h4 className="font-bold text-slate-800 text-lg leading-snug group-hover:text-purple-600 transition-colors">{recipe.title}</h4>
-                                        </div>
-                                        <div className="p-5 pt-3">
-                                            <div className="text-xs text-slate-500 mb-4 bg-slate-50 px-2 py-1 rounded border border-slate-100 inline-block font-medium">
-                                                {recipe.degreeName}
+                                            <div className="p-5 pt-3 flex-1 flex flex-col">
+                                                {/* ★ [수정됨] 카드 리스트 뷰: 쉼표를 기준으로 줄바꿈 렌더링 */}
+                                                <div className="text-xs text-slate-500 mb-4 bg-slate-50 px-2 py-1 rounded border border-slate-100 inline-block font-medium w-fit max-w-full text-center">
+                                                    {degreeName.split(', ').map((text, i) => (
+                                                        <div key={i}>{text}</div>
+                                                    ))}
+                                                </div>
+                                                
+                                                <div className="grid grid-cols-2 gap-y-2 text-sm mt-auto border-t border-slate-100 pt-3">
+                                                    <div className="flex items-center gap-1">
+                                                        <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wide">총 학점</span>
+                                                        <span className="font-bold text-slate-700 ml-auto">{transcript.reduce((a,c)=>a+c.credit, 0)}</span>
+                                                    </div>
+                                                    <div className="flex items-center gap-1 border-l border-slate-100 pl-3">
+                                                        <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wide">평점</span>
+                                                        <span className="font-black text-purple-600 ml-auto">
+                                                            {(() => {
+                                                                let ts = 0, tc = 0;
+                                                                const sm = { 'A+':4.3, 'A0':4.0, 'A-':3.7, 'B+':3.3, 'B0':3.0, 'B-':2.7, 'C+':2.3, 'C0':2.0, 'C-':1.7, 'D+':1.3, 'D0':1.0, 'D-':0.7 };
+                                                                transcript.forEach(c => { if(sm[c.grade]) { ts += sm[c.grade]*c.credit; tc += c.credit; } });
+                                                                return tc > 0 ? (ts/tc).toFixed(2) : "0.00";
+                                                            })()}
+                                                        </span>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className="flex justify-between items-center text-sm border-t border-slate-100 pt-3">
-                                                <div className="flex flex-col text-center">
-                                                    <span className="text-[10px] text-slate-400 font-bold">기초</span>
-                                                    <span className="font-bold text-slate-600">{basicCredits}</span>
-                                                </div>
-                                                <div className="w-px h-8 bg-slate-100"></div>
-                                                <div className="flex flex-col text-center">
-                                                    <span className="text-[10px] text-slate-400 font-bold">심화</span>
-                                                    <span className="font-bold text-slate-600">{advancedCredits}</span>
-                                                </div>
-                                                <div className="w-px h-8 bg-slate-100"></div>
-                                                <div className="flex flex-col text-right">
-                                                    <span className="text-[10px] text-slate-400 font-bold">평점</span>
-                                                    <span className="font-black text-purple-600">{recipe.gpa}</span>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 );
                             })}
@@ -564,17 +585,17 @@ const TimeTableShelf = () => {
                         {filteredPosts.map(post => {
                             const isLiked = likedPostIds.includes(post.id);
                             const userProfile = post.userProfile || {}; 
-                            const majorCredits = post.courses?.reduce((sum, c) => isMajorCredit(c) ? sum + (c.credit || 0) : sum, 0);
+                            const majorCredits = post.courses?.reduce((sum, c) => isMajorCredit(c) ? sum + (c.credit || 0): 0);
                             return (
                                 <div key={post.id} onClick={() => setViewingItem(post)} className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:shadow-lg hover:border-blue-100 transition-all cursor-pointer group">
                                     <div className="flex items-center justify-between mb-4">
-                                        <div className="flex items-center gap-2">
-                                            <div className="flex flex-col">
-                                                <div className="flex items-center gap-2"><span className="text-sm font-bold text-slate-800">{post.author}</span></div>
-                                                <span className="text-[10px] text-slate-400">{new Date(post.createdAt).toLocaleDateString()}</span>
+                                            <div className="flex items-center gap-2">
+                                                <div className="flex flex-col">
+                                                    <div className="flex items-center gap-2"><span className="text-sm font-bold text-slate-800">{post.author}</span></div>
+                                                    <span className="text-[10px] text-slate-400">{new Date(post.createdAt).toLocaleDateString()}</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <span className="px-2 py-1 bg-slate-50 text-slate-500 text-xs font-bold rounded-lg border border-slate-100">#{post.tag}</span>
+                                            <span className="px-2 py-1 bg-slate-50 text-slate-500 text-xs font-bold rounded-lg border border-slate-100">#{post.tag}</span>
                                     </div>
                                     <h3 className="text-lg font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors line-clamp-1">{post.title}</h3>
                                     <div className="w-full bg-slate-50 rounded-xl mb-4 border border-slate-100 p-4 flex justify-evenly items-center">
@@ -611,9 +632,8 @@ const TimeTableShelf = () => {
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
           <div className="bg-white w-full max-w-4xl max-h-[90vh] rounded-3xl shadow-2xl overflow-hidden flex flex-col">
             <div className="p-4 px-6 border-b border-slate-100 flex justify-between items-center bg-white flex-shrink-0">
-                {/* [Timetable Editing Header] */}
-                {viewingItem.type !== 'recipe' && activeTab === 'my' && isEditing ? (
-                     <div className="flex items-center gap-2 flex-1 mr-4">
+                {viewingItem.isGraduation === undefined && activeTab === 'my' && isEditing ? (
+                      <div className="flex items-center gap-2 flex-1 mr-4">
                         <div className="flex flex-col gap-2 w-full max-w-sm">
                             <input type="text" value={editTitle} onChange={(e) => setEditTitle(e.target.value)} className="border border-blue-300 rounded-lg px-3 py-1.5 text-lg font-bold outline-none focus:ring-2 focus:ring-blue-200" placeholder="제목 입력"/>
                             <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
@@ -629,21 +649,20 @@ const TimeTableShelf = () => {
                         <button onClick={() => setIsEditing(false)} className="p-2 bg-slate-100 text-slate-500 rounded-full hover:bg-slate-200"><RotateCcw size={20}/></button>
                     </div>
                 ) : (
-                    // [General Header]
                     <div className="flex items-center gap-3">
-                         <div className="flex flex-col">
+                          <div className="flex flex-col">
                             <span className="text-xs text-slate-500 font-bold mb-0.5 flex items-center gap-2">
-                                {viewingItem.type === 'recipe' ? (
+                                {viewingItem.isGraduation ? (
                                     <span className="bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded text-[10px]">레시피</span>
                                 ) : (
                                     <span className="bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded text-[10px]">시간표</span>
                                 )}
                                 {viewingItem.author ? `작성자: ${viewingItem.author}` : `진열대 No. ${viewingItem.id?.toString().slice(-4)}`}
-                                {viewingItem.type !== 'recipe' && <span className="ml-2 inline-block px-1.5 py-0.5 bg-slate-100 rounded text-slate-500 font-normal border border-slate-200">{viewingItem.tag}</span>}
+                                {!viewingItem.isGraduation && <span className="ml-2 inline-block px-1.5 py-0.5 bg-slate-100 rounded text-slate-500 font-normal border border-slate-200">{viewingItem.tag}</span>}
                             </span>
                             <div className="flex items-center gap-2 group">
                                 <h2 className="text-xl font-bold text-slate-800">{viewingItem.title}</h2>
-                                {activeTab === 'my' && viewingItem.type !== 'recipe' && (
+                                {activeTab === 'my' && !viewingItem.isGraduation && (
                                     <button onClick={() => setIsEditing(true)} className="opacity-0 group-hover:opacity-100 transition-opacity p-1 text-slate-400 hover:text-blue-500"><Pencil size={16}/></button>
                                 )}
                             </div>
@@ -652,16 +671,13 @@ const TimeTableShelf = () => {
                 )}
               
                 <div className="flex items-center gap-2">
-                    {/* [My Tab Actions] */}
                     {activeTab === 'my' && (
                         <>
-                            {viewingItem.type === 'recipe' ? (
-                                // 레시피 전용 액션
+                            {viewingItem.isGraduation ? (
                                 <button onClick={handleLoadRecipe} className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-purple-600 text-white hover:bg-purple-500 transition font-bold text-sm shadow-md shadow-purple-200">
                                     <LogOut className="rotate-180" size={16}/> <span>이 레시피로 요리하기</span>
                                 </button>
                             ) : (
-                                // 시간표 전용 액션
                                 <button onClick={handleLoadAndEdit} className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 transition font-bold text-sm" title="이 시간표 불러오기">
                                     <LogOut className="rotate-180" size={16}/> <span>수정하기</span>
                                 </button>
@@ -669,7 +685,7 @@ const TimeTableShelf = () => {
 
                             <div className="w-px h-6 bg-slate-200 mx-1"></div>
                             
-                            {viewingItem.type !== 'recipe' && (
+                            {!viewingItem.isGraduation && (
                                 <button onClick={() => handleShareClick(viewingItem)} className={`flex items-center gap-1.5 px-3 py-2 rounded-full transition font-bold text-sm ${viewingItem.firebaseId ? 'bg-slate-100 text-slate-500 hover:bg-red-50 hover:text-red-500' : 'bg-blue-100 text-blue-600 hover:bg-blue-200'}`}>
                                     {viewingItem.firebaseId ? (<><span>공유됨 (취소)</span></>) : (<><Share2 size={16}/> <span>공유</span></>)}
                                 </button>
@@ -677,14 +693,13 @@ const TimeTableShelf = () => {
                             
                             <button onClick={() => { 
                                 if(window.confirm('삭제하시겠습니까?')) { 
-                                    if(viewingItem.type === 'recipe') deleteRecipe(viewingItem.id);
+                                    if(viewingItem.isGraduation) deleteRecipe(viewingItem.id);
                                     else deleteFromShelf(viewingItem.id);
                                     setViewingItem(null); 
                                 } 
                             }} className="p-2 text-red-400 hover:bg-red-50 rounded-full transition"><Trash2 size={20}/></button>
                         </>
                     )}
-                    {/* [Community Tab Actions] */}
                     {activeTab === 'community' && (
                         <>
                             <button onClick={handleImportToShelf} className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition font-bold text-sm shadow-sm">
@@ -699,8 +714,7 @@ const TimeTableShelf = () => {
             
             <div className="flex-1 overflow-y-auto bg-slate-50 p-6 custom-scrollbar">
                 <div className="max-w-3xl mx-auto">
-                    {/* 내용 렌더링 분기 */}
-                    {viewingItem.type === 'recipe' ? (
+                    {viewingItem.isGraduation ? (
                         <ShelfRecipeViewer recipeData={viewingItem} />
                     ) : (
                         <ShelfTimetableViewer timetableData={isEditing ? { ...viewingItem, title: editTitle, tag: editTag } : viewingItem} onCourseClick={handleCourseClick}/>
@@ -708,8 +722,7 @@ const TimeTableShelf = () => {
                 </div>
             </div>
             
-            {/* 시간표일 때만 이미지 저장 버튼 표시 */}
-            {viewingItem.type !== 'recipe' && (
+            {!viewingItem.isGraduation && (
                 <div className="p-4 border-t border-slate-100 bg-white flex justify-center flex-shrink-0">
                     <button onClick={handleDownloadImage} className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-500 shadow-lg hover:shadow-blue-500/30 transition-all">
                         <Download size={20}/> 이미지로 저장하기
@@ -720,7 +733,6 @@ const TimeTableShelf = () => {
         </div>
       )}
 
-      {/* Upload/Delete Modal... (생략 - 기존과 동일) */}
       {isUploadModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
             <div className="bg-white w-full max-w-md rounded-3xl shadow-2xl p-6 relative">
@@ -763,7 +775,7 @@ const TimeTableShelf = () => {
       />
 
       {/* Hidden Capture View */}
-      {viewingItem && viewingItem.type !== 'recipe' && (
+      {viewingItem && !viewingItem.isGraduation && (
         <div style={{ position: 'fixed', top: 0, left: 0, width: '1280px', zIndex: -9999, opacity: 0, pointerEvents: 'none', padding: '60px', backgroundColor: '#f8fafc' }}>
             <div ref={hiddenCaptureRef}><ShelfTimetableViewer timetableData={viewingItem} /></div>
         </div>

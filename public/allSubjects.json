@@ -843,7 +843,8 @@
     "semester": ["1"],       
     "category_main": "심화",
     "category_sub": "트랙",
-    "available_tracks": ["물리학"]
+    "available_tracks": ["물리학"],
+    "effective_period": {"start":"2026-1"}
   },
   {
     "name": "결정학 및 회절(이,공)",
@@ -1100,7 +1101,7 @@
     "available_tracks": ["생명과학"]
   },
   {
-    "name": "생화학I(이,공)",
+    "name": "생화학I(이)",
     "credit": 3,
     "grade_level": 3,      
     "semester": ["1"],       
@@ -1321,5 +1322,1103 @@
     "category_main": "심화",
     "category_sub": "트랙",
     "available_tracks": ["생명과학"]
+  },
+  {
+      "name": "신경과학I(이)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["뇌과학"],
+      "year_exception": {"2025":["1","2"]}
+  },
+  {
+      "name": "뇌과학실험I(이)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["뇌과학"]
+  },
+  {
+      "name": "신경과학II(이)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["뇌과학"],
+      "year_exception": {"2026":["1","2"]}
+  },
+  {
+      "name": "뇌공학개론(이,공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["뇌과학"]
+  },
+  {
+      "name": "뇌과학실험II(이)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["뇌과학"]
+  },
+  {
+      "name": "뇌과학 특강(이)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["뇌과학"]
+  },
+  {
+      "name": "계산뇌과학입문(이)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["뇌과학"]
+  },
+  {
+      "name": "뇌질환(이)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["뇌과학"]
+  },
+  {
+      "name": "신경재생 및 퇴행성(이)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["뇌과학"],
+      "effective_period": {"start":"2026-1"}
+  },
+  {
+      "name": "학습과 기억(이)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["뇌과학"],
+      "effective_period": {"start":"2026-1"}
+  },
+  {
+      "name": "인지뇌과학개론(이)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["뇌과학"]
+  },
+  {
+      "name": "신경생리학(이)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["뇌과학"]
+  },
+  {
+      "name": "고체역학(공)",
+      "credit": 3,
+      "grade_level": 2,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학"]
+  },
+  {
+      "name": "동역학(공)",
+      "credit": 3,
+      "grade_level": 2,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학"]
+  },
+  {
+      "name": "기계열역학(공)",
+      "credit": 3,
+      "grade_level": 2,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학"]
+  },
+  {
+      "name": "의공학개론(공)",
+      "credit": 3,
+      "grade_level": 2,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학","전자공학"]
+  },
+  {
+      "name": "유체역학(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학","화학공학"]
+  },
+  {
+      "name": "자동제어시스템(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학","전자공학"]
+  },
+  {
+      "name": "인간과 공학(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학"]
+  },
+  {
+      "name": "진동공학(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학"],
+      "prerequisites": [["동역학(공)"]]
+  },
+  {
+      "name": "로봇전자공학(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학"],
+      "prerequisites": [["회로이론과 계측법(이론)"]]
+  },
+  {
+      "name": "인공지능개론(이,공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학"]
+  },
+  {
+      "name": "시스템의 통합적 모델링(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학","전자공학"],
+      "prerequisites": [["공학수학II"]]
+  },
+  {
+      "name": "기구학(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학"]
+  },
+  {
+      "name": "메카트로닉스(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학"],
+      "prerequisites": [["자동제어시스템(공)"], ["회로이론과 계측법(이론,실습)", "로봇전자공학(공)"]]
+  },
+  {
+      "name": "열전달(공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학"],
+      "prerequisites": [["기계열역학(공)"]]
+  },
+  {
+      "name": "로봇동역학 및 제어(공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학"],
+      "prerequisites": [["동역학(공)"], ["자동제어시스템(공)"]]
+  },
+  {
+      "name": "마이크로/나노공학(공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학"],
+      "prerequisites": [["고체역학(공)"], ["유체역학(공)"]]
+  },
+  {
+      "name": "모빌리티공학개론(공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학"],
+      "effective_period": {"start":"2026-1"}
+  },
+  {
+      "name": "창의공학설계(공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학"],
+      "prerequisites": [["창의기계설계"], ["자동제어시스템(공)"]]
+  },
+  {
+      "name": "기계재료학(이,공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["기계공학"]
+  },
+  {
+    "name": "재료공학개론I(이,공)",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["1"],
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["재료공학"]
+  },
+  {
+      "name": "재료공학실험(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["재료공학"]
+  },
+  {
+      "name": "재료공학개론II(이,공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["재료공학"]
+  },
+  {
+      "name": "전자물성학(공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["재료공학"]
+  },
+  {
+      "name": "박막재료공학(이,공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["재료공학"],
+      "effective_period": {"end": "2025-2"}
+  },
+  {
+    "name": "재료의 기계적 거동(공)",
+    "credit": 3,
+    "grade_level": 4,
+    "semester": ["1"],
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["재료공학"],
+    "effective_period": {"start":"2026-1"}
+  },
+  {
+    "name": "자료구조(이,공)",
+    "credit": 3,
+    "grade_level": 2,
+    "semester": ["1"],
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["전자공학", "컴퓨터공학"],
+    "prerequisites": [["프로그래밍"]]
+  },
+  {
+      "name": "이산수학(이,공)",
+      "credit": 3,
+      "grade_level": 2,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학", "컴퓨터공학"],
+      "year_exception": {"2024":["1","2"]}
+  },
+  {
+      "name": "객체지향 프로그래밍(이,공)",
+      "credit": 3,
+      "grade_level": 2,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학", "컴퓨터공학"]
+  },
+  {
+      "name": "디지털 논리회로(공)",
+      "credit": 3,
+      "grade_level": 2,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학", "컴퓨터공학"]
+  },
+  {
+      "name": "신호 및 시스템(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학"]
+  },
+  {
+      "name": "컴퓨터구조(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학", "컴퓨터공학"],
+      "prerequisites": [["객체지향 프로그래밍(이,공)"]]
+  },
+  {
+      "name": "전자회로 이론(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학"],
+      "prerequisites": [["회로이론과 계측법(이론)"],["회로이론과 계측법(실습)"]]
+  },
+  {
+      "name": "전자소자개론(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학"],
+      "prerequisites": [["반도체물성 개론(공)"]]
+  },
+  {
+      "name": "운영체제(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학", "컴퓨터공학"],
+      "prerequisites": [["객체지향 프로그래밍(이,공)"]]
+  },
+  {
+      "name": "통신의 기초(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학"],
+      "prerequisites": [["신호 및 시스템(공)"]]
+  },
+  {
+      "name": "딥러닝개론(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학", "컴퓨터공학"]
+  },
+  {
+      "name": "아날로그 전자회로(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학"]
+  },
+  {
+      "name": "강화학습(이,공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학", "컴퓨터공학"],
+      "prerequisites": [["인공지능기초"]]
+  },
+  {
+      "name": "디지털통신(공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학"],
+      "prerequisites": [["통신의 기초(공)"]]
+  },
+  {
+      "name": "지능형제어시스템(공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학"],
+      "prerequisites": [["자동제어시스템(공)"]]
+  },
+  {
+      "name": "반도체공정개론(공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학"]
+  },
+  {
+      "name": "디지털 신호처리(공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학", "컴퓨터공학"]
+  },
+  {
+      "name": "디지털집적회로설계(공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학"]
+  },
+  {
+      "name": "반도체공정실습(공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학"],
+      "prerequisites": [["반도체공정개론(공)"]]
+  },
+  {
+      "name": "컴퓨터 네트워크(이,공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학", "컴퓨터공학"]
+  },
+  {
+      "name": "디지털 영상처리(이,공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학", "컴퓨터공학"],
+      "prerequisites": [["디지털 신호처리(공)"]]
+  },
+  {
+      "name": "디지털 시스템 설계(공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["전자공학"]
+  },
+  {
+    "name": "인공지능기초(공)",
+    "credit": 3,
+    "grade_level": 2,
+    "semester": ["2"],
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["컴퓨터공학"],
+    "min_year": 2025
+  },
+  {
+    "name": "시스템 프로그래밍(공) ",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["1"],
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["컴퓨터공학"],
+    "prerequisites": [["객체지향 프로그래밍(이,공)"]]
+  },
+  {
+      "name": "기계학습개론(이,공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["컴퓨터공학"]
+  },
+  {
+      "name": "프로그래밍 언어(이,공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["컴퓨터공학"],
+      "effective_period": {"start":"2026-1"}
+  },
+  {
+      "name": "컴퓨터 알고리즘(이,공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["컴퓨터공학"],
+      "prerequisites": [["자료구조(이,공)"]]
+  },
+  {
+      "name": "컴퓨터 비전 개론(공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["컴퓨터공학"]
+  },
+  {
+      "name": "컴퓨터보안개론(공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["컴퓨터공학"]
+  },
+  {
+      "name": "데이터베이스개론(공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["컴퓨터공학"]
+  },
+  {
+    "name": "화학공학기초실험(공)",
+    "credit": 3,
+    "grade_level": 2,
+    "semester": ["2"],
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": ["화학공학"]
+  },
+  {
+      "name": "화학공학열역학(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["화학공학"]
+  },
+  {
+      "name": "반응공학(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["화학공학"]
+  },
+  {
+      "name": "이동현상개론(공)",
+      "credit": 3,
+      "grade_level": 3,
+      "semester": ["2"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["화학공학"]
+  },
+  {
+      "name": "화학 제품 및 공정설계(공)",
+      "credit": 3,
+      "grade_level": 4,
+      "semester": ["1"],
+      "category_main": "심화",
+      "category_sub": "트랙",
+      "available_tracks": ["화학공학"]
+  },
+  {
+    "name": "디자인사고",
+    "credit": 3,
+    "grade_level": 1,
+    "semester": ["1","2"],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합"
+  },
+  {
+    "name": "도심항공교통개론(이,공)",
+    "credit": 3,
+    "grade_level": 2,
+    "semester": ["1"],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합",
+    "effective_period": {"start":"2026-1"}
+  },
+  {
+    "name": "디자인 기획과 전략",
+    "credit": 3,
+    "grade_level": 2,
+    "semester": ["2"],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합"
+  },
+  {
+    "name": "생명에 대한 융합적 이해",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["1"],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합"
+  },
+  {
+    "name": "학부생을 위한 해석학 개론",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["1"],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합"
+  },
+  {
+    "name": "현대대수학 개론",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["1"],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합"
+  },
+  {
+    "name": "커뮤니케이션과 현대사회",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["1","2"],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합"
+  },
+  {
+    "name": "산업과 법",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["1","2"],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합"
+  },
+  {
+    "name": "게임이론",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["1","2"],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합"
+  },
+  {
+    "name": "UX디자인",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["1","2"],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합"
+  },
+  {
+    "name": "감성공학과 디자인",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["1","2"],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합"
+  },
+  {
+    "name": "적응의 유체역학(이,공)",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["2"],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합"
+  },
+  {
+    "name": "위상수학개론",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["2"],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합"
+  },
+  {
+    "name": "기하학개론",
+    "credit": 3,
+    "grade_level": 4,
+    "semester": ["1"],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합"
+  },
+  {
+    "name": "텐서들의 기하학과 그 응용(이,공)",
+    "credit": 3,
+    "grade_level": 4,
+    "semester": ["1"],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합",
+    "effective_period": {"start": "2026-1"}
+  },
+  {
+    "name": "단분자 생물물리학 개론",
+    "credit": 3,
+    "grade_level": 4,
+    "semester": ["2"],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합"
+  },
+  {
+    "name": "기업가 정신과 사회적 책임",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["1","2"],
+    "category_main": "심화",
+    "category_sub": "창업"
+  },
+  {
+    "name": "경영학원론",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["1","2"],
+    "category_main": "심화",
+    "category_sub": "창업"
+  },
+  {
+    "name": "하이테크 마케팅",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["1","2"],
+    "category_main": "심화",
+    "category_sub": "창업"
+  },
+  {
+    "name": "조직관리론",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["1","2"],
+    "category_main": "심화",
+    "category_sub": "창업"
+  },
+  {
+    "name": "경영전략 의사결정",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["2"],
+    "category_main": "심화",
+    "category_sub": "창업"
+  },
+  {
+    "name": "회계학원론",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["1"],
+    "category_main": "심화",
+    "category_sub": "창업",
+    "effective_period": {"start":"2026-1"}
+  },
+  {
+    "name": "UGRP I",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["1"],
+    "category_main": "심화",
+    "category_sub": "연구"
+  },
+  {
+    "name": "UGRP II",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": ["2"],
+    "category_main": "심화",
+    "category_sub": "연구"
+  },
+  {
+    "name": "URP I",
+    "credit": 2,
+    "grade_level": 2,
+    "semester": ["2"],
+    "category_main": "심화",
+    "category_sub": "연구"
+  },
+  {
+    "name": "URP II",
+    "credit": 2,
+    "grade_level": 4,
+    "semester": ["1"],
+    "category_main": "심화",
+    "category_sub": "연구"
+  },
+  {
+    "name": "Thesis I",
+    "credit": 1,
+    "grade_level": 4,
+    "semester": ["1"],
+    "category_main": "심화",
+    "category_sub": "연구"
+  },
+  {
+    "name": "Thesis II",
+    "credit": 1,
+    "grade_level": 4,
+    "semester": ["2"],
+    "category_main": "심화",
+    "category_sub": "연구"
+  },
+  {
+    "name": "국내 인턴십I",
+    "credit": 1,
+    "grade_level": 3,
+    "semester": ["1","2","여름","겨울"],
+    "category_main": "심화",
+    "category_sub": "인턴십"
+  },
+  {
+    "name": "국내 인턴십II",
+    "credit": 1,
+    "grade_level": 3,
+    "semester": ["1","2","여름","겨울"],
+    "category_main": "심화",
+    "category_sub": "인턴십"
+  },
+  {
+    "name": "국내 인턴십III",
+    "credit": 2,
+    "grade_level": 3,
+    "semester": ["1","2","여름","겨울"],
+    "category_main": "심화",
+    "category_sub": "인턴십"
+  },
+  {
+    "name": "국내 인턴십IV",
+    "credit": 2,
+    "grade_level": 3,
+    "semester": ["1","2","여름","겨울"],
+    "category_main": "심화",
+    "category_sub": "인턴십"
+  },
+  {
+    "name": "국내 인턴십V",
+    "credit": 2,
+    "grade_level": 3,
+    "semester": ["1","2","여름","겨울"],
+    "category_main": "심화",
+    "category_sub": "인턴십"
+  },
+  {
+    "name": "국내 인턴십VI",
+    "credit": 2,
+    "grade_level": 3,
+    "semester": ["1","2","여름","겨울"],
+    "category_main": "심화",
+    "category_sub": "인턴십"
+  },
+  {
+    "name": "국내 인턴십VII",
+    "credit": 2,
+    "grade_level": 3,
+    "semester": ["여름","겨울"],
+    "category_main": "심화",
+    "category_sub": "인턴십"
+  },
+  {
+    "name": "해외 인턴십I",
+    "credit": 1,
+    "grade_level": 4,
+    "semester": ["여름"],
+    "category_main": "심화",
+    "category_sub": "인턴십",
+    "restriction_note": "국내 인턴십을 이수한 학생이 수강하도록 권고"
+  },
+  {
+    "name": "해외 인턴십II",
+    "credit": 2,
+    "grade_level": 4,
+    "semester": ["여름"],
+    "category_main": "심화",
+    "category_sub": "인턴십",
+    "restriction_note": "국내 인턴십을 이수한 학생이 수강하도록 권고"
+  },
+  {
+    "name": "해외 인턴십III",
+    "credit": 1,
+    "grade_level": 4,
+    "semester": ["겨울"],
+    "category_main": "심화",
+    "category_sub": "인턴십",
+    "restriction_note": "국내 인턴십을 이수한 학생이 수강하도록 권고"
+  },
+  {
+    "name": "해외 인턴십IV",
+    "credit": 2,
+    "grade_level": 4,
+    "semester": ["겨울"],
+    "category_main": "심화",
+    "category_sub": "인턴십",
+    "restriction_note": "국내 인턴십을 이수한 학생이 수강하도록 권고"
+  },
+  {
+    "name": "해외 인턴십V",
+    "credit": 2,
+    "grade_level": 4,
+    "semester": ["1","2"],
+    "category_main": "심화",
+    "category_sub": "인턴십",
+    "restriction_note": "국내 인턴십을 이수한 학생이 수강하도록 권고"
+  },
+  {
+    "name": "해외 인턴십VI",
+    "credit": 2,
+    "grade_level": 4,
+    "semester": ["1","2"],
+    "category_main": "심화",
+    "category_sub": "인턴십",
+    "restriction_note": "국내 인턴십을 이수한 학생이 수강하도록 권고"
+  },
+  {
+    "name": "해외 인턴십VII",
+    "credit": 2,
+    "grade_level": 4,
+    "semester": ["1","2"],
+    "category_main": "심화",
+    "category_sub": "인턴십",
+    "restriction_note": "국내 인턴십을 이수한 학생이 수강하도록 권고"
+  },
+  {
+    "name": "해외 인턴십VIII",
+    "credit": 2,
+    "grade_level": 4,
+    "semester": ["1","2"],
+    "category_main": "심화",
+    "category_sub": "인턴십",
+    "restriction_note": "국내 인턴십을 이수한 학생이 수강하도록 권고"
+  },
+  {
+    "name": "연구본부 인턴 프로그램I",
+    "credit": 1,
+    "grade_level": 3,
+    "semester": ["여름","겨울"],
+    "category_main": "심화",
+    "category_sub": "인턴십"
+  },
+  {
+    "name": "연구본부 인턴 프로그램II",
+    "credit": 1,
+    "grade_level": 3,
+    "semester": ["여름","겨울"],
+    "category_main": "심화",
+    "category_sub": "인턴십"
+  },
+  {
+    "name": "대학원 인턴 프로그램I",
+    "credit": 1,
+    "grade_level": 3,
+    "semester": ["여름","겨울"],
+    "category_main": "심화",
+    "category_sub": "인턴십"
+  },
+  {
+    "name": "대학원 인턴 프로그램II",
+    "credit": 1,
+    "grade_level": 3,
+    "semester": ["여름","겨울"],
+    "category_main": "심화",
+    "category_sub": "인턴십"
+  },
+  {
+    "name": "온라인 인턴십I",
+    "credit": 1,
+    "grade_level": 3,
+    "semester": ["1","2"],
+    "category_main": "심화",
+    "category_sub": "인턴십"
+  },
+  {
+    "name": "온라인 인턴십II",
+    "credit": 1,
+    "grade_level": 3,
+    "semester": ["1","2"],
+    "category_main": "심화",
+    "category_sub": "인턴십"
+  },
+  {
+    "name": "온라인 인턴십III",
+    "credit": 1,
+    "grade_level": 3,
+    "semester": ["여름","겨울"],
+    "category_main": "심화",
+    "category_sub": "인턴십"
+  },
+  {
+    "name": "온라인 인턴십IV",
+    "credit": 1,
+    "grade_level": 3,
+    "semester": ["여름","겨울"],
+    "category_main": "심화",
+    "category_sub": "인턴십"
   }
 ]

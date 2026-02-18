@@ -9,71 +9,52 @@ import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import { 
   Search, Library, GraduationCap, Calendar, Settings, BookOpen, Award,
   Trash2, AlertCircle, CheckCircle2, XCircle, ChevronDown, ChevronUp,
-  ArrowLeft, Plus, GripVertical, FolderOpen, Info, AlertTriangle, Wifi, Layout
+  ArrowLeft, Plus, GripVertical, FolderOpen, Info, AlertTriangle, Wifi, Layout, Clock, Save
 } from 'lucide-react';
 
-// --- [Helper Functions] ---
-
-// [수정] 선수과목 괄호 제거
 const formatPrerequisites = (preList) => {
   if (!preList || preList.length === 0) return "";
   return preList.map(item => {
-    // 배열인 경우 '또는'으로 연결하되 괄호는 제거
     if (Array.isArray(item)) return item.join(' 또는 '); 
     return item;
   }).join(', ');
 };
 
-// [수정] 개설 학기 표시 (학년 정보 포함)
 const getOpenInfo = (c) => {
-  // 학년 정보가 있으면 '1-', '2-' 등으로 시작
   const gradePrefix = c.grade_level ? `${c.grade_level}-` : '';
-
-  if (c.year_constraint) {
-      // 격년제 특수 표시
-      return `${gradePrefix}홀수(${c.year_constraint.odd.join(',')})/짝수(${c.year_constraint.even.join(',')})`;
+  if (c.year_constraint) return `${gradePrefix}홀수(${c.year_constraint.odd.join(',')})/짝수(${c.year_constraint.even.join(',')})`;
+  if (c.year_exception) {
+      const exceptions = Object.entries(c.year_exception).map(([year, sems]) => `${year}(${sems.join(',')})`).join(' ');
+      const baseSems = Array.isArray(c.semester) ? c.semester.join(',') : c.semester;
+      return `${gradePrefix}${exceptions} 기본(${baseSems})`;
   }
-
   if (!c.semester) return '';
   const sems = Array.isArray(c.semester) ? c.semester : [c.semester];
-  
-  if (sems.length >= 4) return '전체학기';
-  
+  if (sems.length >= 4) return `${gradePrefix}전체학기`;
   const order = { '1': 1, '2': 2, '여름': 3, '겨울': 4 };
   const sorted = [...sems].sort((a, b) => (order[a] || 9) - (order[b] || 9));
-  
-  // 예: "1-1/2", "2-여름"
   return `${gradePrefix}${sorted.join('/')}`;
 };
 
 const getCategoryLabel = (c) => {
   let label = c.category_sub || c.category_main || '미분류';
   if (c.category_main && c.category_sub) label = `${c.category_main}-${c.category_sub}`;
-  
   if (c.available_tracks && c.available_tracks.length > 0) {
       const displayTracks = c.available_tracks.filter(t => t !== '기초학부');
-      if (displayTracks.length > 0) {
-          label += ` (${displayTracks.join(',')})`;
-      }
+      if (displayTracks.length > 0) label += ` (${displayTracks.join(',')})`;
   }
   return label;
 };
 
 const getCourseType = (courseName, trackName) => {
-    if (!trackName || trackName === '미정' || trackName === '없음' || !trackRules[trackName]) {
-        return null; 
-    }
+    if (!trackName || trackName === '미정' || trackName === '없음' || !trackRules[trackName]) return null; 
     const rule = trackRules[trackName];
     const normName = courseName.replace(/\s/g, '');
     const requiredList = rule.major?.required?.map(r => r.replace(/\s/g, '')) || [];
-
-    if (requiredList.includes(normName)) {
-        return { label: '전공필수', style: 'text-red-500 bg-red-50 border-red-100' };
-    }
+    if (requiredList.includes(normName)) return { label: '전공필수', style: 'text-red-500 bg-red-50 border-red-100' };
     return { label: '전공선택', style: 'text-green-600 bg-green-50 border-green-100' };
 };
 
-// 학기 평점 계산 함수
 const calculateSemesterGPA = (courses) => {
     const scoreMap = { 'A+': 4.3, 'A0': 4.0, 'A-': 3.7, 'B+': 3.3, 'B0': 3.0, 'B-': 2.7, 'C+': 2.3, 'C0': 2.0, 'C-': 1.7, 'D+': 1.3, 'D0': 1.0, 'D-': 0.7 };
     let sum = 0, count = 0;
@@ -84,20 +65,37 @@ const calculateSemesterGPA = (courses) => {
     return count === 0 ? "0.00" : (sum / count).toFixed(2);
 };
 
+const getSemesterValue = (year, semester) => {
+    const semWeight = { '1': 10, '여름': 20, '2': 30, '겨울': 40 };
+    return parseInt(year) * 100 + (semWeight[semester] || 99);
+};
+
+const isCourseActive = (course, targetYear, targetSemester) => {
+    if (!course.effective_period) return { active: true };
+    const targetVal = getSemesterValue(targetYear, targetSemester);
+    const { start, end } = course.effective_period;
+    if (start) {
+        const [sYear, sSem] = start.split('-');
+        const startVal = getSemesterValue(sYear, sSem);
+        if (targetVal < startVal) return { active: false, msg: `${start} 학기부터 신설되는 과목입니다.` };
+    }
+    if (end) {
+        const [eYear, eSem] = end.split('-');
+        const endVal = getSemesterValue(eYear, eSem);
+        if (targetVal > endVal) return { active: false, msg: `${end} 학기를 마지막으로 폐지된 과목입니다.` };
+    }
+    return { active: true };
+};
+
 const CATEGORY_MAP = {
   '기초': ['수학', '물리학', '화학', '생명과학', '컴퓨터공학', '공학선택', '인문사회', '영어', '쓰기,읽기중점'],
-  '심화': [
-    '트랙', 
-    '비트랙/융합', '연구', '창업'
-  ],
-  '일반선택': ['선택안함']
+  '심화': ['트랙', '비트랙/융합', '연구', '창업', '인턴십']
 };
 
 const TRACK_LIST = [
   '물리학', '화학', '생명과학', '뇌과학', '기계공학', '재료공학', '전자공학', '컴퓨터공학', '화학공학'
 ];
 
-// React 18 Fix
 const StrictModeDroppable = ({ children, ...props }) => {
   const [enabled, setEnabled] = useState(false);
   useEffect(() => {
@@ -110,12 +108,13 @@ const StrictModeDroppable = ({ children, ...props }) => {
 
 const GraduationChef = () => {
   const { 
-    gradCourses, transcript, savedTimetables, userProfile, updateUserProfile, setStep,
+    gradCourses, transcript, savedTimetables, savedRecipes, userProfile, updateUserProfile, setStep,
     fetchGradCourses, addCustomToTranscript, updateTranscriptGrade, removeFromTranscript, 
     importScheduleToTranscript, moveTranscriptCourse,
     addNewCourseToWarehouse,
     saveRecipe,
-    updateTranscriptTrack 
+    updateTranscriptTrack,
+    editingRecipeId
   } = useStore();
   
   const safeUpdateTranscriptTrack = updateTranscriptTrack || ((id, newTrack) => {
@@ -127,10 +126,11 @@ const GraduationChef = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCustomOpen, setIsCustomOpen] = useState(false);
+  const [isSaveModalOpen, setIsSaveModalOpen] = useState(false);
   const [selectedShelfId, setSelectedShelfId] = useState(null);
   const [importYear, setImportYear] = useState('2025');
   const [importSemester, setImportSemester] = useState('1');
-  
+  const [saveTitle, setSaveTitle] = useState('');
   const [activeSemesters, setActiveSemesters] = useState([]); 
   const [newSemYear, setNewSemYear] = useState(new Date().getFullYear());
   const [newSemTerm, setNewSemTerm] = useState('1');
@@ -140,28 +140,20 @@ const GraduationChef = () => {
     specific_track: '컴퓨터공학', isOnline: false 
   });
 
-  const [targetMajor, setTargetMajor] = useState('컴퓨터공학');
-  const [targetDouble, setTargetDouble] = useState('없음');
-  const [targetMinor, setTargetMinor] = useState('없음');
+  const [targetMajor, setTargetMajor] = useState(userProfile.major && userProfile.major !== '미정' ? userProfile.major : '없음');
+  const [targetDouble, setTargetDouble] = useState(userProfile.doubleMajor && userProfile.doubleMajor !== '미정' ? userProfile.doubleMajor : '없음');
+  const [targetMinor, setTargetMinor] = useState(userProfile.minor && userProfile.minor !== '미정' ? userProfile.minor : '없음');
+
   const [basicReqs, setBasicReqs] = useState({ warningCount: 0 });
   const [isEarlyGrad, setIsEarlyGrad] = useState(false);
-
-  // 학기별 접기 상태 관리
   const [collapsedSemesters, setCollapsedSemesters] = useState({});
 
   useEffect(() => { 
-    fetchGradCourses(); 
-    if(userProfile.major) setTargetMajor(userProfile.major);
-    if(userProfile.doubleMajor) setTargetDouble(userProfile.doubleMajor);
-    if(userProfile.minor) setTargetMinor(userProfile.minor);
+    if (fetchGradCourses) fetchGradCourses(); 
+    if(userProfile.major) setTargetMajor(userProfile.major === '미정' ? '없음' : userProfile.major);
+    if(userProfile.doubleMajor) setTargetDouble(userProfile.doubleMajor === '미정' ? '없음' : userProfile.doubleMajor);
+    if(userProfile.minor) setTargetMinor(userProfile.minor === '미정' ? '없음' : userProfile.minor);
   }, [userProfile]);
-
-  useEffect(() => {
-    const validSubs = CATEGORY_MAP[customForm.category_main] || [];
-    if (!validSubs.includes(customForm.category_sub)) {
-        setCustomForm(prev => ({ ...prev, category_sub: validSubs[0] || '선택안함' }));
-    }
-  }, [customForm.category_main]);
 
   const handleEntryYearChange = (e) => updateUserProfile({ entryYear: e.target.value });
   const entryYear = parseInt(userProfile.entryYear || '2021');
@@ -173,10 +165,8 @@ const GraduationChef = () => {
       const key = `${c.year}-${c.semester}`;
       groups[key] = true;
     });
-    
     const dataKeys = Object.keys(groups);
     const uniqueKeys = Array.from(new Set([...activeSemesters, ...dataKeys])).filter(k => !k.includes('계획') && !k.includes('미정'));
-    
     const semOrder = { '1': 1, '여름': 2, '2': 3, '겨울': 4 };
     uniqueKeys.sort((a, b) => {
       const [y1, s1] = a.split('-');
@@ -191,7 +181,9 @@ const GraduationChef = () => {
   }, [transcript]);
 
   const filteredGradCourses = useMemo(() => {
-    const takenCourseNames = new Set(transcript.map(t => t.name.replace(/\s/g, '')));
+    if (!gradCourses) return [];
+    const currentTranscript = transcript || [];
+    const takenCourseNames = new Set(currentTranscript.map(t => t.name.replace(/\s/g, '')));
     return gradCourses.filter(c => {
       if (takenCourseNames.has(c.name.replace(/\s/g, ''))) return false;
       const nameMatch = c.name.includes(searchTerm);
@@ -215,7 +207,6 @@ const GraduationChef = () => {
     return groups;
   }, [transcript, activeSemesters]);
 
-  // --- 학점 계산 로직 (화면에 보이는 학기만) ---
   const passedCourses = useMemo(() => {
       return transcript.filter(c => {
           if (c.grade === 'F' || c.grade === 'U') return false;
@@ -226,27 +217,16 @@ const GraduationChef = () => {
   
   const totalCredits = passedCourses.reduce((acc, c) => acc + Number(c.credit), 0);
   const onlineCredits = passedCourses.filter(c => c.is_online).reduce((acc, c) => acc + Number(c.credit), 0);
-  
   const basicTotalCredits = passedCourses.filter(c => c.category_main === '기초').reduce((acc, c) => acc + Number(c.credit), 0);
   const advancedTotalCredits = passedCourses.filter(c => c.category_main === '심화').reduce((acc, c) => acc + Number(c.credit), 0);
+  
   const sciCredits = passedCourses.filter(c => c.name.includes('(이)') || c.name.includes('(이,공)')).reduce((acc, c) => acc + Number(c.credit), 0);
   const engCredits = passedCourses.filter(c => c.name.includes('(공)') || c.name.includes('(이,공)')).reduce((acc, c) => acc + Number(c.credit), 0);
 
-  const calculateGPA = () => {
-    const scoreMap = { 'A+': 4.3, 'A0': 4.0, 'A-': 3.7, 'B+': 3.3, 'B0': 3.0, 'B-': 2.7, 'C+': 2.3, 'C0': 2.0, 'C-': 1.7, 'D+': 1.3, 'D0': 1.0, 'D-': 0.7 };
-    let sum = 0, count = 0;
-    passedCourses.forEach(c => {
-      const score = scoreMap[c.grade];
-      if (score !== undefined) { sum += score * Number(c.credit); count += Number(c.credit); }
-    });
-    return count === 0 ? "0.00" : (sum / count).toFixed(2);
-  };
-  const currentGPA = parseFloat(calculateGPA());
+  const currentGPA = parseFloat(calculateSemesterGPA(passedCourses));
 
-  // --- Requirements Logic ---
   const { commonStatus, basicStatusList, advancedStatusList } = useMemo(() => {
     const RULES = BASIC_REQUIRED_COURSES; 
-
     const getCreditsByNames = (targetNames) => {
         return passedCourses.filter(c => 
             targetNames.some(t => c.name.replace(/\s/g,'').includes(t.replace(/\s/g,'')))
@@ -260,8 +240,6 @@ const GraduationChef = () => {
     ).reduce((a,c) => a + c.credit, 0);
 
     const isNewCurriculum = entryYear >= 2025;
-
-    // 1. 공통 요건
     const regularSemesterCount = activeSemesters.filter(key => {
         const [_, term] = key.split('-');
         return term === '1' || term === '2';
@@ -273,7 +251,6 @@ const GraduationChef = () => {
         { name: `등록학기 (${targetSemesters}학기↑)`, done: regularSemesterCount >= targetSemesters, detail: `${regularSemesterCount}학기` }
     ];
 
-    // 2. 기초 요건
     const mathReq = hasAll(RULES.math.required);
     const mathSel = hasOne(RULES.math.selectOne);
     const mathCredits = countCredit("기초", "수학");
@@ -314,28 +291,22 @@ const GraduationChef = () => {
         humDone = humCredits >= 15 && writingPass;
     }
     const humResult = { name: `인문사회 (${humTarget})`, done: humDone, detail: `${humCredits}/${humTarget}` };
-
     const englishCredits = getCreditsByNames(RULES.english.required);
     const englishResult = { name: "영어 (4)", done: englishCredits >= 4, detail: `${englishCredits}/4` };
 
     const basicStatusList = [mathResult, scienceResult, comResult, engineeringResult, humResult, englishResult];
 
-    // 3. 심화 요건
     const convCredits = passedCourses.filter(c => ADVANCED_CONVERGENCE_LIST.some(a => c.name.includes(a))).reduce((a,c)=>a+c.credit, 0);
     const convResult = { name: "비트랙/융합 (6)", done: convCredits >= 6, detail: `${convCredits}/6` };
-
     const ugrpCredits = getCreditsByNames(RULES.research.required);
     const ugrpResult = { name: "UGRP (6)", done: ugrpCredits >= 6, detail: `${ugrpCredits}/6` };
-
-    const internCredits = countCredit("심화", "인턴십");
+    
+    const internCredits = passedCourses.filter(c => c.name.includes("인턴십")).reduce((a,c) => a + c.credit, 0);
+    
     let internReq = 1;
     if (entryYear <= 2024) internReq = 2; 
-    else internReq = 1; 
-    
     const internResult = { name: `인턴십 (${internReq})`, done: internCredits >= internReq, detail: `${internCredits}/${internReq}` };
-
     const advancedStatusList = [convResult, ugrpResult, internResult];
-
     return { commonStatus, basicStatusList, advancedStatusList };
   }, [passedCourses, entryYear, activeSemesters, isEarlyGrad, totalCredits]);
 
@@ -343,20 +314,15 @@ const GraduationChef = () => {
     if (trackName === '미정' || trackName === '없음' || !trackRules[trackName]) return null;
     const rule = trackRules[trackName];
     const ruleSet = type === 'minor' ? rule.minor : rule.major;
-    
     const validCourses = passedCourses;
     const takenNames = validCourses.map(c => c.name.replace(/\s/g, ''));
-    
-    // 트랙별 학점 계산 (기초 과목 제외, 해당 트랙으로 지정된 과목)
     const currentTrackCredits = validCourses
         .filter(c => c.category_main !== '기초' && c.selected_track === trackName)
         .reduce((acc, c) => acc + Number(c.credit), 0);
-    
     const requiredTrackCredits = type === 'minor' ? 18 : 27;
-
     let overlapDeduction = 0;
     let duplicateCredits = 0;
-    if (type === 'major' && trackName === targetDouble && targetMajor !== '미정') {
+    if (type === 'major' && trackName === targetDouble && targetMajor !== '미정' && targetMajor !== '없음') {
       const majorCourses = validCourses.filter(c => c.available_tracks && c.available_tracks.includes(targetMajor));
       const doubleCourses = validCourses.filter(c => c.available_tracks && c.available_tracks.includes(targetDouble));
       const intersection = doubleCourses.filter(d => majorCourses.some(m => m.id === d.id));
@@ -394,7 +360,6 @@ const GraduationChef = () => {
       }
     }
     if (currentTrackCredits < requiredTrackCredits) isPass = false;
-
     return { 
         isPass, 
         requirements, 
@@ -414,17 +379,33 @@ const GraduationChef = () => {
   const isBasicPass = basicStatusList.every(r => r.done) && basicTotalCredits >= 58;
   const isAdvancedPass = advancedStatusList.every(r => r.done) && advancedTotalCredits >= 72;
   const isCommonPass = commonStatus.every(r => r.done);
-  const isMajorPass = majorStatus?.isPass;
+  
+  if (isCommonPass && isBasicPass && isAdvancedPass) {
+      if (targetMajor !== '없음' && targetMajor !== '미정') {
+          if (majorStatus?.isPass) {
+              degreeName = `융복합 ${majorStatus.degree} (${targetMajor})`;
+              if (targetDouble !== '없음' && targetDouble !== '미정' && doubleStatus?.isPass) {
+                  degreeName += `, 융복합 ${doubleStatus.degree} (${targetDouble})`;
+              }
+          } else {
+              degreeName = "수료 (전공 요건 미달)";
+          }
+      } else {
+          const isSciPass = sciCredits >= 27;
+          const isEngPass = engCredits >= 27;
 
-  if (isCommonPass && isBasicPass && isAdvancedPass && isMajorPass) {
-      degreeName = `융복합 ${majorStatus.degree} (${targetMajor})`;
-      if (doubleStatus?.isPass) degreeName += ` + ${targetDouble}`;
-  } else if (isCommonPass && isBasicPass && isAdvancedPass) {
-    if (engCredits >= 27) degreeName = "융복합 공학사 (트랙 미이수)";
-    else if (sciCredits >= 27) degreeName = "융복합 이학사 (트랙 미이수)";
+          if (isSciPass && isEngPass) {
+              degreeName = "융복합 공학사, 융복합 이학사 (트랙 미이수)";
+          } else if (isSciPass) {
+              degreeName = "융복합 이학사 (트랙 미이수)";
+          } else if (isEngPass) {
+              degreeName = "융복합 공학사 (트랙 미이수)";
+          } else {
+              degreeName = "수료 (트랙 이수 학점 미달)";
+          }
+      }
   }
 
-  // --- Handlers ---
   const handleAddSemester = () => {
     const key = `${newSemYear}-${newSemTerm}`;
     if (activeSemesters.includes(key)) { alert("이미 존재하는 학기입니다!"); return; }
@@ -437,14 +418,12 @@ const GraduationChef = () => {
     });
     setActiveSemesters(newActive);
   };
-
   const handleRemoveSemester = (semesterKey) => {
     const [year, semester] = semesterKey.split('-');
     const coursesToRemove = transcript.filter(c => c.year === year && c.semester === semester);
     coursesToRemove.forEach(c => removeFromTranscript(c.id));
     setActiveSemesters(prev => prev.filter(k => k !== semesterKey));
   };
-
   const handleConfirmImport = () => {
     if (selectedShelfId) {
       const targetTable = savedTimetables.find(t => t.id === selectedShelfId);
@@ -459,32 +438,69 @@ const GraduationChef = () => {
     }
     setIsModalOpen(false); setSelectedShelfId(null);
   };
+  
+  const handleSaveClick = () => {
+    if (transcript.length === 0) {
+      alert("저장할 과목이 없습니다! 먼저 시간표를 요리해주세요.");
+      return;
+    }
 
-  const toggleSemesterCollapse = (semesterKey) => {
-      setCollapsedSemesters(prev => ({
-          ...prev,
-          [semesterKey]: !prev[semesterKey]
-      }));
+    if (editingRecipeId) {
+        const existingRecipe = savedRecipes.find(r => r.id === editingRecipeId);
+        if (existingRecipe) {
+            setSaveTitle(existingRecipe.title);
+            setIsSaveModalOpen(true);
+            return;
+        }
+    }
+
+    const defaultTitle = `${new Date().getMonth() + 1}월 ${new Date().getDate()}일의 졸업 요리`;
+    setSaveTitle(defaultTitle);
+    setIsSaveModalOpen(true);
   };
-
+  
+  const confirmSaveRecipe = () => {
+    if (!saveTitle.trim()) {
+        alert("레시피 이름을 입력해주세요!");
+        return;
+    }
+    if (saveRecipe) {
+        const currentTracks = {
+            major: targetMajor,
+            doubleMajor: targetDouble,
+            minor: targetMinor
+        };
+        saveRecipe(saveTitle, currentTracks, degreeName);
+        alert(`'${saveTitle}' 레시피가 ${editingRecipeId ? '성공적으로 덮어쓰기 되었습니다' : '진열대에 저장되었습니다'}!`);
+        setIsSaveModalOpen(false);
+    } else {
+        alert("저장 기능 오류: useStore에 saveRecipe 함수가 없습니다.");
+    }
+  };
+  
+  const toggleSemesterCollapse = (semesterKey) => {
+      setCollapsedSemesters(prev => ({ ...prev, [semesterKey]: !prev[semesterKey] }));
+  };
   const checkSemesterValid = (course, targetYear, targetSemester) => {
-    if (!course.semester && !course.year_constraint) return true;
-
+    const activeStatus = isCourseActive(course, targetYear, targetSemester);
+    if (!activeStatus.active) { alert(`🚫 수강 불가: ${activeStatus.msg}`); return false; }
+    if (course.year_exception && course.year_exception[targetYear]) {
+        const allowed = course.year_exception[targetYear];
+        if (!allowed.includes(targetSemester)) return false;
+        return true;
+    }
     if (course.year_constraint) {
         const isOdd = parseInt(targetYear) % 2 !== 0;
         const allowed = isOdd ? course.year_constraint.odd : course.year_constraint.even;
         if (!allowed.includes(targetSemester)) return false;
         return true; 
     }
-
     if (course.semester) {
         const allowed = Array.isArray(course.semester) ? course.semester : [course.semester];
         return allowed.includes(targetSemester);
     }
-
     return true;
   };
-
   const checkPrerequisites = (course, targetYear, targetSemester) => {
     if (!course.prerequisites || course.prerequisites.length === 0) return { ok: true };
     const semOrder = { '1': 1, '여름': 2, '2': 3, '겨울': 4 };
@@ -509,14 +525,12 @@ const GraduationChef = () => {
     if (missing.length > 0) return { ok: false, msg: `🚫 선수과목 미달: [${missing.join(', ')}]을(를) 먼저 이수해야 합니다.` };
     return { ok: true };
   };
-
   const determineDefaultTrack = (course) => {
       if (!course.available_tracks || course.available_tracks.length === 0) return '';
       if (course.available_tracks.includes(targetMajor)) return targetMajor;
       if (course.available_tracks.includes(targetDouble)) return targetDouble;
       return course.available_tracks[0];
   };
-
   const onDragEnd = (result) => {
     const { source, destination, draggableId } = result;
     if (!destination) return;
@@ -550,7 +564,6 @@ const GraduationChef = () => {
         moveTranscriptCourse(draggableId, targetYear, targetSemester);
     }
   };
-
   const handleAddCustom = () => {
     if (!customForm.name) return;
     const isDuplicate = transcript.some(t => t.name === customForm.name);
@@ -575,7 +588,7 @@ const GraduationChef = () => {
     setIsCustomOpen(false);
     setCustomForm({ name: '', credit: 3, category_main: '기초', category_sub: '선택안함', specific_track: '컴퓨터공학', isOnline: false });
   };
-
+  
   const planningYears = Array.from({length: 10}, (_, i) => 2021 + i);
   const historyYears = Array.from({length: 6}, (_, i) => 2021 + i);
   const gpaThreshold = isEarlyGrad ? 3.5 : 2.0;
@@ -596,7 +609,10 @@ const GraduationChef = () => {
             </h1>
           </div>
           <div className="flex items-center gap-4">
-            <button className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors border border-slate-700">
+            <button 
+                onClick={handleSaveClick}
+                className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors border border-slate-700"
+            >
                 <Layout className="w-4 h-4" />
                 <span className="hidden sm:inline">레시피 저장</span>
             </button>
@@ -633,11 +649,11 @@ const GraduationChef = () => {
                       <span className="text-xs font-bold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded">{course?.credit}학점</span>
                     </div>
                     <div className="flex justify-between items-center text-xs mt-1">
-                       <div className="flex items-center gap-1.5">
-                         <span className="bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded-sm tracking-tighter">{getCategoryLabel(course || {})}</span>
-                         <span className="text-[11px] font-bold text-slate-500">{getOpenInfo(course || {})}</span>
-                       </div>
-                       <span className="text-slate-400">{course?.classification || '일반'}</span>
+                        <div className="flex items-center gap-1.5">
+                          <span className="bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded-sm tracking-tighter">{getCategoryLabel(course || {})}</span>
+                          <span className="text-[11px] font-bold text-slate-500">{getOpenInfo(course || {})}</span>
+                        </div>
+                        <span className="text-slate-400">{course?.classification || '일반'}</span>
                     </div>
                   </div>
                 );
@@ -662,9 +678,25 @@ const GraduationChef = () => {
                                     <AlertCircle className="w-3 h-3 shrink-0" /> <span className="truncate">Pre: {formatPrerequisites(course.prerequisites)}</span>
                                 </div>
                              )}
+                             {course.effective_period && (
+                                <div className="text-purple-500 flex items-center gap-1">
+                                    <Clock className="w-3 h-3 shrink-0" /> 
+                                    <span className="truncate">
+                                        {course.effective_period.start ? `${course.effective_period.start} 신설` : ''}
+                                        {course.effective_period.end ? `${course.effective_period.end} 폐지` : ''}
+                                    </span>
+                                </div>
+                             )}
+                             {course.year_exception && (
+                                <div className="text-blue-500 flex items-center gap-1">
+                                    <Calendar className="w-3 h-3 shrink-0" /> 
+                                    <span className="truncate">특정 학기 개설</span>
+                                </div>
+                             )}
                              {course.restriction_note && (
                                 <div className="text-orange-400 flex items-center gap-1">
-                                    <AlertTriangle className="w-3 h-3 shrink-0" /> <span className="truncate">{course.restriction_note}</span>
+                                    <AlertTriangle className="w-3 h-3 shrink-0" /> 
+                                    <span className="truncate">{course.restriction_note}</span>
                                 </div>
                              )}
                           </div>
@@ -681,7 +713,7 @@ const GraduationChef = () => {
           {/* 2. Center: Semester Plan */}
           <div className="w-[56%] flex flex-col gap-4 overflow-hidden">
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-3 flex justify-between items-center shrink-0">
-               <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2">
                   <select value={newSemYear} onChange={e=>setNewSemYear(e.target.value)} className="bg-slate-50 border p-1 rounded text-sm">{planningYears.map(y=><option key={y} value={y}>{y}년</option>)}</select>
                   <select value={newSemTerm} onChange={e=>setNewSemTerm(e.target.value)} className="bg-slate-50 border p-1 rounded text-sm"><option value="1">1학기</option><option value="2">2학기</option><option value="여름">여름</option><option value="겨울">겨울</option></select>
                   <button onClick={handleAddSemester} className="bg-slate-800 text-white text-xs px-3 py-1.5 rounded hover:bg-slate-700">+ 학기 추가</button>
@@ -750,19 +782,22 @@ const GraduationChef = () => {
               <h3 className="text-xs font-bold text-slate-400 mb-2 flex items-center gap-1">
                 <GraduationCap className="w-3.5 h-3.5" /> 예상 학위
               </h3>
+              {/* ★ [수정됨] 학위명에 쉼표가 있을 경우 렌더링 시 자동 줄바꿈 적용 */}
               <div className="font-bold text-lg leading-snug text-blue-100">
-                {degreeName}
+                {degreeName.split(', ').map((text, index) => (
+                    <div key={index}>{text}</div>
+                ))}
               </div>
             </div>
 
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5">
               <h3 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2">
-                <Settings className="w-4 h-4 text-slate-500" /> 트랙 설정
+                <Settings className="w-4 h-4 text-slate-500" /> 트랙 설정 (시뮬레이션)
               </h3>
               <div className="space-y-3">
-                <SelectBox label="주전공" value={targetMajor} onChange={setTargetMajor} options={Object.keys(trackRules)} color="blue" />
+                <SelectBox label="주전공" value={targetMajor} onChange={setTargetMajor} options={Object.keys(trackRules)} color="blue" nullable />
                 <SelectBox label="복수전공" value={targetDouble} onChange={setTargetDouble} options={Object.keys(trackRules).filter(t=>t!==targetMajor)} color="indigo" nullable />
-                <SelectBox label="부전공" value={targetMinor} onChange={setTargetMinor} options={Object.keys(trackRules).filter(t=>t!==targetMajor)} color="slate" nullable disabled={targetDouble !== '없음'} />
+                <SelectBox label="부전공" value={targetMinor} onChange={setTargetMinor} options={Object.keys(trackRules).filter(t=>t!==targetMajor)} color="slate" nullable disabled={targetDouble !== '없음' && targetDouble !== '미정'} />
               </div>
             </div>
 
@@ -830,8 +865,8 @@ const GraduationChef = () => {
             </div>
             
             <TrackStatusCard title="주전공" trackName={targetMajor} status={majorStatus} color="indigo" />
-            {targetDouble !== '없음' && <TrackStatusCard title="복수전공" trackName={targetDouble} status={doubleStatus} color="indigo" overlapMsg={doubleStatus?.overlapDeduction > 0 ? `중복 ${doubleStatus.duplicateCredits}학점 중 6학점만 인정` : null} />}
-            {targetMinor !== '없음' && <TrackStatusCard title="부전공" trackName={targetMinor} status={minorStatus} color="indigo" /> }
+            {targetDouble !== '없음' && targetDouble !== '미정' && <TrackStatusCard title="복수전공" trackName={targetDouble} status={doubleStatus} color="indigo" overlapMsg={doubleStatus?.overlapDeduction > 0 ? `중복 ${doubleStatus.duplicateCredits}학점 중 6학점만 인정` : null} />}
+            {targetMinor !== '없음' && targetMinor !== '미정' && <TrackStatusCard title="부전공" trackName={targetMinor} status={minorStatus} color="indigo" /> }
 
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-4 flex justify-between gap-4 items-center justify-center">
               <CreditBox label="이학사 학점" current={sciCredits} total={27} />
@@ -840,13 +875,12 @@ const GraduationChef = () => {
             </div>
           </div>
 
-          {/* Modals... (Existing Modals Code) */}
+          {/* 커스텀 과목 생성 모달 */}
           {isCustomOpen && (
             <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center z-50">
               <div className="bg-white p-6 rounded-2xl shadow-2xl w-[350px]">
                 <h3 className="font-bold text-lg mb-6 text-slate-800">커스텀 과목 생성</h3>
                 <div className="space-y-4 mb-6">
-                  {/* ... Inputs ... */}
                   <div>
                     <label className="block text-xs font-bold text-slate-500 mb-1.5 ml-1">과목명</label>
                     <input type="text" className="w-full border border-slate-200 p-2.5 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all" value={customForm.name} onChange={e=>setCustomForm({...customForm, name: e.target.value})} />
@@ -865,13 +899,10 @@ const GraduationChef = () => {
                     <div>
                         <label className="block text-xs font-bold text-slate-500 mb-1.5 ml-1">영역 (소분류)</label>
                         <select className="w-full border border-slate-200 p-2.5 rounded-lg text-sm bg-white focus:outline-none focus:border-blue-500" value={customForm.category_sub} onChange={e=>setCustomForm({...customForm, category_sub: e.target.value})}>
-                            {CATEGORY_MAP[customForm.category_main].map(sub => {
-                                return <option key={sub} value={sub}>{sub}</option>
-                            })}
+                            {CATEGORY_MAP[customForm.category_main].map(sub => <option key={sub} value={sub}>{sub}</option>)}
                         </select>
                     </div>
                   </div>
-                  {/* 트랙인 경우에만 나타나는 세부 전공 선택 */}
                   {customForm.category_main === '심화' && customForm.category_sub === '트랙' && (
                       <div className="mt-3">
                           <label className="block text-xs font-bold text-slate-500 mb-1.5 ml-1">세부 전공 (트랙)</label>
@@ -880,15 +911,9 @@ const GraduationChef = () => {
                           </select>
                       </div>
                   )}
-                  {/* 온라인 강의 체크박스 */}
                   <div className="mt-4">
                     <label className="flex items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
-                        <input 
-                            type="checkbox" 
-                            checked={customForm.isOnline} 
-                            onChange={(e) => setCustomForm({...customForm, isOnline: e.target.checked})}
-                            className="w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500"
-                        />
+                        <input type="checkbox" checked={customForm.isOnline} onChange={(e) => setCustomForm({...customForm, isOnline: e.target.checked})} className="w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500"/>
                         <span className="text-sm text-slate-600 font-medium">온라인 강의 (졸업학점의 20% 이내 인정)</span>
                     </label>
                   </div>
@@ -900,7 +925,6 @@ const GraduationChef = () => {
               </div>
             </div>
           )}
-
           {isModalOpen && (
             <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center z-50">
               <div className="bg-white p-6 rounded-2xl shadow-2xl w-[450px] max-h-[80vh] flex flex-col">
@@ -919,16 +943,42 @@ const GraduationChef = () => {
                   <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-4">
                     <p className="text-xs font-bold text-slate-500 mb-2">언제 학기로 추가할까요?</p>
                     <div className="flex gap-2">
-                       <select value={importYear} onChange={(e)=>setImportYear(e.target.value)} className="flex-1 p-2 rounded border text-sm">
-                         {historyYears.map(y=><option key={y} value={y}>{y}년</option>)}
-                       </select>
-                       <select value={importSemester} onChange={(e)=>setImportSemester(e.target.value)} className="flex-1 p-2 rounded border text-sm"><option value="1">1학기</option><option value="2">2학기</option></select>
+                        <select value={importYear} onChange={(e)=>setImportYear(e.target.value)} className="flex-1 p-2 rounded border text-sm">{historyYears.map(y=><option key={y} value={y}>{y}년</option>)}</select>
+                        <select value={importSemester} onChange={(e)=>setImportSemester(e.target.value)} className="flex-1 p-2 rounded border text-sm"><option value="1">1학기</option><option value="2">2학기</option></select>
                     </div>
                   </div>
                 )}
                 <div className="flex gap-2">
-                   <button onClick={()=>setIsModalOpen(false)} className="flex-1 bg-slate-100 py-2 rounded">취소</button>
-                   <button onClick={handleConfirmImport} disabled={!selectedShelfId} className="flex-1 bg-blue-600 text-white py-2 rounded">추가하기</button>
+                    <button onClick={()=>setIsModalOpen(false)} className="flex-1 bg-slate-100 py-2 rounded">취소</button>
+                    <button onClick={handleConfirmImport} disabled={!selectedShelfId} className="flex-1 bg-blue-600 text-white py-2 rounded">추가하기</button>
+                </div>
+              </div>
+            </div>
+          )}
+          {isSaveModalOpen && (
+            <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center z-50">
+              <div className="bg-white p-6 rounded-2xl shadow-2xl w-[350px]">
+                <h3 className="font-bold text-lg mb-4 text-slate-800 flex items-center gap-2">
+                    <Save className="w-5 h-5 text-blue-600" /> 레시피 저장하기
+                </h3>
+                <div className="mb-4">
+                    <label className="block text-xs font-bold text-slate-500 mb-1.5 ml-1">레시피 이름</label>
+                    <input 
+                        type="text" 
+                        value={saveTitle} 
+                        onChange={(e) => setSaveTitle(e.target.value)}
+                        className="w-full border border-slate-200 p-2.5 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all"
+                        placeholder="예: 2026-1 졸업계획"
+                        autoFocus
+                    />
+                </div>
+                <div className="flex gap-2">
+                  <button onClick={() => setIsSaveModalOpen(false)} className="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-600 py-2.5 rounded-lg text-sm font-medium transition-colors">
+                    취소
+                  </button>
+                  <button onClick={confirmSaveRecipe} className="flex-1 bg-slate-800 hover:bg-slate-700 text-white py-2.5 rounded-lg text-sm font-medium transition-colors shadow-sm">
+                    저장
+                  </button>
                 </div>
               </div>
             </div>
@@ -939,7 +989,6 @@ const GraduationChef = () => {
   );
 };
 
-// --- Sub Components ---
 const CourseCard = ({ c, index, updateGrade, updateTrack, remove }) => {
     const courseType = getCourseType(c.name, c.selected_track);
     const displayTracks = c.available_tracks ? c.available_tracks.filter(t => t !== '기초학부') : [];
@@ -950,7 +999,7 @@ const CourseCard = ({ c, index, updateGrade, updateTrack, remove }) => {
           <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className={`bg-white border border-slate-200 rounded p-2 flex justify-between items-center shadow-sm cursor-grab active:cursor-grabbing group hover:border-blue-300 transition-all ${snapshot.isDragging ? 'shadow-lg ring-2 ring-blue-400 z-50' : ''}`} style={{ ...provided.draggableProps.style }}>
             <div className="flex items-center gap-2 truncate flex-1">
               <GripVertical className="w-4 h-4 text-slate-300" />
-              <div className="truncate">
+              <div className="truncate flex-1">
                 <div className="flex items-center gap-1.5">
                     <span className="text-xs font-bold text-slate-700 truncate">{c.name}</span>
                     {c.is_online && <Wifi className="w-3 h-3 text-blue-400 shrink-0" />}
@@ -978,6 +1027,12 @@ const CourseCard = ({ c, index, updateGrade, updateTrack, remove }) => {
                         <span className="text-slate-300">({displayTracks[0]})</span>
                     )}
                 </div>
+                {c.restriction_note && (
+                    <div className="flex items-center gap-1 text-[10px] text-orange-500 mt-0.5">
+                        <AlertTriangle className="w-3 h-3 shrink-0" />
+                        <span className="truncate">{c.restriction_note}</span>
+                    </div>
+                )}
               </div>
             </div>
             <div className="flex items-center gap-1">
@@ -996,7 +1051,7 @@ const SelectBox = ({ label, value, onChange, options, color, nullable, disabled 
   <div className="space-y-1">
     <label className={`text-xs font-bold text-${color}-600 ${disabled ? 'opacity-50' : ''}`}>{label}</label>
     <select value={value} onChange={(e) => onChange(e.target.value)} disabled={disabled} className="w-full text-xs border rounded p-1.5 bg-slate-50 outline-none cursor-pointer">
-      {nullable && <option value="없음">없음</option>}
+      {nullable && <option value="없음">없음 (미정)</option>}
       {options.map(o => <option key={o} value={o}>{o}</option>)}
     </select>
   </div>

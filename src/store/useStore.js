@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { db } from '../firebaseConfig';
-import { collection, addDoc, getDocs, updateDoc, deleteDoc, doc, increment, query, orderBy, where, writeBatch } from 'firebase/firestore';
+import { collection, addDoc, getDocs, updateDoc, deleteDoc, getDoc, doc, increment, query, orderBy, where, writeBatch } from 'firebase/firestore';
 
 const getRandomName = () => {
   const number = Math.floor(1000 + Math.random() * 9000);
@@ -11,11 +11,11 @@ const getRandomName = () => {
 const useStore = create(
   persist(
     (set, get) => ({
-      // --- 공통 상태 ---
       currentStep: 0,
       mode: null,
       userNickname: null,
       editingId: null,
+      editingRecipeId: null, // [추가] 레시피 수정 모드 추적용 ID
 
       userProfile: {
         status: '학사',
@@ -23,8 +23,8 @@ const useStore = create(
         major: '미정',
         doubleMajor: '미정',
         minor: '미정',
-        entryYear: '2021',
-        lastUpdatedAt: null
+        lastUpdatedAt: null,
+        entryYear: '2025'
       },
 
       setStep: (step) => set({ currentStep: step }),
@@ -58,24 +58,47 @@ const useStore = create(
         }
       },
 
-      // --- 시간표 요리사 데이터 ---
       allCourses: [], 
+      gradCourses: [], 
       basket: [],
       schedule: [],
       isOverCredit: false,
+
+      savedTimetables: [], 
+      savedRecipes: [], 
 
       fetchCourses: async () => {
         if (get().allCourses.length > 0) return;
         try {
           const response = await fetch('/t2.json');
           if (!response.ok) throw new Error('데이터 로딩 실패');
-          
           const data = await response.json();
           set({ allCourses: data }); 
         } catch (error) {
           console.error("강의 데이터 로딩 실패:", error);
         }
       },
+
+      fetchGradCourses: async () => {
+        const current = get().gradCourses;
+        if (current.length > 0) return current;
+
+        try {
+          const response = await fetch('/allSubjects.json'); 
+          if (!response.ok) throw new Error('졸업 과목 데이터 로딩 실패');
+          const data = await response.json();
+          set({ gradCourses: data }); 
+          return data; 
+        } catch (error) {
+          console.error("졸업 과목 데이터 로딩 실패:", error);
+          set({ gradCourses: [] }); 
+          return [];
+        }
+      },
+
+      addNewCourseToWarehouse: (newCourse) => set((state) => ({
+        gradCourses: [newCourse, ...state.gradCourses] 
+      })),
 
       toggleBasket: (course) => set((state) => {
         const exists = state.basket.find((c) => c.id === course.id);
@@ -119,104 +142,89 @@ const useStore = create(
       removeFromSchedule: (courseId) => set((state) => ({
         schedule: state.schedule.filter((c) => c.id !== courseId)
       })),
-      
       setCourseTrack: (courseId, trackName) => set((state) => ({
         schedule: state.schedule.map(c => c.id === courseId ? { ...c, selectedTrack: trackName } : c)
       })),
-      
       toggleOverCredit: () => set((state) => ({ isOverCredit: !state.isOverCredit })),
 
-      // --- 졸업 요리사 데이터 ---
-      gradCourses: [], 
-      transcript: [],
-      // [New] 레시피 저장소 (기존 savedTimetables와 분리)
-      savedRecipes: [], 
-      
+      transcript: [], 
       gradType: 'general',
       semestersCompleted: 0,
       hasThesis: false,
       warningCount: 0,
       grades: {},
-
-      fetchGradCourses: async () => {
-        if (get().gradCourses.length > 0) return;
-        try {
-          const res = await fetch('/allSubjects.json'); 
-          if (!res.ok) throw new Error('Failed to load graduation subjects');
-          const data = await res.json();
-          set({ gradCourses: data });
-        } catch (err) {
-          console.error("졸업 과목 DB 로드 실패:", err);
-        }
-      },
-
+      
       setGradType: (type) => set({ gradType: type }),
       setSemestersCompleted: (num) => set({ semestersCompleted: num }),
       toggleThesis: () => set((state) => ({ hasThesis: !state.hasThesis })),
       setWarningCount: (count) => set({ warningCount: count }),
       setGrade: (courseId, score) => set((state) => ({ grades: { ...state.grades, [courseId]: score } })),
       
-      importScheduleToTranscript: (timetable, targetYear, targetSemester, trackSelector) => set((state) => {
-        const newCourses = timetable.courses.map(c => ({
-          ...c,
-          id: `imported-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-          year: targetYear || timetable.year || '계획',      
-          semester: targetSemester || timetable.semester || '미정', 
-          grade: 'A+',
-          isCustom: true,
-          // [New] 트랙 자동 선택 (함수가 전달된 경우)
-          selected_track: trackSelector ? trackSelector(c) : (c.selectedTrack || '')
-        }));
-        return { transcript: [...state.transcript, ...newCourses] };
+      addCustomToTranscript: (course, year, semester) => set((state) => {
+        const newId = `taken-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+        const newCourse = {
+            ...course,
+            id: newId,
+            year: year.toString(),
+            semester: semester.toString(),
+            grade: 'A+',
+            selected_track: course.selected_track || '', 
+        };
+        return { transcript: [...state.transcript, newCourse] };
       }),
 
-      addCustomToTranscript: (course, year, semester) => set((state) => ({
-        transcript: [...state.transcript, {
-          ...course,
-          id: `custom-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-          year: year || '계획',
-          semester: semester || '미정',
-          grade: 'A+',
-          isCustom: true
-        }]
+      moveTranscriptCourse: (courseId, targetYear, targetSemester) => set((state) => ({
+        transcript: state.transcript.map(c => 
+            c.id === courseId 
+                ? { ...c, year: targetYear.toString(), semester: targetSemester.toString() } 
+                : c
+        )
       })),
 
-      moveTranscriptCourse: (id, year, semester) => set((state) => ({
-        transcript: state.transcript.map(c => c.id === id ? { ...c, year, semester } : c)
+      updateTranscriptTrack: (courseId, newTrack) => set((state) => ({
+        transcript: state.transcript.map(c => 
+            c.id === courseId ? { ...c, selected_track: newTrack } : c
+        )
       })),
 
-      updateTranscriptGrade: (id, grade) => set((state) => ({
-        transcript: state.transcript.map(c => c.id === id ? { ...c, grade: grade } : c)
-      })),
+      importScheduleToTranscript: async (timetable, targetYear, targetSemester, determineTrackFn) => {
+        if (!timetable || !timetable.courses) return;
 
-      // [New] 트랙 업데이트 함수 (GraduationChef에서 사용)
-      updateTranscriptTrack: (id, newTrack) => set((state) => ({
-          transcript: state.transcript.map(c => c.id === id ? { ...c, selected_track: newTrack } : c)
-      })),
+        const get = useStore.getState;
+        const set = useStore.setState;
 
-      removeFromTranscript: (id) => set((state) => ({
-        transcript: state.transcript.filter(c => c.id !== id)
-      })),
+        let referenceCourses = get().gradCourses;
+        if (referenceCourses.length === 0) {
+            referenceCourses = await get().fetchGradCourses();
+        }
+        if (!referenceCourses) referenceCourses = [];
 
-      // --- [New] 레시피 관련 액션 ---
-      addRecipe: (recipe) => set((state) => ({
-          savedRecipes: [recipe, ...state.savedRecipes]
-      })),
+        const newCourses = timetable.courses.map(course => {
+            const newId = `imported-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+            const originalData = referenceCourses.find(ref => 
+                ref.name.replace(/\s/g, '') === course.name.replace(/\s/g, '')
+            );
 
-      deleteRecipe: (id) => set((state) => ({
-          savedRecipes: state.savedRecipes.filter(r => r.id !== id)
-      })),
+            return {
+                ...course, 
+                ...originalData, 
+                id: newId,
+                year: targetYear.toString(),       
+                semester: targetSemester.toString(), 
+                grade: 'A+', 
+                category_main: originalData?.category_main || course.category_main || '미분류',
+                category_sub: originalData?.category_sub || course.category_sub || '',
+                selected_track: determineTrackFn ? determineTrackFn(course) : (course.selectedTrack || ''), 
+                restriction_note: originalData?.restriction_note || course.restriction_note || ''
+            };
+        });
 
-      loadRecipe: (recipeData) => set({
-          transcript: recipeData.transcript || [],
-          userProfile: recipeData.userProfile || get().userProfile,
-          // activeSemesters, isEarlyGrad 등은 컴포넌트 로컬 상태에서 복원하거나 필요시 여기에 추가
-      }),
+        set({ transcript: [...get().transcript, ...newCourses] });
+      },
 
+      updateTranscriptGrade: (courseId, score) => set((state) => ({ transcript: state.transcript.map(c => c.id === courseId ? { ...c, grade: score } : c) })),
+      removeFromTranscript: (courseId) => set((state) => ({ transcript: state.transcript.filter(c => c.id !== courseId) })),
 
-      // --- 저장소 (Shelf - Timetable) ---
-      savedTimetables: [],
-      
       saveScheduleToShelf: (title, tag) => set((state) => {
         if (state.editingId) {
             const updatedList = state.savedTimetables.map(t => 
@@ -231,16 +239,13 @@ const useStore = create(
             );
             return {
                 savedTimetables: updatedList,
-                editingId: null,
-                schedule: [], 
-                basket: [],
-                currentStep: 1,
-                mode: 'shelf'
+                // 주의: 사용자가 계속 같은 시간표를 수정할 수 있도록 editingId를 null로 바꾸지 않습니다.
             };
         }
 
+        const newId = Date.now();
         const newTimetable = {
-          id: Date.now(),
+          id: newId,
           title,
           tag,
           courses: [...state.schedule],
@@ -250,20 +255,70 @@ const useStore = create(
         };
         return { 
           savedTimetables: [...state.savedTimetables, newTimetable],
-          schedule: [], 
-          basket: [],
-          currentStep: 1,
-          mode: 'shelf'
+          editingId: newId // 새 시간표 생성 후엔 덮어쓰기 모드로 전환
+        };
+      }),
+
+      loadRecipe: (recipe) => set((state) => ({
+        transcript: [...recipe.courses],
+        editingRecipeId: recipe.id, // 진열대에서 불러올 때 해당 레시피의 ID를 저장!
+        userProfile: recipe.userProfile || state.userProfile,
+        currentStep: 1,
+        mode: 'graduation'
+      })),
+
+      // ★ [수정됨] 레시피 덮어쓰기 로직 완벽 적용
+      saveRecipe: (title, customTracks, degreeName) => set((state) => {
+        const recipeProfile = {
+            ...state.userProfile,
+            ...(customTracks || {})
+        };
+
+        // 1. 수정 모드인 경우 (editingRecipeId가 존재) -> 해당 레시피 덮어쓰기
+        if (state.editingRecipeId) {
+            const updatedList = state.savedRecipes.map(r => 
+                r.id === state.editingRecipeId ? {
+                    ...r,
+                    title: title,
+                    courses: [...state.transcript],
+                    userProfile: recipeProfile,
+                    degreeName: degreeName || "수료 (요건 미달)",
+                    updatedAt: new Date().toISOString()
+                } : r
+            );
+            return { 
+                savedRecipes: updatedList 
+                // 참고: editingRecipeId를 유지하여 여러 번 저장을 눌러도 중복 생성 안 되게 함
+            };
+        }
+
+        // 2. 새로운 레시피인 경우 -> 신규 생성
+        const newId = Date.now();
+        const newRecipe = {
+          id: newId,
+          title: title,
+          tag: '졸업요리',
+          courses: [...state.transcript],
+          createdAt: new Date().toISOString(),
+          userProfile: recipeProfile,
+          degreeName: degreeName || "수료 (요건 미달)",
+          isGraduation: true 
+        };
+        return { 
+          savedRecipes: [...state.savedRecipes, newRecipe],
+          editingRecipeId: newId // 새 레시피를 만든 후, 다음 저장부터는 덮어쓰기가 되도록 ID 부여
         };
       }),
 
       deleteFromShelf: (id) => set((state) => ({ savedTimetables: state.savedTimetables.filter(t => t.id !== id) })),
+      deleteRecipe: (id) => set((state) => ({ savedRecipes: state.savedRecipes.filter(r => r.id !== id) })),
+      
       updateShelfItem: (id, newTitle, newTag) => set((state) => ({ savedTimetables: state.savedTimetables.map(t => t.id === id ? { ...t, title: newTitle, tag: newTag } : t) })),
 
       loadScheduleFromShelf: (timetable) => set((state) => ({
         schedule: [...timetable.courses],
         editingId: timetable.id, 
-        basket: [], 
+        basket: [...timetable.courses], 
         currentStep: 1, 
         mode: 'timetable' 
       })),
@@ -302,7 +357,10 @@ const useStore = create(
         return course.type || '일반';
       },
 
-      resetAll: () => set({ currentStep: 0, basket: [], schedule: [], transcript: [], grades: {}, editingId: null }),
+      resetAll: () => set({ 
+          currentStep: 0, basket: [], schedule: [], transcript: [], grades: {}, 
+          editingId: null, editingRecipeId: null // 초기화
+      }),
 
       communityPosts: [],
       isLoadingPosts: false,
@@ -356,6 +414,7 @@ const useStore = create(
             categories: c.categories || [],
             times: c.times || [],
             selectedTrack: c.selectedTrack || null,
+            restriction_note: c.restriction_note || '' 
           }));
 
           const docRef = await addDoc(collection(db, "timetables"), {
@@ -370,9 +429,9 @@ const useStore = create(
           
           if (localTimetableId) {
              set(state => ({
-               savedTimetables: state.savedTimetables.map(t => 
-                   t.id === localTimetableId ? { ...t, firebaseId: docRef.id } : t
-               )
+                savedTimetables: state.savedTimetables.map(t => 
+                    t.id === localTimetableId ? { ...t, firebaseId: docRef.id } : t
+                )
              }));
           }
 
@@ -419,24 +478,15 @@ const useStore = create(
       name: 'dgist-chef-storage',
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
-        // [중요] 저장할 상태 목록에 savedRecipes 추가
-        currentStep: state.currentStep, 
-        mode: state.mode, 
-        basket: state.basket, 
-        schedule: state.schedule, 
-        isOverCredit: state.isOverCredit,
         savedTimetables: state.savedTimetables, 
-        savedRecipes: state.savedRecipes, // 여기에 추가됨!
+        savedRecipes: state.savedRecipes, 
         transcript: state.transcript, 
-        gradType: state.gradType, 
-        semestersCompleted: state.semestersCompleted,
-        hasThesis: state.hasThesis, 
-        warningCount: state.warningCount, 
-        grades: state.grades,
+        gradCourses: state.gradCourses,
         likedPostIds: state.likedPostIds, 
         userNickname: state.userNickname, 
         userProfile: state.userProfile,
-        editingId: state.editingId 
+        editingId: state.editingId, // 새로고침(F5) 해도 시간표 덮어쓰기 유지
+        editingRecipeId: state.editingRecipeId // 새로고침(F5) 해도 레시피 덮어쓰기 유지
       }),
     }
   )
