@@ -792,7 +792,7 @@ const GraduationChef = () => {
 
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5">
               <h3 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2">
-                <Settings className="w-4 h-4 text-slate-500" /> 트랙 설정 (시뮬레이션)
+                <Settings className="w-4 h-4 text-slate-500" /> 전공 트랙 설정
               </h3>
               <div className="space-y-3">
                 <SelectBox label="주전공" value={targetMajor} onChange={setTargetMajor} options={Object.keys(trackRules)} color="blue" nullable />
