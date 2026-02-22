@@ -6,7 +6,6 @@ import {
     LogOut, FolderPlus, FileText, PieChart, BookOpen, Calendar, ChevronDown, ChevronUp, Scroll, UserCircle2, CalendarPlus
 } from 'lucide-react';
 import { toPng } from 'html-to-image';
-// [추가] ics 라이브러리 추가
 import { createEvents } from 'ics';
 
 const START_HOUR = 9;
@@ -323,7 +322,7 @@ const TimeTableShelf = () => {
     }
   };
 
-  // [추가] 캘린더(.ics) 내보내기 핸들러
+  // ★ [수정됨] 캘린더(.ics) 내보내기 핸들러
   const handleExportCalendar = () => {
     if (!viewingItem || !viewingItem.courses || viewingItem.courses.length === 0) {
       alert('달력에 추가할 강의가 없습니다.');
@@ -332,22 +331,23 @@ const TimeTableShelf = () => {
 
     const events = [];
     const semesterYear = 2026;
-    const semesterMonth = 3; 
+    const semesterMonth = 2; // 2월 시작
 
+    // 2026년 2월 23일 개강 주간에 맞춘 요일-날짜 매핑
     const firstWeekDates = {
-      0: 2, // 월 (3/2)
-      1: 3, // 화 (3/3)
-      2: 4, // 수 (3/4)
-      3: 5, // 목 (3/5)
-      4: 6, // 금 (3/6)
-      5: 7  // 토 (3/7)
+      0: 23, // 월 (2/23)
+      1: 24, // 화 (2/24)
+      2: 25, // 수 (2/25)
+      3: 26, // 목 (2/26)
+      4: 27, // 금 (2/27)
+      5: 28  // 토 (2/28)
     };
 
     viewingItem.courses.forEach((course) => {
       if (!course.times || course.times.length === 0) return;
 
       course.times.forEach((time) => {
-        const firstDate = firstWeekDates[time.day] || 2;
+        const firstDate = firstWeekDates[time.day] || 23;
         
         const startHour = Math.floor(time.start);
         const startMinute = Math.round((time.start - startHour) * 60);
@@ -357,10 +357,10 @@ const TimeTableShelf = () => {
 
         events.push({
           title: course.name,
-          description: `👨‍🏫 ${course.prof || '미정'} 교수님\n🔖 ${course.fixedTypes?.[0] || '분류 없음'}`,
+          location: course.room || '', // 엑셀에서 가져온 교실 정보 매핑 (메모 삭제됨)
           start: [semesterYear, semesterMonth, firstDate, startHour, startMinute],
           duration: { hours: durHour, minutes: durMinute },
-          recurrenceRule: 'FREQ=WEEKLY;UNTIL=20260619T150000Z' // 6월 19일까지 매주 반복
+          recurrenceRule: 'FREQ=WEEKLY;COUNT=16' // 16주간 반복
         });
       });
     });
@@ -376,7 +376,6 @@ const TimeTableShelf = () => {
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      // 시간표 제목으로 파일명 설정
       link.setAttribute('download', `${viewingItem.title}.ics`); 
       document.body.appendChild(link);
       link.click();

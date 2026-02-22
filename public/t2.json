@@ -75,7 +75,8 @@
         "Final Exam"
       ],
       "textbook": "None"
-    }
+    },
+    "room": "E7-233"
   },
   {
     "id": "BE202-01",
@@ -164,7 +165,8 @@
         "Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython\t(Wes McKinney / 2022)",
         " An Introduction to Statistical Learning\t(James, Gareth, Witten, Daniela, Hastie, Trevor / 2021)"
       ]
-    }
+    },
+    "room": "E7-233"
   },
   {
     "id": "BE202-02",
@@ -253,7 +255,8 @@
         "Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython\t(Wes McKinney / 2022)",
         " An Introduction to Statistical Learning\t(James, Gareth, Witten, Daniela, Hastie, Trevor / 2021)"
       ]
-    }
+    },
+    "room": "E7-233"
   },
   {
     "id": "BE203-01",
@@ -317,7 +320,8 @@
         "15주차:최종발표 및 평가"
       ],
       "textbook": "None"
-    }
+    },
+    "room": "E7-307"
   },
   {
     "id": "BE203-02",
@@ -385,7 +389,8 @@
         "15주차:최종발표 및 평가"
       ],
       "textbook": "None"
-    }
+    },
+    "room": "E7-307"
   },
   {
     "id": "BE205-01",
@@ -458,7 +463,8 @@
         "16주차:Final Exam"
       ],
       "textbook": "Frequency Response and System Concepts\t(Rizzoni, Giorgio / 2022)"
-    }
+    },
+    "room": "E7-233"
   },
   {
     "id": "BE205-02",
@@ -531,7 +537,8 @@
         "16주차:Final Exam"
       ],
       "textbook": "Frequency Response and System Concepts\t(Rizzoni, Giorgio / 2022)"
-    }
+    },
+    "room": "E7-233"
   },
   {
     "id": "BR301-01",
@@ -602,7 +609,8 @@
         "16주차:Final-term"
       ],
       "textbook": "None"
-    }
+    },
+    "room": "E4-225"
   },
   {
     "id": "BR403-01",
@@ -678,7 +686,8 @@
         "16주차:Final Examination"
       ],
       "textbook": "None"
-    }
+    },
+    "room": "E7-L21"
   },
   {
     "id": "BR404-01",
@@ -758,7 +767,8 @@
         "16주차:Final exam"
       ],
       "textbook": "None"
-    }
+    },
+    "room": "E7-G01"
   },
   {
     "id": "BS102a-01",
@@ -822,7 +832,8 @@
         "⌜Advanced Engineering Mathematics⌟, 10th ed. (Kreyszig / 2011)",
         "My lecture Notes based on the book “이두석, 안흥주(2014),  DGIST 응용 미적분학과 미분방정식 ebook” (Notes will be distributed through LMS)"
       ]
-    }
+    },
+    "room": "E7-223"
   },
   {
     "id": "BS102a-02",
@@ -902,7 +913,8 @@
       "textbook": [
         "Advanced engineering mathematics (Kreyszig, Erwin / 2011)"
       ]
-    }
+    },
+    "room": "E7-223"
   },
   {
     "id": "BS102a-03",
@@ -983,7 +995,8 @@
         "Advanced Engineering Mathematics (Kreyszig / n.d.)",
         "Calculus: Early Transcendentals (Stewart, Clegg and Wats / n.d.)"
       ]
-    }
+    },
+    "room": "E7-L21"
   },
   {
     "id": "BS102a-04",
@@ -1064,7 +1077,8 @@
         "Advanced Engineering Mathematics (Kreyszig / n.d.)",
         "Calculus: Early Transcendentals (Stewart, Clegg and Wats / n.d.)"
       ]
-    }
+    },
+    "room": "E7-223"
   },
   {
     "id": "BS102a-05",
@@ -1145,7 +1159,8 @@
         "Advanced Engineering Mathematics (Kreyszig / n.d.)",
         "Calculus: Early Transcendentals (Stewart, Clegg and Wats / n.d.)"
       ]
-    }
+    },
+    "room": "E7-223"
   },
   {
     "id": "BS103a-01",
@@ -1229,7 +1244,8 @@
         "Physics for engineers and scientists (Hans C. Ohanian, John T. Markert / n.d.)",
         "Physics for Scientists and Engineers with Modern Physics, 4th Edition (D. C. Giancoli. / n.d.)"
       ]
-    }
+    },
+    "room": "E7-241"
   },
   {
     "id": "BS103a-02",
@@ -1313,7 +1329,8 @@
         "Physics for engineers and scientists (Hans C. Ohanian, John T. Markert / n.d.)",
         "Physics for Scientists and Engineers with Modern Physics, 4th Edition (D. C. Giancoli. / n.d.)"
       ]
-    }
+    },
+    "room": "E7-241"
   },
   {
     "id": "BS103a-03",
@@ -1397,7 +1414,8 @@
         "Physics for engineers and scientists (Hans C. Ohanian, John T. Markert / n.d.)",
         "Physics for Scientists and Engineers with Modern Physics, 4th Edition (D. C. Giancoli. / n.d.)"
       ]
-    }
+    },
+    "room": "E7-241"
   },
   {
     "id": "BS103a-04",
@@ -1481,7 +1499,8 @@
         "Physics for engineers and scientists (Hans C. Ohanian, John T. Markert / n.d.)",
         "Physics for Scientists and Engineers with Modern Physics, 4th Edition (D. C. Giancoli. / n.d.)"
       ]
-    }
+    },
+    "room": "E7-236"
   },
   {
     "id": "BS104a-01",
@@ -1569,7 +1588,8 @@
         "고전역학 실험서 (이기준, 최승호, 박기성 / 2017)",
         "고전역학 e-book (최승호, 박기성 / 2017)"
       ]
-    }
+    },
+    "room": "E2-220"
   },
   {
     "id": "BS104a-02",
@@ -1657,7 +1677,8 @@
         "고전역학 실험서 (이기준, 최승호, 박기성 / 2017)",
         "고전역학 e-book (최승호, 박기성 / 2017)"
       ]
-    }
+    },
+    "room": "E2-220"
   },
   {
     "id": "BS104a-03",
@@ -1745,7 +1766,8 @@
         "고전역학 실험서 (이기준, 최승호, 박기성 / 2017)",
         "고전역학 e-book (최승호, 박기성 / 2017)"
       ]
-    }
+    },
+    "room": "E2-220"
   },
   {
     "id": "BS104a-04",
@@ -1833,7 +1855,8 @@
         "고전역학 실험서 (이기준, 최승호, 박기성 / 2017)",
         "고전역학 e-book (최승호, 박기성 / 2017)"
       ]
-    }
+    },
+    "room": "E2-220"
   },
   {
     "id": "BS104a-05",
@@ -1921,7 +1944,8 @@
         "고전역학 실험서 (이기준, 최승호, 박기성 / 2017)",
         "고전역학 e-book (최승호, 박기성 / 2017)"
       ]
-    }
+    },
+    "room": "E2-220"
   },
   {
     "id": "BS104a-06",
@@ -2009,7 +2033,8 @@
         "고전역학 실험서 (이기준, 최승호, 박기성 / 2017)",
         "고전역학 e-book (최승호, 박기성 / 2017)"
       ]
-    }
+    },
+    "room": "E2-220"
   },
   {
     "id": "BS104a-07",
@@ -2089,7 +2114,8 @@
         "고전역학 실험서 (이기준, 최승호, 박기성 / 2017)",
         "고전역학 e-book (최승호, 박기성 / 2017)"
       ]
-    }
+    },
+    "room": "E2-220"
   },
   {
     "id": "BS113-01",
@@ -2162,7 +2188,8 @@
         "16주차:finals"
       ],
       "textbook": "None"
-    }
+    },
+    "room": "E6-221"
   },
   {
     "id": "BS113-02",
@@ -2235,7 +2262,8 @@
         "16주차:finals"
       ],
       "textbook": "None"
-    }
+    },
+    "room": "E6-221"
   },
   {
     "id": "BS113-03",
@@ -2308,7 +2336,8 @@
         "16주차:finals"
       ],
       "textbook": "None"
-    }
+    },
+    "room": "E6-221"
   },
   {
     "id": "BS113-04",
@@ -2381,7 +2410,8 @@
         "16주차:finals"
       ],
       "textbook": "None"
-    }
+    },
+    "room": "E6-221"
   },
   {
     "id": "BS113-05",
@@ -2454,7 +2484,8 @@
         "16주차:finals"
       ],
       "textbook": "None"
-    }
+    },
+    "room": "E6-221"
   },
   {
     "id": "BS113-06",
@@ -2525,7 +2556,8 @@
       "textbook": [
         "TBA (김성균 외 / n.d.)"
       ]
-    }
+    },
+    "room": "E6-221"
   },
   {
     "id": "BS113-07",
@@ -2596,7 +2628,8 @@
       "textbook": [
         "TBA (김성균 외 / n.d.)"
       ]
-    }
+    },
+    "room": "E6-221"
   },
   {
     "id": "BS114-01",
@@ -2662,7 +2695,8 @@
       "textbook": [
         "Campbell Essential Biology with Physiology, Global Edition 6th Edition (Eric J. Simon / 2019)"
       ]
-    }
+    },
+    "room": "E7-242"
   },
   {
     "id": "BS114-02",
@@ -2723,7 +2757,8 @@
       "textbook": [
         "Campbell Essential Biology with physiology (Eric J. Simon / 2020)"
       ]
-    }
+    },
+    "room": "E7-224"
   },
   {
     "id": "BS115-01",
@@ -2799,7 +2834,8 @@
       "textbook": [
         "분자와 생명현상 실험 (이석규 / 2017)"
       ]
-    }
+    },
+    "room": "E4-224"
   },
   {
     "id": "BS115-02",
@@ -2885,7 +2921,8 @@
       "textbook": [
         "분자와 생명현상 실험 (이석규 / 2017)"
       ]
-    }
+    },
+    "room": "E4-224"
   },
   {
     "id": "BS115-03",
@@ -2971,7 +3008,8 @@
       "textbook": [
         "분자와 생명현상 실험 (이석규 / 2017)"
       ]
-    }
+    },
+    "room": "E4-224"
   },
   {
     "id": "BS115-04",
@@ -3057,7 +3095,8 @@
       "textbook": [
         "분자와 생명현상 실험 (이석규 / 2017)"
       ]
-    }
+    },
+    "room": "E4-224"
   },
   {
     "id": "BS115-05",
@@ -3143,7 +3182,8 @@
       "textbook": [
         "분자와 생명현상 실험 (이석규 / 2017)"
       ]
-    }
+    },
+    "room": "E4-224"
   },
   {
     "id": "BS115-06",
@@ -3229,7 +3269,8 @@
       "textbook": [
         "분자와 생명현상 실험 (이석규 / 2017)"
       ]
-    }
+    },
+    "room": "E4-224"
   },
   {
     "id": "BS115-07",
@@ -3315,7 +3356,8 @@
       "textbook": [
         "분자와 생명현상 실험 (이석규 / 2017)"
       ]
-    }
+    },
+    "room": "E4-224"
   },
   {
     "id": "BS116-01",
@@ -3387,7 +3429,8 @@
       "textbook": [
         "Biology: A Global Approach, Global Edition (닐 캠벨 / n.d.)"
       ]
-    }
+    },
+    "room": "E7-236"
   },
   {
     "id": "BS118-01",
@@ -3463,7 +3506,8 @@
         "Chemistry (Zumdahl, Steven S / 2018)",
         "Chemistry : the central science (Brown, Theodore L / 2022)"
       ]
-    }
+    },
+    "room": "E7-241"
   },
   {
     "id": "BS118-02",
@@ -3544,7 +3588,8 @@
         "Chemistry, 10th Ed. (Zumdahl / 2017)",
         "Chemistry : the central science (Brown, Theodore L / 2022)"
       ]
-    }
+    },
+    "room": "E7-242"
   },
   {
     "id": "BS118-03",
@@ -3624,7 +3669,8 @@
       "textbook": [
         "Chemistry : the central science\t(Brown, Theodore L / 2022)"
       ]
-    }
+    },
+    "room": "E7-233"
   },
   {
     "id": "BS118-04",
@@ -3705,7 +3751,8 @@
         "Chemistry (Zumdahl, Steven S / 2018)",
         "Chemistry : the central science (Brown, Theodore L / 2022)"
       ]
-    }
+    },
+    "room": "E7-242"
   },
   {
     "id": "BS118-05",
@@ -3786,7 +3833,8 @@
         "Chemistry (Zumdahl, Steven S / 2018)",
         "Chemistry : the central science (Brown, Theodore L / 2022)"
       ]
-    }
+    },
+    "room": "E7-242"
   },
   {
     "id": "BS202-01",
@@ -3866,7 +3914,8 @@
         "Introductory Statistics (Mann / n.d.)",
         "Introduction to Mathematical Statistics (Hogg, McKean, Criag / n.d.)"
       ]
-    }
+    },
+    "room": "E7-L21"
   },
   {
     "id": "BS203-01",
@@ -3951,7 +4000,8 @@
         "Linear Algebra Done Right (Sheldon Axler / 2015)",
         "Linear Algebra (3rd ed.) (Serge Lang / 1987)"
       ]
-    }
+    },
+    "room": "E7-224"
   },
   {
     "id": "BS203-02",
@@ -4036,7 +4086,8 @@
         "Linear Algebra Done Right (Sheldon Axler / 2015)",
         "Linear Algebra (3rd ed.) (Serge Lang / 1987)"
       ]
-    }
+    },
+    "room": "E7-L22"
   },
   {
     "id": "BS203-03",
@@ -4122,7 +4173,8 @@
         "Linear algebra : theory, intuition, code (Cohen, Mike X / 2021)",
         "Elementary linear algebra : with supplemental applications (Anton, Howard / 2011)"
       ]
-    }
+    },
+    "room": "E7-L22"
   },
   {
     "id": "CE303-01",
@@ -4183,7 +4235,8 @@
         "TBA"
       ],
       "textbook": "None"
-    }
+    },
+    "room": "E7-L31"
   },
   {
     "id": "CE401-01",
@@ -4254,7 +4307,8 @@
         "고분자화학 (Nicholson, John W / 2009)",
         "Introduction to Polymers\t(Lovell, P.A / 2011)"
       ]
-    }
+    },
+    "room": "E7-L22"
   },
   {
     "id": "CE402-01",
@@ -4342,7 +4396,8 @@
         "Lecture note",
         "Chemical product design (Cussler, E. L / 2011)"
       ]
-    }
+    },
+    "room": "E7-G02"
   },
   {
     "id": "CHEM201-01",
@@ -4427,7 +4482,8 @@
         "화학적분석 (Exploring Chemical Anaylsis) 5th Ed. (DC Harris / 2013)",
         "분석화학 (Quantitative Chemical Analysis) 8th (DC Harris / 2012)"
       ]
-    }
+    },
+    "room": "E7-233"
   },
   {
     "id": "CHEM205-01",
@@ -4512,7 +4568,8 @@
       "textbook": [
         "Organic chemistry, 4th Edition (Klein, David R / 2022)"
       ]
-    }
+    },
+    "room": "E7-236"
   },
   {
     "id": "CHEM206-01",
@@ -4568,7 +4625,8 @@
       "textbook": [
         "TBA\t(김성균 외 / 2019)"
       ]
-    }
+    },
+    "room": "E6-222"
   },
   {
     "id": "CHEM301-01",
@@ -4637,7 +4695,8 @@
       "textbook": [
         "심화화학 실험서 I (pdf version, LMS 전자교재)"
       ]
-    }
+    },
+    "room": "E6-222"
   },
   {
     "id": "CHEM305-01",
@@ -4721,7 +4780,8 @@
       "textbook": [
         "Inorganic Chemistry,5/6th Ed. (Gary L. Miessler, Paul J. Fischer, Donald A. Tarr)"
       ]
-    }
+    },
+    "room": "E7-L22"
   },
   {
     "id": "CHEM306-01",
@@ -4800,7 +4860,8 @@
       "textbook": [
         "Atkins' Physical chemistry (Atkins, P. W / 2018)"
       ]
-    }
+    },
+    "room": "E7-224"
   },
   {
     "id": "CHEM404-01",
@@ -4855,7 +4916,8 @@
       "textbook": [
         "None"
       ]
-    }
+    },
+    "room": "E7-L22"
   },
   {
     "id": "CSE203-01",
@@ -4883,7 +4945,8 @@
         "start": 11,
         "duration": 1.5
       }
-    ]
+    ],
+    "room": "E7-242"
   },
   {
     "id": "CSE302-01",
@@ -4908,7 +4971,8 @@
         "start": 15,
         "duration": 1.5
       }
-    ]
+    ],
+    "room": "E7-242"
   },
   {
     "id": "CSE305-01",
@@ -4989,7 +5053,8 @@
       "textbook": [
         "Computer organization and design : the hardware/softwareinterface (Patterson, David A / 2014)"
       ]
-    }
+    },
+    "room": "E7-236"
   },
   {
     "id": "CSE306-01",
@@ -5055,7 +5120,8 @@
       "textbook": [
         "Computer systems : a programmer's perspective (3e) (O'Hallaron, David R / 2016)"
       ]
-    }
+    },
+    "room": "E7-242"
   },
   {
     "id": "CSE307-01",
@@ -5137,7 +5203,8 @@
         "Essentials of Programming Languages (Friedman, Daniel P., and Mitchell Wand. / 2006)",
         "프로그래밍 언어의 원리 (오학주 / 2022)"
       ]
-    }
+    },
+    "room": "E7-236"
   },
   {
     "id": "CSE404-01",
@@ -5221,7 +5288,8 @@
         "Pattern recognition and machine learning (Bishop, Christopher M\t/ 2006)",
         "Deep Learning (Goodfellow, Ian / 2016)"
       ]
-    }
+    },
+    "room": "E7-L21"
   },
   {
     "id": "CSE405-01",
@@ -5280,7 +5348,8 @@
         "TBA"
       ],
       "textbook": "None"
-    }
+    },
+    "room": "E7-224"
   },
   {
     "id": "EE301-01",
@@ -5362,7 +5431,8 @@
         "Signals & Systems (2nd ed.) (Alan V. Oppenheim / n.d.)",
         "Signals & Systems: Theory and Applications (The University of Michigan Press / n.d.)"
       ]
-    }
+    },
+    "room": "E7-241"
   },
   {
     "id": "EE401-01",
@@ -5447,7 +5517,8 @@
         "Digital signal processing using MATLAB (Ingle, Vinay K / 2012)",
         "Discrete-time signal processing (Oppenheim, Alan V / 2010)"
       ]
-    }
+    },
+    "room": "E7-G01"
   },
   {
     "id": "EE403-01",
@@ -5528,7 +5599,8 @@
         "Introduction to Analog & Digital Communication (2nd Ed.) (Haykin & Moher / 2007)",
         "Principles of Communications (7th Ed.) (Ziemer & Trante / 2014)"
       ]
-    }
+    },
+    "room": "E7-G02"
   },
   {
     "id": "EE404-01",
@@ -5611,7 +5683,8 @@
         "Introduction to microelectronic fabrication\t(Jaeger, Richard C / 2002)",
         "Fundamentals of microfabrication : The science of miniaturization\t(Madou, Marc J / 2011)"
       ]
-    }
+    },
+    "room": "E7-L20"
   },
   {
     "id": "EE406-01",
@@ -5685,7 +5758,8 @@
         "Reinforcement Learning - An I (Richard S. Sutton and Andrew G. Barto / n.d.)",
         "Discrete-time Stochastic Systems (T. Soderstrom / n.d.)"
       ]
-    }
+    },
+    "room": "E7-235"
   },
   {
     "id": "EE407-01",
@@ -5765,7 +5839,8 @@
         "16주차:Final exam"
       ],
       "textbook": "None"
-    }
+    },
+    "room": "E3-626"
   },
   {
     "id": "GC101-01",
@@ -5853,7 +5928,8 @@
         "16주차:Final exam"
       ],
       "textbook": "Academic English: Speaking & Correspondence (n.n. / n.d.)"
-    }
+    },
+    "room": "E7-L27"
   },
   {
     "id": "GC101-02",
@@ -5941,7 +6017,8 @@
         "16주차:Final exam"
       ],
       "textbook": "Academic English: Speaking & Correspondence (n.n. / n.d.)"
-    }
+    },
+    "room": "E7-L27"
   },
   {
     "id": "GC101-03",
@@ -6029,7 +6106,8 @@
         "16주차:Final exam"
       ],
       "textbook": "Academic English: Speaking & Correspondence (n.n. / n.d.)"
-    }
+    },
+    "room": "E7-L27"
   },
   {
     "id": "GC101-04",
@@ -6117,7 +6195,8 @@
         "16주차:Final exam"
       ],
       "textbook": "Academic English: Speaking & Correspondence (n.n. / n.d.)"
-    }
+    },
+    "room": "E7-L27"
   },
   {
     "id": "GC101-05",
@@ -6204,7 +6283,8 @@
         "16주차:Final exam"
       ],
       "textbook": "Academic English: Speaking & Correspondence (n.n. / n.d.)"
-    }
+    },
+    "room": "E7-L28"
   },
   {
     "id": "GC101-06",
@@ -6291,7 +6371,8 @@
         "16주차:Final exam"
       ],
       "textbook": "Academic English: Speaking & Correspondence (n.n. / n.d.)"
-    }
+    },
+    "room": "E7-L27"
   },
   {
     "id": "GC101-07",
@@ -6378,7 +6459,8 @@
         "16주차:Final exam"
       ],
       "textbook": "Academic English: Speaking & Correspondence (n.n. / n.d.)"
-    }
+    },
+    "room": "E7-L27"
   },
   {
     "id": "GC101-08",
@@ -6465,7 +6547,8 @@
         "16주차:Final exam"
       ],
       "textbook": "Academic English: Speaking & Correspondence (n.n. / n.d.)"
-    }
+    },
+    "room": "E7-L28"
   },
   {
     "id": "GC101-09",
@@ -6553,7 +6636,8 @@
         "16주차:Final exam"
       ],
       "textbook": "Academic English: Speaking & Correspondence (n.n. / n.d.)"
-    }
+    },
+    "room": "E7-L27"
   },
   {
     "id": "GC101-10",
@@ -6641,7 +6725,8 @@
         "16주차:Final exam"
       ],
       "textbook": "Academic English: Speaking & Correspondence (n.n. / n.d.)"
-    }
+    },
+    "room": "E7-L28"
   },
   {
     "id": "GC101-11",
@@ -6729,7 +6814,8 @@
         "16주차:Final exam"
       ],
       "textbook": "Academic English: Speaking & Correspondence (n.n. / n.d.)"
-    }
+    },
+    "room": "E7-L27"
   },
   {
     "id": "GC101-12",
@@ -6818,7 +6904,8 @@
         "16주차:Final exam"
       ],
       "textbook": "Academic English: Speaking & Correspondence (n.n. / n.d.)"
-    }
+    },
+    "room": "E7-L28"
   },
   {
     "id": "GC101-13",
@@ -6907,7 +6994,8 @@
         "16주차:Final exam"
       ],
       "textbook": "Academic English: Speaking & Correspondence (n.n. / n.d.)"
-    }
+    },
+    "room": "E7-L28"
   },
   {
     "id": "GC101-14",
@@ -6997,7 +7085,8 @@
       "textbook": [
         "Academic English: Speaking & Correspondence (n.n / 2020)"
       ]
-    }
+    },
+    "room": "E7-L28"
   },
   {
     "id": "HSS101-01",
@@ -7045,7 +7134,8 @@
       "textbook": [
         "Principles of Economics, 5th ed. (G. Mankiw / n.d.)"
       ]
-    }
+    },
+    "room": "E7-L31"
   },
   {
     "id": "HSS102-01",
@@ -7126,7 +7216,8 @@
         "과학학이란 무엇인가\t(Yearley, Steven / 2018)",
         "과학기술학의 세계 : 과학기술과 사회를 이해하기\t(강윤재 / 2014)"
       ]
-    }
+    },
+    "room": "E7-G01"
   },
   {
     "id": "HSS103-01",
@@ -7204,7 +7295,8 @@
       "textbook": [
         "None"
       ]
-    }
+    },
+    "room": "E7-L21"
   },
   {
     "id": "HSS104a-01",
@@ -7291,7 +7383,8 @@
       "textbook": [
         "애크로이드가의 살인 사건\t(Agatha Christie / 2013)"
       ]
-    }
+    },
+    "room": "E7-G02"
   },
   {
     "id": "HSS106-01",
@@ -7373,7 +7466,8 @@
         "국가는 어떻게 통치되는가 : 대통령제, 내각제, 이원정부제\t(강원택 / 2022)",
         "민주주의, 할 수 없는 것과 할 수 있는 것\t(Przeworski, Adam / 2024)"
       ]
-    }
+    },
+    "room": "E7-G02"
   },
   {
     "id": "HSS107-01",
@@ -7448,7 +7542,8 @@
       "textbook": [
         "언어: 이론과 그 응용 (3판) (김진우 / 2017)"
       ]
-    }
+    },
+    "room": "E7-L30"
   },
   {
     "id": "HSS108-01",
@@ -7520,7 +7615,8 @@
         "기말시험"
       ],
       "textbook": "None"
-    }
+    },
+    "room": "E7-L31"
   },
   {
     "id": "HSS109a-01",
@@ -7602,7 +7698,8 @@
         "16주차:기말고사"
       ],
       "textbook": "대학 글쓰기1 (김명운 / 2019)"
-    }
+    },
+    "room": "E7-G02"
   },
   {
     "id": "HSS109a-02",
@@ -7679,7 +7776,8 @@
         "16주차: 기말고사"
       ],
       "textbook": "대학 글쓰기1 (서울대학교 대학글쓰기1 교재편찬위원회 편 / 2019)"
-    }
+    },
+    "room": "E7-G02"
   },
   {
     "id": "HSS109a-03",
@@ -7756,7 +7854,8 @@
         "16주차: 기말고사"
       ],
       "textbook": "대학 글쓰기1 (서울대학교 대학글쓰기1 교재편찬위원회 편 / 2019)"
-    }
+    },
+    "room": "E7-224"
   },
   {
     "id": "HSS109a-04",
@@ -7833,7 +7932,8 @@
         "16주차: 기말고사"
       ],
       "textbook": "대학 글쓰기1 (서울대학교 대학글쓰기1 교재편찬위원회 편 / 2019)"
-    }
+    },
+    "room": "E7-224"
   },
   {
     "id": "HSS109a-05",
@@ -7910,7 +8010,8 @@
         "16주차: 기말고사"
       ],
       "textbook": "대학 글쓰기1 (서울대학교 대학글쓰기1 교재편찬위원회 편 / 2019)"
-    }
+    },
+    "room": "E7-224"
   },
   {
     "id": "HSS112-01",
@@ -7983,7 +8084,8 @@
         "16주차:기말고사"
       ],
       "textbook": "사회학: 비판적 시선 (정태석, 지주형 / 2023)"
-    }
+    },
+    "room": "E7-G03"
   },
   {
     "id": "HSS114-01",
@@ -8056,7 +8158,8 @@
         "Final Examination"
       ],
       "textbook": "Human Geography: Places and Regions in Global Context, 5th Canadian Edition.\t(Knox, P. L., Marsden, S. A., and Nash, A. / 2019)"
-    }
+    },
+    "room": "E7-G01"
   },
   {
     "id": "HSS115-01",
@@ -8125,7 +8228,8 @@
         "16주차:기말고사"
       ],
       "textbook": "Human Geography: Places and Regions in Global Context, 5th Canadian Edition.\t(Knox, P. L., Marsden, S. A., and Nash, A. / 2019)"
-    }
+    },
+    "room": "E7-L30"
   },
   {
     "id": "HSS116-01",
@@ -8204,7 +8308,8 @@
         "글로벌시대의 문화인류학\t(밀러 / 2019)",
         "빅 히스토리 - 우주와 지구, 인간을 하나로 잇는 새로운 역사\t(크리스천 / 2022)"
       ]
-    }
+    },
+    "room": "E7-G03"
   },
   {
     "id": "HSS117-01",
@@ -8284,7 +8389,8 @@
       "textbook": [
         "종교학의 이해\t(\t유요한 / 2020)"
       ]
-    }
+    },
+    "room": "E7-L30"
   },
   {
     "id": "HSS118-01",
@@ -8304,7 +8410,8 @@
         "start": 13,
         "duration": 1
       }
-    ]
+    ],
+    "room": "E7-236"
   },
   {
     "id": "HSS119-01",
@@ -8324,7 +8431,8 @@
         "start": 13,
         "duration": 1
       }
-    ]
+    ],
+    "room": "E7-L29"
   },
   {
     "id": "HSS121-01",
@@ -8404,7 +8512,8 @@
       "textbook": [
         "Charles La Shure, The Roots of Korean Culture (서울대학교 한국어문학연구소 K학술확산연구센터 / 2021)"
       ]
-    }
+    },
+    "room": "E7-L22"
   },
   {
     "id": "HSS122-01",
@@ -8465,7 +8574,8 @@
       "textbook": [
         "Philosophy for Everyone\t(Matthew Chrisman / 2016)"
       ]
-    }
+    },
+    "room": "E7-G03"
   },
   {
     "id": "HSS201-01",
@@ -8548,7 +8658,8 @@
         "모든 이의 과학사 강의 : 역사와 문화로 이해하는 과학 인문학 (정인경 / 2020)",
         "야누스의 과학 : 20세기 과학기술의 사회사\t(김명진 / 2008)"
       ]
-    }
+    },
+    "room": "E7-G01"
   },
   {
     "id": "HSS202-01",
@@ -8628,7 +8739,8 @@
         "예루살렘의 아이히만\t(한나 아렌트 저, 김선욱 역 / 2006)",
         "과학철학 입문\t(카르납 저, 윤용택 역 / 1993)"
       ]
-    }
+    },
+    "room": "E7-G03"
   },
   {
     "id": "HSS203-01",
@@ -8700,7 +8812,8 @@
         "15주차:기말시험"
       ],
       "textbook": "None"
-    }
+    },
+    "room": "E7-L30"
   },
   {
     "id": "HSS204-01",
@@ -8780,7 +8893,8 @@
         "16주차:Final Exam"
       ],
       "textbook": "Principles of international politics\t(Bueno de Mesquita, Bruce\t/ 2014)"
-    }
+    },
+    "room": "E7-235"
   },
   {
     "id": "HSS207a-01",
@@ -8850,7 +8964,8 @@
         "Final Reflection – What Kind of Communicator Is AI?"
       ],
       "textbook": "None"
-    }
+    },
+    "room": "E7-G01"
   },
   {
     "id": "HSS208a-01",
@@ -8934,7 +9049,8 @@
         "확실성에 관하여 (루트비히 비트겐슈타인 / 2020)",
         "도덕의 계보 (프리드리히 니체 / 2021)"
       ]
-    }
+    },
+    "room": "E7-235"
   },
   {
     "id": "HSS212-01",
@@ -9006,7 +9122,8 @@
       "textbook": [
         "한국인의 법과 생활 : 일반인들이 알아야 할 생활법률 가이드북\t(이충호 / 2021)"
       ]
-    }
+    },
+    "room": "E7-L30"
   },
   {
     "id": "HSS215-01",
@@ -9090,7 +9207,8 @@
         "Lecture PPT, notes and class handouts to be provided by the instructor",
         "Handbook of Urban Geography\t(Schwanen, T. & van Kempen, R. (ed.) / 2020)"
       ]
-    }
+    },
+    "room": "E7-224"
   },
   {
     "id": "HSS218-01",
@@ -9170,7 +9288,8 @@
       "textbook": [
         "세계종교산책 (로이 롭슨 / 2013)"
       ]
-    }
+    },
+    "room": "E7-L30"
   },
   {
     "id": "HSS221-01",
@@ -9241,7 +9360,8 @@
       "textbook": [
         "매주 강의자료 LMS에 올림"
       ]
-    }
+    },
+    "room": "E7-L20"
   },
   {
     "id": "HSS222-01",
@@ -9322,7 +9442,8 @@
         "언어와 인지 (임예원 / 2013)",
         "진화인류학강의 (박한선 / 2024)"
       ]
-    }
+    },
+    "room": "E7-L30"
   },
   {
     "id": "HSS222-02",
@@ -9399,7 +9520,8 @@
         "문화 이론: 사회학적 접근 (필립 스미스, 알렉산더 라일리 외 / 2025)",
         "[eBook] 문화사회학 (최종렬, 김은하 외 / 2024)"
       ]
-    }
+    },
+    "room": "E7-L20"
   },
   {
     "id": "HSS223-01",
@@ -9486,7 +9608,8 @@
         "Final Exam"
       ],
       "textbook": "Philosophy of Mind: An Introduction\t(Tim Bayne / 2022)"
-    }
+    },
+    "room": "E7-235"
   },
   {
     "id": "HSS301a-01",
@@ -9574,7 +9697,8 @@
       "textbook": [
         "Scientific Writing (Lee, Jeong-Ah & Tucker, Tremaine / 2017)"
       ]
-    }
+    },
+    "room": "E7-L28"
   },
   {
     "id": "HSS301a-02",
@@ -9659,7 +9783,8 @@
         "Final exam period – No scheduled classes"
       ],
       "textbook": "Scientific Writing (J-A. Lee and T. L. Tucker. / 2017)"
-    }
+    },
+    "room": "E7-L28"
   },
   {
     "id": "INT201-01",
@@ -9679,7 +9804,8 @@
         "start": 17,
         "duration": 1
       }
-    ]
+    ],
+    "room": "E7-241"
   },
   {
     "id": "INT202-01",
@@ -9699,7 +9825,8 @@
         "start": 17,
         "duration": 1
       }
-    ]
+    ],
+    "room": "E7-241"
   },
   {
     "id": "INT203-01",
@@ -9719,7 +9846,8 @@
         "start": 17,
         "duration": 2
       }
-    ]
+    ],
+    "room": "E7-241"
   },
   {
     "id": "INT204-01",
@@ -9739,7 +9867,8 @@
         "start": 17,
         "duration": 2
       }
-    ]
+    ],
+    "room": "E7-241"
   },
   {
     "id": "INT211-01",
@@ -9759,7 +9888,8 @@
         "start": 13.5,
         "duration": 10
       }
-    ]
+    ],
+    "room": "E7-241"
   },
   {
     "id": "INT212-01",
@@ -9779,7 +9909,8 @@
         "start": 13.5,
         "duration": 10
       }
-    ]
+    ],
+    "room": "E7-241"
   },
   {
     "id": "INT213-01",
@@ -9799,7 +9930,8 @@
         "start": 13.5,
         "duration": 10
       }
-    ]
+    ],
+    "room": "E7-241"
   },
   {
     "id": "INT214-01",
@@ -9819,7 +9951,8 @@
         "start": 13.5,
         "duration": 10
       }
-    ]
+    ],
+    "room": "E7-241"
   },
   {
     "id": "INT401-01",
@@ -9839,7 +9972,8 @@
         "start": 13.5,
         "duration": 10
       }
-    ]
+    ],
+    "room": "E7-241"
   },
   {
     "id": "INT402-01",
@@ -9859,7 +9993,8 @@
         "start": 13.5,
         "duration": 10
       }
-    ]
+    ],
+    "room": "E7-241"
   },
   {
     "id": "LS203-01",
@@ -9929,7 +10064,8 @@
         "TBA"
       ],
       "textbook": "생명과학 실험 1, LMS 자료 (이창훈 / 2018)"
-    }
+    },
+    "room": "E4-225"
   },
   {
     "id": "LS203-02",
@@ -10004,7 +10140,8 @@
         "TBA"
       ],
       "textbook": "LMS 통한 자료 배포"
-    }
+    },
+    "room": "E4-225"
   },
   {
     "id": "LS203-03",
@@ -10097,7 +10234,8 @@
         "16주차 : 기말고사"
       ],
       "textbook": "생명과학실험 I (이창훈 / n.d.)"
-    }
+    },
+    "room": "E4-224"
   },
   {
     "id": "LS204-01",
@@ -10161,7 +10299,8 @@
         "TBA"
       ],
       "textbook": "Molecular biology of the cell (Bruce Alberts / n.d.)"
-    }
+    },
+    "room": "E7-233"
   },
   {
     "id": "LS204-02",
@@ -10225,7 +10364,8 @@
         "TBA"
       ],
       "textbook": "Molecular biology of the cell (Bruce Alberts / n.d.)"
-    }
+    },
+    "room": "E7-236"
   },
   {
     "id": "LS304-01",
@@ -10308,7 +10448,8 @@
         "Ecology : Concepts and applications (Molles / n.d.)",
         "Evolutionary analysis (Freeman & Herron / n.d.)"
       ]
-    }
+    },
+    "room": "E7-229"
   },
   {
     "id": "LS305-01",
@@ -10392,7 +10533,8 @@
         "Final-term Exam"
       ],
       "textbook": "Neuroscience : exploring the brain (Jones ＆ Bartlett Learning\t/ 2016)"
-    }
+    },
+    "room": "E7-L21"
   },
   {
     "id": "LS306-01",
@@ -10477,7 +10619,8 @@
         "Principles of Neural Science, Neuroscience: Exploring the Brain, 4th ed. (Mark Bear, Connors, Paradiso / n.d.)",
         "Principles of Neural Science\t(Eric Kandel / n.d.)"
       ]
-    }
+    },
+    "room": "E7-L21"
   },
   {
     "id": "LS308-01",
@@ -10559,7 +10702,8 @@
         "기말고사"
       ],
       "textbook": "Lehninger principles of biochemistry (Cox, Michael M. / 2021)"
-    }
+    },
+    "room": "E7-241"
   },
   {
     "id": "LS312-01",
@@ -10630,7 +10774,8 @@
       "textbook": [
         "None"
       ]
-    }
+    },
+    "room": "E4-113"
   },
   {
     "id": "LS314-01",
@@ -10717,7 +10862,8 @@
       "textbook": [
         "교수자 자체 제작 강의자료 활용 (n.n. / n.d.)"
       ]
-    }
+    },
+    "room": "E7-229"
   },
   {
     "id": "LS403-01",
@@ -10803,7 +10949,8 @@
       "textbook": [
         "Principles of development (Wolpert, L / 2019)"
       ]
-    }
+    },
+    "room": "E7-L22"
   },
   {
     "id": "LS406-01",
@@ -10880,7 +11027,8 @@
       "textbook": [
         "None"
       ]
-    }
+    },
+    "room": "E7-235"
   },
   {
     "id": "LS407a-01",
@@ -10958,7 +11106,8 @@
         "Animal Physiology, 4th ed. (Richard W. Hill, Gordon A. Wyse, Margaret Anderson / 2016)",
         "Vander's Human Physiology: The Mechanisms of Body Function, 16th ed. (Eric Widmaier, Hershel Raff, Kevin Strang / 2022)"
       ]
-    }
+    },
+    "room": "E4-406"
   },
   {
     "id": "LS410-01",
@@ -11034,7 +11183,8 @@
       "textbook": [
         "Brock Biology of Microorganisms, 15th (n.n. / n.d.)"
       ]
-    }
+    },
+    "room": "E7-229"
   },
   {
     "id": "LS411-01",
@@ -11109,7 +11259,8 @@
       "textbook": [
         "Neuronal Dynamics : From Single Neurons to Networks and Models of Cognition (Paperback) (Gerstner, Wulfram / n.d.)"
       ]
-    }
+    },
+    "room": "E4-113"
   },
   {
     "id": "LS412-01",
@@ -11174,7 +11325,8 @@
         "Neurobiology of Disease 2nd edition (n.n. / n.d.)",
         "Principles of Neural Science 6th edition (n.n. / n.d.)"
       ]
-    }
+    },
+    "room": "E7-235"
   },
   {
     "id": "MECH201-01",
@@ -11235,7 +11387,8 @@
       "textbook": [
         "Mechanics of Materials (Barry J. Goodno, James M. Gere / n.d.)"
       ]
-    }
+    },
+    "room": "E7-L31"
   },
   {
     "id": "MECH301-01",
@@ -11303,7 +11456,8 @@
       "textbook": [
         "None"
       ]
-    }
+    },
+    "room": "E7-L21"
   },
   {
     "id": "MECH306-01",
@@ -11390,7 +11544,8 @@
       "textbook": [
         "Engineering Vibration 5th edition (Daniel J. Inman / 2021)"
       ]
-    }
+    },
+    "room": "E5-116"
   },
   {
     "id": "MECH309-01",
@@ -11477,7 +11632,8 @@
       "textbook": [
         "Introduction to Control Engineering (Yong Seob Lim / n.d.)"
       ]
-    }
+    },
+    "room": "E7-236"
   },
   {
     "id": "MECH311-01",
@@ -11559,7 +11715,8 @@
       "textbook": [
         "Introduction to Control Engineering (Yong Seob Lim / n.d.)"
       ]
-    }
+    },
+    "room": "E7-233"
   },
   {
     "id": "MECH313-01",
@@ -11642,7 +11799,8 @@
       "textbook": [
         "Practical Electronics for Inventors (P. Scherz & S. Monk / 2016)"
       ]
-    }
+    },
+    "room": "E5-217"
   },
   {
     "id": "MECH401-01",
@@ -11726,7 +11884,8 @@
         "Introduction to robotics: mechanics and control (John Craig / n.d.)",
         "Modern Robotics (Kevin M. Lynch, Frank C. Park / n.d.)"
       ]
-    }
+    },
+    "room": "E7-G01"
   },
   {
     "id": "MECH402-01",
@@ -11807,7 +11966,8 @@
       "textbook": [
         "Foundations of MEMS (Chang Liu / 2012)"
       ]
-    }
+    },
+    "room": "E7-229"
   },
   {
     "id": "MECH407-01",
@@ -11891,7 +12051,8 @@
         "Introduction to Autonomous Mobile Robots (2nd Edition) (Ronald Siegwart, Illah R. Nourbakhsh, Davide Scaramuzza / 2011)",
         "Optimal state estimation : Kalman, H [infinity] and nonlinear approaches (Simon, Dan / 2006)"
       ]
-    }
+    },
+    "room": "E5-217"
   },
   {
     "id": "MSE305a-01",
@@ -11971,7 +12132,8 @@
       "textbook": [
         "Fundamentals of Materials Science and Engineering (William D. Callister / 2008)"
       ]
-    }
+    },
+    "room": "E7-L20"
   },
   {
     "id": "MSE307-01",
@@ -11996,7 +12158,8 @@
         "start": 13,
         "duration": 3
       }
-    ]
+    ],
+    "room": "E6-223"
   },
   {
     "id": "MSE402-01",
@@ -12024,7 +12187,8 @@
         "start": 10.5,
         "duration": 1.5
       }
-    ]
+    ],
+    "room": "E7-223"
   },
   {
     "id": "MSE407-01",
@@ -12113,7 +12277,8 @@
         "Structure of Materials: An Introduction to Crystallography, Diffraction and Symmetry (Marc De Graf, Michael E. Mchenry / 2021)",
         "Introduction to Solid Mechanics (Irving H. Shames, J. M. Pitarresi / 2009)"
       ]
-    }
+    },
+    "room": "E7-L20"
   },
   {
     "id": "PHY202a-01",
@@ -12194,7 +12359,8 @@
         "Classical Dynamics of Particles and Systems (5th Edition) (Thornton, Stephen T / 2003)",
         "Analytical mechanics (Fowles, Grant R / 2004)"
       ]
-    }
+    },
+    "room": "E7-G02"
   },
   {
     "id": "PHY205a-01",
@@ -12259,7 +12425,8 @@
       "textbook": [
         "Modern physics for scientists and engineers (Thornton, Stephen T / 2013)"
       ]
-    }
+    },
+    "room": "E7-L22"
   },
   {
     "id": "PHY302a-01",
@@ -12342,7 +12509,8 @@
       "textbook": [
         "현대물리실험 (박기성, 김보현 / 2016)"
       ]
-    }
+    },
+    "room": "E2-219"
   },
   {
     "id": "PHY304-01",
@@ -12430,7 +12598,8 @@
         "Quantum physics (Gasiorowicz, Stephen / 2003)",
         "Introduction to quantum mechanics (Griffiths, David J / 2017)"
       ]
-    }
+    },
+    "room": "E7-223"
   },
   {
     "id": "PHY306-01",
@@ -12510,7 +12679,8 @@
         "Mathematical methods for physicists : a comprehensive guide (Arfken, George B / 2013)",
         "Mathematical methods in the physical sciences (Boas, Mary L / 2006)"
       ]
-    }
+    },
+    "room": "E7-L31"
   },
   {
     "id": "PHY308-01",
@@ -12575,7 +12745,8 @@
       "textbook": [
         "Introduction to Electrodynamics (4th Edition) (D. J. Griffiths / n.d.)"
       ]
-    }
+    },
+    "room": "E2-525"
   },
   {
     "id": "PHY401-01",
@@ -12660,7 +12831,8 @@
         "Optics (Eugene Hecht / 2016)",
         "Fundamentals of Photonics (Saleh and Teich / 1991)"
       ]
-    }
+    },
+    "room": "E7-L21"
   },
   {
     "id": "PHY403-01",
@@ -12726,7 +12898,8 @@
       "textbook": [
         "Introduction to Solid State Physics (C. Kittel / n.d.)"
       ]
-    }
+    },
+    "room": "E2-324"
   },
   {
     "id": "PHY405-01",
@@ -12803,7 +12976,8 @@
       "textbook": [
         "None"
       ]
-    }
+    },
+    "room": "E7-L22"
   },
   {
     "id": "PHY406-01",
@@ -12866,7 +13040,8 @@
       "textbook": [
         "Computational physics (Newman, M. E. J / 2013)"
       ]
-    }
+    },
+    "room": "E7-229"
   },
   {
     "id": "PHY408-01",
@@ -12948,7 +13123,8 @@
         "Atomic physics (Foot, C. J / 2013)",
         "Atoms and molecules interacting with light : atomic physics for the laser era (Van der Straten, Peter / 2015)"
       ]
-    }
+    },
+    "room": "E7-G02"
   },
   {
     "id": "TP101-01",
@@ -13028,7 +13204,8 @@
         "창의성의 즐거움 (미하이 치센트미하이 / 2003)",
         "문제해결연구소 (사토오오키 / 2017)"
       ]
-    }
+    },
+    "room": "E7-237"
   },
   {
     "id": "TP202-01",
@@ -13099,7 +13276,8 @@
         "FAA “Airman Knowledge Testing Supplement for Private Pilot (FAA-CT-8080-2H)” (n.d. / n.d.)",
         "FAA “Pilot’s Handbook of Aeronautical Knowledge (PHAK, FAA-H-8083-25)” (n.d. / n.d.)"
       ]
-    }
+    },
+    "room": "E7-G03"
   },
   {
     "id": "TP301-01",
@@ -13171,7 +13349,8 @@
       "textbook": [
         "None"
       ]
-    }
+    },
+    "room": "E7-L31"
   },
   {
     "id": "TP305-01",
@@ -13219,7 +13398,8 @@
       "textbook": [
         "Game Theory (Kyuho Wang and Inkoo Cho / n.d.)"
       ]
-    }
+    },
+    "room": "E7-L31"
   },
   {
     "id": "TP307a-01",
@@ -13295,7 +13475,8 @@
         "UX디자인을 시작하는 책 (타마가이 신이치 외 / 2016)",
         "UX디자인 입문 A to Z (에릭(박의준) / 2022)"
       ]
-    }
+    },
+    "room": "E7-237"
   },
   {
     "id": "TP308-01",
@@ -13356,7 +13537,8 @@
         "이것이 생물학이다 (Meyer, Ernst / 2016)",
         "생명이란 무엇인가 (Margulis, Lynn / 2016)"
       ]
-    }
+    },
+    "room": "E7-G02"
   },
   {
     "id": "TP309-01",
@@ -13422,7 +13604,8 @@
         "해석개론 (김성기 / 2011)",
         "Real analysis and foundations (Krantz, Steven G / 2017)"
       ]
-    }
+    },
+    "room": "E7-223"
   },
   {
     "id": "TP310-01",
@@ -13503,7 +13686,8 @@
         "Algebra (Hungerford, Thomas W / 1974)",
         "Abstract Algebra : an introduction (Hungerford, Thomas W / 2014)"
       ]
-    }
+    },
+    "room": "E7-224"
   },
   {
     "id": "TP406-01",
@@ -13589,7 +13773,8 @@
         "Tensors - geometry and applications (J.M. Landsberg / n.d.)",
         "Lecture note on tensors (Han, Kangjin / n.d.)"
       ]
-    }
+    },
+    "room": "E7-L22"
   },
   {
     "id": "CSE402",
@@ -13677,7 +13862,8 @@
         "Lecture note",
         "Chemical product design (Cussler, E. L / 2011)"
       ]
-    }
+    },
+    "room": null
   },
   {
     "id": "EE303",
@@ -13757,7 +13943,8 @@
       "textbook": [
         "Fundamentals of Microelectronics\t(Behzad Razavi / n.d.)"
       ]
-    }
+    },
+    "room": null
   },
   {
     "id": "EE304",
@@ -13830,7 +14017,8 @@
       "textbook": [
         "Semiconductor physics and devices : basic principles\t(Neamen, Donald A / 2012)"
       ]
-    }
+    },
+    "room": null
   },
   {
     "id": "ENT301",
@@ -13855,7 +14043,8 @@
     "type": "전공선택",
     "trackRelations": {
       "창업": "전공선택"
-    }
+    },
+    "room": null
   },
   {
     "id": "ENT306",
@@ -13933,7 +14122,8 @@
       "textbook": [
         "Engineering Accounting\t(Cho, Seong-Pyo, Cho, Joong-Hi / 2026)"
       ]
-    }
+    },
+    "room": null
   },
   {
     "id": "RP401-01",
@@ -13951,7 +14141,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-02",
@@ -13969,7 +14160,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-03",
@@ -13987,7 +14179,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-04",
@@ -14005,7 +14198,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-05",
@@ -14023,7 +14217,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-06",
@@ -14041,7 +14236,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-07",
@@ -14059,7 +14255,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-08",
@@ -14077,7 +14274,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-09",
@@ -14095,7 +14293,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-10",
@@ -14113,7 +14312,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-11",
@@ -14131,7 +14331,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-12",
@@ -14149,7 +14350,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-13",
@@ -14167,7 +14369,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-14",
@@ -14185,7 +14388,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-15",
@@ -14203,7 +14407,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-16",
@@ -14221,7 +14426,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-17",
@@ -14239,7 +14445,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-18",
@@ -14257,7 +14464,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP401-19",
@@ -14275,7 +14483,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-01",
@@ -14293,7 +14502,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-02",
@@ -14311,7 +14521,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-03",
@@ -14329,7 +14540,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-04",
@@ -14347,7 +14559,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-05",
@@ -14365,7 +14578,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-06",
@@ -14383,7 +14597,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-07",
@@ -14401,7 +14616,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-08",
@@ -14419,7 +14635,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-09",
@@ -14437,7 +14654,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-10",
@@ -14455,7 +14673,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-11",
@@ -14473,7 +14692,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-12",
@@ -14491,7 +14711,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-13",
@@ -14509,7 +14730,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-14",
@@ -14527,7 +14749,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-15",
@@ -14545,7 +14768,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-16",
@@ -14563,7 +14787,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-17",
@@ -14581,7 +14806,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-18",
@@ -14599,7 +14825,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-19",
@@ -14617,7 +14844,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-20",
@@ -14635,7 +14863,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-21",
@@ -14653,7 +14882,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP402-22",
@@ -14671,7 +14901,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-01",
@@ -14689,7 +14920,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-02",
@@ -14707,7 +14939,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-03",
@@ -14725,7 +14958,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-04",
@@ -14743,7 +14977,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-05",
@@ -14761,7 +14996,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-06",
@@ -14779,7 +15015,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-07",
@@ -14797,7 +15034,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-08",
@@ -14815,7 +15053,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-09",
@@ -14833,7 +15072,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-10",
@@ -14851,7 +15091,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-11",
@@ -14869,7 +15110,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-12",
@@ -14887,7 +15129,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-13",
@@ -14905,7 +15148,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-14",
@@ -14923,7 +15167,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-15",
@@ -14941,7 +15186,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-16",
@@ -14959,7 +15205,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-17",
@@ -14977,7 +15224,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-18",
@@ -14995,7 +15243,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-19",
@@ -15013,7 +15262,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-20",
@@ -15031,7 +15281,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-21",
@@ -15049,7 +15300,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-22",
@@ -15067,7 +15319,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-23",
@@ -15085,7 +15338,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-24",
@@ -15103,7 +15357,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-25",
@@ -15121,7 +15376,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP403-26",
@@ -15139,7 +15395,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-01",
@@ -15157,7 +15414,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-02",
@@ -15175,7 +15433,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-03",
@@ -15193,7 +15452,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-04",
@@ -15211,7 +15471,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-05",
@@ -15229,7 +15490,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": null
   },
   {
     "id": "RP404-06",
@@ -15247,7 +15509,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-07",
@@ -15265,7 +15528,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-08",
@@ -15283,7 +15547,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-09",
@@ -15301,7 +15566,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-10",
@@ -15319,7 +15585,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-11",
@@ -15337,7 +15604,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-12",
@@ -15355,7 +15623,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-13",
@@ -15373,7 +15642,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-15",
@@ -15391,7 +15661,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-16",
@@ -15409,7 +15680,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-17",
@@ -15427,7 +15699,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-18",
@@ -15445,7 +15718,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-19",
@@ -15463,7 +15737,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP404-20",
@@ -15481,7 +15756,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP405-01",
@@ -15499,7 +15775,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP405-02",
@@ -15517,7 +15794,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP405-03",
@@ -15535,7 +15813,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP405-04",
@@ -15553,7 +15832,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP405-05",
@@ -15571,7 +15851,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP405-06",
@@ -15589,7 +15870,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP405-07",
@@ -15607,7 +15889,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP405-08",
@@ -15625,7 +15908,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP405-09",
@@ -15643,7 +15927,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP405-10",
@@ -15661,7 +15946,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP405-11",
@@ -15679,7 +15965,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP405-12",
@@ -15697,7 +15984,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP405-13",
@@ -15715,7 +16003,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP405-14",
@@ -15733,7 +16022,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP405-15",
@@ -15751,7 +16041,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP405-16",
@@ -15769,7 +16060,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-01",
@@ -15787,7 +16079,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-02",
@@ -15805,7 +16098,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-03",
@@ -15823,7 +16117,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-04",
@@ -15841,7 +16136,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-05",
@@ -15859,7 +16155,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-06",
@@ -15877,7 +16174,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-07",
@@ -15895,7 +16193,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-08",
@@ -15913,7 +16212,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-09",
@@ -15931,7 +16231,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-10",
@@ -15949,7 +16250,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-11",
@@ -15967,7 +16269,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-12",
@@ -15985,7 +16288,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-13",
@@ -16003,7 +16307,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-14",
@@ -16021,7 +16326,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-15",
@@ -16039,7 +16345,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-16",
@@ -16057,7 +16364,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-17",
@@ -16075,7 +16383,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-18",
@@ -16093,7 +16402,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-19",
@@ -16111,7 +16421,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-20",
@@ -16129,7 +16440,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-21",
@@ -16147,7 +16459,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-22",
@@ -16165,7 +16478,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-23",
@@ -16183,7 +16497,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-24",
@@ -16201,7 +16516,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-25",
@@ -16219,7 +16535,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-26",
@@ -16237,7 +16554,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-27",
@@ -16255,7 +16573,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-28",
@@ -16273,7 +16592,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-29",
@@ -16291,7 +16611,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-30",
@@ -16309,7 +16630,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-31",
@@ -16327,7 +16649,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-32",
@@ -16345,7 +16668,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-33",
@@ -16363,7 +16687,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP406-34",
@@ -16381,7 +16706,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-01",
@@ -16399,7 +16725,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-02",
@@ -16417,7 +16744,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-03",
@@ -16435,7 +16763,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-04",
@@ -16453,7 +16782,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-05",
@@ -16471,7 +16801,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-06",
@@ -16489,7 +16820,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-07",
@@ -16507,7 +16839,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-08",
@@ -16525,7 +16858,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-09",
@@ -16543,7 +16877,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-10",
@@ -16561,7 +16896,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-11",
@@ -16579,7 +16915,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-12",
@@ -16597,7 +16934,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-13",
@@ -16615,7 +16953,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-14",
@@ -16633,7 +16972,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-15",
@@ -16651,7 +16991,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-16",
@@ -16669,7 +17010,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-17",
@@ -16687,7 +17029,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-18",
@@ -16705,7 +17048,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-19",
@@ -16723,7 +17067,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-20",
@@ -16741,7 +17086,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-21",
@@ -16759,7 +17105,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-22",
@@ -16777,7 +17124,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-23",
@@ -16795,7 +17143,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-24",
@@ -16813,7 +17162,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-25",
@@ -16831,7 +17181,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-26",
@@ -16849,7 +17200,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-27",
@@ -16867,7 +17219,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-28",
@@ -16885,7 +17238,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-29",
@@ -16903,7 +17257,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-30",
@@ -16921,7 +17276,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-31",
@@ -16939,7 +17295,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-32",
@@ -16957,7 +17314,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-33",
@@ -16975,7 +17333,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-34",
@@ -16993,7 +17352,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-35",
@@ -17011,7 +17371,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-36",
@@ -17029,7 +17390,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-37",
@@ -17047,7 +17409,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-38",
@@ -17065,7 +17428,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-39",
@@ -17083,7 +17447,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-40",
@@ -17101,7 +17466,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-41",
@@ -17119,7 +17485,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-42",
@@ -17137,7 +17504,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-43",
@@ -17155,7 +17523,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-44",
@@ -17173,7 +17542,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-45",
@@ -17191,7 +17561,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-46",
@@ -17209,7 +17580,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-47",
@@ -17227,7 +17599,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-48",
@@ -17245,7 +17618,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-49",
@@ -17263,7 +17637,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-50",
@@ -17281,7 +17656,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-51",
@@ -17299,7 +17675,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-52",
@@ -17317,7 +17694,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-53",
@@ -17335,7 +17713,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-54",
@@ -17353,7 +17732,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-55",
@@ -17371,7 +17751,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-56",
@@ -17389,7 +17770,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-57",
@@ -17407,7 +17789,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-58",
@@ -17425,7 +17808,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-59",
@@ -17443,7 +17827,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-60",
@@ -17461,7 +17846,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-61",
@@ -17479,7 +17865,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-62",
@@ -17497,7 +17884,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-63",
@@ -17515,7 +17903,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-64",
@@ -17533,7 +17922,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-65",
@@ -17551,7 +17941,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-66",
@@ -17569,7 +17960,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-67",
@@ -17587,7 +17979,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-69",
@@ -17605,7 +17998,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-70",
@@ -17623,7 +18017,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-71",
@@ -17641,7 +18036,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-72",
@@ -17659,7 +18055,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-73",
@@ -17677,7 +18074,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": null
   },
   {
     "id": "RP408-74",
@@ -17695,7 +18093,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-75",
@@ -17713,7 +18112,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-76",
@@ -17731,7 +18131,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-77",
@@ -17749,7 +18150,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-78",
@@ -17767,7 +18169,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-79",
@@ -17785,7 +18188,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-80",
@@ -17803,7 +18207,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-81",
@@ -17821,7 +18226,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-82",
@@ -17839,7 +18245,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-83",
@@ -17857,7 +18264,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-84",
@@ -17875,7 +18283,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-85",
@@ -17893,7 +18302,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-86",
@@ -17911,7 +18321,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-87",
@@ -17929,7 +18340,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-88",
@@ -17947,7 +18359,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-89",
@@ -17965,7 +18378,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-90",
@@ -17983,7 +18397,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-91",
@@ -18001,7 +18416,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-92",
@@ -18019,7 +18435,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-93",
@@ -18037,7 +18454,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-94",
@@ -18055,7 +18473,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-241"
   },
   {
     "id": "RP408-95",
@@ -18073,7 +18492,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-241"
   },
   {
     "id": "RP408-96",
@@ -18091,7 +18511,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-241"
   },
   {
     "id": "RP408-97",
@@ -18109,7 +18530,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-241"
   },
   {
     "id": "RP408-98",
@@ -18127,7 +18549,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-241"
   },
   {
     "id": "RP408-99",
@@ -18145,7 +18568,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-241"
   },
   {
     "id": "RP408-100",
@@ -18163,7 +18587,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-101",
@@ -18181,7 +18606,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-102",
@@ -18199,7 +18625,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-103",
@@ -18217,7 +18644,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-104",
@@ -18235,7 +18663,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-105",
@@ -18253,7 +18682,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-106",
@@ -18271,7 +18701,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-107",
@@ -18289,7 +18720,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-108",
@@ -18307,7 +18739,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-109",
@@ -18325,7 +18758,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-110",
@@ -18343,7 +18777,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-111",
@@ -18361,7 +18796,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-112",
@@ -18379,7 +18815,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-113",
@@ -18397,7 +18834,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-114",
@@ -18415,7 +18853,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-115",
@@ -18433,7 +18872,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-116",
@@ -18451,7 +18891,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-117",
@@ -18469,7 +18910,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-118",
@@ -18487,7 +18929,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-119",
@@ -18505,7 +18948,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-120",
@@ -18523,7 +18967,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-121",
@@ -18541,7 +18986,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-122",
@@ -18559,7 +19005,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-123",
@@ -18577,7 +19024,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-124",
@@ -18595,7 +19043,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-125",
@@ -18613,7 +19062,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-126",
@@ -18631,7 +19081,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-127",
@@ -18649,7 +19100,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-128",
@@ -18667,7 +19119,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-129",
@@ -18685,7 +19138,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-130",
@@ -18703,7 +19157,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-131",
@@ -18721,7 +19176,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-132",
@@ -18739,7 +19195,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-133",
@@ -18757,7 +19214,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-134",
@@ -18775,7 +19233,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-135",
@@ -18793,7 +19252,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-136",
@@ -18811,7 +19271,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-137",
@@ -18829,7 +19290,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP408-138",
@@ -18847,7 +19309,8 @@
       "연구"
     ],
     "type": "전공선택",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-233"
   },
   {
     "id": "RP301-01",
@@ -18865,7 +19328,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-02",
@@ -18883,7 +19347,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-03",
@@ -18901,7 +19366,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-04",
@@ -18919,7 +19385,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-05",
@@ -18937,7 +19404,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-06",
@@ -18955,7 +19423,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-07",
@@ -18973,7 +19442,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-08",
@@ -18991,7 +19461,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-09",
@@ -19009,7 +19480,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-10",
@@ -19027,7 +19499,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-11",
@@ -19045,7 +19518,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-12",
@@ -19063,7 +19537,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-13",
@@ -19081,7 +19556,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-14",
@@ -19099,7 +19575,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-15",
@@ -19117,7 +19594,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-16",
@@ -19135,7 +19613,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-17",
@@ -19153,7 +19632,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-18",
@@ -19171,7 +19651,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-19",
@@ -19189,7 +19670,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-20",
@@ -19207,7 +19689,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-21",
@@ -19225,7 +19708,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-22",
@@ -19243,7 +19727,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-23",
@@ -19261,7 +19746,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-24",
@@ -19279,7 +19765,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-25",
@@ -19297,7 +19784,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-26",
@@ -19315,7 +19803,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-27",
@@ -19333,7 +19822,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-28",
@@ -19351,7 +19841,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-29",
@@ -19369,7 +19860,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-30",
@@ -19387,7 +19879,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-31",
@@ -19405,7 +19898,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-32",
@@ -19423,7 +19917,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-33",
@@ -19441,7 +19936,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-34",
@@ -19459,7 +19955,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-35",
@@ -19477,7 +19974,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-36",
@@ -19495,7 +19993,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-37",
@@ -19513,7 +20012,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-38",
@@ -19531,7 +20031,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-39",
@@ -19549,7 +20050,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-40",
@@ -19567,7 +20069,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-41",
@@ -19585,7 +20088,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-42",
@@ -19603,7 +20107,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-43",
@@ -19621,7 +20126,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-44",
@@ -19639,7 +20145,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-45",
@@ -19657,7 +20164,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-46",
@@ -19675,7 +20183,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-47",
@@ -19693,7 +20202,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-48",
@@ -19711,7 +20221,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-49",
@@ -19729,7 +20240,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-50",
@@ -19747,7 +20259,8 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   },
   {
     "id": "RP301-51",
@@ -19765,6 +20278,7 @@
       "연구"
     ],
     "type": "전공필수",
-    "trackRelations": {}
+    "trackRelations": {},
+    "room": "E7-236"
   }
 ]

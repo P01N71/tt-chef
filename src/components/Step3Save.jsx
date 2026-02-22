@@ -1,9 +1,7 @@
 import React, { useRef, useMemo, useCallback, useState } from 'react';
 import useStore from '../store/useStore';
-// [추가] CalendarPlus 아이콘 추가
 import { Image as ImageIcon, ArrowLeft, CheckCircle, GraduationCap, BookOpen, Clock, Save, X, Tag, CalendarPlus } from 'lucide-react';
 import { toPng } from 'html-to-image';
-// [추가] ics 라이브러리 추가
 import { createEvents } from 'ics';
 
 const START_HOUR = 9;
@@ -157,7 +155,7 @@ const Step3Save = () => {
     }
   }, [exportRef]);
 
-  // [추가] 캘린더(.ics) 내보내기 핸들러
+  // ★ [수정됨] 캘린더(.ics) 내보내기 핸들러
   const handleExportCalendar = () => {
     if (!safeSchedule || safeSchedule.length === 0) {
       alert('달력에 추가할 강의가 없습니다.');
@@ -166,25 +164,24 @@ const Step3Save = () => {
 
     const events = [];
     const semesterYear = 2026;
-    const semesterMonth = 3; 
+    const semesterMonth = 2; // 2월 시작
     
-    // day(0~5) 값을 2026년 3월 2일(개강주 월요일)부터의 날짜로 매핑
+    // 2026년 2월 23일 개강 주간에 맞춘 요일-날짜 매핑
     const firstWeekDates = {
-      0: 2, // 월 (3/2)
-      1: 3, // 화 (3/3)
-      2: 4, // 수 (3/4)
-      3: 5, // 목 (3/5)
-      4: 6, // 금 (3/6)
-      5: 7  // 토 (3/7)
+      0: 23, // 월 (2/23)
+      1: 24, // 화 (2/24)
+      2: 25, // 수 (2/25)
+      3: 26, // 목 (2/26)
+      4: 27, // 금 (2/27)
+      5: 28  // 토 (2/28)
     };
 
     safeSchedule.forEach((course) => {
       if (!course.times || course.times.length === 0) return;
 
       course.times.forEach((time) => {
-        const firstDate = firstWeekDates[time.day] || 2;
+        const firstDate = firstWeekDates[time.day] || 23;
         
-        // start가 11.5(11시 30분) 같은 소수점 형태일 것을 대비
         const startHour = Math.floor(time.start);
         const startMinute = Math.round((time.start - startHour) * 60);
         
@@ -193,10 +190,10 @@ const Step3Save = () => {
 
         events.push({
           title: course.name,
-          description: `👨‍🏫 ${course.prof || '미정'} 교수님\n🔖 ${course.fixedTypes?.[0] || '분류 없음'}`,
+          location: course.room || '', // 엑셀에서 가져온 교실 정보 매핑 (없으면 빈칸)
           start: [semesterYear, semesterMonth, firstDate, startHour, startMinute],
           duration: { hours: durHour, minutes: durMinute },
-          recurrenceRule: 'FREQ=WEEKLY;UNTIL=20260619T150000Z' // 6월 19일까지 매주 반복
+          recurrenceRule: 'FREQ=WEEKLY;COUNT=16' // 16주간 반복
         });
       });
     });
@@ -227,15 +224,10 @@ const Step3Save = () => {
       return;
     }
     
-    // 1. 데이터 저장
     saveScheduleToShelf(shelfTitle, shelfTag);
-    
-    // 2. [추가] 모달 닫기
     setShowShelfModal(false);
-    
     alert("시간표가 성공적으로 저장되었습니다!");
     
-    // 3. [추가] 보관소(TimeTableShelf) 화면으로 전환!
     setMode('shelf');
     setStep(1); 
   };
@@ -255,16 +247,14 @@ const Step3Save = () => {
         </div>
         
         <div className="flex gap-3">
-          {/* 1. 이미지 저장 버튼 (기존) */}
           <button 
             onClick={exportToImage} 
             disabled={isSaving}
             className={`px-4 py-3 rounded-xl font-bold flex items-center gap-2 shadow-sm transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900`}
           >
-            {isSaving ? '저장 중...' : <><ImageIcon size={18} /> 이미지 저장</>}
+            {isSaving ? '저장 중...' : <><ImageIcon size={18} /> 이미지</>}
           </button>
 
-          {/* 2. [추가] 캘린더 내보내기 버튼 */}
           <button 
             onClick={handleExportCalendar}
             className="px-4 py-3 rounded-xl font-bold flex items-center gap-2 shadow-sm transition-all bg-white border border-slate-200 text-slate-600 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200"
@@ -272,7 +262,6 @@ const Step3Save = () => {
             <CalendarPlus size={18} /> 캘린더 추가
           </button>
 
-          {/* 3. 진열대 저장 버튼 */}
           <button 
             onClick={() => setShowShelfModal(true)}
             className="px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg transition-all bg-blue-600 hover:bg-blue-500 text-white shadow-blue-500/30 hover:-translate-y-1"
@@ -282,7 +271,7 @@ const Step3Save = () => {
         </div>
       </div>
 
-      {/* 화면에 보이는 영역 (시간표 + 리포트 둘 다 보임) */}
+      {/* 화면에 보이는 영역 */}
       <div className="flex-1 w-full max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 items-start pb-20">
         <div className="flex-1 w-full">
            {renderTimetableOnly()}
@@ -314,7 +303,6 @@ const Step3Save = () => {
                 );
               })}
             </div>
-            {/* ... (리포트 하단 합계 부분 - 기존 동일) ... */}
             <div className="mt-6 pt-6 border-t border-slate-100">
               <div className="flex justify-between items-center mb-2 text-slate-500 text-sm">
                 <span>총 신청 학점</span>
@@ -336,7 +324,7 @@ const Step3Save = () => {
         </div>
       </div>
 
-      {/* [NEW] 진열대 저장 모달 (Popup) */}
+      {/* 진열대 저장 모달 */}
       {showShelfModal && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in zoom-in duration-200">
           <div className="bg-white w-full max-w-sm rounded-2xl shadow-2xl p-6 relative">
