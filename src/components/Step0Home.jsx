@@ -141,7 +141,7 @@ const Step0Home = () => {
           DGIST <span className="text-blue-600 dark:text-blue-400">TT Chef</span>
         </h1>
         <p className="text-slate-500 dark:text-slate-400 mb-8 md:mb-12 font-medium text-sm md:text-base">
-          2026 Spring ver. (fix.0218)<br className="hidden md:block"/>
+          2026 Spring ver. (fix.0223)<br className="hidden md:block"/>
           Made by P01N71 (w/ D1C3, pharmaxxan)
         </p>
 
