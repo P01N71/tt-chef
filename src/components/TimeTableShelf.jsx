@@ -3,9 +3,11 @@ import useStore from '../store/useStore';
 import { 
     ArrowLeft, Trash2, Download, X, LayoutGrid, Clock, GraduationCap, 
     FolderOpen, Pencil, Check, RotateCcw, Share2, Heart, Search, UploadCloud, Loader2, Globe, Lock,
-    LogOut, FolderPlus, FileText, PieChart, BookOpen, Calendar, ChevronDown, ChevronUp, Scroll, UserCircle2
+    LogOut, FolderPlus, FileText, PieChart, BookOpen, Calendar, ChevronDown, ChevronUp, Scroll, UserCircle2, CalendarPlus
 } from 'lucide-react';
 import { toPng } from 'html-to-image';
+// [추가] ics 라이브러리 추가
+import { createEvents } from 'ics';
 
 const START_HOUR = 9;
 const SLOT_HEIGHT = 60;
@@ -172,7 +174,6 @@ const ShelfRecipeViewer = ({ recipeData }) => {
                 <h3 className="text-3xl font-black text-slate-900 mb-6 tracking-tight">{recipeData.title}</h3>
                 
                 <div className="grid grid-cols-12 divide-x divide-slate-200 text-sm">
-                    {/* ★ [수정됨] 모달 뷰: 쉼표를 기준으로 줄바꿈 렌더링 */}
                     <div className="col-span-4 flex flex-col items-center justify-center gap-1 px-2">
                         <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wide">예상 학위</div>
                         <div className="text-slate-800 font-bold w-full break-words text-center leading-snug">
@@ -322,6 +323,68 @@ const TimeTableShelf = () => {
     }
   };
 
+  // [추가] 캘린더(.ics) 내보내기 핸들러
+  const handleExportCalendar = () => {
+    if (!viewingItem || !viewingItem.courses || viewingItem.courses.length === 0) {
+      alert('달력에 추가할 강의가 없습니다.');
+      return;
+    }
+
+    const events = [];
+    const semesterYear = 2026;
+    const semesterMonth = 3; 
+
+    const firstWeekDates = {
+      0: 2, // 월 (3/2)
+      1: 3, // 화 (3/3)
+      2: 4, // 수 (3/4)
+      3: 5, // 목 (3/5)
+      4: 6, // 금 (3/6)
+      5: 7  // 토 (3/7)
+    };
+
+    viewingItem.courses.forEach((course) => {
+      if (!course.times || course.times.length === 0) return;
+
+      course.times.forEach((time) => {
+        const firstDate = firstWeekDates[time.day] || 2;
+        
+        const startHour = Math.floor(time.start);
+        const startMinute = Math.round((time.start - startHour) * 60);
+        
+        const durHour = Math.floor(time.duration);
+        const durMinute = Math.round((time.duration - durHour) * 60);
+
+        events.push({
+          title: course.name,
+          description: `👨‍🏫 ${course.prof || '미정'} 교수님\n🔖 ${course.fixedTypes?.[0] || '분류 없음'}`,
+          start: [semesterYear, semesterMonth, firstDate, startHour, startMinute],
+          duration: { hours: durHour, minutes: durMinute },
+          recurrenceRule: 'FREQ=WEEKLY;UNTIL=20260619T150000Z' // 6월 19일까지 매주 반복
+        });
+      });
+    });
+
+    createEvents(events, (error, value) => {
+      if (error) {
+        console.error('캘린더 생성 실패:', error);
+        alert('캘린더 파일을 생성하는 중 오류가 발생했습니다.');
+        return;
+      }
+      
+      const blob = new Blob([value], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      // 시간표 제목으로 파일명 설정
+      link.setAttribute('download', `${viewingItem.title}.ics`); 
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    });
+  };
+
   const handleUpdate = () => {
     if (!editTitle.trim()) { alert("제목을 입력해주세요!"); return; }
     updateShelfItem(viewingItem.id, editTitle, editTag);
@@ -395,10 +458,10 @@ const TimeTableShelf = () => {
           
           if(loadRecipe) loadRecipe(recipeToLoad); 
           else {
-             useStore.setState({ 
-                 transcript: viewingItem.courses || [], 
-                 userProfile: viewingItem.userProfile || {} 
-             });
+              useStore.setState({ 
+                  transcript: viewingItem.courses || [], 
+                  userProfile: viewingItem.userProfile || {} 
+              });
           }
           setMode('graduation');
           setStep(1);
@@ -537,7 +600,6 @@ const TimeTableShelf = () => {
                                                 <h4 className="font-bold text-slate-800 text-lg leading-snug group-hover:text-purple-600 transition-colors">{recipe.title}</h4>
                                             </div>
                                             <div className="p-5 pt-3 flex-1 flex flex-col">
-                                                {/* ★ [수정됨] 카드 리스트 뷰: 쉼표를 기준으로 줄바꿈 렌더링 */}
                                                 <div className="text-xs text-slate-500 mb-4 bg-slate-50 px-2 py-1 rounded border border-slate-100 inline-block font-medium w-fit max-w-full text-center">
                                                     {degreeName.split(', ').map((text, i) => (
                                                         <div key={i}>{text}</div>
@@ -722,10 +784,14 @@ const TimeTableShelf = () => {
                 </div>
             </div>
             
+            {/* [수정됨] 하단 모달 버튼 영역 (이미지 저장 & 캘린더 연동) */}
             {!viewingItem.isGraduation && (
-                <div className="p-4 border-t border-slate-100 bg-white flex justify-center flex-shrink-0">
-                    <button onClick={handleDownloadImage} className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-500 shadow-lg hover:shadow-blue-500/30 transition-all">
-                        <Download size={20}/> 이미지로 저장하기
+                <div className="p-4 border-t border-slate-100 bg-white flex justify-center gap-3 flex-shrink-0">
+                    <button onClick={handleDownloadImage} className="flex items-center gap-2 px-6 py-3 bg-slate-800 text-white rounded-xl font-bold hover:bg-slate-700 shadow-lg hover:shadow-slate-500/30 transition-all">
+                        <Download size={20}/> 이미지 저장
+                    </button>
+                    <button onClick={handleExportCalendar} className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-500 shadow-lg hover:shadow-blue-500/30 transition-all">
+                        <CalendarPlus size={20}/> 캘린더 연동
                     </button>
                 </div>
             )}

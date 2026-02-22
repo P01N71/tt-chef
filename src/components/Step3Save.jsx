@@ -1,7 +1,10 @@
 import React, { useRef, useMemo, useCallback, useState } from 'react';
 import useStore from '../store/useStore';
-import { Image as ImageIcon, ArrowLeft, CheckCircle, GraduationCap, BookOpen, Clock, Save, X, Tag } from 'lucide-react';
+// [추가] CalendarPlus 아이콘 추가
+import { Image as ImageIcon, ArrowLeft, CheckCircle, GraduationCap, BookOpen, Clock, Save, X, Tag, CalendarPlus } from 'lucide-react';
 import { toPng } from 'html-to-image';
+// [추가] ics 라이브러리 추가
+import { createEvents } from 'ics';
 
 const START_HOUR = 9;
 const SLOT_HEIGHT = 60;
@@ -154,7 +157,70 @@ const Step3Save = () => {
     }
   }, [exportRef]);
 
-  // [NEW] 진열대 저장 핸들러
+  // [추가] 캘린더(.ics) 내보내기 핸들러
+  const handleExportCalendar = () => {
+    if (!safeSchedule || safeSchedule.length === 0) {
+      alert('달력에 추가할 강의가 없습니다.');
+      return;
+    }
+
+    const events = [];
+    const semesterYear = 2026;
+    const semesterMonth = 3; 
+    
+    // day(0~5) 값을 2026년 3월 2일(개강주 월요일)부터의 날짜로 매핑
+    const firstWeekDates = {
+      0: 2, // 월 (3/2)
+      1: 3, // 화 (3/3)
+      2: 4, // 수 (3/4)
+      3: 5, // 목 (3/5)
+      4: 6, // 금 (3/6)
+      5: 7  // 토 (3/7)
+    };
+
+    safeSchedule.forEach((course) => {
+      if (!course.times || course.times.length === 0) return;
+
+      course.times.forEach((time) => {
+        const firstDate = firstWeekDates[time.day] || 2;
+        
+        // start가 11.5(11시 30분) 같은 소수점 형태일 것을 대비
+        const startHour = Math.floor(time.start);
+        const startMinute = Math.round((time.start - startHour) * 60);
+        
+        const durHour = Math.floor(time.duration);
+        const durMinute = Math.round((time.duration - durHour) * 60);
+
+        events.push({
+          title: course.name,
+          description: `👨‍🏫 ${course.prof || '미정'} 교수님\n🔖 ${course.fixedTypes?.[0] || '분류 없음'}`,
+          start: [semesterYear, semesterMonth, firstDate, startHour, startMinute],
+          duration: { hours: durHour, minutes: durMinute },
+          recurrenceRule: 'FREQ=WEEKLY;UNTIL=20260619T150000Z' // 6월 19일까지 매주 반복
+        });
+      });
+    });
+
+    createEvents(events, (error, value) => {
+      if (error) {
+        console.error('캘린더 생성 실패:', error);
+        alert('캘린더 파일을 생성하는 중 오류가 발생했습니다.');
+        return;
+      }
+      
+      const blob = new Blob([value], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', '2026_봄학기_시간표.ics');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    });
+  };
+
+  // [기존] 진열대 저장 핸들러
   const handleShelfSave = () => {
     if (!shelfTitle.trim()) {
       alert("시간표 이름을 입력해주세요!");
@@ -193,12 +259,20 @@ const Step3Save = () => {
           <button 
             onClick={exportToImage} 
             disabled={isSaving}
-            className={`px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-sm transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900`}
+            className={`px-4 py-3 rounded-xl font-bold flex items-center gap-2 shadow-sm transition-all bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900`}
           >
-            {isSaving ? '저장 중...' : <><ImageIcon size={20} /> 이미지 저장</>}
+            {isSaving ? '저장 중...' : <><ImageIcon size={18} /> 이미지 저장</>}
           </button>
 
-          {/* 2. [NEW] 진열대 저장 버튼 */}
+          {/* 2. [추가] 캘린더 내보내기 버튼 */}
+          <button 
+            onClick={handleExportCalendar}
+            className="px-4 py-3 rounded-xl font-bold flex items-center gap-2 shadow-sm transition-all bg-white border border-slate-200 text-slate-600 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200"
+          >
+            <CalendarPlus size={18} /> 캘린더 추가
+          </button>
+
+          {/* 3. 진열대 저장 버튼 */}
           <button 
             onClick={() => setShowShelfModal(true)}
             className="px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg transition-all bg-blue-600 hover:bg-blue-500 text-white shadow-blue-500/30 hover:-translate-y-1"
