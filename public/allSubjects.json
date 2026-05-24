@@ -1794,7 +1794,7 @@
       "category_main": "심화",
       "category_sub": "트랙",
       "available_tracks": ["전자공학", "컴퓨터공학"],
-      "prerequisites": [["인공지능기초"]]
+      "prerequisites": [["인공지능기초","인공지능기초(공)"]]
   },
   {
       "name": "디지털통신(공)",

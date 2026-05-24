@@ -296,12 +296,14 @@ const GraduationChef = () => {
 
     let comTarget = 6;
     let comCredits = 0;
+    const comBaseList = ["프로그래밍","데이터사이언스기초"]
+    const comOldList = ["프로그래밍","데이터사이언스기초","인공지능기초"]
     if (isNewCurriculum) {
        comTarget = 6;
-       comCredits = getCreditsByNames(RULES.computer.base);
+       comCredits = getCreditsByNames(comBaseList);
     } else {
        comTarget = 9;
-       comCredits = getCreditsByNames([...RULES.computer.base, ...RULES.computer.old]);
+       comCredits = getCreditsByNames(comOldList);
     }
     const comResult = { name: `컴퓨터공학 (${comTarget})`, done: comCredits >= comTarget, detail: `${comCredits}/${comTarget}` };
 
@@ -333,7 +335,7 @@ const GraduationChef = () => {
     const ugrpCredits = getCreditsByNames(RULES.research.required);
     const ugrpResult = { name: "UGRP (6)", done: ugrpCredits >= 6, detail: `${ugrpCredits}/6` };
     
-    const internCredits = passedCourses.filter(c => c.name.includes("인턴십")).reduce((a,c) => a + c.credit, 0);
+    const internCredits = passedCourses.filter(c => c.name.includes("인턴")).reduce((a,c) => a + c.credit, 0);
     
     let internReq = 1;
     if (entryYear <= 2024) internReq = 2; 
