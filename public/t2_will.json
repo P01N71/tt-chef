@@ -2102,7 +2102,7 @@
     "id": "BS106a-01",
     "name": "일반물리실험II",
     "prof": "김동렬",
-    "credit": 3,
+    "credit": 1,
     "categories": [
       "물리학"
     ],
@@ -2188,7 +2188,7 @@
     "id": "BS106a-02",
     "name": "일반물리실험II",
     "prof": "김동렬",
-    "credit": 3,
+    "credit": 1,
     "categories": [
       "물리학"
     ],
@@ -2274,7 +2274,7 @@
     "id": "BS106a-03",
     "name": "일반물리실험II",
     "prof": "김동렬",
-    "credit": 3,
+    "credit": 1,
     "categories": [
       "물리학"
     ],
@@ -2360,7 +2360,7 @@
     "id": "BS106a-04",
     "name": "일반물리실험II",
     "prof": "김동렬",
-    "credit": 3,
+    "credit": 1,
     "categories": [
       "물리학"
     ],
@@ -2446,7 +2446,7 @@
     "id": "BS106a-06",
     "name": "일반물리실험II",
     "prof": "박기성",
-    "credit": 3,
+    "credit": 1,
     "categories": [
       "물리학"
     ],
@@ -2529,10 +2529,10 @@
     }
   },
   {
-    "id": "BS106a-01",
+    "id": "BS106a-05",
     "name": "일반물리실험II",
     "prof": "김동렬",
-    "credit": 3,
+    "credit": 1,
     "categories": [
       "물리학"
     ],
@@ -2542,7 +2542,7 @@
     "times": [
       {
         "day": 2,
-        "start": 16,
+        "start": 13,
         "duration": 2
       }
     ],
@@ -2611,6 +2611,2066 @@
       ],
       "textbook": [
         "전자기학 실험서 (박기성, 이기준, 최승호 / 2017)"
+      ]
+    }
+  },
+  {
+    "id": "BS113-01",
+    "name": "일반화학실험I",
+    "prof": "민은선",
+    "credit": 1,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 9,
+        "duration": 2
+      }
+    ],
+    "room": "E6-221",
+    "syllabus": {
+      "capacity": "24",
+      "contact": {
+        "email": "mbrownie@dgist.ac.kr",
+        "phone": "010-9235-6035",
+        "office": "TBA",
+        "office_hours": "수업전후"
+      },
+      "summary": "화학은 물질의 정체와 변환을 연구하는 자연과학의 핵심 분야로, 원자와 분자를 이용하여 새로운 화합물을 합성하며 다양한 화학 반응의 특성을 연구하는 분야이다. 학문적으로는 자연과 인간의 생명 현상을 이해하고 더 나은 삶을 위한 관련 첨단과학을 선도하며 산업적으로는 인류의 삶에 필요한 다양한 소재와 에너지를 공급해주고 있다. 실험으로 얻어진 결과와 이론적으로 예측된 값을 비교하여 화학적 사고확장을 유도한다.",
+      "methods": [
+        "Experiment"
+      ],
+      "materials": "TBA",
+      "policies": "사전 보고서를 통해 실험 전 내용을 숙지하고 조별로 실험하며 얻어진 결과는 함께 논의 하되 보고서는 개별 제출한다.",
+      "grading": [
+        {
+          "name": "Etc",
+          "percent": 10
+        },
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Homework",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:orientation",
+        "2주차:Calculation of Atomic/Ion Radius ",
+        "3주차:Molar Volume of Gases",
+        "4주차:Characteristics and Structure of Molecules",
+        "5주차:Derivation of Chemical Formulas ",
+        "6주차:Atomic Spectra ",
+        "7주차:make up class",
+        "8주차:midterm",
+        "9주차:Determination of Molecular Weight via Freezing Point Depression",
+        "10주차:Measurement of Reaction Enthalpy",
+        "11주차:Acid-Base Titration 1",
+        "12주차:Acid-Base Titration 2",
+        "13주차:Calculation of Ksp of Calcium Hydroxide",
+        "14주차:Electrochemical Reaction and Entropy Change",
+        "15주차:make up class",
+        "16주차:finals"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "BS113-02",
+    "name": "일반화학실험I",
+    "prof": "민은선",
+    "credit": 1,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 4,
+        "start": 9,
+        "duration": 2
+      }
+    ],
+    "room": "E6-221",
+    "syllabus": {
+      "capacity": "24",
+      "contact": {
+        "email": "mbrownie@dgist.ac.kr",
+        "phone": "010-9235-6035",
+        "office": "TBA",
+        "office_hours": "수업전후"
+      },
+      "summary": "화학은 물질의 정체와 변환을 연구하는 자연과학의 핵심 분야로, 원자와 분자를 이용하여 새로운 화합물을 합성하며 다양한 화학 반응의 특성을 연구하는 분야이다. 학문적으로는 자연과 인간의 생명 현상을 이해하고 더 나은 삶을 위한 관련 첨단과학을 선도하며 산업적으로는 인류의 삶에 필요한 다양한 소재와 에너지를 공급해주고 있다. 실험으로 얻어진 결과와 이론적으로 예측된 값을 비교하여 화학적 사고확장을 유도한다.",
+      "methods": [
+        "Experiment"
+      ],
+      "materials": "TBA",
+      "policies": "사전 보고서를 통해 실험 전 내용을 숙지하고 조별로 실험하며 얻어진 결과는 함께 논의 하되 보고서는 개별 제출한다.",
+      "grading": [
+        {
+          "name": "Etc",
+          "percent": 10
+        },
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Homework",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:orientation",
+        "2주차:Calculation of Atomic/Ion Radius ",
+        "3주차:Molar Volume of Gases",
+        "4주차:Characteristics and Structure of Molecules",
+        "5주차:Derivation of Chemical Formulas ",
+        "6주차:Atomic Spectra ",
+        "7주차:make up class",
+        "8주차:midterm",
+        "9주차:Determination of Molecular Weight via Freezing Point Depression",
+        "10주차:Measurement of Reaction Enthalpy",
+        "11주차:Acid-Base Titration 1",
+        "12주차:Acid-Base Titration 2",
+        "13주차:Calculation of Ksp of Calcium Hydroxide",
+        "14주차:Electrochemical Reaction and Entropy Change",
+        "15주차:make up class",
+        "16주차:finals"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "BS113-03",
+    "name": "일반화학실험I",
+    "prof": "민은선",
+    "credit": 1,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 4,
+        "start": 11,
+        "duration": 2
+      }
+    ],
+    "room": "E6-221",
+    "syllabus": {
+      "capacity": "24",
+      "contact": {
+        "email": "mbrownie@dgist.ac.kr",
+        "phone": "010-9235-6035",
+        "office": "TBA",
+        "office_hours": "수업전후"
+      },
+      "summary": "화학은 물질의 정체와 변환을 연구하는 자연과학의 핵심 분야로, 원자와 분자를 이용하여 새로운 화합물을 합성하며 다양한 화학 반응의 특성을 연구하는 분야이다. 학문적으로는 자연과 인간의 생명 현상을 이해하고 더 나은 삶을 위한 관련 첨단과학을 선도하며 산업적으로는 인류의 삶에 필요한 다양한 소재와 에너지를 공급해주고 있다. 실험으로 얻어진 결과와 이론적으로 예측된 값을 비교하여 화학적 사고확장을 유도한다.",
+      "methods": [
+        "Experiment"
+      ],
+      "materials": "TBA",
+      "policies": "사전 보고서를 통해 실험 전 내용을 숙지하고 조별로 실험하며 얻어진 결과는 함께 논의 하되 보고서는 개별 제출한다.",
+      "grading": [
+        {
+          "name": "Etc",
+          "percent": 10
+        },
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Homework",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:orientation",
+        "2주차:Calculation of Atomic/Ion Radius ",
+        "3주차:Molar Volume of Gases",
+        "4주차:Characteristics and Structure of Molecules",
+        "5주차:Derivation of Chemical Formulas ",
+        "6주차:Atomic Spectra ",
+        "7주차:make up class",
+        "8주차:midterm",
+        "9주차:Determination of Molecular Weight via Freezing Point Depression",
+        "10주차:Measurement of Reaction Enthalpy",
+        "11주차:Acid-Base Titration 1",
+        "12주차:Acid-Base Titration 2",
+        "13주차:Calculation of Ksp of Calcium Hydroxide",
+        "14주차:Electrochemical Reaction and Entropy Change",
+        "15주차:make up class",
+        "16주차:finals"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "BS113-04",
+    "name": "일반화학실험I",
+    "prof": "민은선",
+    "credit": 1,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 13,
+        "duration": 2
+      }
+    ],
+    "room": "E6-221",
+    "syllabus": {
+      "capacity": "24",
+      "contact": {
+        "email": "mbrownie@dgist.ac.kr",
+        "phone": "010-9235-6035",
+        "office": "TBA",
+        "office_hours": "수업전후"
+      },
+      "summary": "화학은 물질의 정체와 변환을 연구하는 자연과학의 핵심 분야로, 원자와 분자를 이용하여 새로운 화합물을 합성하며 다양한 화학 반응의 특성을 연구하는 분야이다. 학문적으로는 자연과 인간의 생명 현상을 이해하고 더 나은 삶을 위한 관련 첨단과학을 선도하며 산업적으로는 인류의 삶에 필요한 다양한 소재와 에너지를 공급해주고 있다. 실험으로 얻어진 결과와 이론적으로 예측된 값을 비교하여 화학적 사고확장을 유도한다.",
+      "methods": [
+        "Experiment"
+      ],
+      "materials": "TBA",
+      "policies": "사전 보고서를 통해 실험 전 내용을 숙지하고 조별로 실험하며 얻어진 결과는 함께 논의 하되 보고서는 개별 제출한다.",
+      "grading": [
+        {
+          "name": "Etc",
+          "percent": 10
+        },
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Homework",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:orientation",
+        "2주차:Calculation of Atomic/Ion Radius ",
+        "3주차:Molar Volume of Gases",
+        "4주차:Characteristics and Structure of Molecules",
+        "5주차:Derivation of Chemical Formulas ",
+        "6주차:Atomic Spectra ",
+        "7주차:make up class",
+        "8주차:midterm",
+        "9주차:Determination of Molecular Weight via Freezing Point Depression",
+        "10주차:Measurement of Reaction Enthalpy",
+        "11주차:Acid-Base Titration 1",
+        "12주차:Acid-Base Titration 2",
+        "13주차:Calculation of Ksp of Calcium Hydroxide",
+        "14주차:Electrochemical Reaction and Entropy Change",
+        "15주차:make up class",
+        "16주차:finals"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "BS113-05",
+    "name": "일반화학실험I",
+    "prof": "민은선",
+    "credit": 1,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 4,
+        "start": 13,
+        "duration": 2
+      }
+    ],
+    "room": "E6-221",
+    "syllabus": {
+      "capacity": "24",
+      "contact": {
+        "email": "mbrownie@dgist.ac.kr",
+        "phone": "010-9235-6035",
+        "office": "TBA",
+        "office_hours": "수업전후"
+      },
+      "summary": "화학은 물질의 정체와 변환을 연구하는 자연과학의 핵심 분야로, 원자와 분자를 이용하여 새로운 화합물을 합성하며 다양한 화학 반응의 특성을 연구하는 분야이다. 학문적으로는 자연과 인간의 생명 현상을 이해하고 더 나은 삶을 위한 관련 첨단과학을 선도하며 산업적으로는 인류의 삶에 필요한 다양한 소재와 에너지를 공급해주고 있다. 실험으로 얻어진 결과와 이론적으로 예측된 값을 비교하여 화학적 사고확장을 유도한다.",
+      "methods": [
+        "Experiment"
+      ],
+      "materials": "TBA",
+      "policies": "사전 보고서를 통해 실험 전 내용을 숙지하고 조별로 실험하며 얻어진 결과는 함께 논의 하되 보고서는 개별 제출한다.",
+      "grading": [
+        {
+          "name": "Etc",
+          "percent": 10
+        },
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Homework",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:orientation",
+        "2주차:Calculation of Atomic/Ion Radius ",
+        "3주차:Molar Volume of Gases",
+        "4주차:Characteristics and Structure of Molecules",
+        "5주차:Derivation of Chemical Formulas ",
+        "6주차:Atomic Spectra ",
+        "7주차:make up class",
+        "8주차:midterm",
+        "9주차:Determination of Molecular Weight via Freezing Point Depression",
+        "10주차:Measurement of Reaction Enthalpy",
+        "11주차:Acid-Base Titration 1",
+        "12주차:Acid-Base Titration 2",
+        "13주차:Calculation of Ksp of Calcium Hydroxide",
+        "14주차:Electrochemical Reaction and Entropy Change",
+        "15주차:make up class",
+        "16주차:finals"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "BS113-06",
+    "name": "일반화학실험I",
+    "prof": "Desta Kebede Taye",
+    "credit": 1,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 15,
+        "duration": 2
+      }
+    ],
+    "room": "E6-221",
+    "syllabus": {
+      "capacity": "24",
+      "contact": {
+        "email": "ktdesta@dgist.ac.kr",
+        "phone": "010-5953-1971",
+        "office": "E7-L09",
+        "office_hours": "금요일 10:30-12:00"
+      },
+      "summary": "General Chemistry Laboratory I introduces fundamental laboratory techniques in chemistry. Students are expected to review safety precautions before each experiment. Throughout the course, students will perform prearranged experimental procedures, work collaboratively with classmates, and accurately collect and analyze experimental data. Emphasis is placed on proper laboratory practices and safety awareness to minimize accidents and maintain a safe learning environment.",
+      "methods": [
+        "Experiment"
+      ],
+      "materials": "TBA",
+      "policies": "Students must complete a preliminary report to review pre-lab content before each experiment. Experiments and result discussions must be conducted in groups, but reports must be submitted individually. Proper lab clothing is required. Wearing capes, flip-flops, sandals, or other open-toed shoes is prohibited.",
+      "grading": [
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Homework",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:orientation",
+        "2주차:Calculation of Atomic/Ion Radius ",
+        "3주차:Molar Volume of Gases",
+        "4주차:Characteristics and Structure of Molecules",
+        "5주차:Derivation of Chemical Formulas ",
+        "6주차:Atomic Spectra ",
+        "7주차:make up class",
+        "8주차:midterm",
+        "9주차:Determination of Molecular Weight via Freezing Point Depression",
+        "10주차:Measurement of Reaction Enthalpy",
+        "11주차:Acid-Base Titration 1",
+        "12주차:Acid-Base Titration 2",
+        "13주차:Calculation of Ksp of Calcium Hydroxide",
+        "14주차:Electrochemical Reaction and Entropy Change",
+        "15주차:make up class",
+        "16주차:finals"
+      ],
+      "textbook": [
+        "Basic Chemistry Experiments (Seong Kyun Kim, Chang-Hoon Nam, Byunghyuck Jung, Hyunsook Jung/ 2024)"
+      ]
+    }
+  },
+  {
+    "id": "BS113-07",
+    "name": "일반화학실험I",
+    "prof": "Desta Kebede Taye",
+    "credit": 1,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 4,
+        "start": 16,
+        "duration": 2
+      }
+    ],
+    "room": "E6-221",
+    "syllabus": {
+      "capacity": "24",
+      "contact": {
+        "email": "ktdesta@dgist.ac.kr",
+        "phone": "010-5953-1971",
+        "office": "E7-L09",
+        "office_hours": "금요일 10:30-12:00"
+      },
+      "summary": "General Chemistry Laboratory I introduces fundamental laboratory techniques in chemistry. Students are expected to review safety precautions before each experiment. Throughout the course, students will perform prearranged experimental procedures, work collaboratively with classmates, and accurately collect and analyze experimental data. Emphasis is placed on proper laboratory practices and safety awareness to minimize accidents and maintain a safe learning environment.",
+      "methods": [
+        "Experiment"
+      ],
+      "materials": "TBA",
+      "policies": "Students must complete a preliminary report to review pre-lab content before each experiment. Experiments and result discussions must be conducted in groups, but reports must be submitted individually. Proper lab clothing is required. Wearing capes, flip-flops, sandals, or other open-toed shoes is prohibited.",
+      "grading": [
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Homework",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:orientation",
+        "2주차:Calculation of Atomic/Ion Radius ",
+        "3주차:Molar Volume of Gases",
+        "4주차:Characteristics and Structure of Molecules",
+        "5주차:Derivation of Chemical Formulas ",
+        "6주차:Atomic Spectra ",
+        "7주차:make up class",
+        "8주차:midterm",
+        "9주차:Determination of Molecular Weight via Freezing Point Depression",
+        "10주차:Measurement of Reaction Enthalpy",
+        "11주차:Acid-Base Titration 1",
+        "12주차:Acid-Base Titration 2",
+        "13주차:Calculation of Ksp of Calcium Hydroxide",
+        "14주차:Electrochemical Reaction and Entropy Change",
+        "15주차:make up class",
+        "16주차:finals"
+      ],
+      "textbook": [
+        "Basic Chemistry Experiments (Seong Kyun Kim, Chang-Hoon Nam, Byunghyuck Jung, Hyunsook Jung/ 2024)"
+      ]
+    }
+  },
+  {
+    "id": "BS113-08",
+    "name": "일반화학실험I",
+    "prof": "Desta Kebede Taye",
+    "credit": 1,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 5,
+        "start": 9,
+        "duration": 2
+      }
+    ],
+    "room": "E6-221",
+    "syllabus": {
+      "capacity": "24",
+      "contact": {
+        "email": "ktdesta@dgist.ac.kr",
+        "phone": "010-5953-1971",
+        "office": "E7-L09",
+        "office_hours": "금요일 10:30-12:00"
+      },
+      "summary": "General Chemistry Laboratory I introduces fundamental laboratory techniques in chemistry. Students are expected to review safety precautions before each experiment. Throughout the course, students will perform prearranged experimental procedures, work collaboratively with classmates, and accurately collect and analyze experimental data. Emphasis is placed on proper laboratory practices and safety awareness to minimize accidents and maintain a safe learning environment.",
+      "methods": [
+        "Experiment"
+      ],
+      "materials": "TBA",
+      "policies": "Students must complete a preliminary report to review pre-lab content before each experiment. Experiments and result discussions must be conducted in groups, but reports must be submitted individually. Proper lab clothing is required. Wearing capes, flip-flops, sandals, or other open-toed shoes is prohibited.",
+      "grading": [
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Homework",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:orientation",
+        "2주차:Calculation of Atomic/Ion Radius ",
+        "3주차:Molar Volume of Gases",
+        "4주차:Characteristics and Structure of Molecules",
+        "5주차:Derivation of Chemical Formulas ",
+        "6주차:Atomic Spectra ",
+        "7주차:make up class",
+        "8주차:midterm",
+        "9주차:Determination of Molecular Weight via Freezing Point Depression",
+        "10주차:Measurement of Reaction Enthalpy",
+        "11주차:Acid-Base Titration 1",
+        "12주차:Acid-Base Titration 2",
+        "13주차:Calculation of Ksp of Calcium Hydroxide",
+        "14주차:Electrochemical Reaction and Entropy Change",
+        "15주차:make up class",
+        "16주차:finals"
+      ],
+      "textbook": [
+        "Basic Chemistry Experiments (Seong Kyun Kim, Chang-Hoon Nam, Byunghyuck Jung, Hyunsook Jung/ 2024)"
+      ]
+    }
+  },
+  {
+    "id": "BS114-01",
+    "name": "생명과학개론",
+    "prof": "예경무",
+    "credit": 3,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 9,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 9,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-G02",
+    "syllabus": {
+      "capacity": "40",
+      "contact": {
+        "email": "ykm31@dgist.ac.kr",
+        "phone": "010-8863-3901",
+        "office": "TBA",
+        "office_hours": "미리 전화 조율"
+      },
+      "summary": "기초생물학 뿐만 아니라 응용 생물학분야 연구를 지망하는 저학년 학부생들에게 생명과학의 기본적인 이해와 더불어서 응용 방법 전반에 대한 관심 유도를 도모하고자 합니다. (기본적인 생물학 지식이 너무 없으면 강의를 따라오기가 어려우니, 미리 고등학교 생명과학 수준의 이해를 미리하고 참여하기를 권장)",
+      "methods": [
+        "Lecture",
+        "Discussion"
+      ],
+      "materials": "캠밸 생물학같은 생물학 기본서를 함께 탐독 바랍니다.",
+      "policies": "노트북은 갖고 오지 않습니다. 갖고 와도 펼칠수 없습니다. 강의에 집중하고 교수님고 대화에 초점을 맞추어야 합니다. 핸드폰을 통한 대화도 불가능합니다.",
+      "grading": [
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Midterm exam",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:"
+      ],
+      "textbook": [
+        "켐벨 생물학 (n.n. / n.d.)"
+      ]
+    }
+  },
+  {
+    "id": "BS114-02",
+    "name": "생명과학개론",
+    "prof": "Felix Jonas",
+    "credit": 3,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 10.5,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 10.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-223",
+    "syllabus": {
+      "capacity": "40",
+      "contact": {
+        "email": "fjonas@dgist.ac.kr",
+        "phone": "010-8863-3901",
+        "office": "R5-303",
+        "office_hours": "TBA"
+      },
+      "summary": "The course introduces the student to the key concepts and prinicples that govern life on earth.",
+      "methods": [
+        "Lecture",
+        "Flipped-learning",
+        "Discussion"
+      ],
+      "materials": "Campell Biology and selected research literature ",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Midterm exam",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:Introduction",
+        "2주차:Water &amp; other molecules of life",
+        "3주차:Nucleic Acids &amp; Proteins",
+        "4주차:Carbohydrates",
+        "5주차:Molecular Interaction",
+        "6주차:Origin of Life",
+        "7주차:Structure of the cell",
+        "8주차:Energy",
+        "9주차:Cellular respiration",
+        "10주차:Signal transduction",
+        "11주차:DNA replication",
+        "12주차:Transcription",
+        "13주차:Translation",
+        "14주차:Immunity",
+        "15주차:Cancer",
+        "16주차:Recent developments"
+      ],
+      "textbook": [
+        "Campbell Biology (Urry, Lisa A / 2017)"
+      ]
+    }
+  },
+  {
+    "id": "BS115-01",
+    "name": "일반생물학 실험",
+    "prof": "이석규",
+    "credit": 1,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 16,
+        "duration": 2
+      }
+    ],
+    "room": "E4-224",
+    "syllabus": {
+      "capacity": "24",
+      "contact": {
+        "email": "slee2012@dgist.ac.kr",
+        "phone": "010-8764-5230",
+        "office": "E4-409",
+        "office_hours": "TBA"
+      },
+      "summary": "Molecular biology and bioinformatics experiments and experiments essential for modern life science research Understand the basics of modern molecular biology experiments by performing practical exercises. In particular, students practice scientific methodology of biological research and experiments encompassing microbiology, molecular biology, and bioinformatics through an actual molecular biology project consisting of several modules.",
+      "methods": [
+        "Project",
+        "Experiment"
+      ],
+      "materials": "TBA ",
+      "policies": "1. Write your own report without help from others. 2. Be sure to submit the result report within the deadline.",
+      "grading": [
+        {
+          "name": "Homework",
+          "percent": 20
+        },
+        {
+          "name": "Term Project",
+          "percent": 40
+        },
+        {
+          "name": "Class Participation",
+          "percent": 10
+        },
+        {
+          "name": "Lab Note",
+          "percent": 30
+        }
+      ],
+      "schedule": [
+        "1주차:Basics of biology experiments",
+        "2주차:Basics of Bioinformatics",
+        "3주차:Identification of bacteria in our living",
+        "4주차:Mitochondrial DNA and haplotyping",
+        "5주차:Forensic Biology"
+      ],
+      "textbook": [
+        "(과학영재를 위한) 생명과학실험 101 (이석규 / 2026)"
+      ]
+    }
+  },
+  {
+    "id": "BS115-02",
+    "name": "일반생물학 실험",
+    "prof": "박포정",
+    "credit": 1,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 4,
+        "start": 13,
+        "duration": 2
+      }
+    ],
+    "room": "E4-224",
+    "syllabus": {
+      "capacity": "24",
+      "contact": {
+        "email": "pojeong@dgist.ac.kr",
+        "phone": "010-4302-3991",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "This laboratory course introduces students to fundamental techniques and experimental approaches in biology, reinforcing core concepts through hands-on investigation. Students will conduct experiments in areas such as microscopy, cell biology, enzyme activity, genetics, and molecular biology. Emphasis is placed on developing skills in hypothesis formulation, experimental design, data collection and analysis, and scientific communication. The course complements the associated lecture by providing experiential learning opportunities that highlight the process of scientific inquiry and the application of biological principles in real-world contexts.",
+      "methods": [
+        "Lecture",
+        "Experiment"
+      ],
+      "materials": "TBA ",
+      "policies": "Laptops/tablets should only be used for course-related activities.",
+      "grading": [
+        {
+          "name": "Homework",
+          "percent": 10
+        },
+        {
+          "name": "Term Project",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 20
+        },
+        {
+          "name": "Quiz",
+          "percent": 30
+        }
+      ],
+      "schedule": [
+        "1주차:Orientation",
+        "2주차:Scientific methodology",
+        "3주차:Overview of Project #1",
+        "4주차:Genomic DNA preparation",
+        "5주차:No Class",
+        "6주차:PCR",
+        "7주차:Gel electrophoresis & DNA purification",
+        "8주차:No class",
+        "9주차:Bioinformatics analysis",
+        "10주차:Overview of Project #2",
+        "11주차:Bacteria culture",
+        "12주차:Colony PCR",
+        "13주차:Gel electrophoresis & DNA purification",
+        "14주차:Bioformatics analysis",
+        "15주차:Quiz",
+        "16주차:No class"
+      ],
+      "textbook": [
+        "분자와 생명현상 실험서 : 생물 (이석규 / 2017)"
+      ]
+    }
+  },
+  {
+    "id": "BS115-03",
+    "name": "일반생물학 실험",
+    "prof": "조정아",
+    "credit": 1,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 14.5,
+        "duration": 2
+      }
+    ],
+    "room": "E4-224",
+    "syllabus": {
+      "capacity": "24",
+      "contact": {
+        "email": "TBA",
+        "phone": "010-7187-8345",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "'일반생물학 실험'은 현대 생명과학 연구에 필수적인 분자생물학과 생물정보학 실험 및 실습을 수행한다. 특히, 2개의 연구 프로젝트를 진행하여 생물학 연구의 과학적 방법론 및 미생물학, 분자생물학, 생물정보학을 포괄하는 실험을 수행하고 이를 통하여 현대 생물학 연구의 기초를 학습한다. ",
+      "methods": [
+        "Lecture",
+        "Project",
+        "Discussion",
+        "Experiment"
+      ],
+      "materials": "연구노트, 실험복",
+      "policies": "지도 불응, 안전관리 소홀 및 수업 분위기 방해가 되는 일체의 행동 시 즉시 퇴실조치한다. ",
+      "grading": [
+        {
+          "name": "Homework",
+          "percent": 20
+        },
+        {
+          "name": "Term Project",
+          "percent": 30
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Quiz",
+          "percent": 20
+        },
+        {
+          "name": "Lab Note",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:오리엔테이션(Overview) 및 연구노트 작성법",
+        "2주차:실험실 안전수칙 및 과학적 방법론",
+        "3주차:실험장비 사용법 이론 및 실습",
+        "4주차:유전형X표현형 분석 프로젝트: 세포 genomic DNA 추출",
+        "5주차:유전형X표현형 분석 프로젝트: PCR 원리 및 실습",
+        "6주차:유전형X표현형 분석 프로젝트: DNA 전기영동 및 정제 ",
+        "7주차:유전형X표현형 분석 프로젝트: 염기서열 분석",
+        "8주차:중간고사(1차 보고서 작성 및 제출)",
+        "9주차:미생물 동정 프로젝트: 미생물학의 기초",
+        "10주차:미생물 동정 프로젝트: 미생물 배양용 배지 제조 및 pH 미터 적정 실습",
+        "11주차:미생물 동정 프로젝트: 단계희석 및 고체배지 도말",
+        "12주차:미생물 동정 프로젝트: CFU 측정 및 colony PCR",
+        "13주차:미생물 동정 프로젝트: DNA 전기영동 및 정제 ",
+        "14주차:미생물 동정 프로젝트: 염기서열 분석 및 BLAST를 이용한 미생물 동정",
+        "15주차:염기서열 분석 결과 분반 공유 및 질의응답",
+        "16주차:기말고사(2차 보고서 작성 및 제출)"
+      ],
+      "textbook": [
+        "분자와 생명현상 실험서 (이석규 / 2017)"
+      ]
+    }
+  },
+  {
+    "id": "BS115-04",
+    "name": "일반생물학 실험",
+    "prof": "조정아",
+    "credit": 1,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 4,
+        "start": 15,
+        "duration": 2
+      }
+    ],
+    "room": "E4-224",
+    "syllabus": {
+      "capacity": "24",
+      "contact": {
+        "email": "TBA",
+        "phone": "010-7187-8345",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "'일반생물학 실험'은 현대 생명과학 연구에 필수적인 분자생물학과 생물정보학 실험 및 실습을 수행한다. 특히, 2개의 연구 프로젝트를 진행하여 생물학 연구의 과학적 방법론 및 미생물학, 분자생물학, 생물정보학을 포괄하는 실험을 수행하고 이를 통하여 현대 생물학 연구의 기초를 학습한다. ",
+      "methods": [
+        "Lecture",
+        "Project",
+        "Discussion",
+        "Experiment"
+      ],
+      "materials": "연구노트, 실험복",
+      "policies": "지도 불응, 안전관리 소홀 및 수업 분위기 방해가 되는 일체의 행동 시 즉시 퇴실조치한다. ",
+      "grading": [
+        {
+          "name": "Homework",
+          "percent": 20
+        },
+        {
+          "name": "Term Project",
+          "percent": 30
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Quiz",
+          "percent": 20
+        },
+        {
+          "name": "Lab Note",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:오리엔테이션(Overview) 및 연구노트 작성법",
+        "2주차:실험실 안전수칙 및 과학적 방법론",
+        "3주차:실험장비 사용법 이론 및 실습",
+        "4주차:유전형X표현형 분석 프로젝트: 세포 genomic DNA 추출",
+        "5주차:유전형X표현형 분석 프로젝트: PCR 원리 및 실습",
+        "6주차:유전형X표현형 분석 프로젝트: DNA 전기영동 및 정제 ",
+        "7주차:유전형X표현형 분석 프로젝트: 염기서열 분석",
+        "8주차:중간고사(1차 보고서 작성 및 제출)",
+        "9주차:미생물 동정 프로젝트: 미생물학의 기초",
+        "10주차:미생물 동정 프로젝트: 미생물 배양용 배지 제조 및 pH 미터 적정 실습",
+        "11주차:미생물 동정 프로젝트: 단계희석 및 고체배지 도말",
+        "12주차:미생물 동정 프로젝트: CFU 측정 및 colony PCR",
+        "13주차:미생물 동정 프로젝트: DNA 전기영동 및 정제 ",
+        "14주차:미생물 동정 프로젝트: 염기서열 분석 및 BLAST를 이용한 미생물 동정",
+        "15주차:염기서열 분석 결과 분반 공유 및 질의응답",
+        "16주차:기말고사(2차 보고서 작성 및 제출)"
+      ],
+      "textbook": [
+        "분자와 생명현상 실험서 (이석규 / 2017)"
+      ]
+    }
+  },
+  {
+    "id": "BS115-05",
+    "name": "일반생물학 실험",
+    "prof": "조정아",
+    "credit": 1,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 3,
+        "start": 14,
+        "duration": 2
+      }
+    ],
+    "room": "E4-224",
+    "syllabus": {
+      "capacity": "24",
+      "contact": {
+        "email": "TBA",
+        "phone": "010-7187-8345",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "'일반생물학 실험'은 현대 생명과학 연구에 필수적인 분자생물학과 생물정보학 실험 및 실습을 수행한다. 특히, 2개의 연구 프로젝트를 진행하여 생물학 연구의 과학적 방법론 및 미생물학, 분자생물학, 생물정보학을 포괄하는 실험을 수행하고 이를 통하여 현대 생물학 연구의 기초를 학습한다. ",
+      "methods": [
+        "Lecture",
+        "Project",
+        "Discussion",
+        "Experiment"
+      ],
+      "materials": "연구노트, 실험복",
+      "policies": "지도 불응, 안전관리 소홀 및 수업 분위기 방해가 되는 일체의 행동 시 즉시 퇴실조치한다. ",
+      "grading": [
+        {
+          "name": "Homework",
+          "percent": 20
+        },
+        {
+          "name": "Term Project",
+          "percent": 30
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Quiz",
+          "percent": 20
+        },
+        {
+          "name": "Lab Note",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:오리엔테이션(Overview) 및 연구노트 작성법",
+        "2주차:실험실 안전수칙 및 과학적 방법론",
+        "3주차:실험장비 사용법 이론 및 실습",
+        "4주차:유전형X표현형 분석 프로젝트: 세포 genomic DNA 추출",
+        "5주차:유전형X표현형 분석 프로젝트: PCR 원리 및 실습",
+        "6주차:유전형X표현형 분석 프로젝트: DNA 전기영동 및 정제 ",
+        "7주차:유전형X표현형 분석 프로젝트: 염기서열 분석",
+        "8주차:중간고사(1차 보고서 작성 및 제출)",
+        "9주차:미생물 동정 프로젝트: 미생물학의 기초",
+        "10주차:미생물 동정 프로젝트: 미생물 배양용 배지 제조 및 pH 미터 적정 실습",
+        "11주차:미생물 동정 프로젝트: 단계희석 및 고체배지 도말",
+        "12주차:미생물 동정 프로젝트: CFU 측정 및 colony PCR",
+        "13주차:미생물 동정 프로젝트: DNA 전기영동 및 정제 ",
+        "14주차:미생물 동정 프로젝트: 염기서열 분석 및 BLAST를 이용한 미생물 동정",
+        "15주차:염기서열 분석 결과 분반 공유 및 질의응답",
+        "16주차:기말고사(2차 보고서 작성 및 제출)"
+      ],
+      "textbook": [
+        "분자와 생명현상 실험서 (이석규 / 2017)"
+      ]
+    }
+  },
+  {
+    "id": "BS115-06",
+    "name": "일반생물학 실험",
+    "prof": "조정아",
+    "credit": 1,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 3,
+        "start": 16,
+        "duration": 2
+      }
+    ],
+    "room": "E4-224",
+    "syllabus": {
+      "capacity": "24",
+      "contact": {
+        "email": "TBA",
+        "phone": "010-7187-8345",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "'일반생물학 실험'은 현대 생명과학 연구에 필수적인 분자생물학과 생물정보학 실험 및 실습을 수행한다. 특히, 2개의 연구 프로젝트를 진행하여 생물학 연구의 과학적 방법론 및 미생물학, 분자생물학, 생물정보학을 포괄하는 실험을 수행하고 이를 통하여 현대 생물학 연구의 기초를 학습한다. ",
+      "methods": [
+        "Lecture",
+        "Project",
+        "Discussion",
+        "Experiment"
+      ],
+      "materials": "연구노트, 실험복",
+      "policies": "지도 불응, 안전관리 소홀 및 수업 분위기 방해가 되는 일체의 행동 시 즉시 퇴실조치한다. ",
+      "grading": [
+        {
+          "name": "Homework",
+          "percent": 20
+        },
+        {
+          "name": "Term Project",
+          "percent": 30
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Quiz",
+          "percent": 20
+        },
+        {
+          "name": "Lab Note",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:오리엔테이션(Overview) 및 연구노트 작성법",
+        "2주차:실험실 안전수칙 및 과학적 방법론",
+        "3주차:실험장비 사용법 이론 및 실습",
+        "4주차:유전형X표현형 분석 프로젝트: 세포 genomic DNA 추출",
+        "5주차:유전형X표현형 분석 프로젝트: PCR 원리 및 실습",
+        "6주차:유전형X표현형 분석 프로젝트: DNA 전기영동 및 정제 ",
+        "7주차:유전형X표현형 분석 프로젝트: 염기서열 분석",
+        "8주차:중간고사(1차 보고서 작성 및 제출)",
+        "9주차:미생물 동정 프로젝트: 미생물학의 기초",
+        "10주차:미생물 동정 프로젝트: 미생물 배양용 배지 제조 및 pH 미터 적정 실습",
+        "11주차:미생물 동정 프로젝트: 단계희석 및 고체배지 도말",
+        "12주차:미생물 동정 프로젝트: CFU 측정 및 colony PCR",
+        "13주차:미생물 동정 프로젝트: DNA 전기영동 및 정제 ",
+        "14주차:미생물 동정 프로젝트: 염기서열 분석 및 BLAST를 이용한 미생물 동정",
+        "15주차:염기서열 분석 결과 분반 공유 및 질의응답",
+        "16주차:기말고사(2차 보고서 작성 및 제출)"
+      ],
+      "textbook": [
+        "분자와 생명현상 실험서 (이석규 / 2017)"
+      ]
+    }
+  },
+  {
+    "id": "BS116-01",
+    "name": "일반생물학I",
+    "prof": "이석규, 유성운",
+    "credit": 3,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 3,
+        "start": 11,
+        "duration": 1.5
+      },
+      {
+        "day": 5,
+        "start": 11,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-223",
+    "syllabus": {
+      "capacity": "60",
+      "contact": {
+        "email": "slee2012@dgist.ac.kr",
+        "phone": "010-8764-5230",
+        "office": "E4-409",
+        "office_hours": "TBA"
+      },
+      "summary": "This course provides an introduction to fundamental biological principles, emphasizing the molecular and cellular basis of life, genetics, evolution, and the structure-function relationships in living organisms. Topics include the chemistry of life, cell structure and function, metabolism, DNA replication and expression, Mendelian and molecular genetics, and evolutionary processes. The course is designed for students pursuing studies in life sciences, medicine, neuroscience or related fields and provides the foundational knowledge required for advanced coursework in biology.",
+      "methods": [
+        "Lecture",
+        "Discussion"
+      ],
+      "materials": "TBA",
+      "policies": "Cell phones should be turned off or set to silent mode during class.  No texting or browsing on phones during class.  Laptops/tablets should only be used for course-related activities.",
+      "grading": [
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Midterm exam",
+          "percent": 40
+        },
+        {
+          "name": "Class Participation",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "Campbell biology in focus, Global Edition (3 ed) (Urry, Lisa A / 2020)"
+      ]
+    }
+  },
+  {
+    "id": "BS117-01",
+    "name": "일반생물학II",
+    "prof": "서병창, 이상임",
+    "credit": 3,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 10.5,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 10.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-G01",
+    "syllabus": {
+      "capacity": "40",
+      "contact": {
+        "email": "bcsuh@dgist.ac.kr",
+        "phone": "010-2416-6123",
+        "office": "E4-409",
+        "office_hours": "월요일 13:00-14:00"
+      },
+      "summary": "본 강의에서는 주요 생명체의 구조와 특징을 통해 진화의 역사에 따라 나타나는 생명체의 다양성과 공통성을 살펴보고, 개체 수준의 생명현상(특히, 동물과 식물의 생리학)과 생태학에 대하여 학습함.",
+      "methods": [
+        "Lecture",
+        "Peer teaching"
+      ],
+      "materials": "TBA",
+      "policies": "절대 평가: A+ ~ A-  80점 이상; B+ ~ B-  60점 이상; C+ 이하  60점 미만",
+      "grading": [
+        {
+          "name": "Final exam",
+          "percent": 50
+        },
+        {
+          "name": "Midterm exam",
+          "percent": 50
+        }
+      ],
+      "schedule": [
+        "1주차:Introduction, The Animal Body",
+        "2주차:Chemical Signals in Animals, Animal Digestive Systems",
+        "3주차:Animal Transport/Excretory Systems",
+        "4주차:Animal Reproductive Systems, Development in Animals",
+        "5주차:Animal Defensees Against Infection",
+        "6주차:Electric Signals/Neural Regulation in Animals",
+        "7주차:Sensation and Movement in Animals",
+        "8주차:Midterm Exam",
+        "9주차:Plant Structure and Growth, Transport in Vascular Plants, Plant Nutrition",
+        "10주차:Reproduction of Flowering Plants, Plant Signals and Behavior",
+        "11주차:How Evolution Works, Phylogenetic Reconstruction",
+        "12주차:Microevolution, Species and Speciation",
+        "13주차:Macroevolution, An Overview of Ecology",
+        "14주차:Behavioral Ecology, Populations and Life History Traits",
+        "15주차:Biodiversity and Communities, Energy Flow and Chemical Cycling in Ecosystems, Conservation and Global Ecology",
+        "16주차:Final Exam"
+      ],
+      "textbook": [
+        "Campbell Biology (Urry, Lisa A / 2017)"
+      ]
+    }
+  },
+  {
+    "id": "BS117-02",
+    "name": "일반생물학II",
+    "prof": "엄지원, 최일규",
+    "credit": 3,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 9,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 9,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-224",
+    "syllabus": {
+      "capacity": "50",
+      "contact": {
+        "email": "jiwonum@dgist.ac.kr",
+        "phone": "010-8820-4390",
+        "office": "E4-509",
+        "office_hours": "금요일 13:00-15:00"
+      },
+      "summary": "This course provides an integrated introduction to animal and plant biology, evolution, and ecology. Students will learn how animals maintain homeostasis through coordinated physiological systems, how plants grow, reproduce, and respond to their environment, and how evolutionary processes generate biological diversity. The course also examines ecological interactions at the levels of populations, communities, and ecosystems. Emphasis is placed on understanding fundamental biological principles and applying them to real-world biological phenomena.",
+      "methods": [
+        "Lecture",
+        "Team teaching",
+        "Presentation"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 20
+        },
+        {
+          "name": "Midterm exam",
+          "percent": 40
+        }
+      ],
+      "schedule": [
+        "1주차:"
+      ],
+      "textbook": [
+        "Campbell Biology in Focus (n.n. / n.d.)"
+      ]
+    }
+  },
+  {
+    "id": "BS118-01",
+    "name": "일반화학I",
+    "prof": "Desta Kebede Taye",
+    "credit": 3,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 14,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 14,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-224",
+    "syllabus": {
+      "capacity": "40",
+      "contact": {
+        "email": "ktdesta@dgist.ac.kr",
+        "phone": "010-5953-1971",
+        "office": "E7-L09",
+        "office_hours": "금요일 10:30-12:00"
+      },
+      "summary": "General Chemistry I course introduces foundational concepts in chemistry, focusing on the structure and properties of matter. Students will explore atomic theory, periodic trends, chemical bonding, molecular geometry, and the principles governing chemical reactions and stoichiometry. The course also covers gases, liquids, solids, and intermolecular forces, providing a solid foundation in fundamental chemistry concepts.",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "Using cellphone during lecture and exam is prohibited.",
+      "grading": [
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Midterm exam",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Homework",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:Orientation, Chapter 1 -  Introduction: Matter, Energy, and Measurement",
+        "2주차:Chapter 2 - Atoms, Molecules,and Ions",
+        "3주차:Chapter 3 - Chemical Reactions and Reaction Stoichiometry",
+        "4주차:Chapter 4 - Reactions in Aqueous Solution",
+        "5주차:Chapter 6 - Electronic Structure of Atoms",
+        "6주차:Chapter 7 - Periodic Properties of the Elements",
+        "7주차:Chapter 7 - Periodic Properties of the Elements",
+        "8주차:Mid-term Exam week",
+        "9주차:Chapter 8 - Basic Concepts of Chemical Bonding",
+        "10주차:Chapter 8 - Basic Concepts of Chemical Bonding",
+        "11주차:Chapter 9 - Molecular Geometry and Bonding Theories",
+        "12주차:Chapter 9 - Molecular Geometry and Bonding Theories",
+        "13주차:Chapter 10 - Gases",
+        "14주차:Chapter 11 - Liquids and Intermolecular Forces",
+        "15주차:Chapter 12 - Solids and Modern Materials",
+        "16주차:Final Exam week"
+      ],
+      "textbook": [
+        "Chemistry : the central science (Brown, Theodore L / 2022)",
+        "Chemistry (Zumdahl, Steven S / 2018)"
+      ]
+    }
+  },
+  {
+    "id": "BS119-01",
+    "name": "일반화학II",
+    "prof": "Desta Kebede Taye",
+    "credit": 3,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 16.5,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 16.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-242",
+    "syllabus": {
+      "capacity": "80",
+      "contact": {
+        "email": "ktdesta@dgist.ac.kr",
+        "phone": "010-5953-1971",
+        "office": "E7-L09",
+        "office_hours": "금요일 10:30-12:00"
+      },
+      "summary": "General Chemistry II builds upon the fundamental principles introduced in General Chemistry I by examining the behavior of chemical systems in greater depth. Students will explore the properties of solutions, chemical kinetics, chemical equilibrium, acid-base equilibria, thermodynamics, electrochemistry, nuclear chemistry, and the chemistry of nonmetals and transition metals. The course emphasizes the factors that govern chemical reactions, energy transformations, and equilibrium processes, while highlighting applications in environmental, industrial, biological, and technological contexts.",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "Using cellphone during lecture and exam is prohibited.",
+      "grading": [
+        {
+          "name": "Final exam",
+          "percent": 45
+        },
+        {
+          "name": "Midterm exam",
+          "percent": 45
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:Orientation, Chapter 13: Properties of Solutions",
+        "2주차:Chapter 13: Properties of Solutions",
+        "3주차:Chapter 14: Chemical Kinetics",
+        "4주차:Chapter 15: Chemical Equilibrium",
+        "5주차:Chapter 15: Chemical Equilibrium",
+        "6주차:Chapter 16: Acid–Base Equilibria",
+        "7주차:Chapter 16: Acid–Base Equilibria",
+        "8주차:Mid-term Exam week",
+        "9주차:Chapter 17: Additional Aspects of Aqueous Equilibria",
+        "10주차:Chapter 5: Thermochemistry",
+        "11주차:Chapter 19: Chemical Thermodynamics",
+        "12주차:Chapter 20: Electrochemistry",
+        "13주차:Chapter 20: Electrochemistry",
+        "14주차:Chapter 23: Transition Metals and Coordination Chemistrys",
+        "15주차:Chapter 23: Transition Metals and Coordination Chemistry",
+        "16주차:Final Exam week"
+      ],
+      "textbook": [
+        "Chemistry : the central science (Brown, Theodore L / 2022)",
+        "Chemistry (Zumdahl, Steven S / 2018)"
+      ]
+    }
+  },
+  {
+    "id": "BS119-02",
+    "name": "일반화학II",
+    "prof": "Desta Kebede Taye",
+    "credit": 3,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start":9,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 9,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-236",
+    "syllabus": {
+      "capacity": "80",
+      "contact": {
+        "email": "ktdesta@dgist.ac.kr",
+        "phone": "010-5953-1971",
+        "office": "E7-L09",
+        "office_hours": "금요일 10:30-12:00"
+      },
+      "summary": "General Chemistry II builds upon the fundamental principles introduced in General Chemistry I by examining the behavior of chemical systems in greater depth. Students will explore the properties of solutions, chemical kinetics, chemical equilibrium, acid-base equilibria, thermodynamics, electrochemistry, nuclear chemistry, and the chemistry of nonmetals and transition metals. The course emphasizes the factors that govern chemical reactions, energy transformations, and equilibrium processes, while highlighting applications in environmental, industrial, biological, and technological contexts.",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "Using cellphone during lecture and exam is prohibited.",
+      "grading": [
+        {
+          "name": "Final exam",
+          "percent": 45
+        },
+        {
+          "name": "Midterm exam",
+          "percent": 45
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:Orientation, Chapter 13: Properties of Solutions",
+        "2주차:Chapter 13: Properties of Solutions",
+        "3주차:Chapter 14: Chemical Kinetics",
+        "4주차:Chapter 15: Chemical Equilibrium",
+        "5주차:Chapter 15: Chemical Equilibrium",
+        "6주차:Chapter 16: Acid–Base Equilibria",
+        "7주차:Chapter 16: Acid–Base Equilibria",
+        "8주차:Mid-term Exam week",
+        "9주차:Chapter 17: Additional Aspects of Aqueous Equilibria",
+        "10주차:Chapter 5: Thermochemistry",
+        "11주차:Chapter 19: Chemical Thermodynamics",
+        "12주차:Chapter 20: Electrochemistry",
+        "13주차:Chapter 20: Electrochemistry",
+        "14주차:Chapter 23: Transition Metals and Coordination Chemistrys",
+        "15주차:Chapter 23: Transition Metals and Coordination Chemistry",
+        "16주차:Final Exam week"
+      ],
+      "textbook": [
+        "Chemistry : the central science (Brown, Theodore L / 2022)",
+        "Chemistry (Zumdahl, Steven S / 2018)"
+      ]
+    }
+  },
+  {
+    "id": "BS119-03",
+    "name": "일반화학II",
+    "prof": "문혜원",
+    "credit": 3,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 10.5,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 10.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-236",
+    "syllabus": {
+      "capacity": "80",
+      "contact": {
+        "email": "hmoon@dgist.ac.kr",
+        "phone": "053-785-6538",
+        "office": "E2-413",
+        "office_hours": "월요일 17:30-18:30"
+      },
+      "summary": "Understand the basic principles of solutions, the concept of equilibrium, kinetics and mechanisms of chemical reactions, thermodynamics, electrochemistry, and coordination chemistry.",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "Cell phone is not allowed during the class.",
+      "grading": [
+        {
+          "name": "Final exam",
+          "percent": 45
+        },
+        {
+          "name": "Midterm exam",
+          "percent": 45
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:chap 13 ",
+        "2주차:chap 13",
+        "3주차:Chap 14",
+        "4주차:chap 14, 15",
+        "5주차:chap 15",
+        "6주차:chap 16",
+        "7주차:chap 16",
+        "8주차:Midterm exam",
+        "9주차:chap 17",
+        "10주차:chap 5",
+        "11주차:chap 5, 19",
+        "12주차:chap 19, 20",
+        "13주차:chap 20",
+        "14주차:chap 23",
+        "15주차:chap 23",
+        "16주차:Final exam"
+      ],
+      "textbook": [
+        "Chemistry : the central science (Brown, Theodore L / 2022)"
+      ]
+    }
+  },
+  {
+    "id": "BS120a-01",
+    "name": "일변수미적분학",
+    "prof": "안흥주",
+    "credit": 3,
+    "categories": [
+      "수학"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 9,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 9,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-G02",
+    "syllabus": {
+      "capacity": "50",
+      "contact": {
+        "email": "heungju@dgist.ac.kr",
+        "phone": "010-6667-0448",
+        "office": "E7-218",
+        "office_hours": "TBA"
+      },
+      "summary": "Single variable Calculus is an introductory course in the field of calculus, which is a branch of mathematics that deals with the concepts of change and motion. The course is designed to provide students with a solid foundation in the fundamental principles of calculus, preparing them for more advanced mathematical and scientific studies.",
+      "methods": [
+        "Lecture",
+        "Discussion",
+        "Experiment"
+      ],
+      "materials": "TBA",
+      "policies": "반드시 연습시간을 수강 해야함. 연습시간에는 매트랩 실습, 연습문제 풀이, 학생의 질문 등으로 이루어지며, 실습 등을 수행할 때 조교가 진행할 수 있음  질의 및 면담 시간: 강의시간에 별도 공지함. TA 면담 시간은 연습 시 간에 별도 공지   5번까지 결석 허용. 6회 이상(20 %) 정당한 사유 없이 무단 결석한 경우, 본래보다 낮은 학점이 부여될 수 있음. (강의 시작 15분 이후 입실할 경우 지각으로 정의하고. 지각 3번은 결석 1번으로 정의하며. 결석에는 경조사 및 천재지변 등을 모두 포함함. 5회 미만일 경우 따로 교수에게 알릴 필요 없음)   연습 시간에 대한 출석도 위와 동일하게 적용하되 결석 회수는 3회까지 허용(시험 주간 제외20%)    절대 평가.   중간, 기말 고사 중 하나를 치르지 않으면 점수와 관계없이 F 처리됨.  100점 만점 환산 20점(절대적 점수는 아니고 시험의 난이도에 따라 약간의 차이 있음)미만은 F    학생이 피할 수 없는 유고 치 못할 경우 명확한 서류에 의하여 증명되고 담당교수가 인정하는 한에서 학생이 취득한 점수를 고려하여 합리적으로 점수를 부여할 수 있음.   매주 일정한 분량의 숙제(HW)가 주어지고, 숙제는 정해진 제출기한까지 LMS 과제물 게시판 또는 지정된 장소에 제출.    교과 내용과  Matlab 교육 내용을 각각  2번의  퀴즈를 통해 테스트함. 교과 퀴즈 및  Matlab  퀴즈는 아래  강의 계획서에  계획된 일자에  진행하며 원칙적으로 모든 시험은(퀴즈 포함) 재시험 없음.",
+      "grading": [
+        {
+          "name": "Final exam",
+          "percent": 25
+        },
+        {
+          "name": "Midterm exam",
+          "percent": 25
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Homework",
+          "percent": 10
+        },
+        {
+          "name": "Quiz",
+          "percent": 30
+        }
+      ],
+      "schedule": [
+        "1주차:Introduction to the course and history of Calculus",
+        "2주차:Limits and continuity of functions",
+        "3주차:Derivatives and Applications of derivatives",
+        "4주차:Integration and Integration technique",
+        "5주차:Volume, surface area, center of mass ",
+        "6주차:Complex numbers",
+        "7주차:Matrices and transformations (2 by 2 matrices, mainly)",
+        "8주차:Mid",
+        "9주차:Parametric equations",
+        "10주차:Polar coordinates",
+        "11주차:Sequences and series",
+        "12주차:Series and convergence test",
+        "13주차:Power series and its algebraic operations",
+        "14주차:Taylor series",
+        "15주차:Applications to Differential equations",
+        "16주차:Final"
+      ],
+      "textbook": [
+        "Thomas' Calculus (Hass / 2020)"
+      ]
+    }
+  },
+  {
+    "id": "BS201b-01",
+    "name": "공학수학II",
+    "prof": "이두석",
+    "credit": 3,
+    "categories": [
+      "수학"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 10.5,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 10.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-L22",
+    "syllabus": {
+      "capacity": "50",
+      "contact": {
+        "email": "dslee@dgist.ac.kr",
+        "phone": "010-2727-9774",
+        "office": "E7-210",
+        "office_hours": "화요일 17:00-19:00"
+      },
+      "summary": "Students will study on the topics in complex variable, Fourier analysis,  basics of partial differential equations, and potential theory with computational tool.   Topics includes:  -Complex analysis: Caucy-Riemann equation, Analytic functions, Conformal mapping, Complex integrals, Contour integrals, Power series, Laurant series, Residue theorems  -Fourier analysis, Fourier and inverse transform, Discrete Fourier transform, Fast Fourier transform   -Basics of Partial differential equations  -Potential theory",
+      "methods": [
+        "Lecture",
+        "Discussion",
+        "Project",
+        "Experiment"
+      ],
+      "materials": "TBA",
+      "policies": "If you cheat on exams and quizzes, your grade will be F.  Assignment: Submission required within the deadline (10% reduction per day for late submission),Submit by yourself(No points for plagiarism once, F for more than two plagiarism)   Penalty for disruptive behavior: Use of electronic devices such as cell phones that are not related to class. Sleeping, noise, frequent movement, etc.",
+      "grading": [
+        {
+          "name": "Term Project",
+          "percent": 30
+        },
+        {
+          "name": "Midterm exam",
+          "percent": 40
+        },
+        {
+          "name": "Homework",
+          "percent": 20
+        },
+        {
+          "name": "Quiz",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:Introduction, Fourier series",
+        "2주차:Fourier integral, Fourier transform",
+        "3주차:DFT and FFT",
+        "4주차:Basics of Partial differential equations",
+        "5주차:1-d wave equations",
+        "6주차:1-d heat equations",
+        "7주차:2-d heat equations",
+        "8주차:mid-term exam",
+        "9주차:Complex functions, Cauchy-Riemann equation",
+        "10주차:Exponential functions, trigonometric functions, logarithmic functions",
+        "11주차:Complex integral, contour integral",
+        "12주차:Cauchy integral formula and its applications",
+        "13주차:Power series, Taylor series and Laurent series",
+        "14주차:Residue theorem, Evaluations of real integrals",
+        "15주차:Conformal mappings and Potential theory",
+        "16주차:final-term exam"
+      ],
+      "textbook": [
+        "Engineering Mathematics(10th edition) (E. Kreysig / 2015)"
+      ]
+    }
+  },
+  {
+    "id": "BS202a-01",
+    "name": "확률과 통계 및 실습",
+    "prof": "Carlos Scarinci",
+    "credit": 3,
+    "categories": [
+      "수학"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 13,
+        "duration": 2
+      },
+      {
+        "day": 3,
+        "start": 13,
+        "duration": 2
+      }
+    ],
+    "room": "E7-L22",
+    "syllabus": {
+      "capacity": "40",
+      "contact": {
+        "email": "TBA",
+        "phone": "053-785-6474",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "This course provides an introduction to probability and statistical inference with an emphasis on fundamental concepts and their mathematical foundations. Topics include probability models, random variables and their distributions, joint and conditional distributions, sampling distributions, estimation, hypothesis testing, and simple linear regression. The course integrates theoretical development with illustrative examples and applications to data.",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "Students are expected to have successfully completed Multivariable Calculus (BS101) or an equivalent course. Familiarity with basic calculus, algebraic manipulation, and mathematical notation is expected. Students must have regular access to a laptop computer for assignments and computational demonstrations as required.",
+      "policies": "Attendance of the midterm and final exams are mandatory (absence in either exam will result in a failing grade). Make-up exams might be granted upon request, in a case-by-case basis and with appropriate documentation explaining each circumstance.",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "BS203a-01",
+    "name": "선형대수학",
+    "prof": "한강진",
+    "credit": 3,
+    "categories": [
+      "수학"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 14.5,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 14.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-L22",
+    "syllabus": {
+      "capacity": "60",
+      "contact": {
+        "email": "kjhan@dgist.ac.kr",
+        "phone": "053-785-6629",
+        "office": "E7-L15",
+        "office_hours": "TBA"
+      },
+      "summary": "This course provides an introduction to probability and statistical inference with an emphasis on fundamental concepts and their mathematical foundations. Topics include probability models, random variables and their distributions, joint and conditional distributions, sampling distributions, estimation, hypothesis testing, and simple linear regression. The course integrates theoretical development with illustrative examples and applications to data.",
+      "methods": [
+        "Lecture",
+        "Flipped-learning",
+        "Discussion",
+        "Project",
+        "Presentation"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "Homework",
+          "percent": 5
+        },
+        {
+          "name": "Quiz",
+          "percent": 10
+        },
+        {
+          "name": "Midterm exam",
+          "percent": 40
+        },
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 5
+        }
+      ],
+      "schedule": [
+        "1주차:Introduction, Gaussian Elimination",
+        "2주차:Gauss-Jordan Elimination, Matrix Basics",
+        "3주차:Matrix Inverses and Determinants",
+        "4주차:Vector space and related topics I",
+        "5주차:Vector space and related topics II",
+        "6주차:Linear Maps I",
+        "7주차:Linear Maps II",
+        "8주차:Midterm Exam",
+        "9주차:Inner product space and related topics I",
+        "10주차:Inner product space and related topics II",
+        "11주차:Eigenvalue Problems I",
+        "12주차:Eigenvalue Problems II",
+        "13주차:Spectral Theorems",
+        "14주차:Singular Value Decomposition",
+        "15주차:Applications",
+        "16주차:Final Exam"
+      ],
+      "textbook": [
+        "Applied Linear Algebra and Matrix Analysis (T.Shores / 2018)",
+        "Linear Algebra Done Right (Sheldon Axler / 2015)",
+        "Contemporary Linear Algebra (Howard Anton / 2003)"
+      ]
+    }
+  },
+  {
+    "id": "CE201a-01",
+    "name": "화학공학기초실험(공)",
+    "prof": "김찬연, 김승현, 김운혁, 최종민, 호동해",
+    "credit": 3,
+    "categories": [
+      "화학공학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 16,
+        "duration": 4
+      },
+      {
+        "day": 3,
+        "start": 16,
+        "duration": 2
+      }
+    ],
+    "room": "E6-220",
+    "syllabus": {
+      "capacity": "60",
+      "contact": {
+        "email": "TBA",
+        "phone": "053-785-6450",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "화학공학은 화학, 재료과학 등의 기초과학 지식을 기반으로 하여 실생활에 도움이 되는 화학소재 및 제품을 만드는 학문으로, 학문 간의 융복합 시대를 맞아 그 영역이 점점 확장되어지고 있다. 화학공학과 관련되는 이학 및 공학적 현상을 관찰·이해하기 위한 실험을 수행하며, 전통화공관련 실험과 응용화공관련 실험들로 구성되어 있다.",
+      "methods": [
+        "Team teaching",
+        "Discussion",
+        "Project"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "Report",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:오리엔테이션",
+        "2주차:전통화공실험1",
+        "3주차:전통화공실험2",
+        "4주차:전통화공실험3",
+        "5주차:전통화공실험4",
+        "6주차:전통화공실험5",
+        "7주차:전통화공실험6",
+        "8주차:중간고사기간",
+        "9주차:응용화공실험1",
+        "10주차:응용화공실험2",
+        "11주차:응용화공실험3",
+        "12주차:응용화공실험4",
+        "13주차:응용화공실험5",
+        "14주차:응용화공실험6",
+        "15주차:보충실험기간",
+        "16주차:기말고사기간"
+      ],
+      "textbook": [
+        "None"
       ]
     }
   }
