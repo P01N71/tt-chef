@@ -4673,5 +4673,256 @@
         "None"
       ]
     }
+  },
+  {
+    "id": "CE301-01",
+    "name": "반응공학(공)",
+    "prof": "양지웅",
+    "credit": 3,
+    "categories": [
+      "화학공학"
+    ],
+    "fixedTypes": [
+      "전공필수"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 10.5,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 10.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-241",
+    "syllabus": {
+      "capacity": "TBA",
+      "contact": {
+        "email": "TBA",
+        "phone": "TBA",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "TBA",
+      "methods": [
+        "TBA"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "TBA"
+      ]
+    }
+  },
+  {
+    "id": "CE302-01",
+    "name": "이동현상개론(공)",
+    "prof": "이종민",
+    "credit": 3,
+    "categories": [
+      "화학공학"
+    ],
+    "fixedTypes": [
+      "전공필수"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 16.5,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 16.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-229",
+    "syllabus": {
+      "capacity": "30",
+      "contact": {
+        "email": "TBA",
+        "phone": "010-2213-4886",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "The following contents are introduced (1) Interpretation of heat transfer, (2) Molecular basis of diffusion in gas, liquid, polymer, and solid, (3) Condition description of diffusion in binary and multi-component mixtures with and without chemical reactions.",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "Final exam",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "Incropera’s Principles of Heat and Mass Transfer, 1st Edition, Global Edition (n.n. /n.d.)",
+        "Fundamentals of Heat and Mass Transfer (Hardcover, 7) (n.n. / n.d.)"
+      ]
+    }
+  },
+  {
+    "id": "CHEM202-01",
+    "name": "무기화학I(이,공)",
+    "prof": "박진희",
+    "credit": 3,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "trackRelations":{
+      "화학": "전공필수",
+      "화학공학": "전공필수",
+      "재료공학": "전공선택" 
+    },
+    "times": [
+      {
+        "day": 1,
+        "start": 9,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 9,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-241",
+    "syllabus": {
+      "capacity": "40",
+      "contact": {
+        "email": "jinhee@dgist.ac.kr",
+        "phone": "010-5003-4671",
+        "office": "E2-508",
+        "office_hours": "TBA"
+      },
+      "summary": "Fundamental principles of inorganic chemistry such as atomic structure, molecular orbital theory, molecular symmetry, and coordination chemistry related to chemical bonding and molecular geometry will be discussed. A study of the energetics of the bonding and reactions of inorganic compounds will be included. Emphasis will be placed on the periodicity of the chemical and physical properties of the elements. The course also covers key concepts related to the chemistry of the elements such as effective nuclear charge, lattice energy, and electron density. ",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 40
+        },
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "Inorganic Chemistry, 5th Edition (Gary L. Miessler, Paul J. Fischer, and Donald A. Tarr / 2014)"
+      ]
+    }
+  },
+  {
+    "id": "CHEM203-01",
+    "name": "물리화학I(이,공)",
+    "prof": "장윤희",
+    "credit": 3,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "전공필수"
+    ],
+    "trackRelations":{
+      "화학": "전공필수",
+      "화학공학": "전공선택",
+      "재료공학": "전공선택" 
+    },
+    "times": [
+      {
+        "day": 3,
+        "start": 13,
+        "duration": 1.5
+      },
+      {
+        "day": 5,
+        "start": 13,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-242",
+    "syllabus": {
+      "capacity": "40",
+      "contact": {
+        "email": "yhjang@dgist.ac.kr",
+        "phone": "010-8627-7065",
+        "office": "E6-313",
+        "office_hours": "TBA"
+      },
+      "summary": "원자/분자 수준의 물질/에너지/화학현상 이해: 양자역학/양자화학 (분광학/계산화학의 기초)",
+      "methods": [
+        "Lecture",
+        "Discussion",
+        "Presentation",
+        "Project"
+      ],
+      "materials": "예습/복습 필수 (주교재: Engel, Quantum chemistry and spectroscopy; 부교재: Atkins, Physical Chemistry)",
+      "policies": "매 시간 출석 부름 (얼굴/이름 익히기 위함). ",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 40
+        },
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 5
+        },
+        {
+          "name": "Term Project",
+          "percent": 5
+        },
+        {
+          "name": "Quiz",
+          "percent": 5
+        },
+        {
+          "name": "Class Participation",
+          "percent": 5
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "Quantum chemistry & Spectroscopy (T. Engel / n.d.)",
+        "Physical Chemistry (P. Atkins / n.d.)"
+      ]
+    }
   }
 ]
