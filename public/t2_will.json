@@ -6272,5 +6272,1416 @@
         "Principles of Communications (R. E. Ziemer and W. H. Tranter / 2010)"
       ]
     }
+  },
+  {
+    "id": "EE306-01",
+    "name": "아날로그 전자회로(공)",
+    "prof": "이경태",
+    "credit": 3,
+    "categories": [
+      "전자공학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 14.5,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 14.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-G02",
+    "syllabus": {
+      "capacity": "40",
+      "contact": {
+        "email": "kyoungtae@dgist.ac.kr",
+        "phone": "010-2270-9770",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "This course covers advanced knowledge related to analog integrated circuit, including MOSFET-based single and multiple stage single-ended and differential amplifiers, operational amplifiers, feedback analysis, frequency domain analysis and stability, and electronic noise.   The first part of the course reviews transistors, single-stage amplifiers, linearization, and transconductance. Basic differential amplifier structures are introduced next with DC and AC analysis, as well as important amplifier specifications such as CMRR, input/output ranges, and slew-rate. Then, introductory level of negative feedback and stability concepts including phase and gain margins will be provided. Lastly, we will study sources of noise and how it affect the overall signal-to-noise ratio.  ",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 30
+        },
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Homework",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:Course overview",
+        "2주차:Recap : linearization and transconductance",
+        "3주차:Recap : single-ended amplifiers",
+        "4주차:Recap : small-signal analysis",
+        "5주차:Introduction to differential amplifiers",
+        "6주차:Various differential amplifier topologies",
+        "7주차:Amplifier performance metrics",
+        "8주차:Midterm exam",
+        "9주차:Introduction to frequency response",
+        "10주차:Introduction to feedback and stability",
+        "11주차:Feedback and stability analysis",
+        "12주차:Introduction to electronic noise",
+        "13주차:Noise analysis",
+        "14주차:Various analog circuit blocks",
+        "15주차:Various analog circuit blocks",
+        "16주차:Final exam"
+      ],
+      "textbook": [
+        "Design of analog CMOS integrated circuits (Razavi, Behzad / 2001)"
+      ]
+    }
+  },
+  {
+    "id": "EE402-01",
+    "name": "디지털 영상처리(이,공)",
+    "prof": "이병권",
+    "credit": 3,
+    "categories": [
+      "전자공학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "trackRelations":{
+      "전자공학": "전공선택",
+      "컴퓨터공학": "전공선택"
+    },
+    "times": [
+      {
+        "day": 2,
+        "start": 10.5,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 10.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-L28",
+    "syllabus": {
+      "capacity": "30",
+      "contact": {
+        "email": "byungkun@dgist.ac.kr",
+        "phone": "010-4751-6522",
+        "office": "E3-611",
+        "office_hours": "수요일 13:00-14:00"
+      },
+      "summary": "This course provides an in-depth exploration of digital image processing techniques and their applications. Fundamental concepts such as image representation, enhancement, restoration, reconstruction, and segmentation are covered. Students will gain hands-on experience with modern image processing algorithms and techniques, applying theoretical knowledge to real-world problems. The course will also emphasize the mathematical foundations behind digital image operations, preparing students for both academic and industry careers in fields such as computer vision, machine learning, biomedical imaging, and multimedia applications.",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "Completed homework should be turned in before the beginning of the class on the due date.  No late homework will be accepted. Also, students should write their answers as clearly as possible so that those can easily be understood by the grader. No credit points will be given to homework answers which cannot be read or understood. Taking photos is prohibited during class. Instead, lecture recordings will be provided.",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 20
+        },
+        {
+          "name": "Final exam",
+          "percent": 20
+        },
+        {
+          "name": "Homework",
+          "percent": 40
+        },
+        {
+          "name": "Term Project",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:Introduction, Review of Linear Systems",
+        "2주차:Digital Image Fundamentals",
+        "3주차:Intensity Transformations and Spatial Filtering",
+        "4주차:Spatial Fourier Transform",
+        "5주차:Filtering in the Frequency Domain",
+        "6주차:Image Restoration",
+        "7주차:Image Reconstruction",
+        "8주차:Midterm Exam",
+        "9주차:Morphological Image Processing",
+        "10주차:Basic Image Segmentation",
+        "11주차:Advanced Image Segmentation",
+        "12주차:Feature Extraction",
+        "13주차:Image Pattern Classification",
+        "14주차:Image Processing Using Deep Neural Networks",
+        "15주차:Final Project Presentations",
+        "16주차:Final Exam"
+      ],
+      "textbook": [
+        "Digital image processing (Gonzalez, Rafael C / 2018)",
+        "Digital image processing using MATLAB (Gonzalez, Rafael C / 2020)"
+      ]
+    }
+  },
+  {
+    "id": "EE405-01",
+    "name": "반도체공정실습(공)",
+    "prof": "장재은",
+    "credit": 3,
+    "categories": [
+      "전자공학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 13,
+        "duration": 3
+      }
+    ],
+    "room": "R6-208",
+    "syllabus": {
+      "capacity": "TBA",
+      "contact": {
+        "email": "TBA",
+        "phone": "TBA",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "TBA",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "TBA"
+      ]
+    }
+  },
+  {
+    "id": "ENT301-01",
+    "name": "기업가 정신과 사회적 책임",
+    "prof": "권업",
+    "credit": 3,
+    "categories": [
+      "창업"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "times": [
+      {
+        "day": 5,
+        "start": 9,
+        "duration": 3
+      }
+    ],
+    "room": "E7-L31",
+    "syllabus": {
+      "capacity": "30",
+      "contact": {
+        "email": "hyunk54@naver.com",
+        "phone": "010-9750-0710",
+        "office": "TBA",
+        "office_hours": "사전 통화"
+      },
+      "summary": "OECD(1999)에서는 기업가(entrepreneur)란 경제에서 변화와 성장의 주체가 되며, 혁신적인 아이디어의 생성, 확산, 활용을 가속하여 자원의 효율적 활용을 도모하고 경제활동의 범위를 확장하는 하는 자로 정의하고 있다. 기업가정신은 이러한 기업가의 규범적 가치로 변화와 혁신에 필연적으로 수반하는 불확실성(uncertainty)을 부담하는 것을 의미한다(Knight 1961). 본 과목은 기업가정신의 이론과 실제 및 기술혁신에 관련한 기업경영 전반에 걸친 핵심 논점을 학습함으로써 기술창업의 성공잠재력을 제고하고자 한다.",
+      "methods": [
+        "Lecture",
+        "Presentation",
+        "Discussion"
+      ],
+      "materials": "없음",
+      "policies": "결석과 지각은 사전 통보를 필수로 함. 무단결석과 지각은 감점요인이 될 것임, 노트북 사용 금지, 핸드폰 사용 금지",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 40
+        },
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Class Participation",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:강의/교수 소개, 글로벌 기술전쟁과 기업가 정신",
+        "2주차:글로벌 기술전쟁과 트럼프의 “MAGA” 정책",
+        "3주차:NASDAQ Big Tech 기업들",
+        "4주차:실리콘밸리, what it is, what it is not, 기업가와 기업가정신 ",
+        "5주차:혁신의 이해, 석기에서 AI까지 만들어낸 인간의 생각",
+        "6주차:도구 발전은 “새로운 착상”의 역사“새로운 착상”의 원천 : 수렴적 사고와 발산적 사고의 콜라보",
+        "7주차:도구를 만드는 도구 – 과학과 기술   Science Push vs. Technology Push   과학은 혁명적(revolution)으로 변화하지만 기술은 진화(evolution)한다.   기술 패러다임과 기술 궤적(Technological Trajectories) ",
+        "8주차:Midterm Exam.",
+        "9주차:경영의 세계 : 경영의 일반론",
+        "10주차:혁신이란 무엇인가? 경영과 혁신, 혁신의 촉발 요인",
+        "11주차:혁신의 문화, 혁신의 유형, Big Bang Innovation, 신속결합혁신",
+        "12주차:기술경영(MOT) 기초 ",
+        "13주차:기술경영(MOT) 기초 ",
+        "14주차:기술경영(MOT) 기초 ",
+        "15주차:지속가능한 기업가 혁신(Sustainable Entrepreneurship)",
+        "16주차:Final Exam."
+      ],
+      "textbook": [
+        "기업가정신 2.0 (이민화 / 2016)"
+      ]
+    }
+  },
+  {
+    "id": "GC102-01",
+    "name": "Academic English: R&W",
+    "prof": "Aaron Cumberledge",
+    "credit": 2,
+    "categories": [
+      "영어"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 9,
+        "duration": 3
+      }
+    ],
+    "room": "E7-L27",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "aaroncledge@dgist.ac.kr",
+        "phone": "010-5135-6652",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "This course is designed to help students develop the English skills needed for academic and professional purposes. It aims to provide students with an opportunity to familiarize themselves with the use of English in a variety of stimulating topics. Students will work towards improving their ability to work with the de facto language of international academia: English.",
+      "methods": [
+        "Lecture","Project"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance Policy: All classes are mandatory and must be attended. If you are unable to attend class, you must inform your professor at least 24 hours prior to your intended absence. If you have a reasonable excuse for your absence you will be given an excused absence. An excused absence does not negatively affect your final grade, however repeated absences (excused or not) may result in a warning from your professor, after which any further absences may lead to being awarded a failing or incomplete grade in the course. If you miss class due to ill-health, provide a medical certificate to your professor on the first class meeting after your return to receive your excused absence. If you are absent without a reasonable excuse, you will be marked absent from the class meeting. If you are marked absent 4 or more times during the semester you will receive a failing grade for the course. Please arrive on time for all class meetings. Three late arrivals will result in being marked as an unexcused absence. Arriving more than 20 minutes after the start of class will automatically be marked as an unexcused absence. / Late Work Policy: There are no make-ups for work completed in class, such as group work or presentations. Any work not completed during class time must be finished and turned in by the due date set by your professor. If you are absent (even if you have a reasonable excuse), it is your responsibility to find out what work was assigned during the classes you missed and to complete that work by the due date. Failure to submit work by the due date is unacceptable, and the work will not receive any feedback. / Group Work Policy: Everyone must take part in group projects. For daily work throughout the semester, you will be assigned to a group. All members of a group will receive the same score. In other words, the assignment is given 1 score, and everyone in the group receives it. For larger assignments and projects, you may work in groups but be assessed individually. / Student/Professor Communication: If you have a question regarding the course administration or course content you should: Ask your professor during or after class. Because it is common for many students to have the same questions, asking in class allows every student to get the answer at the same time. Ask your professor via email if you have a private question. Your professor will designate time each week specifically for helping students. Your professor will post an appointment sheet on or near their office door. To make an appointment, sign up for the time you wish to visit. Alternatively, you can send an email to your professor to make an appointment. Outside of office hours, your professor may be busy attending to other duties, so they may not be available to meet.",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "GC102-02",
+    "name": "Academic English: R&W",
+    "prof": "Aaron Cumberledge",
+    "credit": 2,
+    "categories": [
+      "영어"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 13,
+        "duration": 3
+      }
+    ],
+    "room": "E7-L27",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "aaroncledge@dgist.ac.kr",
+        "phone": "010-5135-6652",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "This course is designed to help students develop the English skills needed for academic and professional purposes. It aims to provide students with an opportunity to familiarize themselves with the use of English in a variety of stimulating topics. Students will work towards improving their ability to work with the de facto language of international academia: English.",
+      "methods": [
+        "Lecture","Project"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance Policy: All classes are mandatory and must be attended. If you are unable to attend class, you must inform your professor at least 24 hours prior to your intended absence. If you have a reasonable excuse for your absence you will be given an excused absence. An excused absence does not negatively affect your final grade, however repeated absences (excused or not) may result in a warning from your professor, after which any further absences may lead to being awarded a failing or incomplete grade in the course. If you miss class due to ill-health, provide a medical certificate to your professor on the first class meeting after your return to receive your excused absence. If you are absent without a reasonable excuse, you will be marked absent from the class meeting. If you are marked absent 4 or more times during the semester you will receive a failing grade for the course. Please arrive on time for all class meetings. Three late arrivals will result in being marked as an unexcused absence. Arriving more than 20 minutes after the start of class will automatically be marked as an unexcused absence. / Late Work Policy: There are no make-ups for work completed in class, such as group work or presentations. Any work not completed during class time must be finished and turned in by the due date set by your professor. If you are absent (even if you have a reasonable excuse), it is your responsibility to find out what work was assigned during the classes you missed and to complete that work by the due date. Failure to submit work by the due date is unacceptable, and the work will not receive any feedback. / Group Work Policy: Everyone must take part in group projects. For daily work throughout the semester, you will be assigned to a group. All members of a group will receive the same score. In other words, the assignment is given 1 score, and everyone in the group receives it. For larger assignments and projects, you may work in groups but be assessed individually. / Student/Professor Communication: If you have a question regarding the course administration or course content you should: Ask your professor during or after class. Because it is common for many students to have the same questions, asking in class allows every student to get the answer at the same time. Ask your professor via email if you have a private question. Your professor will designate time each week specifically for helping students. Your professor will post an appointment sheet on or near their office door. To make an appointment, sign up for the time you wish to visit. Alternatively, you can send an email to your professor to make an appointment. Outside of office hours, your professor may be busy attending to other duties, so they may not be available to meet.",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "GC102-03",
+    "name": "Academic English: R&W",
+    "prof": "Aaron Cumberledge",
+    "credit": 2,
+    "categories": [
+      "영어"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 9,
+        "duration": 3
+      }
+    ],
+    "room": "E7-L27",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "aaroncledge@dgist.ac.kr",
+        "phone": "010-5135-6652",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "This course is designed to help students develop the English skills needed for academic and professional purposes. It aims to provide students with an opportunity to familiarize themselves with the use of English in a variety of stimulating topics. Students will work towards improving their ability to work with the de facto language of international academia: English.",
+      "methods": [
+        "Lecture","Project"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance Policy: All classes are mandatory and must be attended. If you are unable to attend class, you must inform your professor at least 24 hours prior to your intended absence. If you have a reasonable excuse for your absence you will be given an excused absence. An excused absence does not negatively affect your final grade, however repeated absences (excused or not) may result in a warning from your professor, after which any further absences may lead to being awarded a failing or incomplete grade in the course. If you miss class due to ill-health, provide a medical certificate to your professor on the first class meeting after your return to receive your excused absence. If you are absent without a reasonable excuse, you will be marked absent from the class meeting. If you are marked absent 4 or more times during the semester you will receive a failing grade for the course. Please arrive on time for all class meetings. Three late arrivals will result in being marked as an unexcused absence. Arriving more than 20 minutes after the start of class will automatically be marked as an unexcused absence. / Late Work Policy: There are no make-ups for work completed in class, such as group work or presentations. Any work not completed during class time must be finished and turned in by the due date set by your professor. If you are absent (even if you have a reasonable excuse), it is your responsibility to find out what work was assigned during the classes you missed and to complete that work by the due date. Failure to submit work by the due date is unacceptable, and the work will not receive any feedback. / Group Work Policy: Everyone must take part in group projects. For daily work throughout the semester, you will be assigned to a group. All members of a group will receive the same score. In other words, the assignment is given 1 score, and everyone in the group receives it. For larger assignments and projects, you may work in groups but be assessed individually. / Student/Professor Communication: If you have a question regarding the course administration or course content you should: Ask your professor during or after class. Because it is common for many students to have the same questions, asking in class allows every student to get the answer at the same time. Ask your professor via email if you have a private question. Your professor will designate time each week specifically for helping students. Your professor will post an appointment sheet on or near their office door. To make an appointment, sign up for the time you wish to visit. Alternatively, you can send an email to your professor to make an appointment. Outside of office hours, your professor may be busy attending to other duties, so they may not be available to meet.",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "GC102-04",
+    "name": "Academic English: R&W",
+    "prof": "Aaron Cumberledge",
+    "credit": 2,
+    "categories": [
+      "영어"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 13,
+        "duration": 3
+      }
+    ],
+    "room": "E7-L27",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "aaroncledge@dgist.ac.kr",
+        "phone": "010-5135-6652",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "This course is designed to help students develop the English skills needed for academic and professional purposes. It aims to provide students with an opportunity to familiarize themselves with the use of English in a variety of stimulating topics. Students will work towards improving their ability to work with the de facto language of international academia: English.",
+      "methods": [
+        "Lecture","Project"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance Policy: All classes are mandatory and must be attended. If you are unable to attend class, you must inform your professor at least 24 hours prior to your intended absence. If you have a reasonable excuse for your absence you will be given an excused absence. An excused absence does not negatively affect your final grade, however repeated absences (excused or not) may result in a warning from your professor, after which any further absences may lead to being awarded a failing or incomplete grade in the course. If you miss class due to ill-health, provide a medical certificate to your professor on the first class meeting after your return to receive your excused absence. If you are absent without a reasonable excuse, you will be marked absent from the class meeting. If you are marked absent 4 or more times during the semester you will receive a failing grade for the course. Please arrive on time for all class meetings. Three late arrivals will result in being marked as an unexcused absence. Arriving more than 20 minutes after the start of class will automatically be marked as an unexcused absence. / Late Work Policy: There are no make-ups for work completed in class, such as group work or presentations. Any work not completed during class time must be finished and turned in by the due date set by your professor. If you are absent (even if you have a reasonable excuse), it is your responsibility to find out what work was assigned during the classes you missed and to complete that work by the due date. Failure to submit work by the due date is unacceptable, and the work will not receive any feedback. / Group Work Policy: Everyone must take part in group projects. For daily work throughout the semester, you will be assigned to a group. All members of a group will receive the same score. In other words, the assignment is given 1 score, and everyone in the group receives it. For larger assignments and projects, you may work in groups but be assessed individually. / Student/Professor Communication: If you have a question regarding the course administration or course content you should: Ask your professor during or after class. Because it is common for many students to have the same questions, asking in class allows every student to get the answer at the same time. Ask your professor via email if you have a private question. Your professor will designate time each week specifically for helping students. Your professor will post an appointment sheet on or near their office door. To make an appointment, sign up for the time you wish to visit. Alternatively, you can send an email to your professor to make an appointment. Outside of office hours, your professor may be busy attending to other duties, so they may not be available to meet.",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "GC102-05",
+    "name": "Academic English: R&W",
+    "prof": "Benjamin Wilson Riley",
+    "credit": 2,
+    "categories": [
+      "영어"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 5,
+        "start": 14,
+        "duration": 3
+      }
+    ],
+    "room": "E7-G03",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "benriley73@dgist.ac.kr",
+        "phone": "010-9795-9818",
+        "office": "E7-L16",
+        "office_hours": "By appointment"
+      },
+      "summary": "This course is designed to help students develop the English skills needed for academic and professional purposes. It aims to provide students with an opportunity to familiarize themselves with the use of English in a variety of stimulating topics. Students will work towards improving their ability to work with the de facto language of international academia: English.",
+      "methods": [
+        "Lecture","Project",
+        "Presentation","Discussion"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance Policy: All classes are mandatory and must be attended. If you are unable to attend class, you must inform your professor at least 24 hours prior to your intended absence. If you have a reasonable excuse for your absence you will be given an excused absence. An excused absence does not negatively affect your final grade, however repeated absences (excused or not) may result in a warning from your professor, after which any further absences may lead to being awarded a failing or incomplete grade in the course. If you miss class due to ill-health, provide a medical certificate to your professor on the first class meeting after your return to receive your excused absence. If you are absent without a reasonable excuse, you will be marked absent from the class meeting. If you are marked absent 4 or more times during the semester you will receive a failing grade for the course. Please arrive on time for all class meetings. Three late arrivals will result in being marked as an unexcused absence. Arriving more than 20 minutes after the start of class will automatically be marked as an unexcused absence. / Late Work Policy: There are no make-ups for work completed in class, such as group work or presentations. Any work not completed during class time must be finished and turned in by the due date set by your professor. If you are absent (even if you have a reasonable excuse), it is your responsibility to find out what work was assigned during the classes you missed and to complete that work by the due date. Failure to submit work by the due date is unacceptable, and the work will not receive any feedback. / Group Work Policy: Everyone must take part in group projects. For daily work throughout the semester, you will be assigned to a group. All members of a group will receive the same score. In other words, the assignment is given 1 score, and everyone in the group receives it. For larger assignments and projects, you may work in groups but be assessed individually. / Student/Professor Communication: If you have a question regarding the course administration or course content you should: Ask your professor during or after class. Because it is common for many students to have the same questions, asking in class allows every student to get the answer at the same time. Ask your professor via email if you have a private question. Your professor will designate time each week specifically for helping students. Your professor will post an appointment sheet on or near their office door. To make an appointment, sign up for the time you wish to visit. Alternatively, you can send an email to your professor to make an appointment. Outside of office hours, your professor may be busy attending to other duties, so they may not be available to meet.",
+      "grading": [
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Participation",
+          "percent": 10
+        },
+        {
+          "name": "Ongoing Semester Assignments",
+          "percent": 30
+        },
+        {
+          "name": "Mid-term Project",
+          "percent": 20
+        },
+        {
+          "name": "Instructor-Student Conference",
+          "percent": 5
+        },
+        {
+          "name": "Final Project",
+          "percent": 25
+        }
+      ],
+      "schedule": [
+        "1주차:Course Introduction",
+        "2주차:Section 1: Identification of Topics",
+        "3주차:Section 2: Evaluation of Sources",
+        "4주차:Section 2: Evaluation of Sources 2",
+        "5주차:Section 2: Evaluation of Sources 3",
+        "6주차:Section 3: Synthesis of Information",
+        "7주차:Section 3: Synthesis of Information 2",
+        "8주차:Midterm exam period - No scheduled classes",
+        "9주차:Section 4: Fundamental Writing Knowledge",
+        "10주차:Section 4: Fundamental Writing Knowledge 2",
+        "11주차:Section 5: The Introduction",
+        "12주차:Section 6: Body Paragraphs",
+        "13주차:Section 7: The Conclusion",
+        "14주차:Writing Workshop",
+        "15주차:Writing Workshop & Instructor-Student Conference",
+        "16주차:Final exam period - No scheduled classes"
+      ],
+      "textbook": [
+        "Academic English: Research and Writing (Downloadable through LMS) (n.n./ n.d.)"
+      ]
+    }
+  },
+  {
+    "id": "GC102-06",
+    "name": "Academic English: R&W",
+    "prof": "Benjamin Wilson Riley",
+    "credit": 2,
+    "categories": [
+      "영어"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 5,
+        "start": 9,
+        "duration": 3
+      }
+    ],
+    "room": "E7-L30",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "benriley73@dgist.ac.kr",
+        "phone": "010-9795-9818",
+        "office": "E7-L16",
+        "office_hours": "By appointment"
+      },
+      "summary": "This course is designed to help students develop the English skills needed for academic and professional purposes. It aims to provide students with an opportunity to familiarize themselves with the use of English in a variety of stimulating topics. Students will work towards improving their ability to work with the de facto language of international academia: English.",
+      "methods": [
+        "Lecture","Project",
+        "Presentation","Discussion"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance Policy: All classes are mandatory and must be attended. If you are unable to attend class, you must inform your professor at least 24 hours prior to your intended absence. If you have a reasonable excuse for your absence you will be given an excused absence. An excused absence does not negatively affect your final grade, however repeated absences (excused or not) may result in a warning from your professor, after which any further absences may lead to being awarded a failing or incomplete grade in the course. If you miss class due to ill-health, provide a medical certificate to your professor on the first class meeting after your return to receive your excused absence. If you are absent without a reasonable excuse, you will be marked absent from the class meeting. If you are marked absent 4 or more times during the semester you will receive a failing grade for the course. Please arrive on time for all class meetings. Three late arrivals will result in being marked as an unexcused absence. Arriving more than 20 minutes after the start of class will automatically be marked as an unexcused absence. / Late Work Policy: There are no make-ups for work completed in class, such as group work or presentations. Any work not completed during class time must be finished and turned in by the due date set by your professor. If you are absent (even if you have a reasonable excuse), it is your responsibility to find out what work was assigned during the classes you missed and to complete that work by the due date. Failure to submit work by the due date is unacceptable, and the work will not receive any feedback. / Group Work Policy: Everyone must take part in group projects. For daily work throughout the semester, you will be assigned to a group. All members of a group will receive the same score. In other words, the assignment is given 1 score, and everyone in the group receives it. For larger assignments and projects, you may work in groups but be assessed individually. / Student/Professor Communication: If you have a question regarding the course administration or course content you should: Ask your professor during or after class. Because it is common for many students to have the same questions, asking in class allows every student to get the answer at the same time. Ask your professor via email if you have a private question. Your professor will designate time each week specifically for helping students. Your professor will post an appointment sheet on or near their office door. To make an appointment, sign up for the time you wish to visit. Alternatively, you can send an email to your professor to make an appointment. Outside of office hours, your professor may be busy attending to other duties, so they may not be available to meet.",
+      "grading": [
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Participation",
+          "percent": 10
+        },
+        {
+          "name": "Ongoing Semester Assignments",
+          "percent": 30
+        },
+        {
+          "name": "Mid-term Project",
+          "percent": 20
+        },
+        {
+          "name": "Instructor-Student Conference",
+          "percent": 5
+        },
+        {
+          "name": "Final Project",
+          "percent": 25
+        }
+      ],
+      "schedule": [
+        "1주차:Course Introduction",
+        "2주차:Section 1: Identification of Topics",
+        "3주차:Section 2: Evaluation of Sources",
+        "4주차:Section 2: Evaluation of Sources 2",
+        "5주차:Section 2: Evaluation of Sources 3",
+        "6주차:Section 3: Synthesis of Information",
+        "7주차:Section 3: Synthesis of Information 2",
+        "8주차:Midterm exam period - No scheduled classes",
+        "9주차:Section 4: Fundamental Writing Knowledge",
+        "10주차:Section 4: Fundamental Writing Knowledge 2",
+        "11주차:Section 5: The Introduction",
+        "12주차:Section 6: Body Paragraphs",
+        "13주차:Section 7: The Conclusion",
+        "14주차:Writing Workshop",
+        "15주차:Writing Workshop & Instructor-Student Conference",
+        "16주차:Final exam period - No scheduled classes"
+      ],
+      "textbook": [
+        "Academic English: Research and Writing (Downloadable through LMS) (n.n./ n.d.)"
+      ]
+    }
+  },
+  {
+    "id": "GC102-07",
+    "name": "Academic English: R&W",
+    "prof": "Benjamin Wilson Riley",
+    "credit": 2,
+    "categories": [
+      "영어"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 4,
+        "start": 13,
+        "duration": 3
+      }
+    ],
+    "room": "E7-L28",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "benriley73@dgist.ac.kr",
+        "phone": "010-9795-9818",
+        "office": "E7-L16",
+        "office_hours": "By appointment"
+      },
+      "summary": "This course is designed to help students develop the English skills needed for academic and professional purposes. It aims to provide students with an opportunity to familiarize themselves with the use of English in a variety of stimulating topics. Students will work towards improving their ability to work with the de facto language of international academia: English.",
+      "methods": [
+        "Lecture","Project",
+        "Presentation","Discussion"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance Policy: All classes are mandatory and must be attended. If you are unable to attend class, you must inform your professor at least 24 hours prior to your intended absence. If you have a reasonable excuse for your absence you will be given an excused absence. An excused absence does not negatively affect your final grade, however repeated absences (excused or not) may result in a warning from your professor, after which any further absences may lead to being awarded a failing or incomplete grade in the course. If you miss class due to ill-health, provide a medical certificate to your professor on the first class meeting after your return to receive your excused absence. If you are absent without a reasonable excuse, you will be marked absent from the class meeting. If you are marked absent 4 or more times during the semester you will receive a failing grade for the course. Please arrive on time for all class meetings. Three late arrivals will result in being marked as an unexcused absence. Arriving more than 20 minutes after the start of class will automatically be marked as an unexcused absence. / Late Work Policy: There are no make-ups for work completed in class, such as group work or presentations. Any work not completed during class time must be finished and turned in by the due date set by your professor. If you are absent (even if you have a reasonable excuse), it is your responsibility to find out what work was assigned during the classes you missed and to complete that work by the due date. Failure to submit work by the due date is unacceptable, and the work will not receive any feedback. / Group Work Policy: Everyone must take part in group projects. For daily work throughout the semester, you will be assigned to a group. All members of a group will receive the same score. In other words, the assignment is given 1 score, and everyone in the group receives it. For larger assignments and projects, you may work in groups but be assessed individually. / Student/Professor Communication: If you have a question regarding the course administration or course content you should: Ask your professor during or after class. Because it is common for many students to have the same questions, asking in class allows every student to get the answer at the same time. Ask your professor via email if you have a private question. Your professor will designate time each week specifically for helping students. Your professor will post an appointment sheet on or near their office door. To make an appointment, sign up for the time you wish to visit. Alternatively, you can send an email to your professor to make an appointment. Outside of office hours, your professor may be busy attending to other duties, so they may not be available to meet.",
+      "grading": [
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Participation",
+          "percent": 10
+        },
+        {
+          "name": "Ongoing Semester Assignments",
+          "percent": 30
+        },
+        {
+          "name": "Mid-term Project",
+          "percent": 20
+        },
+        {
+          "name": "Instructor-Student Conference",
+          "percent": 5
+        },
+        {
+          "name": "Final Project",
+          "percent": 25
+        }
+      ],
+      "schedule": [
+        "1주차:Course Introduction",
+        "2주차:Section 1: Identification of Topics",
+        "3주차:Section 2: Evaluation of Sources",
+        "4주차:Section 2: Evaluation of Sources 2",
+        "5주차:Section 2: Evaluation of Sources 3",
+        "6주차:Section 3: Synthesis of Information",
+        "7주차:Section 3: Synthesis of Information 2",
+        "8주차:Midterm exam period - No scheduled classes",
+        "9주차:Section 4: Fundamental Writing Knowledge",
+        "10주차:Section 4: Fundamental Writing Knowledge 2",
+        "11주차:Section 5: The Introduction",
+        "12주차:Section 6: Body Paragraphs",
+        "13주차:Section 7: The Conclusion",
+        "14주차:Writing Workshop",
+        "15주차:Writing Workshop & Instructor-Student Conference",
+        "16주차:Final exam period - No scheduled classes"
+      ],
+      "textbook": [
+        "Academic English: Research and Writing (Downloadable through LMS) (n.n./ n.d.)"
+      ]
+    }
+  },
+  {
+    "id": "GC102-08",
+    "name": "Academic English: R&W",
+    "prof": "Mark Silverlock",
+    "credit": 2,
+    "categories": [
+      "영어"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 4,
+        "start": 14,
+        "duration": 3
+      }
+    ],
+    "room": "E7-L27",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "marksilverlock@dgist.ac.kr",
+        "phone": "010-5444-0018",
+        "office": "E7-L13",
+        "office_hours": "TBA"
+      },
+      "summary": "This course is designed to help students develop the English skills needed for academic and professional purposes. It aims to provide students with an opportunity to familiarize themselves with the use of English in a variety of stimulating topics. Students will work towards improving their ability to work with the de facto language of international academia: English.",
+      "methods": [
+        "Lecture","Project",
+        "Discussion","Team teaching","Peer teaching"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance Policy: All classes are mandatory and must be attended. If you are unable to attend class, you must inform your professor at least 24 hours prior to your intended absence. If you have a reasonable excuse for your absence you will be given an excused absence. An excused absence does not negatively affect your final grade, however repeated absences (excused or not) may result in a warning from your professor, after which any further absences may lead to being awarded a failing or incomplete grade in the course. If you miss class due to ill-health, provide a medical certificate to your professor on the first class meeting after your return to receive your excused absence. If you are absent without a reasonable excuse, you will be marked absent from the class meeting. If you are marked absent 4 or more times during the semester you will receive a failing grade for the course. Please arrive on time for all class meetings. Three late arrivals will result in being marked as an unexcused absence. Arriving more than 20 minutes after the start of class will automatically be marked as an unexcused absence. / Late Work Policy: There are no make-ups for work completed in class, such as group work or presentations. Any work not completed during class time must be finished and turned in by the due date set by your professor. If you are absent (even if you have a reasonable excuse), it is your responsibility to find out what work was assigned during the classes you missed and to complete that work by the due date. Failure to submit work by the due date is unacceptable, and the work will not receive any feedback. / Group Work Policy: Everyone must take part in group projects. For daily work throughout the semester, you will be assigned to a group. All members of a group will receive the same score. In other words, the assignment is given 1 score, and everyone in the group receives it. For larger assignments and projects, you may work in groups but be assessed individually. / Student/Professor Communication: If you have a question regarding the course administration or course content you should: Ask your professor during or after class. Because it is common for many students to have the same questions, asking in class allows every student to get the answer at the same time. Ask your professor via email if you have a private question. Your professor will designate time each week specifically for helping students. Your professor will post an appointment sheet on or near their office door. To make an appointment, sign up for the time you wish to visit. Alternatively, you can send an email to your professor to make an appointment. Outside of office hours, your professor may be busy attending to other duties, so they may not be available to meet.",
+      "grading": [
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Participation",
+          "percent": 10
+        },
+        {
+          "name": "Ongoing Semester Assignments",
+          "percent": 30
+        },
+        {
+          "name": "Mid-term Project",
+          "percent": 20
+        },
+        {
+          "name": "Instructor-Student Conference",
+          "percent": 5
+        },
+        {
+          "name": "Final Project",
+          "percent": 25
+        }
+      ],
+      "schedule": [
+        "1주차:Course Introduction",
+        "2주차:Section 1: Identification of Topics",
+        "3주차:Section 2: Evaluation of Sources",
+        "4주차:Section 2: Evaluation of Sources 2",
+        "5주차:Section 2: Evaluation of Sources 3",
+        "6주차:Section 3: Synthesis of Information",
+        "7주차:Section 3: Synthesis of Information 2",
+        "8주차:Midterm exam period - No scheduled classes",
+        "9주차:Section 4: Fundamental Writing Knowledge",
+        "10주차:Section 4: Fundamental Writing Knowledge 2",
+        "11주차:Section 5: The Introduction",
+        "12주차:Section 6: Body Paragraphs",
+        "13주차:Section 7: The Conclusion",
+        "14주차:Writing Workshop",
+        "15주차:Writing Workshop & Instructor-Student Conference",
+        "16주차:Final exam period - No scheduled classes"
+      ],
+      "textbook": [
+        "Academic English: Research and Writing (Downloadable through LMS) (n.n./ n.d.)"
+      ]
+    }
+  },
+  {
+    "id": "GC102-09",
+    "name": "Academic English: R&W",
+    "prof": "Mark Silverlock",
+    "credit": 2,
+    "categories": [
+      "영어"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 3,
+        "start": 14.5,
+        "duration": 3
+      }
+    ],
+    "room": "E7-L27",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "marksilverlock@dgist.ac.kr",
+        "phone": "010-5444-0018",
+        "office": "E7-L13",
+        "office_hours": "TBA"
+      },
+      "summary": "This course is designed to help students develop the English skills needed for academic and professional purposes. It aims to provide students with an opportunity to familiarize themselves with the use of English in a variety of stimulating topics. Students will work towards improving their ability to work with the de facto language of international academia: English.",
+      "methods": [
+        "Lecture","Project",
+        "Discussion","Team teaching","Peer teaching"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance Policy: All classes are mandatory and must be attended. If you are unable to attend class, you must inform your professor at least 24 hours prior to your intended absence. If you have a reasonable excuse for your absence you will be given an excused absence. An excused absence does not negatively affect your final grade, however repeated absences (excused or not) may result in a warning from your professor, after which any further absences may lead to being awarded a failing or incomplete grade in the course. If you miss class due to ill-health, provide a medical certificate to your professor on the first class meeting after your return to receive your excused absence. If you are absent without a reasonable excuse, you will be marked absent from the class meeting. If you are marked absent 4 or more times during the semester you will receive a failing grade for the course. Please arrive on time for all class meetings. Three late arrivals will result in being marked as an unexcused absence. Arriving more than 20 minutes after the start of class will automatically be marked as an unexcused absence. / Late Work Policy: There are no make-ups for work completed in class, such as group work or presentations. Any work not completed during class time must be finished and turned in by the due date set by your professor. If you are absent (even if you have a reasonable excuse), it is your responsibility to find out what work was assigned during the classes you missed and to complete that work by the due date. Failure to submit work by the due date is unacceptable, and the work will not receive any feedback. / Group Work Policy: Everyone must take part in group projects. For daily work throughout the semester, you will be assigned to a group. All members of a group will receive the same score. In other words, the assignment is given 1 score, and everyone in the group receives it. For larger assignments and projects, you may work in groups but be assessed individually. / Student/Professor Communication: If you have a question regarding the course administration or course content you should: Ask your professor during or after class. Because it is common for many students to have the same questions, asking in class allows every student to get the answer at the same time. Ask your professor via email if you have a private question. Your professor will designate time each week specifically for helping students. Your professor will post an appointment sheet on or near their office door. To make an appointment, sign up for the time you wish to visit. Alternatively, you can send an email to your professor to make an appointment. Outside of office hours, your professor may be busy attending to other duties, so they may not be available to meet.",
+      "grading": [
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Participation",
+          "percent": 10
+        },
+        {
+          "name": "Ongoing Semester Assignments",
+          "percent": 30
+        },
+        {
+          "name": "Mid-term Project",
+          "percent": 20
+        },
+        {
+          "name": "Instructor-Student Conference",
+          "percent": 5
+        },
+        {
+          "name": "Final Project",
+          "percent": 25
+        }
+      ],
+      "schedule": [
+        "1주차:Course Introduction",
+        "2주차:Section 1: Identification of Topics",
+        "3주차:Section 2: Evaluation of Sources",
+        "4주차:Section 2: Evaluation of Sources 2",
+        "5주차:Section 2: Evaluation of Sources 3",
+        "6주차:Section 3: Synthesis of Information",
+        "7주차:Section 3: Synthesis of Information 2",
+        "8주차:Midterm exam period - No scheduled classes",
+        "9주차:Section 4: Fundamental Writing Knowledge",
+        "10주차:Section 4: Fundamental Writing Knowledge 2",
+        "11주차:Section 5: The Introduction",
+        "12주차:Section 6: Body Paragraphs",
+        "13주차:Section 7: The Conclusion",
+        "14주차:Writing Workshop",
+        "15주차:Writing Workshop & Instructor-Student Conference",
+        "16주차:Final exam period - No scheduled classes"
+      ],
+      "textbook": [
+        "Academic English: Research and Writing (Downloadable through LMS) (n.n./ n.d.)"
+      ]
+    }
+  },
+  {
+    "id": "GC102-10",
+    "name": "Academic English: R&W",
+    "prof": "Mark Silverlock",
+    "credit": 2,
+    "categories": [
+      "영어"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 4,
+        "start": 9,
+        "duration": 3
+      }
+    ],
+    "room": "E7-L27",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "marksilverlock@dgist.ac.kr",
+        "phone": "010-5444-0018",
+        "office": "E7-L13",
+        "office_hours": "TBA"
+      },
+      "summary": "This course is designed to help students develop the English skills needed for academic and professional purposes. It aims to provide students with an opportunity to familiarize themselves with the use of English in a variety of stimulating topics. Students will work towards improving their ability to work with the de facto language of international academia: English.",
+      "methods": [
+        "Lecture","Project",
+        "Discussion","Team teaching","Peer teaching"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance Policy: All classes are mandatory and must be attended. If you are unable to attend class, you must inform your professor at least 24 hours prior to your intended absence. If you have a reasonable excuse for your absence you will be given an excused absence. An excused absence does not negatively affect your final grade, however repeated absences (excused or not) may result in a warning from your professor, after which any further absences may lead to being awarded a failing or incomplete grade in the course. If you miss class due to ill-health, provide a medical certificate to your professor on the first class meeting after your return to receive your excused absence. If you are absent without a reasonable excuse, you will be marked absent from the class meeting. If you are marked absent 4 or more times during the semester you will receive a failing grade for the course. Please arrive on time for all class meetings. Three late arrivals will result in being marked as an unexcused absence. Arriving more than 20 minutes after the start of class will automatically be marked as an unexcused absence. / Late Work Policy: There are no make-ups for work completed in class, such as group work or presentations. Any work not completed during class time must be finished and turned in by the due date set by your professor. If you are absent (even if you have a reasonable excuse), it is your responsibility to find out what work was assigned during the classes you missed and to complete that work by the due date. Failure to submit work by the due date is unacceptable, and the work will not receive any feedback. / Group Work Policy: Everyone must take part in group projects. For daily work throughout the semester, you will be assigned to a group. All members of a group will receive the same score. In other words, the assignment is given 1 score, and everyone in the group receives it. For larger assignments and projects, you may work in groups but be assessed individually. / Student/Professor Communication: If you have a question regarding the course administration or course content you should: Ask your professor during or after class. Because it is common for many students to have the same questions, asking in class allows every student to get the answer at the same time. Ask your professor via email if you have a private question. Your professor will designate time each week specifically for helping students. Your professor will post an appointment sheet on or near their office door. To make an appointment, sign up for the time you wish to visit. Alternatively, you can send an email to your professor to make an appointment. Outside of office hours, your professor may be busy attending to other duties, so they may not be available to meet.",
+      "grading": [
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Participation",
+          "percent": 10
+        },
+        {
+          "name": "Ongoing Semester Assignments",
+          "percent": 30
+        },
+        {
+          "name": "Mid-term Project",
+          "percent": 20
+        },
+        {
+          "name": "Instructor-Student Conference",
+          "percent": 5
+        },
+        {
+          "name": "Final Project",
+          "percent": 25
+        }
+      ],
+      "schedule": [
+        "1주차:Course Introduction",
+        "2주차:Section 1: Identification of Topics",
+        "3주차:Section 2: Evaluation of Sources",
+        "4주차:Section 2: Evaluation of Sources 2",
+        "5주차:Section 2: Evaluation of Sources 3",
+        "6주차:Section 3: Synthesis of Information",
+        "7주차:Section 3: Synthesis of Information 2",
+        "8주차:Midterm exam period - No scheduled classes",
+        "9주차:Section 4: Fundamental Writing Knowledge",
+        "10주차:Section 4: Fundamental Writing Knowledge 2",
+        "11주차:Section 5: The Introduction",
+        "12주차:Section 6: Body Paragraphs",
+        "13주차:Section 7: The Conclusion",
+        "14주차:Writing Workshop",
+        "15주차:Writing Workshop & Instructor-Student Conference",
+        "16주차:Final exam period - No scheduled classes"
+      ],
+      "textbook": [
+        "Academic English: Research and Writing (Downloadable through LMS) (n.n./ n.d.)"
+      ]
+    }
+  },
+  {
+    "id": "GC102-11",
+    "name": "Academic English: R&W",
+    "prof": "Mark Silverlock",
+    "credit": 2,
+    "categories": [
+      "영어"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 3,
+        "start": 9,
+        "duration": 3
+      }
+    ],
+    "room": "E7-L27",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "marksilverlock@dgist.ac.kr",
+        "phone": "010-5444-0018",
+        "office": "E7-L13",
+        "office_hours": "TBA"
+      },
+      "summary": "This course is designed to help students develop the English skills needed for academic and professional purposes. It aims to provide students with an opportunity to familiarize themselves with the use of English in a variety of stimulating topics. Students will work towards improving their ability to work with the de facto language of international academia: English.",
+      "methods": [
+        "Lecture","Project",
+        "Discussion","Team teaching","Peer teaching"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance Policy: All classes are mandatory and must be attended. If you are unable to attend class, you must inform your professor at least 24 hours prior to your intended absence. If you have a reasonable excuse for your absence you will be given an excused absence. An excused absence does not negatively affect your final grade, however repeated absences (excused or not) may result in a warning from your professor, after which any further absences may lead to being awarded a failing or incomplete grade in the course. If you miss class due to ill-health, provide a medical certificate to your professor on the first class meeting after your return to receive your excused absence. If you are absent without a reasonable excuse, you will be marked absent from the class meeting. If you are marked absent 4 or more times during the semester you will receive a failing grade for the course. Please arrive on time for all class meetings. Three late arrivals will result in being marked as an unexcused absence. Arriving more than 20 minutes after the start of class will automatically be marked as an unexcused absence. / Late Work Policy: There are no make-ups for work completed in class, such as group work or presentations. Any work not completed during class time must be finished and turned in by the due date set by your professor. If you are absent (even if you have a reasonable excuse), it is your responsibility to find out what work was assigned during the classes you missed and to complete that work by the due date. Failure to submit work by the due date is unacceptable, and the work will not receive any feedback. / Group Work Policy: Everyone must take part in group projects. For daily work throughout the semester, you will be assigned to a group. All members of a group will receive the same score. In other words, the assignment is given 1 score, and everyone in the group receives it. For larger assignments and projects, you may work in groups but be assessed individually. / Student/Professor Communication: If you have a question regarding the course administration or course content you should: Ask your professor during or after class. Because it is common for many students to have the same questions, asking in class allows every student to get the answer at the same time. Ask your professor via email if you have a private question. Your professor will designate time each week specifically for helping students. Your professor will post an appointment sheet on or near their office door. To make an appointment, sign up for the time you wish to visit. Alternatively, you can send an email to your professor to make an appointment. Outside of office hours, your professor may be busy attending to other duties, so they may not be available to meet.",
+      "grading": [
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Participation",
+          "percent": 10
+        },
+        {
+          "name": "Ongoing Semester Assignments",
+          "percent": 30
+        },
+        {
+          "name": "Mid-term Project",
+          "percent": 20
+        },
+        {
+          "name": "Instructor-Student Conference",
+          "percent": 5
+        },
+        {
+          "name": "Final Project",
+          "percent": 25
+        }
+      ],
+      "schedule": [
+        "1주차:Course Introduction",
+        "2주차:Section 1: Identification of Topics",
+        "3주차:Section 2: Evaluation of Sources",
+        "4주차:Section 2: Evaluation of Sources 2",
+        "5주차:Section 2: Evaluation of Sources 3",
+        "6주차:Section 3: Synthesis of Information",
+        "7주차:Section 3: Synthesis of Information 2",
+        "8주차:Midterm exam period - No scheduled classes",
+        "9주차:Section 4: Fundamental Writing Knowledge",
+        "10주차:Section 4: Fundamental Writing Knowledge 2",
+        "11주차:Section 5: The Introduction",
+        "12주차:Section 6: Body Paragraphs",
+        "13주차:Section 7: The Conclusion",
+        "14주차:Writing Workshop",
+        "15주차:Writing Workshop & Instructor-Student Conference",
+        "16주차:Final exam period - No scheduled classes"
+      ],
+      "textbook": [
+        "Academic English: Research and Writing (Downloadable through LMS) (n.n./ n.d.)"
+      ]
+    }
+  },
+  {
+    "id": "GC102-12",
+    "name": "Academic English: R&W",
+    "prof": "미배정",
+    "credit": 2,
+    "categories": [
+      "영어"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 5,
+        "start": 14,
+        "duration": 3
+      }
+    ],
+    "room": "E7-L28",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "TBA",
+        "phone": "TBA",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "This course is designed to help students develop the English skills needed for academic and professional purposes. It aims to provide students with an opportunity to familiarize themselves with the use of English in a variety of stimulating topics. Students will work towards improving their ability to work with the de facto language of international academia: English.",
+      "methods": [
+        "Lecture","Project"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance Policy: All classes are mandatory and must be attended. If you are unable to attend class, you must inform your professor at least 24 hours prior to your intended absence. If you have a reasonable excuse for your absence you will be given an excused absence. An excused absence does not negatively affect your final grade, however repeated absences (excused or not) may result in a warning from your professor, after which any further absences may lead to being awarded a failing or incomplete grade in the course. If you miss class due to ill-health, provide a medical certificate to your professor on the first class meeting after your return to receive your excused absence. If you are absent without a reasonable excuse, you will be marked absent from the class meeting. If you are marked absent 4 or more times during the semester you will receive a failing grade for the course. Please arrive on time for all class meetings. Three late arrivals will result in being marked as an unexcused absence. Arriving more than 20 minutes after the start of class will automatically be marked as an unexcused absence. / Late Work Policy: There are no make-ups for work completed in class, such as group work or presentations. Any work not completed during class time must be finished and turned in by the due date set by your professor. If you are absent (even if you have a reasonable excuse), it is your responsibility to find out what work was assigned during the classes you missed and to complete that work by the due date. Failure to submit work by the due date is unacceptable, and the work will not receive any feedback. / Group Work Policy: Everyone must take part in group projects. For daily work throughout the semester, you will be assigned to a group. All members of a group will receive the same score. In other words, the assignment is given 1 score, and everyone in the group receives it. For larger assignments and projects, you may work in groups but be assessed individually. / Student/Professor Communication: If you have a question regarding the course administration or course content you should: Ask your professor during or after class. Because it is common for many students to have the same questions, asking in class allows every student to get the answer at the same time. Ask your professor via email if you have a private question. Your professor will designate time each week specifically for helping students. Your professor will post an appointment sheet on or near their office door. To make an appointment, sign up for the time you wish to visit. Alternatively, you can send an email to your professor to make an appointment. Outside of office hours, your professor may be busy attending to other duties, so they may not be available to meet.",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "GC102-13",
+    "name": "Academic English: R&W",
+    "prof": "미배정",
+    "credit": 2,
+    "categories": [
+      "영어"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 5,
+        "start": 9,
+        "duration": 3
+      }
+    ],
+    "room": "E7-G03",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "TBA",
+        "phone": "TBA",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "This course is designed to help students develop the English skills needed for academic and professional purposes. It aims to provide students with an opportunity to familiarize themselves with the use of English in a variety of stimulating topics. Students will work towards improving their ability to work with the de facto language of international academia: English.",
+      "methods": [
+        "Lecture","Project"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance Policy: All classes are mandatory and must be attended. If you are unable to attend class, you must inform your professor at least 24 hours prior to your intended absence. If you have a reasonable excuse for your absence you will be given an excused absence. An excused absence does not negatively affect your final grade, however repeated absences (excused or not) may result in a warning from your professor, after which any further absences may lead to being awarded a failing or incomplete grade in the course. If you miss class due to ill-health, provide a medical certificate to your professor on the first class meeting after your return to receive your excused absence. If you are absent without a reasonable excuse, you will be marked absent from the class meeting. If you are marked absent 4 or more times during the semester you will receive a failing grade for the course. Please arrive on time for all class meetings. Three late arrivals will result in being marked as an unexcused absence. Arriving more than 20 minutes after the start of class will automatically be marked as an unexcused absence. / Late Work Policy: There are no make-ups for work completed in class, such as group work or presentations. Any work not completed during class time must be finished and turned in by the due date set by your professor. If you are absent (even if you have a reasonable excuse), it is your responsibility to find out what work was assigned during the classes you missed and to complete that work by the due date. Failure to submit work by the due date is unacceptable, and the work will not receive any feedback. / Group Work Policy: Everyone must take part in group projects. For daily work throughout the semester, you will be assigned to a group. All members of a group will receive the same score. In other words, the assignment is given 1 score, and everyone in the group receives it. For larger assignments and projects, you may work in groups but be assessed individually. / Student/Professor Communication: If you have a question regarding the course administration or course content you should: Ask your professor during or after class. Because it is common for many students to have the same questions, asking in class allows every student to get the answer at the same time. Ask your professor via email if you have a private question. Your professor will designate time each week specifically for helping students. Your professor will post an appointment sheet on or near their office door. To make an appointment, sign up for the time you wish to visit. Alternatively, you can send an email to your professor to make an appointment. Outside of office hours, your professor may be busy attending to other duties, so they may not be available to meet.",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "GC102-14",
+    "name": "Academic English: R&W",
+    "prof": "미배정",
+    "credit": 2,
+    "categories": [
+      "영어"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 3,
+        "start": 9,
+        "duration": 3
+      }
+    ],
+    "room": "E7-L28",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "TBA",
+        "phone": "TBA",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "This course is designed to help students develop the English skills needed for academic and professional purposes. It aims to provide students with an opportunity to familiarize themselves with the use of English in a variety of stimulating topics. Students will work towards improving their ability to work with the de facto language of international academia: English.",
+      "methods": [
+        "Lecture","Project"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance Policy: All classes are mandatory and must be attended. If you are unable to attend class, you must inform your professor at least 24 hours prior to your intended absence. If you have a reasonable excuse for your absence you will be given an excused absence. An excused absence does not negatively affect your final grade, however repeated absences (excused or not) may result in a warning from your professor, after which any further absences may lead to being awarded a failing or incomplete grade in the course. If you miss class due to ill-health, provide a medical certificate to your professor on the first class meeting after your return to receive your excused absence. If you are absent without a reasonable excuse, you will be marked absent from the class meeting. If you are marked absent 4 or more times during the semester you will receive a failing grade for the course. Please arrive on time for all class meetings. Three late arrivals will result in being marked as an unexcused absence. Arriving more than 20 minutes after the start of class will automatically be marked as an unexcused absence. / Late Work Policy: There are no make-ups for work completed in class, such as group work or presentations. Any work not completed during class time must be finished and turned in by the due date set by your professor. If you are absent (even if you have a reasonable excuse), it is your responsibility to find out what work was assigned during the classes you missed and to complete that work by the due date. Failure to submit work by the due date is unacceptable, and the work will not receive any feedback. / Group Work Policy: Everyone must take part in group projects. For daily work throughout the semester, you will be assigned to a group. All members of a group will receive the same score. In other words, the assignment is given 1 score, and everyone in the group receives it. For larger assignments and projects, you may work in groups but be assessed individually. / Student/Professor Communication: If you have a question regarding the course administration or course content you should: Ask your professor during or after class. Because it is common for many students to have the same questions, asking in class allows every student to get the answer at the same time. Ask your professor via email if you have a private question. Your professor will designate time each week specifically for helping students. Your professor will post an appointment sheet on or near their office door. To make an appointment, sign up for the time you wish to visit. Alternatively, you can send an email to your professor to make an appointment. Outside of office hours, your professor may be busy attending to other duties, so they may not be available to meet.",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "GC102-15",
+    "name": "Academic English: R&W",
+    "prof": "미배정",
+    "credit": 2,
+    "categories": [
+      "영어"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 3,
+        "start": 13,
+        "duration": 3
+      }
+    ],
+    "room": "E7-G03",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "TBA",
+        "phone": "TBA",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "This course is designed to help students develop the English skills needed for academic and professional purposes. It aims to provide students with an opportunity to familiarize themselves with the use of English in a variety of stimulating topics. Students will work towards improving their ability to work with the de facto language of international academia: English.",
+      "methods": [
+        "Lecture","Project"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance Policy: All classes are mandatory and must be attended. If you are unable to attend class, you must inform your professor at least 24 hours prior to your intended absence. If you have a reasonable excuse for your absence you will be given an excused absence. An excused absence does not negatively affect your final grade, however repeated absences (excused or not) may result in a warning from your professor, after which any further absences may lead to being awarded a failing or incomplete grade in the course. If you miss class due to ill-health, provide a medical certificate to your professor on the first class meeting after your return to receive your excused absence. If you are absent without a reasonable excuse, you will be marked absent from the class meeting. If you are marked absent 4 or more times during the semester you will receive a failing grade for the course. Please arrive on time for all class meetings. Three late arrivals will result in being marked as an unexcused absence. Arriving more than 20 minutes after the start of class will automatically be marked as an unexcused absence. / Late Work Policy: There are no make-ups for work completed in class, such as group work or presentations. Any work not completed during class time must be finished and turned in by the due date set by your professor. If you are absent (even if you have a reasonable excuse), it is your responsibility to find out what work was assigned during the classes you missed and to complete that work by the due date. Failure to submit work by the due date is unacceptable, and the work will not receive any feedback. / Group Work Policy: Everyone must take part in group projects. For daily work throughout the semester, you will be assigned to a group. All members of a group will receive the same score. In other words, the assignment is given 1 score, and everyone in the group receives it. For larger assignments and projects, you may work in groups but be assessed individually. / Student/Professor Communication: If you have a question regarding the course administration or course content you should: Ask your professor during or after class. Because it is common for many students to have the same questions, asking in class allows every student to get the answer at the same time. Ask your professor via email if you have a private question. Your professor will designate time each week specifically for helping students. Your professor will post an appointment sheet on or near their office door. To make an appointment, sign up for the time you wish to visit. Alternatively, you can send an email to your professor to make an appointment. Outside of office hours, your professor may be busy attending to other duties, so they may not be available to meet.",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "GC102-16",
+    "name": "Academic English: R&W",
+    "prof": "미배정",
+    "credit": 2,
+    "categories": [
+      "영어"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 9,
+        "duration": 3
+      }
+    ],
+    "room": "E7-229",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "TBA",
+        "phone": "TBA",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "This course is designed to help students develop the English skills needed for academic and professional purposes. It aims to provide students with an opportunity to familiarize themselves with the use of English in a variety of stimulating topics. Students will work towards improving their ability to work with the de facto language of international academia: English.",
+      "methods": [
+        "Lecture","Project"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance Policy: All classes are mandatory and must be attended. If you are unable to attend class, you must inform your professor at least 24 hours prior to your intended absence. If you have a reasonable excuse for your absence you will be given an excused absence. An excused absence does not negatively affect your final grade, however repeated absences (excused or not) may result in a warning from your professor, after which any further absences may lead to being awarded a failing or incomplete grade in the course. If you miss class due to ill-health, provide a medical certificate to your professor on the first class meeting after your return to receive your excused absence. If you are absent without a reasonable excuse, you will be marked absent from the class meeting. If you are marked absent 4 or more times during the semester you will receive a failing grade for the course. Please arrive on time for all class meetings. Three late arrivals will result in being marked as an unexcused absence. Arriving more than 20 minutes after the start of class will automatically be marked as an unexcused absence. / Late Work Policy: There are no make-ups for work completed in class, such as group work or presentations. Any work not completed during class time must be finished and turned in by the due date set by your professor. If you are absent (even if you have a reasonable excuse), it is your responsibility to find out what work was assigned during the classes you missed and to complete that work by the due date. Failure to submit work by the due date is unacceptable, and the work will not receive any feedback. / Group Work Policy: Everyone must take part in group projects. For daily work throughout the semester, you will be assigned to a group. All members of a group will receive the same score. In other words, the assignment is given 1 score, and everyone in the group receives it. For larger assignments and projects, you may work in groups but be assessed individually. / Student/Professor Communication: If you have a question regarding the course administration or course content you should: Ask your professor during or after class. Because it is common for many students to have the same questions, asking in class allows every student to get the answer at the same time. Ask your professor via email if you have a private question. Your professor will designate time each week specifically for helping students. Your professor will post an appointment sheet on or near their office door. To make an appointment, sign up for the time you wish to visit. Alternatively, you can send an email to your professor to make an appointment. Outside of office hours, your professor may be busy attending to other duties, so they may not be available to meet.",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "HSS101-01",
+    "name": "경제학입문",
+    "prof": "김선구",
+    "credit": 3,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 3,
+        "start": 10,
+        "duration": 3
+      }
+    ],
+    "room": "E7-233",
+    "syllabus": {
+      "capacity": "30",
+      "contact": {
+        "email": "sonkukim@snu.ac.kr",
+        "phone": "010-4766-6766",
+        "office": "TBA",
+        "office_hours": "수요일 09:00-10:00"
+      },
+      "summary": "The following outline looks somewhat ambitious and we probably will not be  able to cover all the topics listed below. If we slip behind the schedule, then  we will either skim over or just omit some of the topics.    I. The Bassics of Economics (Ch. 1,2,3,4, and 5)  1. Introduction to Economics  2. Exchange and Production  3, Demand and Supply    II. Markets and Government’s Interventions (Ch. 6, 7, and 8)  III. The Consumer Theory (Ch. 21)  1. The Basic of the Consumer Theory  2. A Consumer’s Optimal Choice  3. Demand Function  IV. The Production Theory (Ch. 13, and 14)  1. The Basics of the Production Theory  2. A Competitive Firm’s Profit Maximization",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "YOUR MOBILE PHONE SHOULD BE TURNED OFF DUR￾ING THE CLASS TIME.",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "HSS102-01",
+    "name": "과학기술과 현대사회",
+    "prof": "장하원",
+    "credit": 3,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 4,
+        "start": 10,
+        "duration": 3
+      }
+    ],
+    "room": "E7-242",
+    "syllabus": {
+      "capacity": "35",
+      "contact": {
+        "email": "hahawon@gmail.com",
+        "phone": "010-3638-2981",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "As science and technology play an increasingly significant role in shaping contemporary society, it is essential to develop a critical understanding of their nature and impacts. This course aims to cultivate students' ability to examine the characteristics and social implications of modern science and technology from multiple perspectives by introducing major theoretical discussions in Science and Technology Studies (STS), an interdisciplinary field that integrates diverse approaches from the humanities and social sciences. Building on these theoretical foundations, students will engage in discussions of contemporary issues and debates related to science and technology.",
+      "methods": [
+        "Lecture", "Presentation", "Discussion"
+      ],
+      "materials": "TBA",
+      "policies": "The course is designed for both Korean and international students and is conducted primarily in English. While course materials and lectures are provided mainly in English, the use of English and Korean in lectures, discussions, and question-and-answer sessions may be adjusted according to the linguistic backgrounds and needs of the enrolled students.",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 30
+        },
+        {
+          "name": "Final exam",
+          "percent": 30
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Term Project",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:Introduction to Science and Technology Studies: Key Questions in STS",
+        "2주차:The Emergence of Sociology of Scientific Knowledge",
+        "3주차:Laboratory Studies and Actor-Network Theory",
+        "4주차:Contemporary Science in Practice: Screening and discussion of <Naturally Obsessed>",
+        "5주차:The Social Shaping of Technology",
+        "6주차:Screening and discussion of <Who Killed the Electric Car?>",
+        "7주차:Risk Governance in the Era of Post-Normal Science",
+        "8주차:Midterm Examination",
+        "9주차:Emerging Technology in Everyday Life: Screening and discussion of <In the Family>",
+        "10주차:Science, Technology, and Gender",
+        "11주차:Screening and discussion of <Hidden Figures>",
+        "12주차:Academic, Social, and Ethical Dimensions of Scientists’ Work",
+        "13주차:Screening and discussion of <The Hwang Scandal>",
+        "14주차:Group Presentations: Book Review and Critical Analysis",
+        "15주차:Final Examination"
+      ],
+      "textbook": [
+        "The handbook of science and technology studies (Hackett, Edward J / 2008)",
+        "The handbook of science and technology studies (Felt, Ulrike / 2017)"
+      ]
+    }
   }
 ]
