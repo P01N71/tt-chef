@@ -2455,5 +2455,101 @@
       [ "신경과학I(이)" ],
       [ "신경과학II(이)" ]
     ]
+  },
+  {
+    "name": "인공지능과 뇌과학(이)",
+    "credit": 3,
+    "grade_level": 4,
+    "semester": [ "2" ],
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": [ "뇌과학" ],
+    "min_year": 2026
+  },
+  {
+    "name": "고분자화학(이,공)",
+    "credit": 3,
+    "grade_level": 4,
+    "semester": [ "2" ],
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": [ "화학" ],
+    "min_year": 2026,
+    "prerequisites": [
+      [ "유기화학I(이,공)" ],
+      [ "유기화학II(이,공)" ]
+    ]
+  },
+  {
+    "name": "계산이론(이,공)",
+    "credit": 3,
+    "grade_level": 2,
+    "semester": [ "2" ],
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": [ "컴퓨터공학" ],
+    "min_year": 2026
+  },
+  {
+    "name": "데이터 기반 신소재 공학(공)",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": [ "2" ],
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": [ "재료공학" ],
+    "min_year": 2026
+  },
+  {
+    "name": "세라믹개론(공)",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": [ "2" ],
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": [ "재료공학" ],
+    "min_year": 2026,
+    "prerequisites": [
+      [ "신경과학I(이)" ],
+      [ "신경과학II(이)" ]
+    ]
+  },
+  {
+    "name": "입자물리개론(이)",
+    "credit": 3,
+    "grade_level": 4,
+    "semester": [ "2" ],
+    "category_main": "심화",
+    "category_sub": "트랙",
+    "available_tracks": [ "물리학" ],
+    "min_year": 2026
+  },
+  {
+    "name": "소리와 음악(이,공)",
+    "credit": 3,
+    "grade_level": 2,
+    "semester": [ "2" ],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합",
+    "min_year": 2026
+  },
+  {
+    "name": "생체분자역학개론(이,공)",
+    "credit": 3,
+    "grade_level": 3,
+    "semester": [ "2" ],
+    "category_main": "심화",
+    "category_sub": "비트랙/융합",
+    "min_year": 2026
+  },
+  {
+    "name": "Korea and International Relations",
+    "credit": 2,
+    "grade_level": 1,
+    "semester": [ "2" ],
+    "category_main": "기초",
+    "category_sub": "쓰기,읽기중점",
+    "available_tracks": [ "기초학부" ],
+    "min_year": 2026
   }
-]
+] 
