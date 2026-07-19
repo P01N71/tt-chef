@@ -4924,5 +4924,482 @@
         "Physical Chemistry (P. Atkins / n.d.)"
       ]
     }
+  },
+  {
+    "id": "CHEM204-01",
+    "name": "유기화학II(이,공)",
+    "prof": "서상원",
+    "credit": 3,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "trackRelations":{
+      "화학": "전공선택",
+      "화학공학": "전공선택"
+    },
+    "times": [
+      {
+        "day": 1,
+        "start": 14.5,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 14.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-235",
+    "syllabus": {
+      "capacity": "40",
+      "contact": {
+        "email": "sangwon.seo@dgist.ac.kr",
+        "phone": "010-4202-4766",
+        "office": "E2-610",
+        "office_hours": "prior arrangement"
+      },
+      "summary": "Molecular structures, physical properties, chemical reactivity, and synthetic methods of a diverse range of organic compounds (다양한 종류의 유기 화합물의 분자구조, 물리적 특성, 화학반응, 합성의 이해)",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 45
+        },
+        {
+          "name": "Final exam",
+          "percent": 45
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:General Introduction, Infrared Spectroscopy and Mass Spectrometry",
+        "2주차:Nuclear Magnetic Resonance Spectroscopy",
+        "3주차:Conjugated Pi Systems and Pericyclic Reactions",
+        "4주차:Aromatic Compounds",
+        "5주차:Aromatic Substitution Reactions I",
+        "6주차:Aromatic Substitution Reactions II",
+        "7주차:Aromatic Substitution Reactions III",
+        "8주차:Midterm Exam",
+        "9주차:Aldehydes and Ketones I",
+        "10주차:Aldehydes and Ketones II",
+        "11주차:Carboxylic Acids and Their Derivatives I",
+        "12주차:Carboxylic Acids and Their Derivatives II / Alpha Carbon Chemistry: Enols and Enolates I",
+        "13주차:Alpha Carbon Chemistry: Enols and Enolates II",
+        "14주차:Amines",
+        "15주차:Carbohydrates",
+        "16주차:Final Exam"
+      ],
+      "textbook": [
+        "Organic Chemistry (Klein, David R / 2022)"
+      ]
+    }
+  },
+  {
+    "id": "CHEM302-01",
+    "name": "심화화학실험II(이)",
+    "prof": "김성균, 장윤희",
+    "credit": 2,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "전공필수"
+    ],
+    "trackRelations":{
+      "화학": "전공필수"
+    },
+    "times": [
+      {
+        "day": 3,
+        "start": 15,
+        "duration": 4
+      }
+    ],
+    "room": "E6-222",
+    "syllabus": {
+      "capacity": "24",
+      "contact": {
+        "email": "hansol@dgist.ac.kr",
+        "phone": "TBA",
+        "office": "E7-G09",
+        "office_hours": "TBA"
+      },
+      "summary": "1. ‘기초화학실험 I, II’ 및 ‘합성으로 이루어진 세상’, ‘유기화학의 이해’ 실험 수업에서 배운 실험의 기초 지식을 발전시키고, 좀 더 전문화된 화학 분야의 다양한 실험들, 즉 물리·유기·무기·분석·생화학 실험을 심층적으로 실습하고자 한다. 2. 과학의 연구 단계인 “자연 현상으로부터 ‘왜?’라는 물음의 제기”→ “가설의 제안” → “실험을 통한 가설의 검증”을 확인한다.",
+      "methods": [  
+        "Project",
+        "Presentation",
+        "Discussion",
+        "Experiment"
+      ],
+      "materials": "실험복, 보안경, 다리를 모두 덮는 면바지(청바지 추천), 발을 완전히 덮는 신발, 머리가 긴 경우 헤어밴드",
+      "policies": "1. 노트북 등 데이터 처리를 위한 전자기기 반입은 허용된다. 2. 실험실 내에서 음식물 및 음료의 취식은 엄금된다. 적발되는 경우 실험 수행 점수에서 감점된다. 3. 안전 장구류를 완전히 갖추어야 하며 미비 시 실험에 참여할 수 없다. ",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 40
+        },
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:오리엔테이션",
+        "2주차:물리화학1 : BET 방법을 이용한 고체 표면적 측정",
+        "3주차:물리화학2 : 액체 시료의 몰 질량 결정",
+        "4주차:물리화학3 : Bomb 열량계",
+        "5주차:물리화학4 : 전해질 용액의 전도도",
+        "6주차:물리화학5 : 부분적으로 섞이는 액체의 상평형 그림",
+        "7주차:물리화학6 : 분광기를 이용한 착물의 안정도 상수",
+        "8주차:중간고사기간",
+        "9주차:무기화학1: 분광법의 이해",
+        "10주차:무기화학2 : 이온 화합물",
+        "11주차:무기화학3 : 배위화합물 I",
+        "12주차:무기화학4 : 배위화합물 II",
+        "13주차:무기화학5 : 배위화합물 III",
+        "14주차:무기화학6: 배위화합물 IV",
+        "15주차:예비주",
+        "16주차:기말고사기간"
+      ],
+      "textbook": [
+        "심화화학실험2 (김성균, 정현숙 / 2018)"
+      ]
+    }
+  },
+  {
+    "id": "CHEM303-01",
+    "name": "유기화학III(이,공)",
+    "prof": "이성기",
+    "credit": 3,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "trackRelations":{
+      "화학": "전공선택",
+      "화학공학": "전공선택"
+    },
+    "times": [
+      {
+        "day": 2,
+        "start": 14.5,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 14.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-241",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "sunggi.lee@dgist.ac.kr",
+        "phone": "010-9370-7022",
+        "office": "E2-611",
+        "office_hours": "by appointment"
+      },
+      "summary": "This course will provide deeper understanding on organic reactions and mechanisms using molecular orbital theory. Topics includes molecular orbital theory, carbonium ion chemistry, nucleophilic and electrophilic reactions, pericyclic reactions, and kinetics, etc. We may not cover or add some of the subjects in each of the subsequent chapters according to progress. You will be responsible for materials covered in the lecture. ",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "Your presence is mandatory for this course. Excuses are expected to have a valid reason (medical, scholar, etc). Frequent absence will result in a diminished grade. Taking lecture notes is highly recommended for this class.",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 45
+        },
+        {
+          "name": "Final exam",
+          "percent": 45
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:",
+        "2주차:",
+        "3주차:",
+        "4주차:",
+        "5주차:",
+        "6주차:",
+        "7주차:",
+        "8주차:",
+        "9주차:",
+        "10주차:",
+        "11주차:",
+        "12주차:",
+        "13주차:",
+        "14주차:",
+        "15주차:",
+        "16주차:"
+      ],
+      "textbook": [
+        "Molecular orbitals and organic chemical reactions (Ian Fleming / 2009)",
+        "Advanced organic chemistry, part A (Francis A. Carey and Richard J. Sundberg / 2010)"
+      ]
+    }
+  },
+  {
+    "id": "CHEM304-01",
+    "name": "물리화학III(이,공)",
+    "prof": "서상원",
+    "credit": 3,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "trackRelations":{
+      "화학": "전공선택",
+      "화학공학": "전공선택"
+    },
+    "times": [
+      {
+        "day": 2,
+        "start": 13,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 13,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-G01",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "jgkim7@dgist.ac.kr",
+        "phone": "010-9312-9551",
+        "office": "E2-608",
+        "office_hours": "TBA"
+      },
+      "summary": "The objective of the Physical Chemistry 3 course is to extend the fundamental concepts introduced in Physical Chemistry 1 and 2 and to deepen students’ understanding of the behavior of molecules in various states: solids, liquids, and gases. In particular, students will learn essential concepts of reaction kinetics and reaction dynamics, which are crucial for understanding a wide range of chemical and biological catalytic reactions. Students will also explore practical experimental and theoretical methods used to investigate reaction mechanisms. Because this course builds substantially on the material covered in Physical Chemistry 1 and 2, prior completion of these courses is strongly recommended.",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "More than 8 classes absent = failure. 3 times late = 1 absence. Your absence is excused only when you missed class because of these three reason: One, you were involved in a university-sponsored activity; Two, there was a death in your family; or Three, you were sick and stayed overnight at a hospital. For each of these case, ou need to bring me official letters.",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 45
+        },
+        {
+          "name": "Final exam",
+          "percent": 45
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:Molecular interactions - 1 (To be replaced with a recorded video lecture)",
+        "2주차:Molecular interactions - 2 (To be replaced with a recorded video lecture)",
+        "3주차:Molecular interactions - 3 / Solids - 1",
+        "4주차:Solids - 2",
+        "5주차:Solids - 3 / Molecules in motions - 1",
+        "6주차:Molecules in motions - 2",
+        "7주차:Molecules in motions - 3",
+        "8주차:Mid-term exam",
+        "9주차:Chemical kinetics - 1",
+        "10주차:Chemical kinetics - 2",
+        "11주차:Chemical kinetics - 3",
+        "12주차:Chemical kinetics - 4",
+        "13주차:Reaction Dynamics - 1",
+        "14주차:Reaction Dynamics - 2",
+        "15주차:Reaction Dynamics - 3",
+        "16주차:Final exam"
+      ],
+      "textbook": [
+        "Atkins' physical chemistry (Peter Atkins / 2018)"
+      ]
+    }
+  },
+  {
+    "id": "CHEM403-01",
+    "name": "광물리화학 개론(이)",
+    "prof": "성주영",
+    "credit": 3,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "trackRelations":{
+      "화학": "전공선택"
+    },
+    "times": [
+      {
+        "day": 2,
+        "start": 10.5,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 10.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-L31",
+    "syllabus": {
+      "capacity": "25",
+      "contact": {
+        "email": "jooyoung@dgist.ac.kr",
+        "phone": "053-785-6533",
+        "office": "E2-212",
+        "office_hours": "TBA"
+      },
+      "summary": "This class introduces fundamentals of photophysics and photochemistry. The course will further cover a wide range of topics, applying physical principles and techniques to characterize chemical and materials systems. ",
+      "methods": [
+        "Lecture",
+        "Presentation"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "Class Participation",
+          "percent": 20
+        },
+        {
+          "name": "Paper Presentation",
+          "percent": 30
+        },
+        {
+          "name": "Final exam",
+          "percent": 30
+        },
+        {
+          "name": "Attendance",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:",
+        "2주차:",
+        "3주차:",
+        "4주차:",
+        "5주차:",
+        "6주차:",
+        "7주차:",
+        "8주차:",
+        "9주차:",
+        "10주차:",
+        "11주차:",
+        "12주차:",
+        "13주차:",
+        "14주차:",
+        "15주차:",
+        "16주차:"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "CHEM406-01",
+    "name": "고분자개론(이,공)",
+    "prof": "홍선기",
+    "credit": 3,
+    "categories": [
+      "화학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "trackRelations":{
+      "화학": "전공선택",
+      "화학공학": "전공선택"
+    },
+    "times": [
+      {
+        "day": 3,
+        "start": 15,
+        "duration": 1.5
+      },
+      {
+        "day": 5,
+        "start": 15,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-242",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "seonkihong@dgist.ac.kr",
+        "phone": "010-7402-8891",
+        "office": "E2-510",
+        "office_hours": "수요일 16:30-17:30"
+      },
+      "summary": "This course introduces the fundamental principles of polymer chemistry, focusing on how polymeric materials are formed through chemical reactions. Emphasis is placed on understanding polymerization mechanisms and the molecular structure of polymers within the framework of organic chemistry, thereby providing a conceptual understanding of how the structural features of polymers relate to their properties.",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "Organic chemistry I and II (CHEM204 & Chem205) are prerequisites. Using cell phone during class is not allowed.",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 45
+        },
+        {
+          "name": "Final exam",
+          "percent": 45
+        },
+        {
+          "name": "Attendance & Participation",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:Basic principles, nomenclature",
+        "2주차:Molecular weight and polymer solutions",
+        "3주차:Chemical structure and polymer morphology",
+        "4주차:Chemical structure and polymer properties",
+        "5주차:Free radical polymerization",
+        "6주차:Ionic polymerization",
+        "7주차:Reactions of vinyl polymers",
+        "8주차:Midterm week",
+        "9주차:Step-reaction polymerization",
+        "10주차:Ring-opening polymerization",
+        "11주차:Polyesters",
+        "12주차:Polyamides and related polymers",
+        "13주차:Miscellaneous organic polymers",
+        "14주차:Nucleic acids",
+        "15주차:Proteins",
+        "16주차:Final term"
+      ],
+      "textbook": [
+        "Polymer chemistry : an introduction (Stevens, Malcolm P / 1999)",
+        "Contemporary polymer chemistry (Allcock, H. R / 2003)"
+      ]
+    }
   }
 ]
