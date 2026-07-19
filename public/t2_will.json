@@ -5324,7 +5324,7 @@
   },
   {
     "id": "CHEM406-01",
-    "name": "고분자개론(이,공)",
+    "name": "고분자화학(이,공)",
     "prof": "홍선기",
     "credit": 3,
     "categories": [
@@ -5399,6 +5399,877 @@
       "textbook": [
         "Polymer chemistry : an introduction (Stevens, Malcolm P / 1999)",
         "Contemporary polymer chemistry (Allcock, H. R / 2003)"
+      ]
+    }
+  },
+  {
+    "id": "CSE201-01",
+    "name": "객체지향 프로그래밍(이,공)",
+    "prof": "김백규",
+    "credit": 3,
+    "categories": [
+      "컴퓨터공학"
+    ],
+    "fixedTypes": [
+      "전공필수"
+    ],
+    "trackRelations":{
+      "전자공학": "전공선택",
+      "컴퓨터공학": "전공필수"
+    },
+    "times": [
+      {
+        "day": 1,
+        "start": 15,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 15,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-233",
+    "syllabus": {
+      "capacity": "100",
+      "contact": {
+        "email": "bkim@dgist.ac.kr",
+        "phone": "010-8770-8555",
+        "office": "E3-211",
+        "office_hours": "TBA"
+      },
+      "summary": "Object-oriented programming is one of the programming paradigms that involves designing and programming centered around objects. In this course, you will learn the concepts of object-oriented programming through C++, one of the languages that supports object-oriented concepts, and understand how to apply these concepts through project execution.",
+      "methods": [
+        "Lecture",
+        "Project",
+        "Presentation"
+      ],
+      "materials": "Programming Practice Environment (Personal Computer) ",
+      "policies": "□ Class attendance is important □ Since it is difficult to develop C++ programming skills through lectures alone, individual practice must be conducted concurrently.",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:Introduction to Object-Oriented Programming and Basics of C++",
+        "2주차:Pointers, Arrays, Structures",
+        "3주차:Memory Allocation, Input/Output",
+        "4주차:Class Abstraction and Encapsulation",
+        "5주차:Inheritance, Polymorphism",
+        "6주차:Operator Overloading",
+        "7주차:Virtual Functions, Multiple Inheritance",
+        "8주차:Midterm Exam",
+        "9주차:Exception Handling and Testing",
+        "10주차:C++ Standard Library, Strings, Streams",
+        "11주차:Algorithms, Iterators, Function Objects",
+        "12주차:Object-Oriented Design",
+        "13주차:Design Patterns",
+        "14주차:Group Presentations",
+        "15주차:Review / Guest Lectures",
+        "16주차:Final Exam"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "CSE202-01",
+    "name": "이산수학(이,공)",
+    "prof": "신동훈",
+    "credit": 3,
+    "categories": [
+      "컴퓨터공학"
+    ],
+    "fixedTypes": [
+      "전공필수"
+    ],
+    "trackRelations":{
+      "전자공학": "전공선택",
+      "컴퓨터공학": "전공필수"
+    },
+    "times": [
+      {
+        "day": 2,
+        "start": 9,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 9,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-236",
+    "syllabus": {
+      "capacity": "100",
+      "contact": {
+        "email": "dshin@dgist.ac.kr",
+        "phone": "010-3271-4849",
+        "office": "E3-310",
+        "office_hours": "화요일 11:00-12:00"
+      },
+      "summary": "[Computer Science] The purpose of this course is to provide essential mathematical tools for those studying Computer Science. ",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "About Homework, - Late penalty: 50% (until 2 days after due) About attendance,  - Late penalty: 0.5 points (until 30 minutes after start) - Failure for 6 absences  (If there are no international students, the lectures will be delivered in Korean.)",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 40
+        },
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Homework",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "Discrete Mathematics, 7th ed. (Richard Johnsonbaugh / n.d.)"
+      ]
+    }
+  },
+  {
+    "id": "CSE204-01",
+    "name": "인공지능기초(공)",
+    "prof": "배인환",
+    "credit": 3,
+    "categories": [
+      "컴퓨터공학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 11,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 11,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-L29",
+    "syllabus": {
+      "capacity": "120",
+      "contact": {
+        "email": "inhwanbae@dgist.ac.kr",
+        "phone": "053-785-6332",
+        "office": "E3-613",
+        "office_hours": "TBA"
+      },
+      "summary": "This course introduces basic concepts of artificial intelligence, covering topics from machine learning to deep learning. It includes mathematical fundamentals, Bayesian methods, and applications such as computer vision, natural language processing, and robotics.",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "This class is recommended for students who are familiar with Python programming and with general mathematics (linear algebra and calculus)",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 35
+        },
+        {
+          "name": "Final exam",
+          "percent": 35
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Homework",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:Introduction to Artificial Intelligence",
+        "2주차:Intelligent Agents",
+        "3주차:Problem Solving",
+        "4주차:Logic Agents &amp; Bayes’ Rule",
+        "5주차:Bayesian networks",
+        "6주차:Machine Learning, Part 1",
+        "7주차:Machine Learning, Part 2",
+        "8주차:Midterm exam",
+        "9주차:Machine Learning, Part 3",
+        "10주차:AI/ML/DL overview",
+        "11주차:Neural networks, Part 1",
+        "12주차:Neural networks, Part 2",
+        "13주차:Basic models – CNN/RNN/Transformer",
+        "14주차:Computer Vision(CV) + Natural Language Processing(NLP)",
+        "15주차:Robotics",
+        "16주차:Final exam"
+      ],
+      "textbook": [
+        "Artificial Intelligence: A Modern Approach, Fourth edition (Stuart Russell and Peter Norvig / 2020)"
+      ]
+    }
+  },
+  {
+    "id": "CSE205-01",
+    "name": "계산이론(이,공)",
+    "prof": "전민석",
+    "credit": 3,
+    "categories": [
+      "컴퓨터공학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 13,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 13,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-241",
+    "syllabus": {
+      "capacity": "60",
+      "contact": {
+        "email": "TBA",
+        "phone": "010-4139-4729",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "This course provides a systematic introduction to the mathematical foundations of computer science. Building on mathematical preliminaries such as set theory, logic, and induction, the course covers three core topics. First, students study finite automata, regular expressions, and the properties of regular languages to understand the simplest computational models. Second, context-free languages and pushdown automata are explored to describe the grammatical structure of programming languages. Third, students examine the origins of computer science and study Turing machines — the theoretical model underlying modern computers — in both standard and extended forms, gaining insight into the nature of computability, undecidability (including the Halting Problem), and computational complexity through P, NP, and NP-completeness theory. ",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance: Regular attendance is strongly encouraged and essential for success in this course. Students are responsible for all material covered in class, including announcements and assignment details. Classroom Conduct: Students are expected to maintain a respectful and professional learning environment. Disruptive behavior, including inappropriate use of electronic devices, will not be tolerated.",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 45
+        },
+        {
+          "name": "Final exam",
+          "percent": 45
+        },
+        {
+          "name": "Attendance & Participation",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:Introduction",
+        "2주차:Mathematical Preliminaries",
+        "3주차:Finite Automata",
+        "4주차:Regular Languages & Regular Expressions",
+        "5주차:Properties of Regular Languages",
+        "6주차:Context-free Languages",
+        "7주차:Simplifications and Normal Forms",
+        "8주차:Midterm Exam",
+        "9주차:Pushdown Automata",
+        "10주차:Properties of Context-free Languages",
+        "11주차:The Origin of Computer Science ",
+        "12주차:Standard Turing Machines",
+        "13주차:Extensions of Turing Machines",
+        "14주차:Undecidability / Limits of Algorithmic Computation",
+        "15주차:P, NP, and NP-completeness",
+        "16주차:Final Exam"
+      ],
+      "textbook": [
+        "Introduction to Automata Theory, Languages, and Computation (John E. Hopcroft, Rajeev Motwani, Jeffrey D. Ullman. / n.d.)"
+      ]
+    }
+  },
+  {
+    "id": "CSE301-01",
+    "name": "컴퓨터 알고리즘(이,공)",
+    "prof": "좌훈승",
+    "credit": 3,
+    "categories": [
+      "컴퓨터공학"
+    ],
+    "fixedTypes": [
+      "전공필수"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 13,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 13,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-242",
+    "syllabus": {
+      "capacity": "100",
+      "contact": {
+        "email": "chwahs@dgist.ac.kr",
+        "phone": "010-2056-9985",
+        "office": "E3-313",
+        "office_hours": "by appointment"
+      },
+      "summary": "● Algorithmic Analysis (2 lectures)  ● Divide and Conquer (2 lectures)  ● Linear-Time Sorting (1 lecture)  ● Randomized Algorithms (2 lectures)  ● Tree Algorithms (2 lectures)  ● Graph Algorithms (3 lectures)  ● Dynamic Programming (2 lectures)  ● Greedy Algorithms (2 lectures)  ● Advanced Algorithms (2 lectures)  ● NP-completeness (1 lecture)",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 30
+        },
+        {
+          "name": "Quiz",
+          "percent": 5
+        },
+        {
+          "name": "Final exam",
+          "percent": 30
+        },
+        {
+          "name": "Class Participation",
+          "percent": 5
+        },
+        {
+          "name": "Homework",
+          "percent": 30
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "Introduction to algorithms (Cormen, Thomas H / 2022)"
+      ]
+    }
+  },
+  {
+    "id": "CSE303-01",
+    "name": "딥러닝개론(공)",
+    "prof": "박대희",
+    "credit": 3,
+    "categories": [
+      "컴퓨터공학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "trackRelations":{
+      "전자공학": "전공선택",
+      "컴퓨터공학": "전공선택"
+    },
+    "times": [
+      {
+        "day": 1,
+        "start": 15,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 15,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-236",
+    "syllabus": {
+      "capacity": "TBA",
+      "contact": {
+        "email": "TBA",
+        "phone": "TBA",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "TBA",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "TBA"
+      ]
+    }
+  },
+  {
+    "id": "CSE304-01",
+    "name": "운영체제(공)",
+    "prof": "이용우",
+    "credit": 3,
+    "categories": [
+      "컴퓨터공학"
+    ],
+    "fixedTypes": [
+      "전공필수"
+    ],
+    "trackRelations":{
+      "전자공학": "전공선택",
+      "컴퓨터공학": "전공필수"
+    },
+    "times": [
+      {
+        "day": 1,
+        "start": 16.5,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 16.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-236",
+    "syllabus": {
+      "capacity": "100",
+      "contact": {
+        "email": "yongwoo@dgist.ac.kr",
+        "phone": "010-3857-6847",
+        "office": "E3-214",
+        "office_hours": "월요일, 수요일 14:00-16:30"
+      },
+      "summary": "This course introduces the basic concept of operating systems, which includes process management, memory management, file systems, and I/O management, and provides a detailed explanation of how those concepts are designed and implemented in modern operating systems. In addition to this, this course provides a set of comprehensive programming homeworks and laboratories to help students improve practical system programming skills in UNIX-like operating systems (e.g., GNU/Linux).",
+      "methods": [
+        "Lecture",
+        "Project"
+      ],
+      "materials": "TBA",
+      "policies": "Prerequisite: Students must be familiar with C or C++ programming.",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 30
+        },
+        {
+          "name": "Final exam",
+          "percent": 30
+        },
+        {
+          "name": "Homework & Quiz",
+          "percent": 30
+        },
+        {
+          "name": "Class Participation",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:Introduction / What is OS",
+        "2주차:From Program to Process / Limited Direct Execution",
+        "3주차:Process Scheduling / Proportional Share Scheduling",
+        "4주차:Concurrency / Lock",
+        "5주차:Semaphore / Deadlock",
+        "6주차:Multi-CPU Scheduling",
+        "7주차:Virtual Memory",
+        "8주차:Midterm",
+        "9주차:Address Translation / Segmentation / Free-space Management",
+        "10주차:Paging / Paging – TLB / Paging – Smaller Table",
+        "11주차:Swapping – Mechanism / Swapping – Policy",
+        "12주차:I/O Devices / HDDs and RAID",
+        "13주차:Flash-based SSDs / File and Directory",
+        "14주차:File-system Implementation / Fast File System",
+        "15주차:FSCK and Journaling / LFS",
+        "16주차:Final"
+      ],
+      "textbook": [
+        "Operating systems : three easy pieces (Arpaci-Dusseau, Remzi H / 2018)",
+        "Operating system concepts (Galvin, Peter B / 2013)"
+      ]
+    }
+  },
+  {
+    "id": "CSE401-01",
+    "name": "데이터베이스개론(공)",
+    "prof": "장준기",
+    "credit": 3,
+    "categories": [
+      "컴퓨터공학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 14.5,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 14.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-G01",
+    "syllabus": {
+      "capacity": "30",
+      "contact": {
+        "email": "TBA",
+        "phone": "TBA",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "This course introduces the fundamental concepts and principles of database systems, including the relational data model, SQL, database design, normalization, indexing, query processing, transactions, concurrency control, recovery, and selected modern database applications such as distributed databases, big data systems, data analysis, and information retrieval.",
+      "methods": [
+        "Lecture",
+        "Experiment"
+      ],
+      "materials": "TBA",
+      "policies": "Students are expected to attend classes regularly, participate actively, and respect the learning environment. Laptops, tablets, and other electronic devices may be used only for class-related purposes, such as note-taking or in-class activities. Attendance, lateness, and absences may be reflected in the final grade according to the course and university policies. Assignments must be submitted by the deadline, and late submissions may be penalized unless prior approval is given.",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 35
+        },
+        {
+          "name": "Final exam",
+          "percent": 35
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Homework",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:Introduction to Database Systems",
+        "2주차:Relational Data Model",
+        "3주차:Basic SQL",
+        "4주차:Intermediate SQL",
+        "5주차:Database Design",
+        "6주차:Relational Database Design and Normalization",
+        "7주차:Data Storage Structures",
+        "8주차:Midterm Exam",
+        "9주차:Indexing",
+        "10주차:Query Processing and Optimization",
+        "11주차:Transactions",
+        "12주차:Concurrency Control",
+        "13주차:Recovery Systems",
+        "14주차:Parallel and Distributed Databases",
+        "15주차:Modern Database Applications",
+        "16주차:Final Exam"
+      ],
+      "textbook": [
+        "Database system concepts (Silberschatz, Abraham / 2020)"
+      ]
+    }
+  },
+  {
+    "id": "CSE403-01",
+    "name": "컴퓨터 네트워크(이,공)",
+    "prof": "미배정",
+    "credit": 3,
+    "categories": [
+      "컴퓨터공학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "trackRelations":{
+      "전자공학": "전공선택",
+      "컴퓨터공학": "전공선택"
+    },
+    "times": [
+      {
+        "day": 2,
+        "start": 9,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 9,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-L20",
+    "syllabus": {
+      "capacity": "TBA",
+      "contact": {
+        "email": "TBA",
+        "phone": "TBA",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "TBA",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "TBA"
+      ]
+    }
+  },
+  {
+    "id": "EE201-01",
+    "name": "디지털 논리회로(공)",
+    "prof": "유재석",
+    "credit": 3,
+    "categories": [
+      "전자공학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "trackRelations":{
+      "전자공학": "전공선택",
+      "컴퓨터공학": "전공선택"
+    },
+    "times": [
+      {
+        "day": 1,
+        "start": 13,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 13,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-223",
+    "syllabus": {
+      "capacity": "60",
+      "contact": {
+        "email": "jaesok.yu@dgist.ac.kr",
+        "phone": "010-5160-7870",
+        "office": "E5-309",
+        "office_hours": "TBD"
+      },
+      "summary": "This course aims to train students to develop basic techniques and practical skills necessary to design modern digital systems. It covers logic design fundamentals, modern design tools and digital design with HDLs.",
+      "methods": [
+        "Lecture",
+        "Project",
+        "Presentation"
+      ],
+      "materials": "VHDL 을 응용한 Term Project 가 있음. 언어에 대해서는 기본적인 내용은 안내해주지만, 상세한 내용은 수강생의 자기주도 학습이 요구됨.",
+      "policies": "출결 점수 반영",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 20
+        },
+        {
+          "name": "Final exam",
+          "percent": 30
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Term Project",
+          "percent": 40
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "Logic and computer design fundamentals (Mano, M. Morris / 2016)",
+        "Fundamentals of digital logic with VHDL design (Brown, Stephen D / 2009)"
+      ]
+    }
+  },
+  {
+    "id": "EE302-01",
+    "name": "전자소자개론(공)",
+    "prof": "한상윤",
+    "credit": 3,
+    "categories": [
+      "전자공학"
+    ],
+    "fixedTypes": [
+      "전공필수"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 10.5,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 10.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-224",
+    "syllabus": {
+      "capacity": "50",
+      "contact": {
+        "email": "s.han@dgist.ac.kr",
+        "phone": "010-7101-8173",
+        "office": "E5-308",
+        "office_hours": "TBA"
+      },
+      "summary": "For the last few decades, microelectronics industry has shown tremendous innovation and improvements. The ground-breaking innovations came along with the advancements of electronic devices. It enabled mobile electronic systems, and allowing analog/digital logic circuit implementations for various applications such as signal processing, optoelectronic devices, sensors, and photovoltaic cells.  In this course, first, we will start by reviewing fundamentals of semiconductor physics. Then we will study electronic devices based on semiconductor materials in detail. After that, we will study modern semiconductor devices such as FinFET. At last,  applications of the semiconductor devices in memory devices will be studied. ",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "Attendance is highly recommended.  Active participation in the lecture is encouraged.",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 30
+        },
+        {
+          "name": "Final exam",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Quiz",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:Semiconductor fundamentals 1",
+        "2주차:Semiconductor fundamentals 2",
+        "3주차:PN junction",
+        "4주차:Metal-semiconductor contacts (Schottky diodes)",
+        "5주차:Metal-oxide-semiconductor fundamentals 1",
+        "6주차:Metal-oxide-semiconductor fundamentals 2",
+        "7주차:MOSFETs: ideal",
+        "8주차:Mid-term exam",
+        "9주차:MOSFETs: electrostatics",
+        "10주차:MOSFETs: C-V characteristics",
+        "11주차:MOSFETs: nonideal",
+        "12주차:CMOS inverters",
+        "13주차:FinFET",
+        "14주차:Memory devices 1",
+        "15주차:Memory devices 2",
+        "16주차:Final exam"
+      ],
+      "textbook": [
+        "Semiconductor device fundamentals (Robert F. Pierret / 2018)",
+        "Modern semiconductor devices for integrated circuits (Chenming Hu / 2019)"
+      ]
+    }
+  },
+  {
+    "id": "EE305-01",
+    "name": "통신의 기초(공)",
+    "prof": "최지웅",
+    "credit": 3,
+    "categories": [
+      "전자공학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 13,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 13,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-224",
+    "syllabus": {
+      "capacity": "40",
+      "contact": {
+        "email": "jwchoi@dgist.ac.kr",
+        "phone": "010-5334-6849",
+        "office": "E3-514",
+        "office_hours": "화요일, 목요일 14:30-15:30"
+      },
+      "summary": "Introduction to the basic principles of communication theory and systems. Topics include basic principles of communication theory, review of signal & systems, probability theory and random signals, analog communication such as baseband/passband modulation/demodulation techniques and performance analysis.",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 30
+        },
+        {
+          "name": "Final exam",
+          "percent": 30
+        },
+        {
+          "name": "Homework",
+          "percent": 30
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:Introduction 1",
+        "2주차:Introduction 2",
+        "3주차:Review of signals and systems 1",
+        "4주차:Review of signals and systems 2",
+        "5주차:Analog signal transmission and reception 1",
+        "6주차:Analog signal transmission and reception 2",
+        "7주차:Analog signal transmission and reception 3",
+        "8주차:Mid-term exam",
+        "9주차:Review of probability and random processes 1",
+        "10주차:Review of probability and random processes 2",
+        "11주차:Performance of analog communication systems 1",
+        "12주차:Performance of analog communication systems 2",
+        "13주차:Performance of analog communication systems 3",
+        "14주차:Performance of analog communication systems 4",
+        "15주차:Review",
+        "16주차:Final exam"
+      ],
+      "textbook": [
+        "Essentials of Communication Systems Engineering (J. G. Proakis and M. Salehi / 2005)",
+        "Principles of Communications (R. E. Ziemer and W. H. Tranter / 2010)"
       ]
     }
   }
