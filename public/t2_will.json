@@ -7683,5 +7683,1119 @@
         "The handbook of science and technology studies (Felt, Ulrike / 2017)"
       ]
     }
+  },
+  {
+    "id": "HSS103-01",
+    "name": "법과 사회",
+    "prof": "김현희",
+    "credit": 3,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 5,
+        "start": 9,
+        "duration": 3
+      }
+    ],
+    "room": "E7-L20",
+    "syllabus": {
+      "capacity": "40",
+      "contact": {
+        "email": "tufruf@dgist.ac.kr",
+        "phone": "010-4697-2039",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "본 강좌에서는 뉴스 및 일상생활에서 접하게 되는 다양한 법률 이슈에 관해 살펴보고 기본적인 법률개념을 배우며 법적인 사안의 기초적인 이해와 접근방법을 익힌다.",
+      "methods": [
+        "Lecture",
+        "Discussion",
+        "Presentation"
+      ],
+      "materials": "현재의 수업계획은 수정될 수 있습니다.",
+      "policies": "수업시간에 핸드폰 사용 금지.  수업 중 법령 관련 내용 검색을 위해 노트북 또는 태블릿PC 지참 필요. 단, 필기 및 검색 등 수업과 관련해서만 사용하여야 함.",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 35
+        },
+        {
+          "name": "Final exam",
+          "percent": 35
+        },
+        {
+          "name": "Attendance",
+          "percent": 15
+        },
+        {
+          "name": "Class Participation",
+          "percent": 15
+        }
+      ],
+      "schedule": [
+        "1주차:Introduction",
+        "2주차:기본 법령 체계, 법의 일반원칙, 민사와 형사의 구분, 소송절차",
+        "3주차:민법의 기초 -권리의 주체, 법률행위",
+        "4주차:소멸시효, 권리의 체계",
+        "5주차:물권 변동, 부동산 임대차(전)",
+        "6주차:부동산 임대차(후), 부동산등기부등본의 검토",
+        "7주차:전반부 학습내용 정리",
+        "8주차:중간고사",
+        "9주차:회사의 설립 및 운영",
+        "10주차:형법의 기초",
+        "11주차:개인정보보호법",
+        "12주차:도로교통과 법",
+        "13주차:SNS와 법",
+        "14주차:지식재산권법",
+        "15주차:후반부 학습내용 정리",
+        "16주차:기말고사"
+      ],
+      "textbook": [
+        " ( / )"
+      ]
+    }
+  },
+  {
+    "id": "HSS108-01",
+    "name": "비교역사학",
+    "prof": "이원근",
+    "credit": 3,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 10.5,
+        "duration": 3
+      }
+    ],
+    "room": "E7-G03",
+    "syllabus": {
+      "capacity": "34",
+      "contact": {
+        "email": "lwkuh84@dgist.ac.kr",
+        "phone": "TBA",
+        "office": "TBA",
+        "office_hours": "Before/after class"
+      },
+      "summary": "This course aims to understand and discuss modern and contemporary world history from a comparative history perspective.",
+      "methods": [
+        "Lecture",
+        "Discussion"
+      ],
+      "materials": "Lecture slides will serve as the primary course material, with supplementary materials provided as needed.",
+      "policies": "Students are expected to attend classes regularly, actively participate in discussions, and complete all reports and essay assignments.",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 30
+        },
+        {
+          "name": "Final exam",
+          "percent": 30
+        },
+        {
+          "name": "Attendance",
+          "percent": 20
+        },
+        {
+          "name": "Class Participation",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:Orientation",
+        "2주차:Introduction to History and Comparative History / The Formation of the Modern World",
+        "3주차:The Formation of Modern States and Revolutions",
+        "4주차:Group Discussion 1",
+        "5주차:Imperialism and Colonialism",
+        "6주차:Group Discussion 2",
+        "7주차:Imperialism and the First World War",
+        "8주차:Midterm Exam period",
+        "9주차:Group Discussion 3",
+        "10주차:The Interwar Period and the Second World War",
+        "11주차:Group Discussion 4",
+        "12주차:The Cold War 1: U.S., U.S.S.R, and the Third World",
+        "13주차:Group Discussion 5",
+        "14주차:The Cold War 2: Asia and Korea",
+        "15주차:Group Discussion 6",
+        "16주차:Final Exam Period"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "HSS109a-01",
+    "name": "학술 글쓰기",
+    "prof": "배하은",
+    "credit": 3,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 10.5,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 10.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-242",
+    "syllabus": {
+      "capacity": "29",
+      "contact": {
+        "email": "haeunbae@dgist.ac.kr",
+        "phone": "053-785-6645",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": " 이 강좌에서는 대학에서의 학술 활동에 필요한 논리적·비판적 글쓰기와 사고 능력을 기른다. 학술 글쓰기를 위한 기초적인 정서법과 문단 구성에서부터 주제 구상과 설계 및 내용 조직, 집필에 이르는 글쓰기의 구체적인 방법을 단계별로 학습하고 직접 글로 쓰는 과정을 거친다. 이와 함께 다양한 텍스트를 섭렵하고, 발표, 토론 및 상호 논평(peer review) 활동을 종합적으로 수행한다.",
+      "methods": [
+        "Lecture",
+        "Discussion",
+        "Presentation"
+      ],
+      "materials": "TBA",
+      "policies": "- 중간고사는 01, 02, 03, 04, 05분반 공통 논술형 지필 고사로 시행하며, 기말고사는 팀 프로젝트 결과물로 대체한다.  - 팀 프로젝트 수업 중 토론과 상호 논평(peer review)이 진행되며, 이를 수업 참여도 성적에 반영한다.  - office hour를 이용하여 수업 및 과제에 대한 개별 상담을 받을 수 있다.   - 과제물은 기한 내에 제출해야 하며, 기한을 넘긴 과제물은 감점을 받는다.  - 과제물 제출은 LMS 과제함 제출을 원칙으로 하며, 제출 여부를 반드시 확인하여 불이익이 없도록 한다.",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 30
+        },
+        {
+          "name": "Homework",
+          "percent": 20
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Term Project",
+          "percent": 30
+        },
+        {
+          "name": "Class Participation",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:강의 안내 / 과학도와 글쓰기",
+        "2주차:정확한 문장 쓰기",
+        "3주차:효과적인 문단 구성",
+        "4주차:글쓰기의 방법(1): 설명",
+        "5주차:글쓰기의 방법(1): 논증",
+        "6주차:글쓰기의 방법(2): 주제 설정과 개요 작성",
+        "7주차:글쓰기의 윤리",
+        "8주차:중간고사",
+        "9주차:연구 주제 탐구와 설계(1)",
+        "10주차:연구 주제 탐구와 설계(2)",
+        "11주차:감솽과 비평(1)",
+        "12주차:감상과 비평(2)",
+        "13주차:팀 프로젝트(1): 연구 계획서 발표 및 토론",
+        "14주차:팀 프로젝트(2): 연구 계획서 발표 및 토론",
+        "15주차:팀 프로젝트(3): 연구 계획서 발표 및 토론",
+        "16주차:기말고사"
+      ],
+      "textbook": [
+        "대학 글쓰기1 (서울대학교 대학글쓰기1 교재편찬위원회 편 / 2026)"
+      ]
+    }
+  },
+  {
+    "id": "HSS109a-02",
+    "name": "학술 글쓰기",
+    "prof": "임희현",
+    "credit": 3,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 4,
+        "start": 9.5,
+        "duration": 3
+      }
+    ],
+    "room": "E7-235",
+    "syllabus": {
+      "capacity": "29",
+      "contact": {
+        "email": "heehyun@dgist.ac.kr",
+        "phone": "010-3062-4177",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "이 강좌에서는 대학에서의 학술 활동에 필요한 논리적·비판적 글쓰기와 능력을 기른다. 학술 글쓰기를 위한 기초적인 정서법과 문단 구성에서부터 주제 구상과 설계 및 내용 조직, 집필에 이르는 글쓰기의 구체적인 방법을 단계별로 학습하고 직접 글로 쓰는 과정을 거친다. 이와 함께 다양한 텍스트를 섭렵하고, 발표, 토론 및 상호 논평(peer review) 활동을 종합적으로 수행한다.",
+      "methods": [
+        "Lecture",
+        "Discussion",
+        "Presentation"
+      ],
+      "materials": "TBA",
+      "policies": "■ 수업 및 과제에 대한 첨삭과 개별 상담을 받을 수 있다. ■ 과제물은 기한 내에 제출해야 하며, 기한을 넘긴 과제물은 감점을 받는다. ■ 모든 과제물 작성 시 인용법, 주석과 참고 문헌 형식을 정확히 지켜야 하며, 연구 및 글쓰기 윤리를 준수하도록 한다.",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 30
+        },
+        {
+          "name": "Homework",
+          "percent": 20
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Class Participation",
+          "percent": 10
+        },
+        {
+          "name": "Term Project",
+          "percent": 30
+        }
+      ],
+      "schedule": [
+        "1주차:introduction",
+        "2주차:정확한 문장 쓰기",
+        "3주차:효과적인 문단 구성",
+        "4주차:글쓰기의 방법(1)",
+        "5주차:글쓰기의 방법(2)",
+        "6주차:주제 구상과 개요 작성",
+        "7주차:글쓰기의 윤리",
+        "8주차:중간고사",
+        "9주차:연구 주제의 구상과 설계",
+        "10주차:연구 계획서 작성",
+        "11주차:감상과 비평(1)",
+        "12주차:감상과 비평(2)",
+        "13주차:팀 프로젝트(1)",
+        "14주차:팀 프로젝트(2)",
+        "15주차:팀 프로젝트(3)",
+        "16주차:기말고사"
+      ],
+      "textbook": [
+        "대학 글쓰기1 (서울대학교 대학글쓰기1 교재편찬위원회 편 / 2026)"
+      ]
+    }
+  },
+  {
+    "id": "HSS109a-03",
+    "name": "학술 글쓰기",
+    "prof": "임희현",
+    "credit": 3,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 4,
+        "start": 14,
+        "duration": 3
+      }
+    ],
+    "room": "E7-233",
+    "syllabus": {
+      "capacity": "29",
+      "contact": {
+        "email": "heehyun@dgist.ac.kr",
+        "phone": "010-3062-4177",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "이 강좌에서는 대학에서의 학술 활동에 필요한 논리적·비판적 글쓰기와 능력을 기른다. 학술 글쓰기를 위한 기초적인 정서법과 문단 구성에서부터 주제 구상과 설계 및 내용 조직, 집필에 이르는 글쓰기의 구체적인 방법을 단계별로 학습하고 직접 글로 쓰는 과정을 거친다. 이와 함께 다양한 텍스트를 섭렵하고, 발표, 토론 및 상호 논평(peer review) 활동을 종합적으로 수행한다.",
+      "methods": [
+        "Lecture",
+        "Discussion",
+        "Presentation"
+      ],
+      "materials": "TBA",
+      "policies": "■ 수업 및 과제에 대한 첨삭과 개별 상담을 받을 수 있다. ■ 과제물은 기한 내에 제출해야 하며, 기한을 넘긴 과제물은 감점을 받는다. ■ 모든 과제물 작성 시 인용법, 주석과 참고 문헌 형식을 정확히 지켜야 하며, 연구 및 글쓰기 윤리를 준수하도록 한다.",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 30
+        },
+        {
+          "name": "Homework",
+          "percent": 20
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Class Participation",
+          "percent": 10
+        },
+        {
+          "name": "Term Project",
+          "percent": 30
+        }
+      ],
+      "schedule": [
+        "1주차:introduction",
+        "2주차:정확한 문장 쓰기",
+        "3주차:효과적인 문단 구성",
+        "4주차:글쓰기의 방법(1)",
+        "5주차:글쓰기의 방법(2)",
+        "6주차:주제 구상과 개요 작성",
+        "7주차:글쓰기의 윤리",
+        "8주차:중간고사",
+        "9주차:연구 주제의 구상과 설계",
+        "10주차:연구 계획서 작성",
+        "11주차:감상과 비평(1)",
+        "12주차:감상과 비평(2)",
+        "13주차:팀 프로젝트(1)",
+        "14주차:팀 프로젝트(2)",
+        "15주차:팀 프로젝트(3)",
+        "16주차:기말고사"
+      ],
+      "textbook": [
+        "대학 글쓰기1 (서울대학교 대학글쓰기1 교재편찬위원회 편 / 2026)"
+      ]
+    }
+  },
+  {
+    "id": "HSS109a-04",
+    "name": "학술 글쓰기",
+    "prof": "전계성",
+    "credit": 3,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 5,
+        "start": 9,
+        "duration": 3
+      }
+    ],
+    "room": "E7-G01",
+    "syllabus": {
+      "capacity": "29",
+      "contact": {
+        "email": "jjkksss@naver.com",
+        "phone": "010-2740-2500",
+        "office": "TBA",
+        "office_hours": "수업 후"
+      },
+      "summary": "이 강좌에서는 대학에서의 학술 활동에 필요한 논리적·비판적 글쓰기와 능력을 기른다. 학술 글쓰기를 위한 기초적인 정서법과 문단 구성에서부터 주제 구상과 설계 및 내용 조직, 집필에 이르는 글쓰기의 구체적인 방법을 단계별로 학습하고 직접 글로 쓰는 과정을 거친다. 이와 함께 다양한 텍스트를 섭렵하고, 발표, 토론 및 상호 논평(peer review) 활동을 종합적으로 수행한다.",
+      "methods": [
+        "Lecture",
+        "Discussion",
+        "Presentation"
+      ],
+      "materials": "*준비물: 노트북 컴퓨터 등 문서작업 및 LMS 업로드가 가능한 기기  *기타: 9월 25일(금) 추석, 10월 9일(금) 한글날 공휴일 휴강으로 이 수업의 6주차에 학사일정 상 8주가 도래함에 유의. 12월 4일(금) 은 담당교수의 학술대회 일정으로 휴강 예정. 10월 19일(월) 18시 보강 협의 예정.",
+      "policies": "수업 및 과제에 대한 첨삭과 개별 상담을 받을 수 있다. 과제물은 기한 내에 제출해야 하며, 기한을 넘긴 과제물은 감점을 받는다. 모든 과제물 작성 시 인용법, 주석과 참고 문헌 형식을 정확히 지켜야 하며, 연구 및 글쓰기 윤리를 준수하도록 한다.",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 30
+        },
+        {
+          "name": "Homework",
+          "percent": 20
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Class Participation",
+          "percent": 10
+        },
+        {
+          "name": "Term Project",
+          "percent": 30
+        }
+      ],
+      "schedule": [
+        "1주차:introduction",
+        "2주차:정확한 문장 쓰기",
+        "3주차:효과적인 문단 구성",
+        "4주차:글쓰기의 방법(1) 정의하기",
+        "5주차:글쓰기의 방법(2) 논증하기",
+        "6주차:중간고사",
+        "7주차:감상과 비평(1) 영화 시청",
+        "8주차:감상과 비평(2) 비평문 작성",
+        "9주차:글쓰기의 윤리, 연구개발 주제의 구상과 설계",
+        "10주차:팀 프로젝트(1) 주제 확정, 선행연구 검토",
+        "11주차:팀 프로젝트(2) 연차별 연구개발계획서 작성",
+        "12주차:팀 프로젝트(3) 연차별 연구개발계획서 작성",
+        "13주차:팀 프로젝트(4) 연구개발계획서 양식 완성",
+        "14주차:연구개발계획서 1차 발표",
+        "15주차:연구개발계획서 최종 발표 및 상호평가 후 종강",
+        "16주차:수업 없음. 기말고사는 연구개발계획서 제출로 대신함."
+      ],
+      "textbook": [
+        "대학 글쓰기1 (서울대학교 대학글쓰기1 교재편찬위원회 편 / 2026)"
+      ]
+    }
+  },
+  {
+    "id": "HSS109a-05",
+    "name": "학술 글쓰기",
+    "prof": "전계성",
+    "credit": 3,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 5,
+        "start": 14,
+        "duration": 3
+      }
+    ],
+    "room": "E7-G01",
+    "syllabus": {
+      "capacity": "29",
+      "contact": {
+        "email": "jjkksss@naver.com",
+        "phone": "010-2740-2500",
+        "office": "TBA",
+        "office_hours": "수업 후"
+      },
+      "summary": "이 강좌에서는 대학에서의 학술 활동에 필요한 논리적·비판적 글쓰기와 능력을 기른다. 학술 글쓰기를 위한 기초적인 정서법과 문단 구성에서부터 주제 구상과 설계 및 내용 조직, 집필에 이르는 글쓰기의 구체적인 방법을 단계별로 학습하고 직접 글로 쓰는 과정을 거친다. 이와 함께 다양한 텍스트를 섭렵하고, 발표, 토론 및 상호 논평(peer review) 활동을 종합적으로 수행한다.",
+      "methods": [
+        "Lecture",
+        "Discussion",
+        "Presentation"
+      ],
+      "materials": "*준비물: 노트북 컴퓨터 등 문서작업 및 LMS 업로드가 가능한 기기  *기타: 9월 25일(금) 추석, 10월 9일(금) 한글날 공휴일 휴강으로 이 수업의 6주차에 학사일정 상 8주가 도래함에 유의. 12월 4일(금) 은 담당교수의 학술대회 일정으로 휴강 예정. 10월 19일(월) 18시 보강 협의 예정.",
+      "policies": "수업 및 과제에 대한 첨삭과 개별 상담을 받을 수 있다. 과제물은 기한 내에 제출해야 하며, 기한을 넘긴 과제물은 감점을 받는다. 모든 과제물 작성 시 인용법, 주석과 참고 문헌 형식을 정확히 지켜야 하며, 연구 및 글쓰기 윤리를 준수하도록 한다.",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 30
+        },
+        {
+          "name": "Homework",
+          "percent": 20
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Class Participation",
+          "percent": 10
+        },
+        {
+          "name": "Term Project",
+          "percent": 30
+        }
+      ],
+      "schedule": [
+        "1주차:introduction",
+        "2주차:정확한 문장 쓰기",
+        "3주차:효과적인 문단 구성",
+        "4주차:글쓰기의 방법(1) 정의하기",
+        "5주차:글쓰기의 방법(2) 논증하기",
+        "6주차:중간고사",
+        "7주차:감상과 비평(1) 영화 시청",
+        "8주차:감상과 비평(2) 비평문 작성",
+        "9주차:글쓰기의 윤리, 연구개발 주제의 구상과 설계",
+        "10주차:팀 프로젝트(1) 주제 확정, 선행연구 검토",
+        "11주차:팀 프로젝트(2) 연차별 연구개발계획서 작성",
+        "12주차:팀 프로젝트(3) 연차별 연구개발계획서 작성",
+        "13주차:팀 프로젝트(4) 연구개발계획서 양식 완성",
+        "14주차:연구개발계획서 1차 발표",
+        "15주차:연구개발계획서 최종 발표 및 상호평가 후 종강",
+        "16주차:수업 없음. 기말고사는 연구개발계획서 제출로 대신함."
+      ],
+      "textbook": [
+        "대학 글쓰기1 (서울대학교 대학글쓰기1 교재편찬위원회 편 / 2026)"
+      ]
+    }
+  },
+  {
+    "id": "HSS112-01",
+    "name": "사회학의 이해",
+    "prof": "최태섭",
+    "credit": 3,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 3,
+        "start": 9.5,
+        "duration": 3
+      }
+    ],
+    "room": "E7-L31",
+    "syllabus": {
+      "capacity": "40",
+      "contact": {
+        "email": "choi-ts@dgist.ac.kr",
+        "phone": "010-4274-0108",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "사회학에 대한 기초적인 지식을 습득하고, 사회학의 대표적인 주제들을 살펴본다. ",
+      "methods": [
+        "Lecture",
+        "Discussion",
+        "Presentation"
+      ],
+      "materials": "주교재 ",
+      "policies": "학습 보조를 목적으로 하는 IT기기 사용 가능. 사고력을 기르는 것이 수업의 중요한 목표이므로 생성형 AI활용은 제한된 범위 안에서 투명하게만 사용 가능. 출석은 규정에 따라서 처리.",
+      "grading": [
+        {
+          "name": "Homework 1",
+          "percent": 25
+        },
+        {
+          "name": "Homework 2",
+          "percent": 25
+        },
+        {
+          "name": "Attendance",
+          "percent": 25
+        },
+        {
+          "name": "Class Participation",
+          "percent": 25
+        }
+      ],
+      "schedule": [
+        "1주차:수업 및 강사 소개. 사회학에 대한 간략한 소개.",
+        "2주차:고전사회학의 등장과 발전, 한국 사회학",
+        "3주차:사회구조와 사회변동",
+        "4주차:사회화와 상호작용",
+        "5주차:국가, 시민사회, 민주주의",
+        "6주차:인구, 도시, 지역",
+        "7주차:대중문화와 일상 생활",
+        "8주차:중간고사 기간",
+        "9주차:성의 개념과 성평등",
+        "10주차:자본주의의 구조와 역사",
+        "11주차:일과 노동세계",
+        "12주차:사회불평등과 계급·계층",
+        "13주차:사회복지와 삶의 질",
+        "14주차:세계화와 정체성",
+        "15주차:과학기술, 위험, 환경",
+        "16주차:기말고사 기간"
+      ],
+      "textbook": [
+        "사회학: 비판적 시선 (정태석, 지주형 / 2023)"
+      ]
+    } 
+  },
+  {
+    "id": "HSS113-01",
+    "name": "글로벌 문화와 의사소통",
+    "prof": "이정아",
+    "credit": 3,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 9,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 9,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-L30",
+    "syllabus": {
+      "capacity": "35",
+      "contact": {
+        "email": "jalee@dgist.ac.kr",
+        "phone": "053-785-6623",
+        "office": "E7-216",
+        "office_hours": "Upon Appointment"
+      },
+      "summary": "<글로벌문화와 의사소통Introduction to Intercultural Communication>은 문화와 문화 간 의사소통에 대한 다양한 관점과 사례를 검토함으로써 1)자기 자신(의 문화)에 대한 이해를 돕고, 나아가 2)성공적인 문화간 소통에 필요한 언어적, 문화적 감수성과 실천 의지를 기르는 것을 목적으로 한다. 문화를 특정 민족/국가의 고유한 특성으로 간주하는 본질주의적 시각에 대한 비판적 검토와 더불어 문화의 역동적, 역사적, 정치적, 담론적인 성격에 주목한다. 이를 위해 전반부에 문화에 대한 차원적인 이해 관점에서 출발하여 Adrian Holliday의 문화간 의사소통 이론을 집중적으로 살핀다. 학기 후반부에는 ‘국제공용어로서의 영어(학습)’과 ‘해외연수’ 등 한국 대학생의 삶과 밀접한 관계가 있는 주제를 문화 간 의사소통의 관점에서 탐색한다. 마지막 4주 동안은 ‘디지스트 커뮤니티에 존재하는 문화적 갈등/충돌과 해결방안’을 주제로 ‘문제중심학습(PBL, Problem Based Learning)’을 활용, 학생들 스스로 문제를 정의하고 탐색하여 해결책을 제안하는 프로젝트를 진행함으로써, 문화간 의사소통의 이론과 실제에 대한 이해의 깊이를 더한다.",
+      "methods": [
+        "Lecture",
+        "Project",
+        "Presentation"
+      ],
+      "materials": "!! 중요: 보충자료 등은 가급적 우리말 자료를 사용하고자 하나, 주교재가 영어 원서임. ",
+      "policies": "* 결석 6회 초과 U/F; 결석 2회부터 1회당 -1.5점; 지각 3회 = 결석 1회  * 수업 시간 토론 및 활동에 대한 적극적인 참여 필수 * 지각은 수업 시작 후 20분 이내에 입실한 경우만 해당 * 통원확인서 제출 불가(장기치료 및 기타 사항은 개별문의)  * 2020년 포함 이후 학번 레터 학점, 2019학번 포함 이전 학번은 S/U *D+이하 = U ",
+      "grading": [
+        {
+          "name": "Class Participation",
+          "percent": 10
+        },
+        {
+          "name": "Homework",
+          "percent": 36
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Term Project",
+          "percent": 44
+        }
+      ],
+      "schedule": [
+        "1주차:강의 소개문화의 의미; 문화 다양성; 자문화중심주의",
+        "2주차:문화에 대한 정량적, 차원적 접근국가 메타포(Case Study)",
+        "3주차:국가메타포(Case Study)Adrian Holliday (2018) - 1장 The grammar of culture - 2장 Cultural practices",
+        "4주차:Adrian Holliday (2018) - 3장 Investigating culture - 4장 Constructing culture",
+        "5주차:Adrian Holliday (2018) - 5장 Dialogue with structure- 6장 Grand narratives of nation and history",
+        "6주차:Adrian Holliday (2018) - 7장 Discourses of culture- 8장 Prejudice",
+        "7주차:Adrian Holliday (2018) - 9장 Cultural travel and innovation - Wrap up",
+        "8주차:중간시험 기간 - 수업 없음.",
+        "9주차:Holliday Wrap Up세계화와 영어 - 언어와 권력, 국제공용어로서의 영어",
+        "10주차:세계화와 영어 - 원어민/비원어민담론 대학생해외연수- 정의, 현황, 목적, 효과 ",
+        "11주차:대학생해외연수- 해외연수와 몰입Immersion 담론학기 돌아보기: 학습 성찰",
+        "12주차:PBL 1차시 - PBL 소개 및 팀구성PBL 2차시 - PBL 문제 제시 - 문제 분석과 확인: 과제수행계획서 #1 작성 (가설, 사실, 학습과제, 향후계획; 과제 분담)PBL 1차시: PBL 소개/ 팀구성PBL 2차시: - PBL 문제 제시 - 문제 분석과 확인: 과제수행계획서 작성 (가설, 사실, 학습과제, 향후계획; 과제 분담)",
+        "13주차:PBL 3차시 - 개인 학습 결과 공유- 팀별 하위문제 확정- 전체 공유(동료, 교수자 피드백) - 과제수행 계획서 #2 작성(가설, 사실, 학습과제, 향후계획; 과제 분담) PBL 4차시자기주도적 개별 과업 수행",
+        "14주차:PBL 5차시- 개별 조사, 학습내용 공유, 해결안 도출을 위한 토론PBL 6차시- 해결안 도출 + 발표 준비",
+        "15주차:PBL 7, 8차시 최종결과물 프레젠테이션 및 평가",
+        "16주차:기말시험기간-수업없음"
+      ],
+      "textbook": [
+        "Understanding Intercultural Communication: Negotiating a Grammar of Culture (Adrian Holliday / 2018)"
+      ]
+    }
+  },
+  {
+    "id": "HSS115-01",
+    "name": "심리학으로의 여행",
+    "prof": "미배정",
+    "credit": 3,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 14.5,
+        "duration": 3
+      }
+    ],
+    "room": "E7-L20",
+    "syllabus": {
+      "capacity": "TBA",
+      "contact": {
+        "email": "TBA",
+        "phone": "TBA",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "TBA",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "TBA"
+      ]
+    }
+  },
+  {
+    "id": "HSS116-01",
+    "name": "인류학의 이해",
+    "prof": "미배정",
+    "credit": 3,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 15,
+        "duration": 3
+      }
+    ],
+    "room": "E7-G01",
+    "syllabus": {
+      "capacity": "TBA",
+      "contact": {
+        "email": "TBA",
+        "phone": "TBA",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "TBA",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "TBA"
+      ]
+    }
+  },
+  {
+    "id": "HSS117-01",
+    "name": "인간과 종교",
+    "prof": "박범석",
+    "credit": 3,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 4,
+        "start": 9,
+        "duration": 3
+      }
+    ],
+    "room": "E7-L30",
+    "syllabus": {
+      "capacity": "TBA",
+      "contact": {
+        "email": "TBA",
+        "phone": "TBA",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "TBA",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "TBA"
+      ]
+    }
+  },
+  {
+    "id": "HSS118-01",
+    "name": "미래소양강좌",
+    "prof": "서대원",
+    "credit": 1,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 5,
+        "start": 13,
+        "duration": 1
+      }
+    ],
+    "room": "E7-233",
+    "syllabus": {
+      "capacity": "180",
+      "contact": {
+        "email": "dwseo@dgist.ac.kr",
+        "phone": "010-9285-1426",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "TBA",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "HSS120-01",
+    "name": "진로탐색 및 전공설계 II",
+    "prof": "서대원",
+    "credit": 1,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초필수"
+    ],
+    "times": [
+      {
+        "day": 3,
+        "start": 13,
+        "duration": 1
+      }
+    ],
+    "room": "E7-L29",
+    "syllabus": {
+      "capacity": "300",
+      "contact": {
+        "email": "dwseo@dgist.ac.kr",
+        "phone": "010-9285-1426",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "본 과목은 1학년 신입생들이 대학 생활에 성공적으로 적응하고 자신의 진로와 전공을 설계할 수 있도록 지원하는 데 목적을 둔다. 특히 진로탐색 및 전공설계 I에서는 학교생활 안내, 트랙별 교과 및 진로 설명, 멘토링 제도 등을 통해 학생들이 학교 자원과 네트워크를 효과적으로 활용하도록 돕고, 각 트랙의 학문적 특성을 이해함으로써 다양한 학문적 선택지를 탐색할 수 있도록 하며, 저명한 학자를 초청한 특별 세미나를 통해 학생들의 학문적 시야를 넓히게 한다.",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "수업 시간에는 필기 목적 이외의 노트북 및 휴대폰 사용을 금지하며, 특별한 사유 없이 3회 이상 결석할 경우 수료하지 못한 것으로 한다.",
+      "grading": [
+        {
+          "name": "TBA",
+          "percent": 100
+        }
+      ],
+      "schedule": [
+        "1주차:진로탐색 및 전공설계II 교과 소개 및 자율트랙 소개",
+        "2주차:청렴 특강 (ESG 청렴윤리경영과 미래 과학기술 인재의 책임있는 의사결정/국민권익위 국가청렴권익교육원 연계 전문가 특강)",
+        "3주차:물리학트랙 연구 소개",
+        "4주차:뇌과학트랙 연구 소개 (박포정 교수님)",
+        "5주차:화학트랙 연구 소개",
+        "6주차:디지털 성범죄 예방교육 특강",
+        "7주차:생명과학트랙 연구 소개",
+        "8주차:중간고사",
+        "9주차:전자공학트랙 연구 소개 (최재호 교수님)",
+        "10주차:컴퓨터공학트랙 연구 소개 (배인환 교수님)",
+        "11주차:화학공학트랙 연구 소개 (김운혁 교수님)",
+        "12주차:기계공학트랙 연구 소개 (황민호 교수님)",
+        "13주차:재료공학트랙 연구 소개 ",
+        "14주차:Advanced Lecture",
+        "15주차:Advanced Lecture",
+        "16주차:기말고사"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "HSS123-01",
+    "name": "Korea and International Relations",
+    "prof": "윤지성",
+    "credit": 2,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 14,
+        "duration": 2
+      }
+    ],
+    "room": "E7-223",
+    "syllabus": {
+      "capacity": "40",
+      "contact": {
+        "email": "TBA",
+        "phone": "010-9130-9842",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "This course aims to introduce the causes, background, and historical development of South Korea’s foreign policy decisions. In particular, it focuses on discussing and analyzing South Korea’s security, trade, and unification policies, as well as its public diplomacy, in the post-Korean War era.",
+      "methods": [
+        "Flipped-learning",
+        "Discussion"
+      ],
+      "materials": "Eui Kon Kim, Korea and International Relations, INHA Center of K-Academic expansion project (https://www.kmooc.kr)",
+      "policies": "Course Participation: Students are required to complete an online lecture before attending the bi-weekly in-class discussion session. Active participation in discussions is expected. If you exceed one absences, your grade will be treated as a failure.",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 25
+        },
+        {
+          "name": "Final exam",
+          "percent": 25
+        },
+        {
+          "name": "Class Participation",
+          "percent": 20
+        },
+        {
+          "name": "Quiz",
+          "percent": 30
+        }
+      ],
+      "schedule": [
+        "1주차:Course Introduction",
+        "2주차:State of Anarchy: State of War",
+        "3주차:Escape from Anarchy",
+        "4주차:Actors of IR",
+        "5주차:Theories of Integration",
+        "6주차:Game Theory: Basics",
+        "7주차:Game Theory: Applications",
+        "8주차:Midterm Exam",
+        "9주차:Historical Factor: History of Division",
+        "10주차:Korean Foreign Policy: Factors",
+        "11주차:Korean Foreign Policy: Issues",
+        "12주차:Unification",
+        "13주차:Middle-Power Diplomacy",
+        "14주차:Concluding Discussion",
+        "15주차:TBA",
+        "16주차:Final Exam"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "HSS201-01",
+    "name": "과학기술사의 주요장면",
+    "prof": "장하원",
+    "credit": 3,
+    "categories": [
+      "읽기,쓰기 중점"
+    ],
+    "fixedTypes": [
+      "기초선택"
+    ],
+    "times": [
+      {
+        "day": 4,
+        "start": 14,
+        "duration": 3
+      }
+    ],
+    "room": "E7-235",
+    "syllabus": {
+      "capacity": "35",
+      "contact": {
+        "email": "hahawon@gmail.com",
+        "phone": "010-3638-2981",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "21세기는 과학기술의 시대이다. 이제는 과학기술이 없는 삶을 상상할 수 없으며, 과학기술의 특징과 그 사회적 함의를 이해하는 것은 시민으로서 갖추어야 할 필수 자질이라고 할 수 있다. 현재 우리의 삶에 영향을 미치는 다양한 과학기술의 기원, 의미, 역할, 한계 등을 이해하기 위해서는 먼저 그것이 발전해 온 역사를 살펴볼 필요가 있다. 본 수업에서는 고대, 중세, 과학 혁명기를 거쳐 근대과학과 현대과학에 이르기까지 과학사의 긴 여정을 개괄적으로 살펴봄으로써, 과학기술이 어떤 과정을 통해 인류 문명에서 핵심적인 지위를 차지하게 되었는지를 이해할 것이다.",
+      "methods": [
+        "Lecture",
+        "Discussion",
+        "Presentation"
+      ],
+      "materials": "본 수업의 목적은 과학기술의 발전 과정에 대한 이해에 기반하여 수강생들로 하여금 현대 과학기술의 특징과 사회적 함의를 비판적으로 성찰할 수 있게끔 만드는 것이며, 이를 효율적으로 달성하기 위한 과제들이 마련되어 있다. (1) 강의 내용에 대한 이해를 평가하기 위해 중간시험, 기말시험을 실시한다. 간단한 서술식 문항들에 대해 정해진 시간 안에 스스로 답안지를 작성하여 제출. (2) 수강생들은 학기 중 과학사 및 관련 인접 분야(과학학 전반)의 책을 조별로 1권 골라 함께 읽고 수업 시간에 발표한다. 책 선정 방식 및 서평 제출일자는 수업 시간에 설명할 예정. (3) 수강생들은 몇몇 주차에 수업 시간 내 이루어지는 조별 토론에 참여하며, 토론 결과를 간략히 정리하여 발표하여야 한다.  * 성적 평가 비율: 출석 10%, 중간시험 30%, 기말시험 30%, 조별 과제 30%  ",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "Midterm exam",
+          "percent": 30
+        },
+        {
+          "name": "Final exam",
+          "percent": 30
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Homework",
+          "percent": 30
+        }
+      ],
+      "schedule": [
+        "1주차:과학사 첫걸음: ‘과학혁명’과 과학사 서술",
+        "2주차:‘혁명’ 이전의 과학(1): 고대 그리스의 과학",
+        "3주차:‘혁명’ 이전의 과학(2): 로마와 중세의 과학",
+        "4주차:천문학의 혁명: 코페르니쿠스에서 갈릴레오까지",
+        "5주차:새로운 과학방법론의 제시: 베이컨과 데카르트",
+        "6주차:과학혁명의 완성: 뉴턴의 자연철학",
+        "7주차:과학혁명 이후: 계몽주의와 과학의 전문직업화",
+        "8주차:중간시험",
+        "9주차:지연된 혁명?: 화학혁명과 물질에 대한 새로운 이해",
+        "10주차:과학과 기술: 산업혁명과 과학기술",
+        "11주차:과학과 이데올로기: 진화론에서 우생학까지 ",
+        "12주차:과학과 전쟁: 전쟁이 낳은 과학기술들",
+        "13주차:현대사회 속의 과학: 다양한 연구개발의 양상들",
+        "14주차:조별과제 발표",
+        "15주차:기말시험",
+        "16주차:TBA"
+      ],
+      "textbook": [
+        "과학사의 이해  Understanding the history of science (임경순 / 2014)"
+      ]
+    }
   }
 ]
