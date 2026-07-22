@@ -80,15 +80,21 @@ const useStore = create(
       },
 
       fetchGradCourses: async () => {
-        const current = get().gradCourses;
-        if (current.length > 0) return current;
-
         try {
           const response = await fetch('/allSubjects.json'); 
           if (!response.ok) throw new Error('졸업 과목 데이터 로딩 실패');
-          const data = await response.json();
-          set({ gradCourses: data }); 
-          return data; 
+          
+          const newData = await response.json(); // 최신 JSON 데이터
+          
+          // 기존 상태에서 사용자가 직접 만든 커스텀 과목만 추출 (id가 'custom-'으로 시작하는 과목)
+          const currentCourses = get().gradCourses;
+          const customCourses = currentCourses.filter(c => c.id && String(c.id).startsWith('custom-'));
+
+          // 커스텀 과목과 최신 JSON 데이터를 합침
+          const mergedCourses = [...customCourses, ...newData];
+          
+          set({ gradCourses: mergedCourses }); 
+          return mergedCourses; 
         } catch (error) {
           console.error("졸업 과목 데이터 로딩 실패:", error);
           set({ gradCourses: [] }); 
