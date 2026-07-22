@@ -10424,5 +10424,624 @@
         "생명과학실험II (이석규 / n.d.)"
       ]
     }
+  },
+  {
+    "id": "LS206-01",
+    "name": "생명분석화학(이,공)",
+    "prof": "김민식, 김유리, 김민석",
+    "credit": 3,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 13,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 13,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-235",
+    "syllabus": {
+      "capacity": "30",
+      "contact": {
+        "email": "mkim@dgist.ac.kr",
+        "phone": "010-5673-9753",
+        "office": "E6-611",
+        "office_hours": "월요일 10:00"
+      },
+      "summary": "본 수업에서는 다양한 생화학적·생물리적 분석기기의 특징과 원리를 배우고, 이를 생명현상의 원리를 이해하는데 어떻게 활용하는지 이해하도록 한다. 또한 계속해서 발전해가는 바이오 분석 기술 및 기기에 대해 알아봄으로써 새로운 연구를 향한 초석을 다지도록 한다.",
+      "methods": [
+        "Lecture",
+        "Presentation"
+      ],
+      "materials": "필기구",
+      "policies": "핸드폰 사용 금지, 노트북은 강의노트 필기 외 사용금지",
+      "grading": [
+        {
+          "name": "Paper Presentation",
+          "percent": 5
+        },
+        {
+          "name": "Final Exam",
+          "percent": 25
+        },
+        {
+          "name": "Midterm Exam 1",
+          "percent": 25
+        },
+        {
+          "name": "Midterm Exam 2",
+          "percent": 25
+        },
+        {
+          "name": "Homework",
+          "percent": 10
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:Overview: 분석화학이란?",
+        "2주차:생분자, 화학농도, 평형상수",
+        "3주차:크로마토그래피 및 전기영동",
+        "4주차:항체, 분자인지, 응용기술",
+        "5주차:중간시험 1",
+        "6주차:NMR 및 대사물질 분석",
+        "7주차:Mass Spectrometry 및 단백질 분석기술",
+        "8주차:Mass Spectrometry 및 단백질 분석기술2",
+        "9주차:통계 분석 ",
+        "10주차:분자 구조 분석",
+        "11주차:중간시험 2",
+        "12주차:광학현미경",
+        "13주차:전자현미경",
+        "14주차:microfluidics",
+        "15주차:single-molecule 분석",
+        "16주차:기말 시험"
+      ],
+      "textbook": [
+        "분석화학 (Harris, Daniel C / 2017)",
+        "기기분석  Instrumental analysis (정맹준 / 2013)"
+      ]
+    }
+  },
+  {
+    "id": "LS303b-01",
+    "name": "정량 생명과학(이)",
+    "prof": "이창훈, 유우경",
+    "credit": 3,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "trackRelations":{
+      "생명과학": "전공선택",
+      "뇌과학": "전공선택"
+    },
+    "times": [
+      {
+        "day": 1,
+        "start": 13,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 13,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-G02",
+    "syllabus": {
+      "capacity": "40",
+      "contact": {
+        "email": "TBA",
+        "phone": "010-9867-0277",
+        "office": "TBA",
+        "office_hours": "TBA"
+      },
+      "summary": "Quantitative Biology는 생명현상에 대한 물리학적 또는 수학적인 측정과 해석 원리에 대해 이해하고, 나아가 해당 원리가 구현된 생물물리학 장비에 대해 알아본다.",
+      "methods": [
+        "Team teaching",
+        "Lecture",
+        "Presentation"
+      ],
+      "materials": "TBA",
+      "policies": "모든 수강생은 수업에서의 성실성과 적극적인 참여를 요구받는다.  생명과학 기초 교과목(일반생물학 등)을 수강한 학생에 한하여, 본 교과목의 수강 신청을 권고한다.",
+      "grading": [
+        {
+          "name": "Midterm Exam 1",
+          "percent": 40
+        },
+        {
+          "name": "Midterm Exam 2",
+          "percent": 30
+        },
+        {
+          "name": "Final Exam",
+          "percent": 30
+        },
+        {
+          "name": "Class Participation",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "Nond"
+      ]
+    }
+  },
+  {
+    "id": "LS307-01",
+    "name": "분자생물학(이)",
+    "prof": "엄지원, 김진해, 이영삼",
+    "credit": 3,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "trackRelations":{
+      "생명과학": "전공선택",
+      "뇌과학": "전공선택"
+    },
+    "times": [
+      {
+        "day": 2,
+        "start": 16.5,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 16.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-236",
+    "syllabus": {
+      "capacity": "60",
+      "contact": {
+        "email": "jiwonum@dgist.ac.kr",
+        "phone": "010-8820-4390",
+        "office": "E4-509",
+        "office_hours": "14:00-15:00"
+      },
+      "summary": "This course is about genes –their structure and function – therefore, students will study nucleic acid structure and the mechanics of replication, repair, transcription, and translation in bacteria, archaea and eukaryotes. ",
+      "methods": [
+        "Lecture",
+        "Discussion"
+      ],
+      "materials": "Molecular Biology (5th ed.), Robert F. Weaver, 2011, McGraw Hill",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "Midterm Exam",
+          "percent": 40
+        },
+        {
+          "name": "Final Exam",
+          "percent": 40
+        },
+        {
+          "name": "Attendance",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:Chapter1-2",
+        "2주차:Chapter3-4",
+        "3주차:Chapter5-6",
+        "4주차:Chapter7-8",
+        "5주차:Chapter9",
+        "6주차:Chapter10-11",
+        "7주차:Chapter12-13",
+        "8주차:Mid term",
+        "9주차:Chapter13-14",
+        "10주차:Chapter15-16",
+        "11주차:Chapter16-17",
+        "12주차:Chapter18",
+        "13주차:Chapter19-20",
+        "14주차:Chapter20-21",
+        "15주차:Chapter22-23",
+        "16주차:Final exam"
+      ],
+      "textbook": [
+        "Molecular Biology (5th ed.) (Robert F. Weaver / 2011)"
+      ]
+    }
+  },
+  {
+    "id": "LS309-01",
+    "name": "생화학II(이)",
+    "prof": "정한빈",
+    "credit": 3,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "trackRelations":{
+      "생명과학": "전공선택",
+      "뇌과학": "전공선택"
+    },
+    "times": [
+      {
+        "day": 1,
+        "start": 14.5,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 14.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-223",
+    "syllabus": {
+      "capacity": "50",
+      "contact": {
+        "email": "hbjeong@dgist.ac.kr",
+        "phone": "010-5960-5117",
+        "office": "E4-520",
+        "office_hours": "월요일, 수요일 10:00"
+      },
+      "summary": "본 강의에서는 주요 생명현상 과정에서 일어나는 화학적 반응을 학습하고, 에너지-물질의 순환, 정보 교환 및 생체 조절 과정을 화학 반응으로 설명하고자 함.",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "Prohibition of using laptop or cell phone.",
+      "grading": [
+        {
+          "name": "Midterm Exam",
+          "percent": 35
+        },
+        {
+          "name": "Final Exam",
+          "percent": 35
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        },
+        {
+          "name": "Quiz",
+          "percent": 20
+        }
+      ],
+      "schedule": [
+        "1주차:Ch13. Bioenergetics and Biochemical Reaction Types",
+        "2주차:Ch14. Glycolysis, Gluconeogenesis, and the Pentose Phosphate Pathway",
+        "3주차:Ch15. Principles of Metabolic Regulation",
+        "4주차:Ch16. The Citric Acid Cycle",
+        "5주차:Ch17. Fatty Acid Catabolism",
+        "6주차:Ch18. Amino Acid Oxidation and the Production of Urea",
+        "7주차:추후조정",
+        "8주차:중간고사",
+        "9주차:Ch19. Oxidative Phosphorylation and Photophosphorylation Oxidative Phosphorylation",
+        "10주차:Ch20. Carbohydrate Biosynthesis in Plants and Bacteria",
+        "11주차:Ch21. Lipid Biosynthesis",
+        "12주차:Continued",
+        "13주차:Ch22. Biosynthesis of Amino Acids, Nucleotides, and Related Molecules",
+        "14주차:Ch23. Hormonal Regulation and Integration of Mammalian Metabolism",
+        "15주차:Ch23. Continued",
+        "16주차:기말고사"
+      ],
+      "textbook": [
+        "Lehninger principles of biochemistry (Nelson, David L. (David Lee), 1942- author. ; Cox, Michael M.; Hoskins, Aaron A. / 2021)"
+      ]
+    }
+  },
+  {
+    "id": "LS311-01",
+    "name": "생명과학과 사회(이)",
+    "prof": "남창훈",
+    "credit": 3,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "times": [
+      {
+        "day": 4,
+        "start": 9,
+        "duration": 3
+      }
+    ],
+    "room": "E7-229",
+    "syllabus": {
+      "capacity": "20",
+      "contact": {
+        "email": "chang@dgist.ac.kr",
+        "phone": "010-7296-3232",
+        "office": "E6-609",
+        "office_hours": "TBA"
+      },
+      "summary": "- 현대 사회에 이르러 생명공학기술이 급속히 발전함에 따라 인류에게 다양한 혜택을 제공함과 동시에 인간 증강, GMO, 종의 다양성, 줄기세포와 복제, 팬더믹, 의료 빅데이터 등과 관련된 다양한 문제점 역시 발생시키고 있음. - 한편 생명과 관련된 사회적 이슈는 주제의 복잡성이 아주 커서 제대로 이해하고 대응하기 위해선 제반 생물학에 대한 이해뿐 아니라 다양한 학제를 아우르는 폭넓은 시야를 가질 필요가 있음. - 따라서 본 교과는 생명과 관련된 사회적 이슈를 이해하고 다루기 위해 각 이슈별로 관련 있는 제반 생명과학적 논의와 더불어 과학학, 과학사회학, 과학/기술철학, 생명윤리학, 과학기술정책론 등에 등장하는 논의 역시 다루고자 함.",
+      "methods": [
+        "Lecture",
+        "Presentation",
+        "Discussion",
+        "Project"
+      ],
+      "materials": "TBA",
+      "policies": "결석이나 조별 활동에서의 이탈시 감점 처리가 된다. 건강상의 이유나 기타 피치 못할 사정에 의해 결석하는 경우 결석 전 그 사정에 대해 메일로 고지해야 함.",
+      "grading": [
+        {
+          "name": "Paper Presentation",
+          "percent": 30
+        },
+        {
+          "name": "Term Project",
+          "percent": 40
+        },
+        {
+          "name": "Class Participation",
+          "percent": 30
+        }
+      ],
+      "schedule": [
+        "1주차:인간 증강(Human enhancement) 논쟁",
+        "2주차:Savior sibling 논쟁",
+        "3주차:생명과학의 상업화 논쟁",
+        "4주차:게놈 특허 논쟁",
+        "5주차:GMO 논쟁",
+        "6주차:종의 다양성 관련 논쟁",
+        "7주차:동물실험 논쟁",
+        "8주차:중간시험 기간",
+        "9주차:생명과 exposome 관련 논쟁",
+        "10주차:사회 발전과 건강불평등 논쟁",
+        "11주차:프로젝트 1차 발표",
+        "12주차:21세기 팬더믹 관련 논쟁",
+        "13주차:생명 정보 관련 논쟁",
+        "14주차:생명과학의 변경에 대한 논쟁",
+        "15주차:프로젝트 최종 발표",
+        "16주차:기말시험 기간"
+      ],
+      "textbook": [
+        "TBA"
+      ]
+    }
+  },
+  {
+    "id": "LS313a-01",
+    "name": "분자생물학 실험(이)",
+    "prof": "이영삼, 이창훈",
+    "credit": 2,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 19,
+        "duration": 2
+      },
+      {
+        "day": 4,
+        "start": 19,
+        "duration": 2
+      }
+    ],
+    "room": "E4-244",
+    "syllabus": {
+      "capacity": "12",
+      "contact": {
+        "email": "lee.youngsam@dgist.ac.kr",
+        "phone": "010-9415-6746",
+        "office": "R2-311",
+        "office_hours": "pre-contact required"
+      },
+      "summary": "분자생물학은 20세기 이후의 현대 생명과학을 형성하는 주요 패러다임을 정립하였다. 그리고, 분자생물학은 '실험과 사유'를 통해 발전한 학문 체계이다. 필연적으로, 분자생물학은 '실험'과 '이론'이 반드시 병행하는 교과목이다.   본 수업은 3학년 전공 필수 교과목으로 운영되는 분자생물학 이론 수업에 발 맞추어, 실험 교과목은 분자생물학 교과서에서도 자세하게 다루는 이론을 실제 프로젝트 수행 과정에서 구현하도록 학습한다. 다만, 모든 실험을 백화점 식으로 나열하는 학습법을 지양하고, 대부분의 생명과학 연구실 및 생명과학 기업에서 활발하게 사용하는 주요 분자생물학 기법을 학습하고자 한다.  즉, 분자생물학 실험 기법을 역사적으로 개괄하되, 현대 생명과학에서도 활발하게 활용되는 실험 기법(예, 클로닝 등)을 실습하고, 단순 체험을 넘어 기법의 주요 과정을 체득할 수 있도록 수업을 구성하였다. ",
+      "methods": [
+        "Lecture",
+        "Presentation",
+        "Discussion",
+        "Flipped-learning",
+        "Project",
+        "Peer teaching",
+        "Experiment"
+      ],
+      "materials": "***수강 신청 시 유의사항*** 실험 과목의 특성상 시간표 상의 강의시간 (2시간)을 넘겨 장시간 수업이 진행될 수 있음.",
+      "policies": "모든 실험은 직접 수행을 원칙으로 하며, 조별 활동에서도 개인의 PBL 과제 수행을 독립적으로 진행할 것.",
+      "grading": [
+        {
+          "name": "Quiz 1",
+          "percent": 30
+        },
+        {
+          "name": "Quiz 2",
+          "percent": 30
+        },
+        {
+          "name": "Term Project",
+          "percent": 30
+        },
+        {
+          "name": "Class Participation",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:TBA"
+      ],
+      "textbook": [
+        "None"
+      ]
+    }
+  },
+  {
+    "id": "LS401a-01",
+    "name": "면역학(이)",
+    "prof": "남창훈, 최일규",
+    "credit": 3,
+    "categories": [
+      "생명과학"
+    ],
+    "fixedTypes": [
+      "전공선택"
+    ],
+    "times": [
+      {
+        "day": 2,
+        "start": 14.5,
+        "duration": 1.5
+      },
+      {
+        "day": 4,
+        "start": 14.5,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-242",
+    "syllabus": {
+      "capacity": "60",
+      "contact": {
+        "email": "chang@dgist.ac.kr",
+        "phone": "010-7296-3232",
+        "office": "E6-609",
+        "office_hours": "TBA"
+      },
+      "summary": "인체에 존재하는 내재면역과 적응면역이 발생하는 과정을 다양한 면역세포와 면역조절물질 간의 상호작용을 통해 이해한다.",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "TBA",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "Midterm Exam",
+          "percent": 45
+        },
+        {
+          "name": "Final Exam",
+          "percent": 45
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:Ch2: Innate immunity: The first lines of defense",
+        "2주차:Ch3: Cellular mechanisms of innate immunity",
+        "3주차:Ch4: Antigen recognition by B-cell and T-cell receptors",
+        "4주차:Ch5: The generation of lymphocyte antigen receptors",
+        "5주차:Ch6: Antigen presentation to T lymphocytes",
+        "6주차:Ch1 to Ch6 내용정리",
+        "7주차:중간시험",
+        "8주차:Ch7: Lymphocyte receptor signaling",
+        "9주차:Ch8: The development of B and T lymphocytes",
+        "10주차:Ch9: T-cell mediated immunity",
+        "11주차:Ch10: The humoral immune response",
+        "12주차:Ch11: Integrated dynamics of innate and adaptive immunity",
+        "13주차:Ch12: The barrier immune system",
+        "14주차:기말시험",
+        "15주차:TBA",
+        "16주차:TBA"
+      ],
+      "textbook": [
+        "Janeway's Immunobiology (n.n. / n.d.)"
+      ]
+    }
+  },
+  {
+    "id": "MECH203-01",
+    "name": "동역학(공)",
+    "prof": "박석호",
+    "credit": 3,
+    "categories": [
+      "기계공학"
+    ],
+    "fixedTypes": [
+      "전공필수"
+    ],
+    "times": [
+      {
+        "day": 1,
+        "start": 9,
+        "duration": 1.5
+      },
+      {
+        "day": 3,
+        "start": 9,
+        "duration": 1.5
+      }
+    ],
+    "room": "E7-G01",
+    "syllabus": {
+      "capacity": "40",
+      "contact": {
+        "email": "shpark12@dgist.ac.kr",
+        "phone": "010-6280-0265",
+        "office": "E5-511",
+        "office_hours": "TBA"
+      },
+      "summary": "This course covers kinematics and kinetics of particles (Newton’s law; energy and momentum methods; systems of particles) and kinematics and kinetics of planar motions of rigid bodies (plane motion of rigid bodies; mechanical vibrations). Students will obtain an understanding of Newton’s Laws of motion, and the ability to apply energy and momentum methods to particles and rigid bodies in planar motion. ",
+      "methods": [
+        "Lecture"
+      ],
+      "materials": "교재, 수업자료(PDF제공), 계산기 등",
+      "policies": "TBA",
+      "grading": [
+        {
+          "name": "Midterm Exam",
+          "percent": 35
+        },
+        {
+          "name": "Final Exam",
+          "percent": 35
+        },
+        {
+          "name": "Quiz",
+          "percent": 20
+        },
+        {
+          "name": "Attendance",
+          "percent": 10
+        }
+      ],
+      "schedule": [
+        "1주차:Introduction, Kinematics of Particles: Rectilinear Motion of Particles",
+        "2주차:Kinematics of Particles: Curvilinear Motion of Particles",
+        "3주차:Kinetics of Particles: Newton’s Second Law",
+        "4주차:Kinetics of Particles: Newton’s Second Law",
+        "5주차:Kinetics of Particles: Energy and Momentum Method",
+        "6주차:Kinetics of Particles: Energy and Momentum Method",
+        "7주차:Midterm Exam",
+        "8주차:Systems of Particles",
+        "9주차:Kinematics of Rigid Bodies",
+        "10주차:Kinematics of Rigid Bodies",
+        "11주차:Plane Motion of Rigid Bodies: Forces and Accelerations",
+        "12주차:Plane Motions of Rigid Bodies: Energy and Momentum Methods",
+        "13주차:Plane Motions of Rigid Bodies: Energy and Momentum Methods",
+        "14주차:Final Exam",
+        "15주차:",
+        "16주차:"
+      ],
+      "textbook": [
+        "Vector mechanics for engineers. 2, Dynamics (Beer, Ferdinand P / 2016)"
+      ]
+    }
   }
 ]
