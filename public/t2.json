@@ -13,7 +13,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 13,
         "duration": 4
       }
@@ -90,7 +90,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 9,
         "duration": 0
       }
@@ -138,7 +138,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 9,
         "duration": 0
       }
@@ -206,7 +206,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 5,
+        "day": 4,
         "start": 14,
         "duration": 2
       }
@@ -269,7 +269,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 16,
         "duration": 2
       }
@@ -344,7 +344,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 5,
+        "day": 4,
         "start": 11,
         "duration": 2
       }
@@ -419,7 +419,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 3,
+        "day": 2,
         "start": 9,
         "duration": 2
       }
@@ -494,7 +494,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 10.5,
         "duration": 2
       }
@@ -569,7 +569,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 10.5,
         "duration": 2
       }
@@ -648,12 +648,12 @@
     },
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 14.5,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 14.5,
         "duration": 1.5
       }
@@ -735,12 +735,12 @@
     },
     "times": [
       {
-        "day": 3,
+        "day": 2,
         "start": 9,
         "duration": 1.5
       },
       {
-        "day": 5,
+        "day": 4,
         "start": 9,
         "duration": 1.5
       }
@@ -818,12 +818,12 @@
     },
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 16.5,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 16.5,
         "duration": 1.5
       }
@@ -897,7 +897,7 @@
     },
     "times": [
       {
-        "day": 5,
+        "day": 4,
         "start": 13,
         "duration": 3
       }
@@ -972,12 +972,12 @@
     },
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 14.5,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 14.5,
         "duration": 1.5
       }
@@ -1052,12 +1052,12 @@
     },
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 13,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 13,
         "duration": 1.5
       }
@@ -1113,12 +1113,12 @@
     },
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 10.5,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 10.5,
         "duration": 1.5
       }
@@ -1191,12 +1191,12 @@
     },
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 15,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 15,
         "duration": 1.5
       }
@@ -1271,12 +1271,12 @@
     },
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 16.5,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 16.5,
         "duration": 1.5
       }
@@ -1341,12 +1341,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 16,
         "duration": 2
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 16,
         "duration": 2
       }
@@ -1418,12 +1418,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 16,
         "duration": 2
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 16,
         "duration": 2
       }
@@ -1497,12 +1497,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 10.5,
         "duration": 2
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 10.5,
         "duration": 2
       }
@@ -1584,12 +1584,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 13,
         "duration": 2
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 13,
         "duration": 2
       }
@@ -1652,12 +1652,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 16,
         "duration": 2
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 16,
         "duration": 2
       }
@@ -1720,12 +1720,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 9,
         "duration": 2
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 9,
         "duration": 2
       }
@@ -1799,12 +1799,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 11,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 11,
         "duration": 1.5
       }
@@ -1876,12 +1876,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 9,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 9,
         "duration": 1.5
       }
@@ -1953,12 +1953,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 14,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 14,
         "duration": 1.5
       }
@@ -2030,12 +2030,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 15.5,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 15.5,
         "duration": 1.5
       }
@@ -2111,7 +2111,7 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 16,
         "duration": 2
       }
@@ -2197,7 +2197,7 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 10,
         "duration": 2
       }
@@ -2283,7 +2283,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 13,
         "duration": 2
       }
@@ -2369,7 +2369,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 10,
         "duration": 2
       }
@@ -2455,7 +2455,7 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 13,
         "duration": 2
       }
@@ -2541,7 +2541,7 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 13,
         "duration": 2
       }
@@ -2627,7 +2627,7 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 9,
         "duration": 2
       }
@@ -2701,7 +2701,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 9,
         "duration": 2
       }
@@ -2775,7 +2775,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 11,
         "duration": 2
       }
@@ -2849,7 +2849,7 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 13,
         "duration": 2
       }
@@ -2923,7 +2923,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 13,
         "duration": 2
       }
@@ -2997,7 +2997,7 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 15,
         "duration": 2
       }
@@ -3067,7 +3067,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 16,
         "duration": 2
       }
@@ -3137,7 +3137,7 @@
     ],
     "times": [
       {
-        "day": 5,
+        "day": 4,
         "start": 9,
         "duration": 2
       }
@@ -3207,12 +3207,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 9,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 9,
         "duration": 1.5
       }
@@ -3268,12 +3268,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 10.5,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 10.5,
         "duration": 1.5
       }
@@ -3345,7 +3345,7 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 16,
         "duration": 2
       }
@@ -3409,7 +3409,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 13,
         "duration": 2
       }
@@ -3484,7 +3484,7 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 14.5,
         "duration": 2
       }
@@ -3565,7 +3565,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 15,
         "duration": 2
       }
@@ -3646,7 +3646,7 @@
     ],
     "times": [
       {
-        "day": 3,
+        "day": 2,
         "start": 14,
         "duration": 2
       }
@@ -3727,7 +3727,7 @@
     ],
     "times": [
       {
-        "day": 3,
+        "day": 2,
         "start": 16,
         "duration": 2
       }
@@ -3808,12 +3808,12 @@
     ],
     "times": [
       {
-        "day": 3,
+        "day": 2,
         "start": 11,
         "duration": 1.5
       },
       {
-        "day": 5,
+        "day": 4,
         "start": 11,
         "duration": 1.5
       }
@@ -3869,12 +3869,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 10.5,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 10.5,
         "duration": 1.5
       }
@@ -3941,12 +3941,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 9,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 9,
         "duration": 1.5
       }
@@ -4003,12 +4003,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 14,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 14,
         "duration": 1.5
       }
@@ -4083,12 +4083,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 16.5,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 16.5,
         "duration": 1.5
       }
@@ -4159,12 +4159,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start":9,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 9,
         "duration": 1.5
       }
@@ -4235,12 +4235,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 0,
         "start": 10.5,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 10.5,
         "duration": 1.5
       }
@@ -4310,12 +4310,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 9,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 9,
         "duration": 1.5
       }
@@ -4395,12 +4395,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 10.5,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 10.5,
         "duration": 1.5
       }
@@ -4477,12 +4477,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 13,
         "duration": 2
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 13,
         "duration": 2
       }
@@ -4529,12 +4529,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 14.5,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 14.5,
         "duration": 1.5
       }
@@ -4618,12 +4618,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 16,
         "duration": 4
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 16,
         "duration": 2
       }
@@ -4687,12 +4687,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 10.5,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 10.5,
         "duration": 1.5
       }
@@ -4739,12 +4739,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 16.5,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 16.5,
         "duration": 1.5
       }
@@ -4797,12 +4797,12 @@
     },
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 9,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 9,
         "duration": 1.5
       }
@@ -4862,12 +4862,12 @@
     },
     "times": [
       {
-        "day": 3,
+        "day": 2,
         "start": 13,
         "duration": 1.5
       },
       {
-        "day": 5,
+        "day": 4,
         "start": 13,
         "duration": 1.5
       }
@@ -4942,12 +4942,12 @@
     },
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 14.5,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 14.5,
         "duration": 1.5
       }
@@ -5020,7 +5020,7 @@
     },
     "times": [
       {
-        "day": 3,
+        "day": 2,
         "start": 15,
         "duration": 4
       }
@@ -5097,12 +5097,12 @@
     },
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 14.5,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 14.5,
         "duration": 1.5
       }
@@ -5177,12 +5177,12 @@
     },
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 13,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 13,
         "duration": 1.5
       }
@@ -5255,12 +5255,12 @@
     },
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 10.5,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 10.5,
         "duration": 1.5
       }
@@ -5339,12 +5339,12 @@
     },
     "times": [
       {
-        "day": 3,
+        "day": 2,
         "start": 15,
         "duration": 1.5
       },
       {
-        "day": 5,
+        "day": 4,
         "start": 15,
         "duration": 1.5
       }
@@ -5419,12 +5419,12 @@
     },
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 15,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 15,
         "duration": 1.5
       }
@@ -5492,12 +5492,12 @@
     },
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 9,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 9,
         "duration": 1.5
       }
@@ -5556,12 +5556,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 11,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 11,
         "duration": 1.5
       }
@@ -5635,12 +5635,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 13,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 13,
         "duration": 1.5
       }
@@ -5710,12 +5710,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 13,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 13,
         "duration": 1.5
       }
@@ -5782,12 +5782,12 @@
     },
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 15,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 15,
         "duration": 1.5
       }
@@ -5838,12 +5838,12 @@
     },
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 16.5,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 16.5,
         "duration": 1.5
       }
@@ -5919,12 +5919,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 14.5,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 14.5,
         "duration": 1.5
       }
@@ -6003,12 +6003,12 @@
     },
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 9,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 9,
         "duration": 1.5
       }
@@ -6059,12 +6059,12 @@
     },
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 13,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 13,
         "duration": 1.5
       }
@@ -6126,12 +6126,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 10.5,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 10.5,
         "duration": 1.5
       }
@@ -6206,12 +6206,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 13,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 13,
         "duration": 1.5
       }
@@ -6286,12 +6286,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 14.5,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 14.5,
         "duration": 1.5
       }
@@ -6369,12 +6369,12 @@
     },
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 10.5,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 10.5,
         "duration": 1.5
       }
@@ -6449,7 +6449,7 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 13,
         "duration": 3
       }
@@ -6496,7 +6496,7 @@
     ],
     "times": [
       {
-        "day": 5,
+        "day": 4,
         "start": 9,
         "duration": 3
       }
@@ -6572,7 +6572,7 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 9,
         "duration": 3
       }
@@ -6619,7 +6619,7 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 13,
         "duration": 3
       }
@@ -6666,7 +6666,7 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 9,
         "duration": 3
       }
@@ -6713,7 +6713,7 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 13,
         "duration": 3
       }
@@ -6760,7 +6760,7 @@
     ],
     "times": [
       {
-        "day": 5,
+        "day": 4,
         "start": 14,
         "duration": 3
       }
@@ -6843,7 +6843,7 @@
     ],
     "times": [
       {
-        "day": 5,
+        "day": 4,
         "start": 9,
         "duration": 3
       }
@@ -6926,7 +6926,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 13,
         "duration": 3
       }
@@ -7009,7 +7009,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 14,
         "duration": 3
       }
@@ -7092,7 +7092,7 @@
     ],
     "times": [
       {
-        "day": 3,
+        "day": 2,
         "start": 14.5,
         "duration": 3
       }
@@ -7175,7 +7175,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 9,
         "duration": 3
       }
@@ -7258,7 +7258,7 @@
     ],
     "times": [
       {
-        "day": 3,
+        "day": 2,
         "start": 9,
         "duration": 3
       }
@@ -7341,7 +7341,7 @@
     ],
     "times": [
       {
-        "day": 5,
+        "day": 4,
         "start": 14,
         "duration": 3
       }
@@ -7388,7 +7388,7 @@
     ],
     "times": [
       {
-        "day": 5,
+        "day": 4,
         "start": 9,
         "duration": 3
       }
@@ -7435,7 +7435,7 @@
     ],
     "times": [
       {
-        "day": 3,
+        "day": 2,
         "start": 9,
         "duration": 3
       }
@@ -7482,7 +7482,7 @@
     ],
     "times": [
       {
-        "day": 3,
+        "day": 2,
         "start": 13,
         "duration": 3
       }
@@ -7529,7 +7529,7 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 9,
         "duration": 3
       }
@@ -7576,7 +7576,7 @@
     ],
     "times": [
       {
-        "day": 3,
+        "day": 2,
         "start": 10,
         "duration": 3
       }
@@ -7623,7 +7623,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 10,
         "duration": 3
       }
@@ -7697,7 +7697,7 @@
     ],
     "times": [
       {
-        "day": 5,
+        "day": 4,
         "start": 9,
         "duration": 3
       }
@@ -7773,7 +7773,7 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 10.5,
         "duration": 3
       }
@@ -7848,12 +7848,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 10.5,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 10.5,
         "duration": 1.5
       }
@@ -7933,7 +7933,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 9.5,
         "duration": 3
       }
@@ -8013,7 +8013,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 14,
         "duration": 3
       }
@@ -8093,7 +8093,7 @@
     ],
     "times": [
       {
-        "day": 5,
+        "day": 4,
         "start": 9,
         "duration": 3
       }
@@ -8173,7 +8173,7 @@
     ],
     "times": [
       {
-        "day": 5,
+        "day": 4,
         "start": 14,
         "duration": 3
       }
@@ -8253,7 +8253,7 @@
     ],
     "times": [
       {
-        "day": 3,
+        "day": 2,
         "start": 9.5,
         "duration": 3
       }
@@ -8329,12 +8329,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 9,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 9,
         "duration": 1.5
       }
@@ -8410,7 +8410,7 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 14.5,
         "duration": 3
       }
@@ -8457,7 +8457,7 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 15,
         "duration": 3
       }
@@ -8504,7 +8504,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 9,
         "duration": 3
       }
@@ -8551,7 +8551,7 @@
     ],
     "times": [
       {
-        "day": 5,
+        "day": 4,
         "start": 13,
         "duration": 1
       }
@@ -8598,7 +8598,7 @@
     ],
     "times": [
       {
-        "day": 3,
+        "day": 2,
         "start": 13,
         "duration": 1
       }
@@ -8660,7 +8660,7 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 14,
         "duration": 2
       }
@@ -8735,7 +8735,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 14,
         "duration": 3
       }
@@ -8811,7 +8811,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 13,
         "duration": 3
       }
@@ -8891,7 +8891,7 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 14.5,
         "duration": 3
       }
@@ -8966,7 +8966,7 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 14.5,
         "duration": 3
       }
@@ -9030,7 +9030,7 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 18,
         "duration": 3
       }
@@ -9102,7 +9102,7 @@
     ],
     "times": [
       {
-        "day": 3,
+        "day": 2,
         "start": 15,
         "duration": 3
       }
@@ -9180,7 +9180,7 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 9.5,
         "duration": 3
       }
@@ -9251,12 +9251,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 10.5,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 10.5,
         "duration": 1.5
       }
@@ -9342,7 +9342,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 13,
         "duration": 3
       }
@@ -9422,12 +9422,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 16.5,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 16.5,
         "duration": 1.5
       }
@@ -9507,12 +9507,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 11,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 11,
         "duration": 1.5
       }
@@ -9590,7 +9590,7 @@
     ],
     "times": [
       {
-        "day": 5,
+        "day": 4,
         "start": 9,
         "duration": 3
       }
@@ -9652,7 +9652,7 @@
     ],
     "times": [
       {
-        "day": 5,
+        "day": 4,
         "start": 14,
         "duration": 3
       }
@@ -9729,12 +9729,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 9,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 9,
         "duration": 1.5
       }
@@ -9818,12 +9818,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 16,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 16,
         "duration": 1.5
       }
@@ -9909,12 +9909,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 10.5,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 10.5,
         "duration": 1.5
       }
@@ -10000,7 +10000,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 6,
+        "day": 5,
         "start": 18,
         "duration": 1
       }
@@ -10021,7 +10021,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 6,
+        "day": 5,
         "start": 18,
         "duration": 1
       }
@@ -10042,7 +10042,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 6,
+        "day": 5,
         "start": 18,
         "duration": 2
       }
@@ -10063,7 +10063,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 6,
+        "day": 5,
         "start": 18,
         "duration": 2
       }
@@ -10084,7 +10084,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 6,
+        "day": 5,
         "start": 9,
         "duration": 10
       }
@@ -10105,7 +10105,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 6,
+        "day": 5,
         "start": 9,
         "duration": 10
       }
@@ -10126,7 +10126,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 6,
+        "day": 5,
         "start": 9,
         "duration": 10
       }
@@ -10147,7 +10147,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 6,
+        "day": 5,
         "start": 9,
         "duration": 10
       }
@@ -10168,7 +10168,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 6,
+        "day": 5,
         "start": 9,
         "duration": 10
       }
@@ -10189,7 +10189,7 @@
     "trackRelations": {},
     "times": [
       {
-        "day": 6,
+        "day": 5,
         "start": 9,
         "duration": 10
       }
@@ -10213,12 +10213,12 @@
     },
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 13,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 13,
         "duration": 1.5
       }
@@ -10293,12 +10293,12 @@
     },
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 14.5,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 14.5,
         "duration": 1.5
       }
@@ -10373,12 +10373,12 @@
     },
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 10,
         "duration": 3
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 10,
         "duration": 3
       }
@@ -10438,12 +10438,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 13,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 13,
         "duration": 1.5
       }
@@ -10531,12 +10531,12 @@
     },
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 13,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 13,
         "duration": 1.5
       }
@@ -10601,12 +10601,12 @@
     },
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 16.5,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 16.5,
         "duration": 1.5
       }
@@ -10681,12 +10681,12 @@
     },
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 14.5,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 14.5,
         "duration": 1.5
       }
@@ -10760,7 +10760,7 @@
     ],
     "times": [
       {
-        "day": 4,
+        "day": 3,
         "start": 9,
         "duration": 3
       }
@@ -10833,12 +10833,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 19,
         "duration": 2
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 19,
         "duration": 2
       }
@@ -10903,12 +10903,12 @@
     ],
     "times": [
       {
-        "day": 2,
+        "day": 1,
         "start": 14.5,
         "duration": 1.5
       },
       {
-        "day": 4,
+        "day": 3,
         "start": 14.5,
         "duration": 1.5
       }
@@ -10978,12 +10978,12 @@
     ],
     "times": [
       {
-        "day": 1,
+        "day": 0,
         "start": 9,
         "duration": 1.5
       },
       {
-        "day": 3,
+        "day": 2,
         "start": 9,
         "duration": 1.5
       }
